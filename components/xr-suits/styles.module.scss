@@ -1,0 +1,22 @@
+@import '../../styles/variables';
+
+.xrsuits {
+	&__container {
+		background-color: $color-black;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		// align-items: center;
+		padding: 100px 0;
+
+		div:nth-child(1) {
+			h2 {
+				text-align: center;
+			}
+
+			h5 {
+				text-align: center;
+			}
+		}
+	}
+}

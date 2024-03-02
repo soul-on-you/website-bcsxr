@@ -1,0 +1,83 @@
+@import './variables';
+
+h1 {
+	font-size: 8.889vw; //128px, 1440
+	font-family: Thunder-Semibold-Italic;
+	text-transform: uppercase;
+	line-height: 1em;
+	letter-spacing: 0.05em;
+
+	@media (max-width: 768px) {
+		font-size: 15.459vw; //414, 64px
+	}
+}
+
+h2 {
+	font-family: Thunder-Semibold-Italic;
+	font-size: 6.667vw; //96px, 1440
+	line-height: 1.1em;
+	letter-spacing: 0.04em;
+
+	text-transform: uppercase;
+	background: linear-gradient(180.76deg, #ffffff 0.66%, #6b6b6b 85.38%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	-webkit-text-fill-color: transparent;
+
+	@media (max-width: 768px) {
+		font-size: 11.25vw; //320, 36px
+	}
+}
+
+//xr-suits, items
+h3 {
+	font-family: Thunder-Semibold-Italic;
+	font-size: 5.972vw; //86px, 1440
+	line-height: 1.1em;
+	letter-spacing: 0.04em;
+
+	text-transform: uppercase;
+	background: linear-gradient(180.76deg, #ffffff 0.66%, #6b6b6b 85.38%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	-webkit-text-fill-color: transparent;
+
+	@media (max-width: 768px) {
+		font-size: 15vw; //320, 48px
+	}
+}
+
+h4 {
+	font-family: Thunder-Medium-Italic;
+	font-size: 4.444vw; //64px, 1440
+	line-height: 1.1em;
+	letter-spacing: 0.04em;
+
+	text-transform: uppercase;
+	background: linear-gradient(180.76deg, #ffffff 0.66%, #6b6b6b 85.38%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	-webkit-text-fill-color: transparent;
+
+	@media (max-width: 768px) {
+		font-size: 8.75vw; //28px, 320
+	}
+}
+
+h5 {
+	font-size: 1.667vw; //24px, 1440
+	font-family: Suisse-Intl-Regular;
+	text-transform: uppercase;
+	// line-height: 1em;
+	// letter-spacing: 0.05em;
+	line-height: 110%;
+	letter-spacing: 0%;
+	color: $color-white;
+
+	@media (max-width: 768px) {
+		font-size: 3.75vw; //12, 36px
+	}
+}

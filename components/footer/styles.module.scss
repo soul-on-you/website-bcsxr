@@ -1,0 +1,17 @@
+.footer {
+	&__container {
+		background: rgba(29, 30, 33, 1);
+		padding-top: 100px;
+
+		.suka {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 100px;
+
+			h2 {
+			}
+		}
+	}
+}

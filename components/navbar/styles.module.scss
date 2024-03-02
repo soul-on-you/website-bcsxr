@@ -1,0 +1,26 @@
+@import '../../styles/variables';
+
+.navbar {
+	&__container {
+		position: absolute;
+		z-index: 5;
+		width: 100vw;
+
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		padding: 3.125vw $padding-desktop; //45px  $padding-desktop, 1440
+
+		img {
+			max-width: 16.667vw; //240px, 1440
+			max-height: 3.125vw; //45px, 1440
+			object-fit: contain;
+
+			@media (max-width: 768px) {
+				max-width: 31.25vw; //100px, 320
+				max-height: 16.5vw; //53px, 1440
+			}
+		}
+	}
+}

@@ -1,0 +1,31 @@
+.images {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around; /* This ensures equal spacing */
+	width: 100vw; /* Make the container full width */
+	overflow: hidden; /* Prevent any overflow */
+    
+	img {
+		object-fit: cover; /* Cover the area without losing aspect ratio */
+		width: 100% !important; /* Ensure the image fills the container */
+		position: relative !important; /* Override Next.js Image component default */
+		height: auto !important; /* Adjust height automatically */
+	}
+}
+
+.images > div {
+	flex-grow: 1; /* Make each image container grow to fill available space */
+	position: relative; /* For next/image positioning */
+	width: 33.33%; /* Divide the space by three */
+}
+
+.images > div > span {
+	position: unset !important; /* Override Next.js Image component default positioning */
+}
+
+@media (max-width: 768px) {
+	.images {
+		flex-direction: column;
+	}
+}

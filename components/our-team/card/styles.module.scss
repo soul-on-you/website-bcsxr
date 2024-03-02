@@ -1,0 +1,81 @@
+@import '../../../styles/variables';
+
+@media (min-width: 769px) {
+	.card {
+		width: 381px;
+		height: 500px;
+		border-radius: 16px;
+		background-color: grey;
+		// background-image: url(/our-team/1.png);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		box-sizing: border-box;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		justify-content: end;
+
+		h4 {
+			width: 100%;
+		}
+
+		button {
+			background-color: aqua;
+			border-radius: 16px;
+			padding: 4px 44px;
+			width: 100%;
+			box-sizing: border-box;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			span {
+				font-family: Suisse-Intl-Regular;
+				font-size: 24px;
+				text-transform: uppercase;
+
+				
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.card {
+		width: 135px;
+		height: 200px;
+		border-radius: 16px;
+		background-color: grey;
+		// background-image: url(/our-team/1.png);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		box-sizing: border-box;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		justify-content: end;
+
+		h4 {
+			width: 100%
+		}
+
+		button {
+			background-color: aqua;
+			border-radius: 16px;
+			padding: 4px 44px;
+			width: 100%;
+			box-sizing: border-box;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			span {
+				font-family: Suisse-Intl-Regular;
+				font-size: 14px;
+				text-transform: uppercase;
+			}
+		}
+	}
+}

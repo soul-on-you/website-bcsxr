@@ -1,0 +1,24 @@
+.arrowContainer {
+	position: relative;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1.944vw 0.972vw; //28px 14px, 1440
+
+	border-radius: 16px;
+	border: 1px solid #5d495b;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.084) 0%, rgba(217, 217, 217, 0.042) 100%);
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-image: url('/noise.webp');
+		opacity: 0.05;
+		pointer-events: none;
+	}
+}

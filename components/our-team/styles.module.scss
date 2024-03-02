@@ -1,0 +1,57 @@
+@import '../../styles/variables';
+
+.ourTeam {
+	&__container {
+		background: #000;
+		padding: $padding-desktop;
+		display: flex;
+		flex-direction: column;
+		gap: 64px;
+
+		.headline {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.gridContainer {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(auto, auto));
+			row-gap: 5.5vw; //88px, 1600
+			width: 100%;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+
+.ourTeam {
+	&__container {
+		background: #000;
+		padding: $padding-mobile;
+		display: flex;
+		flex-direction: column;
+		gap: 64px;
+
+		.headline {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.gridContainer {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(auto, auto));
+			// row-gap: 5.5vw; //88px, 1600
+			gap: 16px;
+			width: 100%;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+}
+}

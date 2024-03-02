@@ -1,0 +1,173 @@
+@import '../../styles/variables';
+
+.ourDivision {
+	background: #000;
+
+	&__container {
+		padding: 100px $padding-desktop;
+
+		.heading {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			h2 {
+				width: 100%;
+				display: inline-block;
+			}
+		}
+
+		.container {
+			padding-top: 48px;
+			display: grid;
+			grid-template-columns: 1fr 1fr; /* Две колонки с равной шириной */
+			gap: 20px; /* Отступ между блоками */
+			grid-auto-rows: minmax(100px, auto); /* Высота строк с минимальной высотой */
+
+			.largeBlock {
+				grid-column: 1 / -1; /* Занимает все колонки */
+				// height: 200px; /* Задаем высоту для верхнего блока */
+
+				position: relative;
+				border: 1px solid #5d495b;
+				border-radius: 16px;
+				background: linear-gradient(to top, rgba(255, 255, 255, 0.07), rgba(217, 217, 217, 0.14));
+				padding: 3.75vw 0; //54px 0, 1440
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				&::after {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					background-image: url('/noise.webp');
+					opacity: 0.05;
+					pointer-events: none;
+				}
+			}
+
+			.bottomBlocks {
+				// height: 100px; /* Задаем высоту для нижних блоков */
+				/* Если вы хотите, чтобы блоки занимали всю доступную ширину */
+				grid-column: span 1;
+
+				position: relative;
+				border: 1px solid #5d495b;
+				border-radius: 16px;
+				background: linear-gradient(to top, rgba(255, 255, 255, 0.07), rgba(217, 217, 217, 0.14));
+				padding: 3.75vw 0; //54px 0, 1440
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				&::after {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					background-image: url('/noise.webp');
+					opacity: 0.05;
+					pointer-events: none;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.ourDivision {
+		background: #000;
+	
+		&__container {
+			padding: 0 $padding-desktop;
+	
+			.heading {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				h2 {
+					width: 100%;
+				}
+			}
+	
+			.container {
+				padding-top: 48px;
+				display: grid;
+				grid-template-columns: 1fr 1fr; /* Две колонки с равной шириной */
+				gap: 20px; /* Отступ между блоками */
+				grid-auto-rows: minmax(100px, auto); /* Высота строк с минимальной высотой */
+	
+				.largeBlock {
+					grid-column: 1 / -1; /* Занимает все колонки */
+					// height: 200px; /* Задаем высоту для верхнего блока */
+	
+					position: relative;
+					border: 1px solid #5d495b;
+					border-radius: 16px;
+					background: linear-gradient(to top, rgba(255, 255, 255, 0.07), rgba(217, 217, 217, 0.14));
+					padding: 3.75vw 0; //54px 0, 1440
+					display: flex;
+					align-items: center;
+					justify-content: center;
+	
+					&::after {
+						content: '';
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						background-image: url('/noise.webp');
+						opacity: 0.05;
+						pointer-events: none;
+					}
+
+					img {
+						width: 60vw; //192px, 320
+						height: auto;
+					}
+				}
+	
+				.bottomBlocks {
+					// height: 100px; /* Задаем высоту для нижних блоков */
+					/* Если вы хотите, чтобы блоки занимали всю доступную ширину */
+					grid-column: span 1;
+	
+					position: relative;
+					border: 1px solid #5d495b;
+					border-radius: 16px;
+					background: linear-gradient(to top, rgba(255, 255, 255, 0.07), rgba(217, 217, 217, 0.14));
+					padding: 3.75vw 0; //54px 0, 1440
+					display: flex;
+					align-items: center;
+					justify-content: center;
+	
+					&::after {
+						content: '';
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						background-image: url('/noise.webp');
+						opacity: 0.05;
+						pointer-events: none;
+					}
+
+					img {
+						width: 32.5vw; //104px, 320
+						height: auto;
+					}
+				}
+			}
+		}
+	}
+}
