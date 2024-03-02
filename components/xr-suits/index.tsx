@@ -33,7 +33,6 @@ const XRSuits: React.FC = () => {
 					trigger: itemsRef.current,
 					start: 'top 96%',
 					end: '+=500',
-					// markers: true,
 					scrub: 1,
 				},
 			},

@@ -20,7 +20,6 @@ const Items: React.FC = () => {
 				trigger: item1Ref.current.parentElement,
 				start: 'top bottom-=200',
 				toggleActions: 'play none none reverse',
-				// markers: true,
 			},
 		});
 	
@@ -33,7 +32,6 @@ const Items: React.FC = () => {
 				trigger: item3Ref.current.parentElement,
 				start: 'top bottom-=200',
 				toggleActions: 'play none none reverse',
-				// markers: true,
 			},
 		});
 	
@@ -48,7 +46,6 @@ const Items: React.FC = () => {
 				trigger: item5Ref.current,
 				start: 'top bottom-=200',
 				toggleActions: 'play none none reverse',
-				// markers: true,
 			},
 			duration: 1
 		});
@@ -70,7 +67,6 @@ const Items: React.FC = () => {
 	// 					start: 'top bottom-=200',
 	// 					end: 'bottom top',
 	// 					toggleActions: 'play none none reverse',
-	// 					markers: true,
 	// 					scrub: 2,
 	// 				},
 	// 				duration: 1.5,

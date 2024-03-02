@@ -7,19 +7,29 @@ const Links: React.FC = () => {
 		<div className={`${styles.links} hide-on-mobile`}>
 			<ul className=''>
 				<li>
-					<Link href='#mission'>mission</Link>
+					<Link href='#mission'>
+						<span>mission</span>
+					</Link>
 				</li>
 				<li>
-					<Link href='#lab'>lab</Link>
+					<Link href='#lab'>
+						<span>lab</span>
+					</Link>
 				</li>
 				<li>
-					<Link href='#suit'>suit</Link>
+					<Link href='#suit'>
+						<span>suit</span>
+					</Link>
 				</li>
 				<li>
-					<Link href='#team'>team</Link>
+					<Link href='#team'>
+						<span>team</span>
+					</Link>
 				</li>
 				<li>
-					<Link href='#partners'>partners</Link>
+					<Link href='#partners'>
+						<span>partners</span>
+					</Link>
 				</li>
 			</ul>
 		</div>

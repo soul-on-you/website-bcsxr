@@ -1,11 +1,11 @@
 @import './variables';
 
 ::selection {
-    background: red;
-    color: red;
+    background: $color-blue;
+    color: $color-white;
     
 }
 ::-moz-selection {
-    background: red;
-    color: red;
+    background: $color-blue;
+    color: $color-white;
 }

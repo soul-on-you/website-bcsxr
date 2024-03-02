@@ -22,7 +22,6 @@ const Images: React.FC = () => {
 				trigger: ref.current,
 				start: 'top center+=150',
 				// end: '+=600',
-				markers: true,
 				scrub: 1, // Начать анимацию, когда элемент входит в область видимости
 				onEnter: () => {
 					gsap.fromTo(

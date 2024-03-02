@@ -20,7 +20,6 @@ const Partners: React.FC = () => {
 				trigger: textRef.current,
 				start: 'top bottom',
 				toggleActions: 'play none none none',
-				markers: true,
 			},
 		});
 

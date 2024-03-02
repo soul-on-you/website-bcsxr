@@ -3,23 +3,33 @@
 .mission {
 	&__container {
 		position: relative;
-
 		width: 100vw;
-		// height: 38.889vw; //560px, 1440
-		height: 100vh;
+		height: 38.889vw; //560px, 1440
+
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: start;
-
 		padding: 0 $padding-desktop; //45px  $padding-desktop, 1440
 
-		h2 {
-			width: 100%;
-		}
+		.headline {
+			div:nth-child(1) {
+				position: relative;
+				h2 {
+					width: 100%;
+					color: $color-pink;
+				}
+				h2:nth-child(2) {
+					position: absolute;
+					transform: translateY(-7.5vw); //-108px, 1440
+					filter: blur(50px);
+					overflow: hidden;
+				}
+			}
 
-		h5 {
-			width: 37.153vw; //535px, 1440
+			h5 {
+				width: 32.153vw; //?px, 1440
+			}
 		}
 
 		.backgroundImage {
@@ -30,8 +40,9 @@
 			bottom: 0;
 			z-index: -1;
 			overflow: hidden;
-            width: 100%;
-				height: 100%;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
 		}
 	}
 }
@@ -40,7 +51,6 @@
 	.mission {
 		&__container {
 			position: relative;
-
 			width: 100vw;
 			height: 97.5vw; //312px, 320
 
@@ -48,11 +58,26 @@
 			flex-direction: column;
 			justify-content: end;
 			align-items: start;
-
 			padding: $padding-mobile; // $padding-mobile, 320
 
-			h5 {
-				width: 88.75vw; //286px, 320
+			.headline {
+				div:nth-child(1) {
+					position: relative;
+					h2 {
+						width: 100%;
+						color: $color-pink;
+					}
+					h2:nth-child(2) {
+						position: absolute;
+						transform: translateY(-7.5vw); //-108px, 1440
+						filter: blur(50px);
+						overflow: hidden;
+					}
+				}
+
+				h5 {
+					width: 88.75vw; //286px, 320
+				}
 			}
 
 			.backgroundImage {
@@ -62,10 +87,11 @@
 				right: 0;
 				bottom: 0;
 				z-index: -1;
-				object-fit: cover;
-				object-position: 60% 50%;
+				overflow: hidden;
 				width: 100%;
 				height: 100%;
+				object-fit: cover;
+				object-position: 58% 50%;
 			}
 		}
 	}
