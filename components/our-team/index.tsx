@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import styles from './styles.module.scss';
 import Card from './card';
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import Image from 'next/image';
 
 const OurTeam: React.FC = () => {
 	const tl = useRef<gsap.core.Timeline | null>(null);
@@ -82,6 +82,7 @@ const OurTeam: React.FC = () => {
 					</div>
 				</div>
 			</div>
+			<Image className={styles.bgImage} src='/bg1.webp' alt='bg' width={2880 / 2} height={1600 / 2} />
 		</section>
 	);
 };
