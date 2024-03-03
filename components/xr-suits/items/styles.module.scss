@@ -16,9 +16,9 @@
 
 			div:nth-child(1) {
 				position: relative;
-				height: 33.333vw; //480px, 1440
+				min-height: 33.333vw; //480px, 1440
 
-				flex: 0 0 29.653dvw; //427px, 1440
+				flex: 0 0 29.653vw; //427px, 1440
 				border: 1px solid #5d495b;
 				border-radius: 16px;
 				background: linear-gradient(to top, rgba(255, 255, 255, 0.07), rgba(217, 217, 217, 0.14));
@@ -38,23 +38,28 @@
 
 				h3 {
 					width: 100%;
+					color: $color-pink;
+				}
+				h3:nth-child(2) {
+					position: absolute;
+					top: 2.2vw; //32px, 1440
+					filter: blur(50px);
+					overflow: hidden;
 				}
 
-				img {
-					position: absolute;
-					bottom: 0;
-					right: 0;
-					width: 225px;
-					height: auto;
-				}
+				// img {
+				// 	position: absolute;
+				// 	bottom: 0;
+				// 	right: 0;
+				// 	width: 225px;
+				// 	height: auto;
+				// }
 			}
 
 			div:nth-child(2) {
 				display: flex;
-				align-items: start;
-				// flex-grow: 1;
 				flex: 1 1 auto;
-				height: 33.333vw; //480px, 1440
+				min-height: 33.333vw; //480px, 1440
 
 				position: relative;
 				border: 1px solid #5d495b;
@@ -76,6 +81,13 @@
 
 				h3 {
 					width: 100%;
+					color: $color-blue;
+				}
+				h3:nth-child(2) {
+					position: absolute;
+					top: 2.2vw; //32px, 1440
+					filter: blur(50px);
+					overflow: hidden;
 				}
 
 				img {
@@ -118,6 +130,13 @@
 
 				h3 {
 					width: 100%;
+					color: $color-pink;
+				}
+				h3:nth-child(2) {
+					position: absolute;
+					top: 2.2vw; //32px, 1440
+					filter: blur(50px);
+					overflow: hidden;
 				}
 
 				img {
@@ -156,6 +175,13 @@
 
 				h3 {
 					width: 100%;
+					color: $color-blue;
+				}
+				h3:nth-child(2) {
+					position: absolute;
+					top: 2.2vw; //32px, 1440
+					filter: blur(50px);
+					overflow: hidden;
 				}
 
 				img {
@@ -194,15 +220,26 @@
 
 				h3 {
 					width: 100%;
-				}
 
-				img {
+					span:nth-child(1) {
+						color: $color-blue;
+					}
+					span:nth-child(2) {
+						color: $color-pink;
+					}
+				}
+				h3:nth-child(2) {
 					position: absolute;
-					bottom: 0;
-					// right: -167px;
-					left: 11vw;
-					width: 61.667vw; //888px, 1440
-					height: auto;
+					top: 2.2vw; //32px, 1440
+					filter: blur(50px);
+					overflow: hidden;
+
+					span:nth-child(1) {
+						color: $color-blue;
+					}
+					span:nth-child(2) {
+						color: $color-pink;
+					}
 				}
 			}
 		}
@@ -379,7 +416,7 @@
 		.container3 {
 			div:nth-child(1) {
 				width: 89.688vw; //287px, 320
-								height: 89.688vw; //287px, 320
+				height: 89.688vw; //287px, 320
 				position: relative;
 				border: 1px solid #5d495b;
 				border-radius: 16px;

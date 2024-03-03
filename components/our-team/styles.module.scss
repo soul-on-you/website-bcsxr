@@ -2,56 +2,93 @@
 
 .ourTeam {
 	&__container {
-		background: #000;
-		padding: $padding-desktop;
 		display: flex;
 		flex-direction: column;
-		gap: 64px;
+		align-items: center;
+		justify-content: center;
+		gap: 4.4vw; //64px, 1440
+		padding: $padding-desktop;
+		background: $color-black;
 
 		.headline {
 			display: flex;
 			flex-direction: column;
-			justify-content: center;
 			align-items: center;
+			justify-content: center;
+
+			div:nth-child(1) {
+				position: relative;
+				h2 {
+					width: 100%;
+					color: $color-pink;
+				}
+				h2:nth-child(2) {
+					position: absolute;
+					transform: translateY(-7.5vw); //-108px, 1440
+					filter: blur(50px);
+					overflow: hidden;
+				}
+			}
+			h5 {
+				width: 100%;
+			}
 		}
 
 		.gridContainer {
 			display: grid;
 			grid-template-columns: repeat(3, minmax(auto, auto));
-			row-gap: 5.5vw; //88px, 1600
-			width: 100%;
 			justify-content: space-between;
 			align-items: center;
+			row-gap: 5.5vw; //88px, 1600
+			width: 100%;
 		}
 	}
 }
 
 @media (max-width: 768px) {
-
-.ourTeam {
-	&__container {
-		background: #000;
-		padding: $padding-mobile;
-		display: flex;
-		flex-direction: column;
-		gap: 64px;
-
-		.headline {
+	.ourTeam {
+		&__container {
 			display: flex;
 			flex-direction: column;
+			align-items: center;
 			justify-content: center;
-			align-items: center;
-		}
+			gap: 5vw; //16px, 320
+			padding: $padding-mobile;
+			background: $color-black;
 
-		.gridContainer {
-			display: grid;
-			grid-template-columns: repeat(2, minmax(auto, auto));
-			// row-gap: 5.5vw; //88px, 1600
-			gap: 16px;
-			width: 100%;
-			justify-content: space-between;
-			align-items: center;
+			.headline {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+
+				div:nth-child(1) {
+					position: relative;
+					h2 {
+						width: 100%;
+						color: $color-pink;
+					}
+					h2:nth-child(2) {
+						position: absolute;
+						transform: translateY(-7.5vw); //-108px, 1440
+						filter: blur(50px);
+						overflow: hidden;
+					}
+				}
+				h5 {
+					width: 100%;
+				}
+			}
+
+			.gridContainer {
+				display: grid;
+				grid-template-columns: repeat(2, minmax(auto, auto));
+				justify-content: space-between;
+				align-items: center;
+				// row-gap: 5.5vw; //88px, 1600
+				gap: 5vw; //16px, 320
+				width: 100%;
+			}
 		}
 	}
-}
 }

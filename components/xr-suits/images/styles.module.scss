@@ -2,26 +2,27 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: space-around; /* This ensures equal spacing */
-	width: 100vw; /* Make the container full width */
-	overflow: hidden; /* Prevent any overflow */
+	justify-content: space-around; 
+	width: 100vw; 
+	overflow: hidden; 
+	// opacity: 0;
     
 	img {
-		object-fit: cover; /* Cover the area without losing aspect ratio */
-		width: 100% !important; /* Ensure the image fills the container */
-		position: relative !important; /* Override Next.js Image component default */
-		height: auto !important; /* Adjust height automatically */
+		object-fit: cover; 
+		width: 100% !important; 
+		position: relative !important; 
+		height: auto !important; 
 	}
 }
 
 .images > div {
-	flex-grow: 1; /* Make each image container grow to fill available space */
-	position: relative; /* For next/image positioning */
-	width: 33.33%; /* Divide the space by three */
+	flex-grow: 1; 
+	position: relative; 
+	width: 33.33%; 
 }
 
 .images > div > span {
-	position: unset !important; /* Override Next.js Image component default positioning */
+	position: unset !important; 
 }
 
 @media (max-width: 768px) {

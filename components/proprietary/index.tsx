@@ -13,8 +13,6 @@ const Proprietary: React.FC = () => {
 	const textRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		gsap.registerPlugin(ScrollTrigger);
-
 		const span = new SplitType(textRef.current!, {
 			types: 'chars',
 			lineClass: 'lineParent',
@@ -30,7 +28,7 @@ const Proprietary: React.FC = () => {
 
 		tl.current.fromTo(
 			headingRef.current,
-			{ autoAlpha: 0, y: 56 },
+			{ autoAlpha: 0, y: 64 },
 			{
 				autoAlpha: 1,
 				y: 0,
@@ -56,6 +54,7 @@ const Proprietary: React.FC = () => {
 			tl.current?.kill();
 		};
 	}, []);
+
 	return (
 		<section className={styles.proprietary} id='lab'>
 			<div className={styles.proprietary__container}>
