@@ -84,6 +84,10 @@ const OurDivision: React.FC = () => {
 					span3='our'
 					span4='divison'
 					text='We are part of blockchain sports ecosystem'
+					colorSpan1='#2DE8E8'
+					colorSpan2='#2DE8E8'
+					colorSpan3='#2DE8E8'
+					colorSpan4='#2DE8E8'
 				/>
 
 				<div className={styles.container}>

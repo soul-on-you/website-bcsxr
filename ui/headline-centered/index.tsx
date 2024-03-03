@@ -3,7 +3,17 @@ import styles from './styles.module.scss';
 import gsap from 'gsap';
 import IHeadlineCenteredProps from './interface';
 
-const HeadlineCentered: React.FC<IHeadlineCenteredProps> = ({ span1, span2, span3, span4, text }) => {
+const HeadlineCentered: React.FC<IHeadlineCenteredProps> = ({
+	span1,
+	span2,
+	span3,
+	span4,
+	text,
+	colorSpan1,
+	colorSpan2,
+	colorSpan3,
+	colorSpan4,
+}) => {
 	const tl = useRef<gsap.core.Timeline | null>(null);
 	const titleRef = useRef<HTMLHeadingElement>(null);
 	const textRef = useRef<HTMLDivElement>(null);
@@ -14,7 +24,7 @@ const HeadlineCentered: React.FC<IHeadlineCenteredProps> = ({ span1, span2, span
 				trigger: textRef.current,
 				start: 'top 98%',
 				toggleActions: 'play none resume reset',
-                // scrub: 1
+				// scrub: 1
 			},
 		});
 
@@ -50,17 +60,15 @@ const HeadlineCentered: React.FC<IHeadlineCenteredProps> = ({ span1, span2, span
 		<div className={styles.headline}>
 			<div className={styles.title} ref={titleRef}>
 				<h2>
-					<span>{span1}</span>
-					<span>{span2}</span>
+					<span style={{ color: colorSpan1 }}>{span1}</span>
+					<span style={{ color: colorSpan2 }}>{span2}</span>
 				</h2>
 				<h2>
-					<span>{span3}</span>
-					<span>{span4}</span>
+					<span style={{ color: colorSpan3 }}>{span3}</span>
+					<span style={{ color: colorSpan4 }}>{span4}</span>
 				</h2>
 			</div>
-			<h5 ref={textRef}>
-				{text}
-			</h5>
+			<h5 ref={textRef}>{text}</h5>
 		</div>
 	);
 };

@@ -62,6 +62,10 @@ const OurTeam: React.FC = () => {
 					span3='our'
 					span4='team'
 					text='Leading specialists in the field of VR'
+					colorSpan1='#E833EC'
+					colorSpan2='#E833EC'
+					colorSpan3='#E833EC'
+					colorSpan4='#E833EC'
 				/>
 
 				<div className={styles.gridContainer}>

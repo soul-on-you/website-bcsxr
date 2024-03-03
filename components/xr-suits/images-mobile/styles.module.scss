@@ -1,0 +1,32 @@
+.images {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around; 
+	width: 100vw; 
+	overflow: hidden; 
+	// opacity: 0;
+    
+	img {
+		object-fit: cover; 
+		width: 100% !important; 
+		position: relative !important; 
+		height: auto !important; 
+	}
+}
+
+.images > div {
+	flex-grow: 1; 
+	position: relative; 
+	width: 33.33%; 
+}
+
+.images > div > span {
+	position: unset !important; 
+}
+
+@media (max-width: 768px) {
+	.images {
+		flex-direction: column;
+	}
+}

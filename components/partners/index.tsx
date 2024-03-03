@@ -47,6 +47,10 @@ const Partners: React.FC = () => {
 					span1='partners'
 					span3='partners'
 					text='We are part of a corporate group of companies'
+					colorSpan1='#E833EC'
+					colorSpan2='#E833EC'
+					colorSpan3='#E833EC'
+					colorSpan4='#E833EC'
 				/>
 				<div>
 					<LargeItem ref={largeBlockRef} img='/partners/1.png' width={1352 / 2} height={184 / 2} />

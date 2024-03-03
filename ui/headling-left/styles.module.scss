@@ -1,0 +1,21 @@
+@import '../../styles/variables';
+
+.headingLeft {
+	div:nth-child(1) {
+		position: relative;
+
+		h2 {
+			width: 100%;
+		}
+
+		h2:nth-child(2) {
+			position: absolute;
+			transform: translateY(-7.5vw); //-108px, 1440
+			filter: blur(50px);
+			overflow: hidden;
+		}
+	}
+
+	h5 {
+	}
+}
