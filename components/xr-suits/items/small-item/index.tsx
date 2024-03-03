@@ -9,10 +9,10 @@ interface ISmallItemProps {
 
 const SmallItem: React.ForwardRefRenderFunction<HTMLDivElement, ISmallItemProps> = ({ name, nameBlur }, ref) => {
 	return (
-		<div className={styles.container} ref={ref}>
+		<div className={styles.smallItem} ref={ref}>
 			<h3>{name}</h3>
 			<h3>{nameBlur}</h3>
-			{/* <Image className={styles.img} src='/xr-suits/items/1.png' alt='items1' width={1000} height={1000} /> */}
+			<Image className='' src='/xr-suits/items/haptic.webp' alt='items1' width={1000} height={1000} />
 		</div>
 	);
 };

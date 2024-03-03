@@ -1,53 +1,61 @@
 @import '../../../../styles/variables';
 
-@media (max-width: 768px) {
-	.container {
-		position: relative;
-		min-height: 33.333vw; //480px, 1440
+.smallItem {
+	position: relative;
+	height: 33.333vw; //480px, 1440
+	// overflow: hidden;
 
-		flex: 0 0 29.653vw; //427px, 1440
-		border: 1px solid #5d495b;
-		border-radius: 16px;
-		background: linear-gradient(to top, rgba(255, 255, 255, 0.07), rgba(217, 217, 217, 0.14));
-		padding: 2.222vw; //32px 0, 1440
+	flex: 0 0 29.653vw; //427px, 1440
+	border: 1px solid #5d495b;
+	border-radius: 16px;
+	background: linear-gradient(to top, rgba(255, 255, 255, 0.07), rgba(217, 217, 217, 0.14));
+	padding: 2.222vw; //32px 0, 1440
 
-		&::after {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background-image: url('/noise.webp');
-			opacity: 0.05;
-			pointer-events: none;
-		}
-
-		h3 {
-			width: 100%;
-			color: $color-pink;
-			text-transform: uppercase;
-		}
-		h3:nth-child(2) {
-			position: absolute;
-			top: 2.2vw; //32px, 1440
-			filter: blur(50px);
-			overflow: hidden;
-		}
-
-		.imgContainer {
-			position: absolute;
-			bottom: 0;
-			right: 0;
-			width: 225px;
-			height: auto;
-			img {
-			  object-fit: cover; // Пример использования object-fit
-			}
-		  }
-		  display: none;
-		  
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-image: url('/noise.webp');
+		opacity: 0.05;
+		pointer-events: none;
 	}
+
+	h3 {
+		width: 100%;
+		color: $color-pink;
+		text-transform: uppercase;
+		z-index: 10;
+	}
+
+	h3:nth-child(2) {
+		position: absolute;
+		top: 2.2vw; //32px, 1440
+		filter: blur(50px);
+		overflow: hidden;
+	}
+
+	img {
+		position: absolute;
+		width: 300px;
+		height: auto;
+		right: -37px;
+		bottom: -56px;
+		z-index: -1;
+	}
+
+	// .imgContainer {
+	// 	position: absolute;
+	// 	bottom: 0;
+	// 	right: 0;
+	// 	width: 225px;
+	// 	height: auto;
+	// 	img {
+	// 		object-fit: cover; // Пример использования object-fit
+	// 	}
+	// }
 }
 
 @media (max-width: 768px) {
