@@ -1,6 +1,14 @@
 @import '../../styles/variables';
 
 .partners {
+	position: relative;
+	.bgImage {
+		position: absolute;
+		// top: 567vw; //?, 1440
+		// top: 712vw;;
+		z-index: 1;
+		bottom: 10vw;
+	}
 	&__container {
 		padding: 100px $padding-desktop;
 		background: #000;

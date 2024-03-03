@@ -5,6 +5,7 @@ import styles from './styles.module.scss';
 import gsap from 'gsap';
 import MediumItem from './medium-item';
 import LargeItem from './large-item';
+import Image from 'next/image';
 
 const OurDivision: React.FC = () => {
 	const tl = useRef<gsap.core.Timeline | null>(null);
@@ -88,6 +89,9 @@ const OurDivision: React.FC = () => {
 
 	return (
 		<section className={styles.ourDivision}>
+			<div className={`${styles.bgImage} hide-on-mobile`}>
+				<Image src='/bg2.webp' alt='bg' width={2880 / 2} height={1600 / 2} />
+			</div>
 			<div className={styles.ourDivision__container}>
 				<div className={styles.headline}>
 					<div ref={headingRef}>

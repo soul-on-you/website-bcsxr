@@ -51,6 +51,9 @@ const OurTeam: React.FC = () => {
 
 	return (
 		<section className={styles.ourTeam} id='team'>
+			<div className={`${styles.bgImage} hide-on-mobile`}>
+				<Image src='/bg1.webp' alt='bg' width={2880 / 2} height={1600 / 2} />
+			</div>
 			<div className={styles.ourTeam__container}>
 				<div className={styles.headline}>
 					<h2>Our Team</h2>
@@ -82,7 +85,6 @@ const OurTeam: React.FC = () => {
 					</div>
 				</div>
 			</div>
-			<Image className={styles.bgImage} src='/bg1.webp' alt='bg' width={2880 / 2} height={1600 / 2} />
 		</section>
 	);
 };

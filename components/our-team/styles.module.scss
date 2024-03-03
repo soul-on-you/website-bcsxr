@@ -1,11 +1,12 @@
 @import '../../styles/variables';
 
 .ourTeam {
+	position: relative;
+	
 	.bgImage {
 		position: absolute;
-		// bottom: 400px;
-		transform: translateY(-111vw); //-1600px, 1440
 		z-index: 1;
+		top: 1vw;
 	}
 	&__container {
 		display: flex;

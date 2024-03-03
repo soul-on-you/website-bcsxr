@@ -1,9 +1,17 @@
 @import '../../styles/variables';
 
 .ourDivision {
+	position: relative;
+	.bgImage {
+		position: absolute;
+		z-index: 1;
+		bottom: 34vw;
+		left: 32vw;
+	}
 	&__container {
 		background-color: $color-black;
 		padding: 6.9vw $padding-desktop; //100px desktop, 1440
+		z-index: 10;
 
 		.headline {
 			display: flex;

@@ -86,6 +86,9 @@ const Partners: React.FC = () => {
 
 	return (
 		<section className={styles.partners} id='partners'>
+			<div className={`${styles.bgImage} hide-on-mobile`}>
+				<Image src='/bg3.webp' alt='bg' width={2880 / 2} height={1600 / 2} />
+			</div>
 			<div className={styles.partners__container}>
 				<div className={styles.headline}>
 					<div ref={headingRef}>
