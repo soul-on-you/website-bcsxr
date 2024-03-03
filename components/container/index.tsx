@@ -16,11 +16,11 @@ const Container: React.FC = () => {
 	}, []);
 	return (
 		<main className='overflow-x-hidden'>
-			<Masthead />
+			{/* <Masthead />
 			<Mission />
 			<Proprietary />
 			<XRSuits />
-			<OurTeam />
+			<OurTeam /> */}
 			<OurDivision />
 			<Partners />
 		</main>
