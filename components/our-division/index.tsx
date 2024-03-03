@@ -6,31 +6,16 @@ import gsap from 'gsap';
 import MediumItem from './medium-item';
 import LargeItem from './large-item';
 import Image from 'next/image';
+import HeadlineCentered from '@/ui/headline-centered';
 
 const OurDivision: React.FC = () => {
 	const tl = useRef<gsap.core.Timeline | null>(null);
 	const largeBlockRef = useRef<HTMLDivElement | null>(null);
 	const bottomBlock1Ref = useRef<HTMLDivElement | null>(null);
 	const bottomBlock2Ref = useRef<HTMLDivElement | null>(null);
-	const headingRef = useRef<HTMLHeadingElement>(null);
-	const textRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		tl.current = gsap.timeline();
-		tl.current.fromTo(
-			headingRef.current,
-			{ y: 50, autoAlpha: 0 },
-			{
-				y: 0,
-				autoAlpha: 1,
-				duration: 1,
-				scrollTrigger: {
-					trigger: headingRef.current,
-					start: 'top bottom-=100',
-					toggleActions: 'play none none none',
-				},
-			},
-		);
 
 		tl.current.fromTo(
 			largeBlockRef.current,
@@ -93,13 +78,14 @@ const OurDivision: React.FC = () => {
 				<Image src='/bg2.webp' alt='bg' width={2880 / 2} height={1600 / 2} />
 			</div>
 			<div className={styles.ourDivision__container}>
-				<div className={styles.headline}>
-					<div ref={headingRef}>
-						<h2>Our Division</h2>
-						<h2>Our Division</h2>
-					</div>
-					<h5 ref={textRef}>We are part of blockchain sports ecosystem</h5>
-				</div>
+				<HeadlineCentered
+					span1='our'
+					span2='division'
+					span3='our'
+					span4='divison'
+					text='We are part of blockchain sports ecosystem'
+				/>
+
 				<div className={styles.container}>
 					<LargeItem ref={largeBlockRef} img='/our-division/1.png' />
 

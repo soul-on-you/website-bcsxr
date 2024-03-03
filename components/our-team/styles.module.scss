@@ -2,7 +2,7 @@
 
 .ourTeam {
 	position: relative;
-	
+
 	.bgImage {
 		position: absolute;
 		z-index: 1;
@@ -17,31 +17,6 @@
 		padding: $padding-desktop;
 		background: $color-black;
 		z-index: 10;
-
-		.headline {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			z-index: 10;
-
-			div:nth-child(1) {
-				position: relative;
-				h2 {
-					width: 100%;
-					color: $color-pink;
-				}
-				h2:nth-child(2) {
-					position: absolute;
-					transform: translateY(-7.5vw); //-108px, 1440
-					filter: blur(50px);
-					overflow: hidden;
-				}
-			}
-			h5 {
-				width: 100%;
-			}
-		}
 
 		.gridContainer {
 			z-index: 10;
@@ -65,30 +40,6 @@
 			gap: 5vw; //16px, 320
 			padding: $padding-mobile;
 			background: $color-black;
-
-			.headline {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-
-				div:nth-child(1) {
-					position: relative;
-					h2 {
-						width: 100%;
-						color: $color-pink;
-					}
-					h2:nth-child(2) {
-						position: absolute;
-						transform: translateY(-7.5vw); //-108px, 1440
-						filter: blur(50px);
-						overflow: hidden;
-					}
-				}
-				h5 {
-					width: 100%;
-				}
-			}
 
 			.gridContainer {
 				display: grid;

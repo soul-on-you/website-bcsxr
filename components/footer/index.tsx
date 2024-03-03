@@ -5,7 +5,7 @@ import Links from './links';
 
 const Footer: React.FC = () => {
 	return (
-		<section className={styles.footer}>
+		<section className={styles.footer} id='footer'>
 			<div className={styles.footer__container}>
 				<div className={styles.suka}>
 					<h2>JOIN US</h2>

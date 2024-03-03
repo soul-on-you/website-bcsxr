@@ -3,6 +3,7 @@ import styles from './styles.module.scss';
 import Card from './card';
 import gsap from 'gsap';
 import Image from 'next/image';
+import HeadlineCentered from '@/ui/headline-centered';
 
 const OurTeam: React.FC = () => {
 	const tl = useRef<gsap.core.Timeline | null>(null);
@@ -55,10 +56,14 @@ const OurTeam: React.FC = () => {
 				<Image src='/bg1.webp' alt='bg' width={2880 / 2} height={1600 / 2} />
 			</div>
 			<div className={styles.ourTeam__container}>
-				<div className={styles.headline}>
-					<h2>Our Team</h2>
-					<h5>Leading specialists in the field of VR</h5>
-				</div>
+				<HeadlineCentered
+					span1='our'
+					span2='team'
+					span3='our'
+					span4='team'
+					text='Leading specialists in the field of VR'
+				/>
+
 				<div className={styles.gridContainer}>
 					<div ref={card1Ref}>
 						<Card name='MICHAIL' surname='ZEUS' jobTitle='CEO' backgroundImage='/our-team/1.png' />
