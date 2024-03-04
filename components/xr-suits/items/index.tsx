@@ -6,8 +6,12 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import SmallItem from './small-item';
 import MediumItem from './medium-item';
 import LargeItem from './large-item';
+import useWindowSize from '@/hooks/useWindowSize';
 
 const Stuff: React.FC = () => {
+	const { width } = useWindowSize();
+	const isMobile = width < 768;
+
 	const item1Ref = useRef<HTMLDivElement | null>(null);
 	const item2Ref = useRef<HTMLDivElement | null>(null);
 	const item3Ref = useRef<HTMLDivElement | null>(null);
@@ -77,15 +81,59 @@ const Stuff: React.FC = () => {
 	return (
 		<div className={styles.items}>
 			<div className={styles.container1}>
-				<SmallItem ref={item1Ref} name='haptic shin guards' nameBlur='haptic shin guards' />
-				<MediumItem ref={item2Ref} name='ai cleats' nameBlur='ai cleats' />
+				<SmallItem
+					ref={item1Ref}
+					name='haptic shin guards'
+					nameBlur='haptic shin guards'
+					imgSrc='/xr-suits/items/haptic.webp'
+					style={
+						isMobile
+							? { width: '59.375vw', right: '-6.875vw', bottom: '-10.625vw' }
+							: { width: '20.833vw', right: '-2.569vw', bottom: '-3.889vw' }
+					}
+					overflowHidden={false}
+				/>
+				<MediumItem
+					ref={item2Ref}
+					name='ai cleats'
+					nameBlur='ai cleats'
+					imgSrc='/xr-suits/items/ai-cleats.webp'
+					style={
+						isMobile
+							? { width: '111.875vw', right: '-17.188vw', bottom: '-1.875vw' }
+							: { width: '43.833vw', right: '-2.569vw', bottom: '-3.889vw' }
+					}
+					overflowHidden={true}
+				/>
 			</div>
 			<div className={styles.container2}>
-				<MediumItem ref={item3Ref} name='goal keeper gloves' nameBlur='goal keeper gloves' />
-				<SmallItem ref={item4Ref} name='xr suit' nameBlur='xr suit' />
+				<MediumItem
+					ref={item3Ref}
+					name='goal keeper gloves'
+					nameBlur='goal keeper gloves'
+					imgSrc='/xr-suits/items/goalkeeper.webp'
+					style={
+						isMobile
+							? { width: '103.125vw', right: '-11.875vw', bottom: '-6.25vw' }
+							: { width: '52.083vw', right: '0.694vw', bottom: '-3.194vw' }
+					}
+					overflowHidden={false}
+				/>
+				<SmallItem
+					ref={item4Ref}
+					name='xr suit'
+					nameBlur='xr suit'
+					imgSrc='/xr-suits/items/xr-suit.webp'
+					style={
+						isMobile
+							? { width: '81.25vw', right: '5.313vw', bottom: '-118.75vw' }
+							: { width: '20.833vw', right: '4.792vw', bottom: '-24.722vw' }
+					}
+					overflowHidden={true}
+				/>
 			</div>
 			<div className={styles.container3}>
-				<LargeItem ref={item5Ref}/>
+				<LargeItem ref={item5Ref} />
 			</div>
 		</div>
 	);

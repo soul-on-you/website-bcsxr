@@ -6,11 +6,9 @@ import Link from 'next/link';
 
 const ButtonGradient: React.FC<IButtonGradientProps> = ({ children }) => {
 	return (
-		<button className={styles.buttonContainer}>
-			<Link href='#footer'>
-				<span>{children}</span>
-			</Link>
-		</button>
+		<Link href='#footer' className={styles.buttonContainer}>
+			<span>{children}</span>
+		</Link>
 	);
 };
 

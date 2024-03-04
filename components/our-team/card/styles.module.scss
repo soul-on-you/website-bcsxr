@@ -2,8 +2,8 @@
 
 @media (min-width: 769px) {
 	.card {
-		width: 381px;
-		height: 500px;
+		width: 26.458vw; //381px, 1440
+		height: 34.722vw; //500px, 1440
 		border-radius: 16px;
 		background-color: grey;
 		// background-image: url(/our-team/1.png);
@@ -11,7 +11,7 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 		box-sizing: border-box;
-		padding: 20px;
+		padding: 1.389vw; //20px, 1440
 		display: flex;
 		flex-direction: column;
 		align-items: start;
@@ -23,8 +23,8 @@
 
 		button {
 			background-color: aqua;
-			border-radius: 16px;
-			padding: 4px 44px;
+			border-radius: 1.111vw; //16px, 1440
+			padding: 0.278vw 3.056vw; //4px 44px, 1440
 			width: 100%;
 			box-sizing: border-box;
 			display: flex;
@@ -32,10 +32,8 @@
 			justify-content: center;
 			span {
 				font-family: Suisse-Intl-Regular;
-				font-size: 24px;
+				font-size: 1.667vw; //24px, 1440
 				text-transform: uppercase;
-
-				
 			}
 		}
 	}
@@ -43,8 +41,8 @@
 
 @media (max-width: 768px) {
 	.card {
-		width: 135px;
-		height: 200px;
+		width: 42.188vw; //135px, 320
+		height: 62.5vw; //200px, 320
 		border-radius: 16px;
 		background-color: grey;
 		// background-image: url(/our-team/1.png);
@@ -59,13 +57,13 @@
 		justify-content: end;
 
 		h4 {
-			width: 100%
+			width: 100%;
 		}
 
 		button {
 			background-color: aqua;
 			border-radius: 16px;
-			padding: 4px 44px;
+			padding: 1.25vw 13.75vw; //4px 44px, 320
 			width: 100%;
 			box-sizing: border-box;
 			display: flex;
@@ -73,7 +71,7 @@
 			justify-content: center;
 			span {
 				font-family: Suisse-Intl-Regular;
-				font-size: 14px;
+				font-size: 4.375vw; //14px, 320
 				text-transform: uppercase;
 			}
 		}

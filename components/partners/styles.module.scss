@@ -13,11 +13,20 @@
 		padding: 100px $padding-desktop;
 		background: #000;
 
-		div:nth-child(2) {
+		.blocksContainer {
+			// display: grid;
+			// grid-template-columns: repeat(3, 1fr);
+			// gap: 2.222vw; //32px, 1440
+			// grid-auto-rows: minmax(100px, auto);
+			// width: 100%;
+
 			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 2.222vw; //32px, 1440
+			grid-template-columns: repeat(3, minmax(auto, auto));
 			grid-auto-rows: minmax(100px, auto);
+			gap: 2.222vw; //32px, 1440
+			width: 100%;
+			align-items: center;
+
 			padding-top: 32px;
 		}
 	}

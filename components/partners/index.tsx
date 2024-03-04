@@ -15,27 +15,27 @@ const Partners: React.FC = () => {
 	const bottomBlocksRef3 = useRef(null);
 	const tl = useRef<gsap.core.Timeline | null>(null);
 
-	useEffect(() => {
-		tl.current = gsap.timeline({
-			scrollTrigger: {
-				trigger: largeBlockRef.current,
-				start: 'top bottom',
-				toggleActions: 'play none none none',
-			},
-		});
+	// useEffect(() => {
+	// 	tl.current = gsap.timeline({
+	// 		scrollTrigger: {
+	// 			trigger: largeBlockRef.current,
+	// 			start: 'top bottom',
+	// 			toggleActions: 'play none none none',
+	// 		},
+	// 	});
 
-		tl.current
-			.fromTo(largeBlockRef.current, { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 1 }, '+=0.01')
-			.fromTo(bottomBlocksRef1.current, { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 1 }, '+=0.001')
-			.fromTo(bottomBlocksRef2.current, { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 1 }, '+=0.001')
-			.fromTo(bottomBlocksRef3.current, { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 1 }, '+=0.001');
+	// 	tl.current
+	// 		.fromTo(largeBlockRef.current, { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 1 }, '+=0.01')
+	// 		.fromTo(bottomBlocksRef1.current, { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 1 }, '+=0.001')
+	// 		.fromTo(bottomBlocksRef2.current, { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 1 }, '+=0.001')
+	// 		.fromTo(bottomBlocksRef3.current, { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 1 }, '+=0.001');
 
-		return () => {
-			if (tl.current) {
-				tl.current.kill();
-			}
-		};
-	}, []);
+	// 	return () => {
+	// 		if (tl.current) {
+	// 			tl.current.kill();
+	// 		}
+	// 	};
+	// }, []);
 
 	return (
 		<section className={styles.partners} id='partners'>
@@ -46,13 +46,14 @@ const Partners: React.FC = () => {
 				<HeadlineCentered
 					span1='partners'
 					span3='partners'
-					text='We are part of a corporate group of companies'
 					colorSpan1='#E833EC'
 					colorSpan2='#E833EC'
 					colorSpan3='#E833EC'
 					colorSpan4='#E833EC'
-				/>
-				<div>
+				>
+					We are part of a corporate group of companies
+				</HeadlineCentered>
+				<div className={styles.blocksContainer}>
 					<LargeItem ref={largeBlockRef} img='/partners/1.png' width={1352 / 2} height={184 / 2} />
 					<SmallItem ref={bottomBlocksRef1} img='/partners/2.png' width={532 / 2} height={156 / 2} />
 					<SmallItem ref={bottomBlocksRef2} img='/partners/3.png' width={604 / 2} height={156 / 2} />

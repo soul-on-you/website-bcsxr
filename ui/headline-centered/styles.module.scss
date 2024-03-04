@@ -13,6 +13,11 @@
 			width: 100%;
 			span:nth-child(1) {
 				color: $color-blue;
+				padding-right: 1.111vw; //16px, 1440
+
+				@media (max-width: 768px) {
+					padding-right: 2.5vw; //8px, 320
+				}
 			}
 			span:nth-child(2) {
 				color: $color-pink;

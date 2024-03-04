@@ -17,15 +17,18 @@ const XRSuits: React.FC = () => {
 			<div className={styles.xrsuits__container}>
 				<HeadlineCentered
 					span1='xr'
-					span2='suits'
+					span2='suit'
 					span3='xr'
-					span4='suits'
-					text='Suit of our own design With haptic feedback & biometric reading'
+					span4='suit'
 					colorSpan1='#2DE8E8'
 					colorSpan2='#E833EC'
 					colorSpan3='#2DE8E8'
 					colorSpan4='#E833EC'
-				/>
+				>
+					Suit of our own design
+					<br />
+					With haptic feedback & biometric reading
+				</HeadlineCentered>
 				{isMobile ? <ImagesMobile /> : <Images />}
 				<Items />
 			</div>

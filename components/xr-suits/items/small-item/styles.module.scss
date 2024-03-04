@@ -3,7 +3,6 @@
 .smallItem {
 	position: relative;
 	height: 33.333vw; //480px, 1440
-	// overflow: hidden;
 
 	flex: 0 0 29.653vw; //427px, 1440
 	border: 1px solid #5d495b;
@@ -36,30 +35,13 @@
 		filter: blur(50px);
 		overflow: hidden;
 	}
-
-	img {
-		position: absolute;
-		width: 300px;
-		height: auto;
-		right: -37px;
-		bottom: -56px;
-		z-index: -1;
-	}
-
-	// .imgContainer {
-	// 	position: absolute;
-	// 	bottom: 0;
-	// 	right: 0;
-	// 	width: 225px;
-	// 	height: auto;
-	// 	img {
-	// 		object-fit: cover; // Пример использования object-fit
-	// 	}
-	// }
 }
 
 @media (max-width: 768px) {
-	.container {
+	.smallItem {
+		display: flex;
+		align-items: start;
+		flex: 1 0 auto;
 		position: relative;
 		width: 89.688vw; //287px, 320
 		height: 89.688vw; //287px, 320
@@ -84,13 +66,5 @@
 			width: 100%;
 			text-transform: uppercase;
 		}
-
-		// img {
-		// 	position: absolute;
-		// 	bottom: 0;
-		// 	right: 0;
-		// 	width: 225px;
-		// 	height: auto;
-		// }
 	}
 }

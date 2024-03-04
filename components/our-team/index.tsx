@@ -61,12 +61,13 @@ const OurTeam: React.FC = () => {
 					span2='team'
 					span3='our'
 					span4='team'
-					text='Leading specialists in the field of VR'
 					colorSpan1='#E833EC'
 					colorSpan2='#E833EC'
 					colorSpan3='#E833EC'
 					colorSpan4='#E833EC'
-				/>
+				>
+					Leading specialists in the field of VR
+				</HeadlineCentered>
 
 				<div className={styles.gridContainer}>
 					<div ref={card1Ref}>

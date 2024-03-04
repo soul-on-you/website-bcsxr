@@ -40,7 +40,7 @@ const Masthead: React.FC = () => {
 
 			tl.current
 				.fromTo(firstSpanRef.current, { y: -500 }, { autoAlpha: 1, y: 0 })
-				.to(backgroundImageRef.current, { scale: 1.7, ease: 'none' }, '<')
+				.to(backgroundImageRef.current, { scale: 1.4, ease: 'none' }, '<')
 				.fromTo(secondSpanRef.current, { y: -500 }, { autoAlpha: 1, y: 0 })
 				.to(backgroundImageRef.current, { scale: 1, ease: 'none' }, '<')
 				.fromTo(thirdSpanRef.current, { y: -500 }, { autoAlpha: 1, y: 0 })
@@ -82,7 +82,7 @@ const Masthead: React.FC = () => {
 				<Image
 					ref={backgroundImageRef}
 					className={styles.backgroundImage}
-					src='/masthead/bg.webp'
+					src='/masthead/bg-best.jpg'
 					alt='bg-image'
 					width={2880 / 2}
 					height={1120 / 2}

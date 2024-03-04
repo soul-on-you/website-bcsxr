@@ -5,8 +5,6 @@ import Image from 'next/image';
 import ButtonGradient from '@/ui/button-gradient';
 import Links from './links';
 import Link from 'next/link';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 const Navbar: React.FC = () => {
 	const buttonRef = useRef(null)
@@ -26,10 +24,10 @@ const Navbar: React.FC = () => {
 		<nav className={styles.navbar}>
 			<div className={`${styles.navbar__container} ${isScrolled ? styles.scrolled : ''}`}>
 				<Link href='#'>
-					<Image src='/nav/logo.webp' alt='logo' width={240 / 2} height={90 / 2} />
+					<Image src='/nav/logo.png' alt='logo' width={800 / 2} height={800 / 2} />
 				</Link>
 				<Links />
-				<div ref={buttonRef}>
+				<div className={styles.buttonTest} ref={buttonRef}>
 					<ButtonGradient>JOIN US</ButtonGradient>
 				</div>
 			</div>

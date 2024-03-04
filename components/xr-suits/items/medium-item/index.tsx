@@ -1,18 +1,32 @@
 import React from 'react';
 import styles from './styles.module.scss';
 import Image from 'next/image';
+import IMediumItemProps from './interface';
 
-interface ISmallItemProps {
-	name: string;
-	nameBlur: string;
-}
+const MediumItem: React.ForwardRefRenderFunction<HTMLDivElement, IMediumItemProps> = (
+	{ name, nameBlur, imgSrc, style, overflowHidden },
+	ref,
+) => {
+	const dynamicStyles: React.CSSProperties = {
+		position: 'absolute',
+		width: style?.width,
+		height: 'auto',
+		right: style?.right,
+		bottom: style?.bottom,
+		zIndex: -1,
+		objectFit: 'cover',
+	};
 
-const MediumItem: React.ForwardRefRenderFunction<HTMLDivElement, ISmallItemProps> = ({ name, nameBlur }, ref) => {
+	const containerStyles = {
+		overflow: overflowHidden ? 'hidden' : 'visible',
+	};
 	return (
-		<div className={styles.container} ref={ref}>
+		<div className={styles.mediumItem} style={containerStyles} ref={ref}>
 			<h3>{name}</h3>
 			<h3>{nameBlur}</h3>
-			{/* <Image className={styles.img} src='/xr-suits/items/1.png' alt='items1' width={1000} height={1000} /> */}
+			<div style={dynamicStyles}>
+				<Image  src={imgSrc} alt='items2' width={2000} height={2000} />
+			</div>
 		</div>
 	);
 };

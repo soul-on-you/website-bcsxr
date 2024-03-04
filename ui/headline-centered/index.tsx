@@ -8,7 +8,7 @@ const HeadlineCentered: React.FC<IHeadlineCenteredProps> = ({
 	span2,
 	span3,
 	span4,
-	text,
+	children,
 	colorSpan1,
 	colorSpan2,
 	colorSpan3,
@@ -68,7 +68,7 @@ const HeadlineCentered: React.FC<IHeadlineCenteredProps> = ({
 					<span style={{ color: colorSpan4 }}>{span4}</span>
 				</h2>
 			</div>
-			<h5 ref={textRef}>{text}</h5>
+			<h5 ref={textRef}>{children}</h5>
 		</div>
 	);
 };

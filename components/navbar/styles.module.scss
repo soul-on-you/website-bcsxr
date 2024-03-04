@@ -9,9 +9,9 @@
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
-		padding: 1.111vw $padding-desktop; //16px $padding-desktop, 1440
+		padding: 3.125vw $padding-desktop; //45px $padding-desktop, 1440
 		z-index: 10;
-		background-color: transparent;
+		// background-color: white;
 		transition: background-color 0.6s ease-out;
 
 		&.scrolled {
@@ -24,6 +24,10 @@
 			height: 5.972vw; //86px, 1440
 			object-fit: contain;
 		}
+
+		// .buttonTest {
+		// 	display: inline-flex;
+		// }
 	}
 }
 

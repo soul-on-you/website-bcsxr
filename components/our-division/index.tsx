@@ -83,12 +83,13 @@ const OurDivision: React.FC = () => {
 					span2='division'
 					span3='our'
 					span4='divison'
-					text='We are part of blockchain sports ecosystem'
 					colorSpan1='#2DE8E8'
 					colorSpan2='#2DE8E8'
 					colorSpan3='#2DE8E8'
 					colorSpan4='#2DE8E8'
-				/>
+				>
+					We are part of blockchain sports ecosystem
+				</HeadlineCentered>
 
 				<div className={styles.container}>
 					<LargeItem ref={largeBlockRef} img='/our-division/1.png' />
