@@ -13,10 +13,10 @@ import Black from '@/components/black';
 const Container: React.FC = () => {
 	return (
 		<div className='overflow-x-hidden'>
-			<Masthead />
+			{/* <Masthead />
 			<Mission />
 			<Proprietary />
-			<XRSuits />
+			<XRSuits /> */}
 			<OurTeam />
 			<OurDivision />
 			<Partners />
