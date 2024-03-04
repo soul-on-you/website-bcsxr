@@ -21,9 +21,9 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={montserrat.className}>
-				{/* <Navbar /> */}
+				<Navbar />
 				{children}
-				{/* <Black /> */}
+				<Black />
 				{/* <Footer /> */}
 			</body>
 		</html>

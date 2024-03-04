@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import Masthead from '@/components/masthead';
 import Mission from '@/components/mission';
 import Proprietary from '@/components/proprietary';
@@ -7,14 +9,20 @@ import OurTeam from '@/components/our-team';
 import OurDivision from '@/components/our-division';
 import Partners from '@/components/partners';
 import Black from '@/components/black';
-import Container from '@/components/container';
 
-const Home = () => {
+const Container: React.FC = () => {
 	return (
-		<main>
-			<Container />
-		</main>
+		<div className='overflow-x-hidden'>
+			<Masthead />
+			<Mission />
+			<Proprietary />
+			<XRSuits />
+			<OurTeam />
+			<OurDivision />
+			<Partners />
+			<Black />
+		</div>
 	);
 };
 
-export default Home;
+export default Container;
