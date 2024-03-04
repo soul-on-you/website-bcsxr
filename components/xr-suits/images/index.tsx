@@ -4,7 +4,7 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
-const Images: React.FC = () => {
+const ImagesMobile2: React.FC = () => {
 	const tl = useRef<gsap.core.Timeline | null>(null);
 	const imageRef1 = useRef<HTMLDivElement | null>(null);
 	const imageRef2 = useRef<HTMLDivElement | null>(null);
@@ -60,4 +60,4 @@ const Images: React.FC = () => {
 	);
 };
 
-export default Images;
+export default ImagesMobile2;

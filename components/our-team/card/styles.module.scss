@@ -50,7 +50,7 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 		box-sizing: border-box;
-		padding: 20px;
+		padding: 2.5vw; //8px, 320
 		display: flex;
 		flex-direction: column;
 		align-items: start;
@@ -63,7 +63,7 @@
 		button {
 			background-color: aqua;
 			border-radius: 16px;
-			padding: 1.25vw 13.75vw; //4px 44px, 320
+			// padding: 1.25vw 13.75vw; //4px 44px, 320
 			width: 100%;
 			box-sizing: border-box;
 			display: flex;

@@ -1,48 +1,68 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './styles.module.scss';
 import Image from 'next/image';
-import gsap from 'gsap';
 
 const ImagesMobile: React.FC = () => {
-	const [currentIndex, setCurrentIndex] = useState(0);
-	const imagesRef = useRef([]);
-	const numOfImages = 3; // Общее количество изображений
+	const images = ['/xr-suits/images/1.webp', '/xr-suits/images/2.webp', '/xr-suits/images/3.webp'];
+	const [imageIndex, setImageIndex] = useState(0);
+	const containerRef = useRef<HTMLDivElement>(null);
+
+	const showNextImage = () => {
+		setImageIndex((index) => (index + 1) % images.length);
+	};
 
 	useEffect(() => {
-		imagesRef.current = imagesRef.current.slice(0, numOfImages);
-	}, []);
+		let interval: string | number | NodeJS.Timeout | undefined;
+		const observer = new IntersectionObserver(
+			(entries) => {
+				const [entry] = entries;
+				if (entry.isIntersecting) {
+					console.log('Анимация стартовала');
+					interval = setInterval(showNextImage, 1500);
+				} else {
+					if (interval) {
+						console.log('Анимация остановлена');
+						clearInterval(interval);
+					}
+				}
+			},
+			{
+				root: null,
+				rootMargin: '0px',
+				threshold: 0.1,
+			},
+		);
 
-	useEffect(() => {
-		const timer = setInterval(() => {
-			// Переключаем на следующее изображение
-			setCurrentIndex((prevIndex) => (prevIndex + 1) % numOfImages);
+		if (containerRef.current) {
+			observer.observe(containerRef.current);
+		}
 
-			// Анимация для переключения изображений
-			gsap.to(imagesRef.current, {
-				xPercent: -100 * currentIndex,
-				duration: 1,
-				ease: 'power1.inOut',
-			});
-		}, 1000); // Интервал в 1 секунду
-
-		return () => clearInterval(timer); // Очищаем интервал при размонтировании компонента
-	}, [currentIndex]);
+		return () => {
+			if (containerRef.current) {
+				observer.unobserve(containerRef.current);
+			}
+			if (interval) {
+				clearInterval(interval);
+			}
+		};
+	}, [containerRef, images.length]);
 
 	return (
-		<div className={styles.images} style={{ overflow: 'hidden', width: '100vw', height: '100vh' }}>
-			<div style={{ display: 'flex', width: '300%' }}>
-				{[1, 2, 3].map((num, index) => (
-					<div key={index} ref={(el) => (imagesRef.current[index] = el)} style={{ flex: '0 0 100%' }}>
-						<Image
-							src={`/xr-suits/images/${num}.webp`}
-							alt={`xr-suit-${num}`}
-							layout='fill'
-							objectFit='cover'
-						/>
-					</div>
+		<>
+			<div ref={containerRef} className={styles.imagesContainer}>
+				{images.map((url) => (
+					<Image
+						key={url}
+						src={url}
+						className={styles.image}
+						style={{ translate: `${-100 * imageIndex}%` }}
+						width={1000}
+						height={1000}
+						alt={url}
+					/>
 				))}
 			</div>
-		</div>
+		</>
 	);
 };
 

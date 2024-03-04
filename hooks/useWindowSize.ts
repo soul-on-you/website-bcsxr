@@ -5,7 +5,7 @@ const isSSR = typeof window === 'undefined';
 
 const useWindowSize = () => {
 	const [size, setSize] = useState({
-		width: isSSR ? 0 : window.innerWidth,
+		width: isSSR ? 768 : window.innerWidth,
 	});
 
 	useEffect(() => {

@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useRef } from 'react';
 import styles from './styles.module.scss';
 import Card from './card';
@@ -27,11 +29,11 @@ const OurTeam: React.FC = () => {
 						autoAlpha: 1,
 						y: 0,
 						ease: 'power3.out',
-						duration: 4,
+						duration: 1.4,
 						scrollTrigger: {
 							trigger: card.current,
 							start: 'top bottom-=200',
-							toggleActions: 'play none none reverse',
+							toggleActions: 'play none none none',
 							// markers: true,
 						},
 						delay: index * 0.1,
