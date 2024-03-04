@@ -21,6 +21,11 @@
 		opacity: 0.05;
 		pointer-events: none;
 	}
+
+	img {
+		width: 30.833vw; //444px, 1440
+		height: auto
+	}
 }
 
 @media (max-width: 768px) {

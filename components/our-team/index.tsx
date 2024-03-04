@@ -6,8 +6,12 @@ import Card from './card';
 import gsap from 'gsap';
 import Image from 'next/image';
 import HeadlineCentered from '@/ui/headline-centered';
+import useWindowSize from '@/hooks/useWindowSize';
 
 const OurTeam: React.FC = () => {
+	const { width } = useWindowSize();
+	const isMobile = width < 768;
+
 	const tl = useRef<gsap.core.Timeline | null>(null);
 	const card1Ref = useRef<HTMLDivElement | null>(null);
 	const card2Ref = useRef<HTMLDivElement | null>(null);
@@ -24,20 +28,22 @@ const OurTeam: React.FC = () => {
 			if (card.current) {
 				gsap.fromTo(
 					card.current,
-					{ autoAlpha: 0, y: 120 },
+					{ autoAlpha: 0.6, y: 120 },
 					{
 						autoAlpha: 1,
 						y: 0,
 						ease: 'power3.out',
 						duration: 1.4,
+						stagger: 0.3,
 						scrollTrigger: {
 							trigger: card.current,
-							start: 'top bottom-=200',
+							// start: 'top bottom-=200',
+							start: isMobile ? 'top-=144 bottom' : 'top bottom-=200',
 							toggleActions: 'play none none none',
-							// markers: true,
-							scrub: 1,
+							markers: true,
+							// scrub: 1,
 						},
-						delay: index * 0.1,
+						// delay: index * 0.1,
 					},
 				);
 			}

@@ -1,16 +1,17 @@
 import React from 'react';
 import styles from './styles.module.scss';
+import ButtonGradient from '@/ui/button-gradient';
 
 const Input: React.FC = () => {
 	return (
-		<form action='#' method='post'>
-			<div className={styles.inputContainer}>
-				<input type='text' placeholder='YOUR MAIL' />
-				<div className={styles.submitContainer}>
-					<input type='submit' value='SEND' />
-				</div>
-			</div>
-		</form>
+		<>
+			<form className={`${styles.inputContainer} ${styles.cf}`}>
+				<input type='text' placeholder='YOUR MAIL' required style={{ boxShadow: 'none' }} />
+				<button type='submit'>
+					<ButtonGradient>send</ButtonGradient>
+				</button>
+			</form>
+		</>
 	);
 };
 

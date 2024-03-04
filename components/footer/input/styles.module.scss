@@ -1,100 +1,124 @@
 @import '/styles/variables';
 
-.inputContainer {
-	display: inline-block;
-	align-items: center;
-	// padding: 10px 10px;
-	background: #2d2e33;
-	border-radius: 16px;
-	border: 1px solid #454750;
+//cf
+.cf:before,
+.cf:after {
+	content: '';
+	display: table;
+}
 
-	.submitContainer {
-		display: inline-block;
-		position: relative;
-		// border: 1px solid $color-gradient;
-		border-radius: 16px;
-		padding: 0.833vw 2.222vw 0.556vw 1.667vw; //12px 32px 8px 24px, 1440
-		background: linear-gradient(180deg, rgba(255, 255, 255, 0.22) 0%, rgba(217, 217, 217, 0.11) 100%);
-	
-		&::after {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background-image: url('/ui/arrow-down/noise.webp');
-			opacity: 0.05;
-			pointer-events: none;
+.cf:after {
+	clear: both;
+}
+
+.cf {
+	zoom: 1;
+
+	&::before,
+	&::after {
+		content: '';
+		display: table;
+	}
+
+	&::after {
+		clear: both;
+	}
+}
+
+.inputContainer {
+	width: 28.472vw; //410px, 1440
+	background: #2d2e33;
+	border: 1px solid #525564;
+	border-radius: 1.25vw; //18px, 1440
+
+	input {
+		font-family: 'Suisse-Intl-Regular';
+		font-size: 1.667vw; //24px, 1440
+		line-height: 110%;
+		color: $color-white;
+
+		width: 20.139vw; // 290px, 1440
+		height: 3.819vw; //55px, 1440
+		float: left;
+		padding-left: 2.222vw; //32px, 1440
+		background: #2d2e33;
+		border-radius: 2.778vw; //40px, 1440
+		border-top-style: none;
+
+		&:hover,
+		&:active,
+		&:focus {
+			outline: 0;
 		}
-	
-		input {
-			font-family: Thunder-Semibold-Italic;
-			font-size: 2.222vw; //32px, 1440
-			line-height: 2.444vw; //35.2px, 1440
-			letter-spacing: 4%;
-			color: $color-white;
+
+		&::-webkit-input-placeholder {
+			color: #525564;
+		}
+
+		&:-moz-placeholder {
+			color: #525564;
+			font-weight: normal;
+		}
+
+		&:-ms-input-placeholder {
+			color: #525564;
+			border-style: none;
 		}
 	}
 
+	button {
+		position: relative;
+		float: right;
+		overflow: visible;
+	}
 }
 
-// @import '../../styles/variables';
+@media (max-width: 768px) {
+	.inputContainer {
+		width: 84.375vw; //270px, 320
+		background: #2d2e33;
+		border: 1px solid #525564;
+		border-radius: 4.375vw; //13px, 320
 
-// .buttonContainer {
-// 	display: inline-block;
-// 	position: relative;
-// 	// border: 1px solid $color-gradient;
-// 	border-radius: 16px;
-// 	padding: 0.833vw 2.222vw 0.556vw 1.667vw; //12px 32px 8px 24px, 1440
-// 	background: linear-gradient(180deg, rgba(255, 255, 255, 0.22) 0%, rgba(217, 217, 217, 0.11) 100%);
+		input {
+			font-family: 'Suisse-Intl-Regular';
+			font-size: 13px; //24px, 320
+			line-height: 110%;
+			color: $color-white;
 
-// 	&::after {
-// 		content: '';
-// 		position: absolute;
-// 		top: 0;
-// 		left: 0;
-// 		right: 0;
-// 		bottom: 0;
-// 		background-image: url('/ui/arrow-down/noise.webp');
-// 		opacity: 0.05;
-// 		pointer-events: none;
-// 	}
+			width: 55.625vw; // 178, 320
+			height: 11.563vw; //37, 320
+			float: left;
+			padding-left: 10vw; //32px, 320
+			background: #2d2e33;
+			border-radius: 12.5vw; //40px, 320
+			border-top-style: none;
 
-// 	span {
-// 		font-family: Thunder-Semibold-Italic;
-// 		font-size: 2.222vw; //32px, 1440
-// 		line-height: 2.444vw; //35.2px, 1440
-// 		letter-spacing: 4%;
-// 		color: $color-white;
-// 	}
-// }
+			&:hover,
+			&:active,
+			&:focus {
+				outline: 0;
+			}
 
-// @media (max-width: 768px) {
-// 	.buttonContainer {
-// 		border: 1px solid $color-gradient;
-// 		border-radius: 11.59px;
-// 		padding: 2.5vw 7.5vw 0.625vw 5.625vw; //8px 24px 2px 18px, 320
-// 		background: linear-gradient(180deg, rgba(255, 255, 255, 0.22) 0%, rgba(217, 217, 217, 0.11) 100%);
+			&::-webkit-input-placeholder {
+				color: #525564;
+			}
 
-// 		&::after {
-// 			content: '';
-// 			position: absolute;
-// 			top: 0;
-// 			left: 0;
-// 			right: 0;
-// 			bottom: 0;
-// 			background-image: url('/ui/arrow-down/noise.webp');
-// 			opacity: 0.05;
-// 			pointer-events: none;
-// 		}
+			&:-moz-placeholder {
+				color: #525564;
+				font-weight: normal;
+			}
 
-// 		span {
-// 			font-family: Thunder-Semibold-Italic;
-// 			font-size: 7.5vw; //24px, 320
-// 			line-height: 8.25vw; //26.4px, 320
-// 			letter-spacing: 4%;
-// 			color: $color-white;
-// 		}
-// 	}
-// }
+			&:-ms-input-placeholder {
+				color: #525564;
+				border-style: none;
+			}
+		}
+
+		button {
+			position: relative;
+			float: right;
+			overflow: visible;
+		}
+	}
+}

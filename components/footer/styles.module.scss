@@ -1,7 +1,7 @@
 .footer {
 	&__container {
 		background: rgba(29, 30, 33, 1);
-		padding-top: 100px;
+		padding-top: 6.944vw; //100px, 1440
 
 		.suka {
 			display: flex;
@@ -11,6 +11,26 @@
 			margin-bottom: 100px;
 
 			h2 {
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.footer {
+		&__container {
+			background: rgba(29, 30, 33, 1);
+			padding-top: 12.5vw; //40px, 320
+	
+			.suka {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				margin-bottom: 100px;
+	
+				h2 {
+				}
 			}
 		}
 	}

@@ -25,16 +25,15 @@ const Stuff: React.FC = () => {
 		const tl1 = gsap.timeline({
 			scrollTrigger: {
 				trigger: item1Ref.current,
-				start: 'top bottom-=100',
-				toggleActions: 'play none none reset',
-				// markers: true,
+				start: isMobile ? 'top-=32 bottom' : 'top bottom-=200',
+				toggleActions: 'play none none none',
 			},
 		});
 
 		tl1.fromTo(
 			item1Ref.current,
-			{ autoAlpha: 0, y: 120 },
-			{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
+			{ autoAlpha: 0, y: 64,  },
+			{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out',  },
 		).fromTo(
 			item2Ref.current,
 			{ autoAlpha: 0, y: 64 },
@@ -46,7 +45,8 @@ const Stuff: React.FC = () => {
 		const tl2 = gsap.timeline({
 			scrollTrigger: {
 				trigger: item3Ref.current,
-				start: 'top bottom-=200',
+				// start: 'top bottom-=200',
+				start: isMobile ? 'top-=64 bottom' : 'top bottom-=200',
 				toggleActions: 'play none none reverse',
 			},
 		});
@@ -66,7 +66,8 @@ const Stuff: React.FC = () => {
 		const tl3 = gsap.timeline({
 			scrollTrigger: {
 				trigger: item5Ref.current,
-				start: 'top bottom-=200',
+				start: isMobile ? 'top-=96 bottom' : 'top bottom-=200',
+				// start: 'top bottom-=200',
 				toggleActions: 'play none none reverse',
 			},
 		});

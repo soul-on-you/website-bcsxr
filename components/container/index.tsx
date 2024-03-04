@@ -19,15 +19,14 @@ const Container: React.FC = () => {
 	return (
 		<div className='overflow-x-hidden'>
 			{isMobile ? <Navbar2 /> : <Navbar />}
-
-			{/* <Masthead /> */}
-			{/* <Mission /> */}
-			{/* <Proprietary /> */}
-			{/* <XRSuits /> */}
-			{/* <OurTeam /> */}
+			<Masthead />
+			<Mission />
+			<Proprietary />
+			<XRSuits />
+			<OurTeam />
 			<OurDivision />
 			<Partners />
-			{/* <Black /> */}
+			<Black />
 		</div>
 	);
 };

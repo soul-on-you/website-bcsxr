@@ -23,7 +23,6 @@ const OurDivision: React.FC = () => {
 				start: 'top bottom-=100',
 				end: 'bottom top',
 				toggleActions: 'play none none none',
-				markers: true,
 			},
 		});
 

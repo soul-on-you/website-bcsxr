@@ -1,6 +1,6 @@
 .largeItem {
 	grid-column: 1 / -1;
-	// height: 200px; /* Задаем высоту для верхнего блока */
+	// height: 200px;
 
 	position: relative;
 	border: 1px solid #5d495b;
@@ -21,6 +21,11 @@
 		background-image: url('/noise.webp');
 		opacity: 0.05;
 		pointer-events: none;
+	}
+
+	img {
+		width: 24.653vw; //355px, 1440
+		height: auto
 	}
 }
 
