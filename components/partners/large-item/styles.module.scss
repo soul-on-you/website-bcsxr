@@ -9,9 +9,12 @@
 
 	border: 1px solid #5d495b;
 	border-radius: 16px;
-	background: linear-gradient(to top, rgba(255, 255, 255, 0.07), rgba(217, 217, 217, 0.14));
+	background: linear-gradient(to top, rgba(255, 255, 255, 0.1), rgba(217, 217, 217, 0.14));
+	// background: red;
 	padding: 3.75vw 0; //54px 0, 1440
 	grid-column: 1 / -1;
+	backdrop-filter: blur(32px);
+	z-index: 1;
 
 	&::after {
 		content: '';

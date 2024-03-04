@@ -7,6 +7,7 @@ import Items from './items';
 import HeadlineCentered from '@/ui/headline-centered';
 import useWindowSize from '@/hooks/useWindowSize';
 import ImagesMobile from './images-mobile';
+import Image from 'next/image';
 
 const XRSuits: React.FC = () => {
 	const { width } = useWindowSize();
@@ -14,6 +15,13 @@ const XRSuits: React.FC = () => {
 
 	return (
 		<section className={styles.xrsuits} id='suit'>
+			<Image
+				className={styles.backgroundImage}
+				src='/xr-suits/xr-suit-bg.jpg'
+				alt='bg-image'
+				width={2880 / 2}
+				height={2120 / 2}
+			/>
 			<div className={styles.xrsuits__container}>
 				<HeadlineCentered
 					span1='xr'

@@ -25,15 +25,15 @@ const Stuff: React.FC = () => {
 		const tl1 = gsap.timeline({
 			scrollTrigger: {
 				trigger: item1Ref.current,
-				start: 'top bottom-=200',
-				toggleActions: 'play none none reverse',
+				start: 'top bottom-=100',
+				toggleActions: 'play none none reset',
 				// markers: true,
 			},
 		});
 
 		tl1.fromTo(
 			item1Ref.current,
-			{ autoAlpha: 0, y: 64 },
+			{ autoAlpha: 0, y: 120 },
 			{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
 		).fromTo(
 			item2Ref.current,

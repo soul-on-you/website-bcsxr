@@ -9,18 +9,25 @@ import OurTeam from '@/components/our-team';
 import OurDivision from '@/components/our-division';
 import Partners from '@/components/partners';
 import Black from '@/components/black';
+import Navbar from '../navbar';
+import Navbar2 from '../navbar2';
+import useWindowSize from '@/hooks/useWindowSize';
 
 const Container: React.FC = () => {
+	const { width } = useWindowSize();
+	const isMobile = width < 768;
 	return (
 		<div className='overflow-x-hidden'>
-			{/* <Masthead />
-			<Mission />
-			<Proprietary />
-			<XRSuits /> */}
-			<OurTeam />
+			{isMobile ? <Navbar2 /> : <Navbar />}
+
+			{/* <Masthead /> */}
+			{/* <Mission /> */}
+			{/* <Proprietary /> */}
+			{/* <XRSuits /> */}
+			{/* <OurTeam /> */}
 			<OurDivision />
 			<Partners />
-			<Black />
+			{/* <Black /> */}
 		</div>
 	);
 };

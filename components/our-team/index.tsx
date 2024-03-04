@@ -35,6 +35,7 @@ const OurTeam: React.FC = () => {
 							start: 'top bottom-=200',
 							toggleActions: 'play none none none',
 							// markers: true,
+							scrub: 1,
 						},
 						delay: index * 0.1,
 					},

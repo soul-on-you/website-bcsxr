@@ -6,7 +6,9 @@ const Input: React.FC = () => {
 		<form action='#' method='post'>
 			<div className={styles.inputContainer}>
 				<input type='text' placeholder='YOUR MAIL' />
-				<input type='submit' value='SEND' />
+				<div className={styles.submitContainer}>
+					<input type='submit' value='SEND' />
+				</div>
 			</div>
 		</form>
 	);

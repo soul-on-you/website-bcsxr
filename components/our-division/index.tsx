@@ -7,6 +7,7 @@ import MediumItem from './medium-item';
 import LargeItem from './large-item';
 import Image from 'next/image';
 import HeadlineCentered from '@/ui/headline-centered';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 const OurDivision: React.FC = () => {
 	const tl = useRef<gsap.core.Timeline | null>(null);
@@ -15,54 +16,23 @@ const OurDivision: React.FC = () => {
 	const bottomBlock2Ref = useRef<HTMLDivElement | null>(null);
 
 	useEffect(() => {
-		tl.current = gsap.timeline();
-
-		tl.current.fromTo(
-			largeBlockRef.current,
-			{ y: 50, autoAlpha: 0 },
-			{
-				y: 0,
-				autoAlpha: 1,
-				duration: 1,
-				delay: 0.5,
-				scrollTrigger: {
-					trigger: largeBlockRef.current,
-					start: 'top bottom-=100',
-					toggleActions: 'play none none none',
-				},
+		gsap.registerPlugin(ScrollTrigger);
+		tl.current = gsap.timeline({
+			scrollTrigger: {
+				trigger: largeBlockRef.current,
+				start: 'top bottom-=100',
+				end: 'bottom top',
+				toggleActions: 'play none none none',
+				markers: true,
 			},
-		);
+		});
 
+		tl.current.fromTo(largeBlockRef.current, { autoAlpha: 0, y: 48 }, { autoAlpha: 1, y: 0, duration: 1 });
 		tl.current.fromTo(
-			bottomBlock1Ref.current,
-			{ y: 50, autoAlpha: 0 },
-			{
-				y: 0,
-				autoAlpha: 1,
-				duration: 1,
-				delay: 1.0,
-				scrollTrigger: {
-					trigger: bottomBlock1Ref.current,
-					start: 'top bottom-=100',
-					toggleActions: 'play none none none',
-				},
-			},
-		);
-
-		tl.current.fromTo(
-			bottomBlock2Ref.current,
-			{ y: 50, autoAlpha: 0 },
-			{
-				y: 0,
-				autoAlpha: 1,
-				duration: 1,
-				delay: 1.5,
-				scrollTrigger: {
-					trigger: bottomBlock2Ref.current,
-					start: 'top bottom-=100',
-					toggleActions: 'play none none none',
-				},
-			},
+			[bottomBlock1Ref.current, bottomBlock2Ref.current],
+			{ autoAlpha: 0, y: 48 },
+			{ autoAlpha: 1, y: 0, duration: 1, stagger: 0.4, ease: 'power2.out' },
+			'<',
 		);
 
 		return () => {
@@ -93,7 +63,6 @@ const OurDivision: React.FC = () => {
 
 				<div className={styles.container}>
 					<LargeItem ref={largeBlockRef} img='/our-division/1.png' />
-
 					<MediumItem ref={bottomBlock1Ref} img='/our-division/2.png' />
 					<MediumItem ref={bottomBlock2Ref} img='/our-division/3.png' />
 				</div>

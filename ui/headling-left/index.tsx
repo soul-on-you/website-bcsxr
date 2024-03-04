@@ -23,8 +23,10 @@ const HeadingLeft: React.FC<IHeadingLeftProps> = ({ heading1, heading2, children
 		tl.current = gsap.timeline({
 			scrollTrigger: {
 				trigger: textRef.current,
-				start: 'top 95%',
-				toggleActions: 'play none none reset',
+				start: 'top bottom-=80',
+				toggleActions: 'play none none none',
+				// markers: true,
+				//suka suka
 			},
 		});
 
@@ -41,12 +43,12 @@ const HeadingLeft: React.FC<IHeadingLeftProps> = ({ heading1, heading2, children
 
 		tl.current.fromTo(
 			split.lines,
-			{ autoAlpha: 0, y: 32 },
+			{ autoAlpha: 0, y: 16 },
 			{
 				autoAlpha: 1,
 				y: 0,
 				duration: 1,
-				stagger: 0.1,
+				stagger: 0.2,
 				ease: 'power2.out',
 			},
 			'<',

@@ -22,8 +22,8 @@ const HeadlineCentered: React.FC<IHeadlineCenteredProps> = ({
 		tl.current = gsap.timeline({
 			scrollTrigger: {
 				trigger: textRef.current,
-				start: 'top 98%',
-				toggleActions: 'play none resume reset',
+				start: 'top bottom-=80',
+				toggleActions: 'play none none none',
 				// scrub: 1
 			},
 		});

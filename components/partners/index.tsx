@@ -15,27 +15,32 @@ const Partners: React.FC = () => {
 	const bottomBlocksRef3 = useRef(null);
 	const tl = useRef<gsap.core.Timeline | null>(null);
 
-	// useEffect(() => {
-	// 	tl.current = gsap.timeline({
-	// 		scrollTrigger: {
-	// 			trigger: largeBlockRef.current,
-	// 			start: 'top bottom',
-	// 			toggleActions: 'play none none none',
-	// 		},
-	// 	});
+	useEffect(() => {
+		gsap.registerPlugin(ScrollTrigger);
+		tl.current = gsap.timeline({
+			scrollTrigger: {
+				trigger: largeBlockRef.current,
+				start: 'top bottom-=100',
+				end: 'bottom top',
+				toggleActions: 'play none none none',
+				// markers: true,
+			},
+		});
 
-	// 	tl.current
-	// 		.fromTo(largeBlockRef.current, { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 1 }, '+=0.01')
-	// 		.fromTo(bottomBlocksRef1.current, { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 1 }, '+=0.001')
-	// 		.fromTo(bottomBlocksRef2.current, { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 1 }, '+=0.001')
-	// 		.fromTo(bottomBlocksRef3.current, { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 1 }, '+=0.001');
+		tl.current.fromTo(largeBlockRef.current, { autoAlpha: 0, y: 48 }, { autoAlpha: 1, y: 0, duration: 1 });
+		tl.current.fromTo(
+			[bottomBlocksRef1.current, bottomBlocksRef2.current, bottomBlocksRef3.current],
+			{ autoAlpha: 0, y: 48 },
+			{ autoAlpha: 1, y: 0, duration: 1, stagger: 0.4, ease: 'power2.out' },
+			'<',
+		);
 
-	// 	return () => {
-	// 		if (tl.current) {
-	// 			tl.current.kill();
-	// 		}
-	// 	};
-	// }, []);
+		return () => {
+			if (tl.current) {
+				tl.current.kill();
+			}
+		};
+	}, []);
 
 	return (
 		<section className={styles.partners} id='partners'>
