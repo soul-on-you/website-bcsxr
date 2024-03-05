@@ -20,9 +20,9 @@ const Masthead: React.FC = () => {
 	const backgroundImageRef = useRef<HTMLImageElement | null>(null);
 	const pinContainerRef = useRef<HTMLDivElement>(null);
 	const invincibleRef = useRef<HTMLDivElement>(null);
-	window.history.scrollRestoration = 'manual';
-
+	
 	useEffect(() => {
+		window.history.scrollRestoration = 'manual';
 		window.scrollTo(0, 0);
 		if (!pinContainerRef.current) {
 			return;
