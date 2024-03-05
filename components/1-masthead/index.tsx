@@ -24,7 +24,7 @@ const Masthead: React.FC = () => {
 			scrollTrigger: {
 				trigger: mastheadRef.current,
 				start: '1% top',
-				end: '+=3000px',
+				end: '+=3000',
 				scrub: 1,
 				pin: true,
 			},
@@ -41,6 +41,9 @@ const Masthead: React.FC = () => {
 
 		return () => {
 			if (tl.current) {
+				if (tl.current.scrollTrigger) {
+					tl.current.scrollTrigger.kill();
+				}
 				tl.current.kill();
 			}
 		};

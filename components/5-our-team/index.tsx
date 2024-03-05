@@ -7,6 +7,7 @@ import gsap from 'gsap';
 import Image from 'next/image';
 import HeadlineCentered from '@/ui/headline-centered';
 import useWindowSize from '@/hooks/useWindowSize';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 const OurTeam: React.FC = () => {
 	const { width } = useWindowSize();

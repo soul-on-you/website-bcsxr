@@ -11,7 +11,7 @@ const ImagesMobile2: React.FC = () => {
 	const imageRef3 = useRef<HTMLDivElement | null>(null);
 
 	useEffect(() => {
-		gsap.registerPlugin(ScrollTrigger)
+		gsap.registerPlugin(ScrollTrigger);
 		tl.current = gsap.timeline({
 			scrollTrigger: {
 				trigger: imageRef1.current,

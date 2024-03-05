@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import styles from './styles.module.scss';
 import gsap from 'gsap';
 import IHeadlineCenteredProps from './interface';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 const HeadlineCentered: React.FC<IHeadlineCenteredProps> = ({
 	span1,
