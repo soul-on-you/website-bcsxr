@@ -20,10 +20,8 @@ const Masthead: React.FC = () => {
 	const backgroundImageRef = useRef<HTMLImageElement | null>(null);
 	const pinContainerRef = useRef<HTMLDivElement>(null);
 	const invincibleRef = useRef<HTMLDivElement>(null);
-	
+
 	useEffect(() => {
-		window.history.scrollRestoration = 'manual';
-		window.scrollTo(0, 0);
 		if (!pinContainerRef.current) {
 			return;
 		}
@@ -40,6 +38,9 @@ const Masthead: React.FC = () => {
 				markers: true,
 			},
 			paused: true,
+			onToggle: (scrollTrigger: any) => {
+				scrollTrigger.refresh();
+			},
 		});
 
 		tl.current
@@ -50,6 +51,8 @@ const Masthead: React.FC = () => {
 			.fromTo(thirdH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0, ease: 'none' })
 			.fromTo(arrowRef.current, { opacity: 0, y: 500 }, { duration: 1, autoAlpha: 1, y: 0 }, '<')
 			.to(invincibleRef.current, { opacity: 0, y: 0, duration: 1 });
+
+		ScrollTrigger.refresh();
 
 		return () => {
 			if (tl.current) {
