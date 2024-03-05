@@ -27,8 +27,9 @@
 	}
 
 	img {
-		width: 20.972vw; //302px, 1440
-		height: 100%;
+		width: 22.361vw; //322px, 1440
+		min-height: 100%;
+		object-fit: cover;
 	}
 }
 
