@@ -6,7 +6,7 @@ import logo from '@/public/logo.png';
 const Black: React.FC = () => {
 	return (
 		<>
-			<div className={styles.black}></div>
+			<div className={styles.black} />
 		</>
 	);
 };

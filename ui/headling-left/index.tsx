@@ -25,7 +25,6 @@ const HeadingLeft: React.FC<IHeadingLeftProps> = ({ heading1, heading2, children
 				trigger: textRef.current,
 				start: 'top bottom-=80',
 				toggleActions: 'play none none none',
-				// markers: true,
 				//suka suka
 			},
 		});
