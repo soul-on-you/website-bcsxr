@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from './styles.module.scss';
 import Card from './card';
 import gsap from 'gsap';
@@ -21,11 +21,11 @@ const OurTeam: React.FC = () => {
 	const card6Ref = useRef<HTMLDivElement | null>(null);
 	const cards = [card1Ref, card2Ref, card3Ref, card4Ref, card5Ref, card6Ref];
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		const tl1 = gsap.timeline({
 			scrollTrigger: {
 				trigger: card1Ref.current,
-				start: isMobile ? 'top-=32 bottom' : 'top bottom-=200',
+				start: isMobile ? 'top bottom-=32' : 'top bottom-=200',
 				toggleActions: 'play none none none',
 			},
 		});
@@ -47,7 +47,7 @@ const OurTeam: React.FC = () => {
 		const tl2 = gsap.timeline({
 			scrollTrigger: {
 				trigger: card4Ref.current,
-				start: isMobile ? 'top-=64 bottom' : 'top bottom-=200',
+				start: isMobile ? 'top bottom-=64' : 'top bottom-=200',
 				toggleActions: 'play none none none',
 			},
 		});

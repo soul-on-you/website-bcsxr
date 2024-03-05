@@ -1,11 +1,10 @@
 'use client';
 
-import React, { useLayoutEffect } from 'react';
+import React, { useRef, useEffect }  from 'react';
 import styles from './styles.module.scss';
 import Image from 'next/image';
 import ArrowDown from './arrow-down';
 import gsap from 'gsap';
-import { useRef, useEffect } from 'react';
 import Title from './title';
 
 const Masthead: React.FC = () => {

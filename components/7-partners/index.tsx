@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from './styles.module.scss';
 import Image from 'next/image';
 import gsap from 'gsap';
@@ -15,7 +15,7 @@ const Partners: React.FC = () => {
 	const bottomBlocksRef3 = useRef(null);
 	const tl = useRef<gsap.core.Timeline | null>(null);
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		tl.current = gsap.timeline({
 			scrollTrigger: {
 				trigger: largeBlockRef.current,

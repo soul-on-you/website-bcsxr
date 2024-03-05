@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from './styles.module.scss';
 import gsap from 'gsap';
 import MediumItem from './medium-item';
@@ -15,7 +15,7 @@ const OurDivision: React.FC = () => {
 	const bottomBlock1Ref = useRef<HTMLDivElement | null>(null);
 	const bottomBlock2Ref = useRef<HTMLDivElement | null>(null);
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
 
 		tl.current = gsap.timeline({

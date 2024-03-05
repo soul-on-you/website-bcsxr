@@ -15,7 +15,7 @@ const Proprietary: React.FC = () => {
 				</HeadingLeft>
 				<Image
 					className={styles.backgroundImage}
-					src='/proprietary/bg.webp'
+					src='/3-proprietary/bg.webp'
 					alt='proprietary-xr-lab-bg-image'
 					width={2880 / 2}
 					height={1600 / 2}

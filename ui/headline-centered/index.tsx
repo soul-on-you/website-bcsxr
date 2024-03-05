@@ -1,4 +1,4 @@
-import React, { useRef, useLayoutEffect, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import styles from './styles.module.scss';
 import gsap from 'gsap';
 import IHeadlineCenteredProps from './interface';

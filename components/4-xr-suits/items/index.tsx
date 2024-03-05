@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from './styles.module.scss';
 import Image from 'next/image';
 import gsap from 'gsap';
@@ -18,8 +18,8 @@ const Items: React.FC = () => {
 	const item4Ref = useRef<HTMLDivElement | null>(null);
 	const item5Ref = useRef<HTMLDivElement | null>(null);
 
-	useLayoutEffect(() => {
-
+	useEffect(() => {
+		gsap.registerPlugin(ScrollTrigger)
 		// Анимация для первого контейнера
 		const tl1 = gsap.timeline({
 			scrollTrigger: {
@@ -92,7 +92,7 @@ const Items: React.FC = () => {
 					ref={item1Ref}
 					name='haptic shin guards'
 					nameBlur='haptic shin guards'
-					imgSrc='/xr-suits/items/haptic.webp'
+					imgSrc='/4-xr-suits/items/haptic.webp'
 					style={
 						isMobile
 							? { width: '59.375vw', right: '-6.875vw', bottom: '-10.625vw' }
@@ -104,7 +104,7 @@ const Items: React.FC = () => {
 					ref={item2Ref}
 					name='ai cleats'
 					nameBlur='ai cleats'
-					imgSrc='/xr-suits/items/ai-cleats.webp'
+					imgSrc='/4-xr-suits/items/ai-cleats.webp'
 					style={
 						isMobile
 							? { width: '111.875vw', right: '-17.188vw', bottom: '-1.875vw' }
@@ -118,7 +118,7 @@ const Items: React.FC = () => {
 					ref={item3Ref}
 					name='goal keeper gloves'
 					nameBlur='goal keeper gloves'
-					imgSrc='/xr-suits/items/goalkeeper.webp'
+					imgSrc='/4-xr-suits/items/goalkeeper.webp'
 					style={
 						isMobile
 							? { width: '103.125vw', right: '-11.875vw', bottom: '-6.25vw' }
@@ -130,7 +130,7 @@ const Items: React.FC = () => {
 					ref={item4Ref}
 					name='xr suit'
 					nameBlur='xr suit'
-					imgSrc='/xr-suits/items/xr-suit.webp'
+					imgSrc='/4-xr-suits/items/xr-suit.webp'
 					style={
 						isMobile
 							? { width: '81.25vw', right: '5.313vw', bottom: '-118.75vw' }

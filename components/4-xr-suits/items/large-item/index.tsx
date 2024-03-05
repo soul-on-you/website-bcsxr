@@ -16,7 +16,7 @@ const LargeItem: React.ForwardRefRenderFunction<HTMLDivElement, ILargeItemProps>
 				<div className={styles.pinkBlur} />
 				<Image
 					className=''
-					src='/xr-suits/items/vr-headset.webp'
+					src='/4-xr-suits/items/vr-headset.webp'
 					alt='items1'
 					width={6200 / 2}
 					height={5800 / 2}

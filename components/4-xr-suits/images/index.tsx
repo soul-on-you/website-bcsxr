@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from './styles.module.scss';
 import Image from 'next/image';
 import gsap from 'gsap';
@@ -10,7 +10,8 @@ const ImagesMobile2: React.FC = () => {
 	const imageRef2 = useRef<HTMLDivElement | null>(null);
 	const imageRef3 = useRef<HTMLDivElement | null>(null);
 
-	useLayoutEffect(() => {
+	useEffect(() => {
+		gsap.registerPlugin(ScrollTrigger)
 		tl.current = gsap.timeline({
 			scrollTrigger: {
 				trigger: imageRef1.current,
