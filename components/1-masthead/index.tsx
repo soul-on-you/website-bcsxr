@@ -28,7 +28,7 @@ const Masthead: React.FC = () => {
 				scrub: 1,
 				pin: true,
 			},
-			paused: true,
+			// paused: true,
 		});
 
 		tl.current
