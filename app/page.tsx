@@ -1,24 +1,28 @@
-import React from 'react';
-import Masthead from '@/components/1-masthead';
-import Mission from '@/components/2-mission';
-import Proprietary from '@/components/3-proprietary';
-import XRSuits from '@/components/4-xr-suits';
-import OurTeam from '@/components/5-our-team';
-import OurDivision from '@/components/6-our-division';
-import Partners from '@/components/7-partners';
-import Black from '@/components/black';
+import React, { Suspense, lazy } from 'react';
+
+// Ленивая загрузка компонентов
+const Masthead = lazy(() => import('@/components/1-masthead'));
+const Mission = lazy(() => import('@/components/2-mission'));
+const Proprietary = lazy(() => import('@/components/3-proprietary'));
+const XRSuits = lazy(() => import('@/components/4-xr-suits'));
+const OurTeam = lazy(() => import('@/components/5-our-team'));
+const OurDivision = lazy(() => import('@/components/6-our-division'));
+const Partners = lazy(() => import('@/components/7-partners'));
+const Black = lazy(() => import('@/components/black'));
 
 const Home = () => {
 	return (
 		<main className='overflow-x-hidden'>
-			<Masthead />
-			<Mission />
-			<Proprietary />
-			<XRSuits />
-			<OurTeam />
-			<OurDivision />
-			<Partners />
-			<Black />
+			<Suspense fallback={<div>Loading...</div>}>
+				<Masthead />
+				<Mission />
+				<Proprietary />
+				<XRSuits />
+				<OurTeam />
+				<OurDivision />
+				<Partners />
+				<Black />
+			</Suspense>
 		</main>
 	);
 };

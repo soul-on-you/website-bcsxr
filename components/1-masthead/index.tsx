@@ -37,7 +37,6 @@ const Masthead: React.FC = () => {
 				end: () => endValue,
 				scrub: true,
 				pin: true,
-				markers: true,
 			},
 			paused: true,
 			onToggle: (scrollTrigger: any) => {
