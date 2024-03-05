@@ -5,7 +5,6 @@ import styles from './styles.module.scss';
 import Image from 'next/image';
 import ArrowDown from '@/ui/arrow-down';
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { useRef, useEffect } from 'react';
 
 const Masthead: React.FC = () => {
@@ -19,7 +18,6 @@ const Masthead: React.FC = () => {
 	const backgroundImageRef = useRef<HTMLImageElement | null>(null);
 
 	useEffect(() => {
-		gsap.registerPlugin(ScrollTrigger);
 		if (
 			mastheadRef.current &&
 			firstSpanRef.current &&
@@ -33,9 +31,10 @@ const Masthead: React.FC = () => {
 					trigger: mastheadRef.current,
 					start: 'top top',
 					end: '+=3000',
-					scrub: 0.4,
+					scrub: 1,
 					pin: true,
 				},
+				paused: true,
 			});
 
 			tl.current
@@ -82,10 +81,11 @@ const Masthead: React.FC = () => {
 				<Image
 					ref={backgroundImageRef}
 					className={styles.backgroundImage}
-					src='/masthead/bg-best.jpg'
+					src='/masthead/bg.webp'
 					alt='bg-image'
 					width={2880 / 2}
 					height={1120 / 2}
+					priority={true}
 				/>
 			</div>
 		</section>
