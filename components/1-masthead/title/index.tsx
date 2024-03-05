@@ -9,17 +9,17 @@ const Title: React.ForwardRefRenderFunction<HTMLDivElement, ITitleProps> = ({
 }) => {
 	return (
 		<div className={styles.title}>
-			<h1 ref={firstH1Ref} style={{ willChange: 'transform, opacity' }}>
+			<h1 ref={firstH1Ref} >
 				<span>new format</span>
 				<span>new format</span>
 			</h1>
 			<br />
-			<h1 ref={secondH1Ref} style={{ willChange: 'transform, opacity' }}>
+			<h1 ref={secondH1Ref} >
 				<span>of competitive</span>
 				<span>of competitive</span>
 			</h1>
 			<br />
-			<h1 ref={thirdH1Ref} style={{ willChange: 'transform, opacity' }}>
+			<h1 ref={thirdH1Ref} >
 				<span>sport</span>
 				<span>sport</span>
 			</h1>
