@@ -4,7 +4,7 @@
 	display: inline-block;
 	position: relative;
 	// border: 1px solid $color-gradient;
-	border-radius: 16px;
+	border-radius: 1.111vw; //16px, 1440
 	padding: 0.833vw 2.222vw 0.556vw 1.667vw; //12px 32px 8px 24px, 1440
 	background: linear-gradient(180deg, rgba(255, 255, 255, 0.22) 0%, rgba(217, 217, 217, 0.11) 100%);
 
@@ -12,7 +12,7 @@
 		content: '';
 		overflow: hidden;
 		position: absolute;
-		border-radius: 16px;
+		border-radius: 1.111vw; //16px, 1440
 		top: 0;
 		left: 0;
 		right: 0;
@@ -35,12 +35,14 @@
 @media (max-width: 768px) {
 	.buttonContainer {
 		// border: 1px solid $color-gradient;
+		overflow: hidden;
 		border-radius: 11.59px;
 		padding: 2.5vw 7.5vw 0.625vw 5.625vw; //8px 24px 2px 18px, 320
 		background: linear-gradient(180deg, rgba(255, 255, 255, 0.22) 0%, rgba(217, 217, 217, 0.11) 100%);
 
 		&::after {
 			content: '';
+			overflow: hidden;
 			position: absolute;
 			top: 0;
 			left: 0;

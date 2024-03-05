@@ -2,6 +2,8 @@
 	&__container {
 		background: rgba(29, 30, 33, 1);
 		padding-top: 6.944vw; //100px, 1440
+		padding: 0 16px;
+		padding-bottom: 64px;
 
 		.suka {
 			display: flex;
@@ -21,6 +23,7 @@
 		&__container {
 			background: rgba(29, 30, 33, 1);
 			padding-top: 12.5vw; //40px, 320
+			padding-bottom: 32px;
 	
 			.suka {
 				display: flex;

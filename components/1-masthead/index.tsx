@@ -27,6 +27,17 @@ const Masthead: React.FC = () => {
 		const endValue = `+=${pinContainerRef.current.offsetHeight * 2}`;
 
 		tl.current = gsap.timeline({
+			onComplete: () => {
+				// Отключить скролл после завершения анимации
+				console.log('block')
+				document.body.style.overflow = 'hidden';
+
+				// Включить скролл обратно через 2 секунды
+				console.log('unblock')
+				setTimeout(() => {
+					document.body.style.overflow = '';
+				}, 1000);
+			},
 			scrollTrigger: {
 				trigger: pinContainerRef.current,
 				start: '1% top',

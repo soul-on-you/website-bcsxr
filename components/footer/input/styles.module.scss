@@ -25,71 +25,86 @@
 	}
 }
 
-.inputContainer {
-	width: 28.472vw; //410px, 1440
-	background: #2d2e33;
-	border: 1px solid #525564;
-	border-radius: 1.25vw; //18px, 1440
+@media (min-width: 769px) {
+	.inputContainer {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
 
-	input {
-		font-family: 'Suisse-Intl-Regular';
-		font-size: 1.667vw; //24px, 1440
-		line-height: 110%;
-		color: $color-white;
-
-		width: 20.139vw; // 290px, 1440
-		height: 3.819vw; //55px, 1440
-		float: left;
-		padding-left: 2.222vw; //32px, 1440
+		// width: 28.472vw; //410px, 1440
 		background: #2d2e33;
-		border-radius: 2.778vw; //40px, 1440
-		border-top-style: none;
+		border: 1px solid #525564;
+		border-radius: 1.181vw; //17px, 1440
 
-		&:hover,
-		&:active,
-		&:focus {
-			outline: 0;
+		input {
+			font-family: 'Suisse-Intl-Regular';
+			font-size: 1.667vw; //24px, 1440
+			line-height: 110%;
+			color: $color-white;
+
+			// width: 20.139vw; // 290px, 1440
+			// height: 3.819vw; //55px, 1440
+			float: left;
+			// width: 100%;
+			padding-left: 2.222vw; //32px, 1440
+			background: #2d2e33;
+			border-radius: 2.778vw; //40px, 1440
+			border-top-style: none;
+			width: 325px;
+
+			&:hover,
+			&:active,
+			&:focus {
+				outline: 0;
+			}
+
+			&::-webkit-input-placeholder {
+				color: #525564;
+			}
+
+			&:-moz-placeholder {
+				color: #525564;
+				font-weight: normal;
+			}
+
+			&:-ms-input-placeholder {
+				color: #525564;
+				border-style: none;
+			}
 		}
 
-		&::-webkit-input-placeholder {
-			color: #525564;
+		button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+			float: right;
+			overflow: visible;
 		}
-
-		&:-moz-placeholder {
-			color: #525564;
-			font-weight: normal;
-		}
-
-		&:-ms-input-placeholder {
-			color: #525564;
-			border-style: none;
-		}
-	}
-
-	button {
-		position: relative;
-		float: right;
-		overflow: visible;
 	}
 }
 
 @media (max-width: 768px) {
 	.inputContainer {
-		width: 84.375vw; //270px, 320
+		// height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
 		background: #2d2e33;
 		border: 1px solid #525564;
 		border-radius: 4.375vw; //13px, 320
 
 		input {
 			font-family: 'Suisse-Intl-Regular';
-			font-size: 13px; //24px, 320
-			line-height: 110%;
+			font-size: 15.36px; //24px, 320
+			line-height: 16.9px;
 			color: $color-white;
 
-			width: 55.625vw; // 178, 320
-			height: 11.563vw; //37, 320
 			float: left;
-			padding-left: 10vw; //32px, 320
+			padding-left: 6.25vw; //20px, 320
 			background: #2d2e33;
 			border-radius: 12.5vw; //40px, 320
 			border-top-style: none;
@@ -116,7 +131,9 @@
 		}
 
 		button {
-			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			float: right;
 			overflow: visible;
 		}

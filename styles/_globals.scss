@@ -48,3 +48,9 @@ body {
 	top: -80px;
 	transition: 0.3s linear;
 }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
