@@ -1,6 +1,8 @@
 @import '../../styles/variables';
 
 .mission {
+	position: relative;
+	
 	&__container {
 		position: relative;
 		width: 100vw;

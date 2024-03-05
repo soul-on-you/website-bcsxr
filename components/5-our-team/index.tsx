@@ -79,8 +79,9 @@ const OurTeam: React.FC = () => {
 	return (
 		<section className={styles.ourTeam} id='team'>
 			<div className={`${styles.bgImage} hide-on-mobile`}>
-				<Image src='/bg1.webp' alt='bg' width={2880 / 2} height={1600 / 2} />
+				<Image src='/5-our-team/pink.webp' alt='bg' width={2880 / 2} height={1600 / 2} />
 			</div>
+
 			<div className={styles.ourTeam__container}>
 				<HeadlineCentered
 					span1='our'

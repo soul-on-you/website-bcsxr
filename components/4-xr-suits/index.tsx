@@ -15,13 +15,6 @@ const XRSuits: React.FC = () => {
 
 	return (
 		<section className={styles.xrsuits} id='suit'>
-			<Image
-				className={styles.backgroundImage}
-				src='/4-xr-suits/xr-suit-bg.webp'
-				alt='bg-image'
-				width={2880 / 2}
-				height={1600 / 2}
-			/>
 			<div className={styles.xrsuits__container}>
 				<HeadlineCentered
 					span1='xr'

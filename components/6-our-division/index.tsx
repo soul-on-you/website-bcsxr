@@ -49,7 +49,7 @@ const OurDivision: React.FC = () => {
 	return (
 		<section className={styles.ourDivision}>
 			<div className={`${styles.bgImage} hide-on-mobile`}>
-				<Image src='/bg2.webp' alt='bg' width={2880 / 2} height={1600 / 2} />
+				<Image src='/6-our-division/bg2.webp' alt='bg' width={2880 / 2} height={1600 / 2} />
 			</div>
 			<div className={styles.ourDivision__container}>
 				<HeadlineCentered
@@ -65,10 +65,10 @@ const OurDivision: React.FC = () => {
 					We are part of blockchain sports ecosystem
 				</HeadlineCentered>
 
-				<div className={styles.container}>
-					<LargeItem ref={largeBlockRef} img='/6-our-division/ecosystem.webp' />
-					<MediumItem ref={bottomBlock1Ref} img='/6-our-division/foundation.webp' />
-					<MediumItem ref={bottomBlock2Ref} img='/6-our-division/football.webp' />
+				<div className={styles.containerItems}>
+					<LargeItem ref={largeBlockRef} img='/6-our-division/ecosystem.svg' />
+					<MediumItem ref={bottomBlock1Ref} img='/6-our-division/foundation.svg' />
+					<MediumItem ref={bottomBlock2Ref} img='/6-our-division/football.svg' />
 				</div>
 			</div>
 		</section>

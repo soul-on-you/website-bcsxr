@@ -13,11 +13,14 @@
 		}
 	}
 	&__container {
-		background-color: $color-black;
+		background: url(/6-our-division/out-division-bg.webp);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
 		padding: 6.9vw $padding-desktop; //100px desktop, 1440
 		z-index: 10;
 
-		.container {
+		.containerItems {
 			padding-top: 3.3vw; //48px, 1440
 			display: grid;
 			grid-template-columns: 1fr 1fr;
@@ -33,7 +36,7 @@
 			background: $color-black;
 			padding:  $padding-mobile;
 
-			.container {
+			.containerItems {
 				padding-top: 15vw; //48px, 320
 				display: grid;
 				grid-template-columns: 1fr 1fr;

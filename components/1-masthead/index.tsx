@@ -51,6 +51,15 @@ const Masthead: React.FC = () => {
 
 	return (
 		<section className={styles.masthead} ref={mastheadRef}>
+			{/* <div className={`${styles.backgroundImageBlack} hide-on-mobile backgroundImageBlack`}>
+				<Image
+					className={styles.backgroundImageBlack}
+					src='/1-masthead/1back.webp'
+					alt='bg-image'
+					width={2880 / 2}
+					height={1600 / 2}
+				/>
+			</div> */}
 			<div className={styles.masthead__container}>
 				<Title firstH1Ref={firstH1Ref} secondH1Ref={secondH1Ref} thirdH1Ref={thirdH1Ref} />
 				<div className={`${styles.arrowDown} hide-on-mobile`} ref={arrowRef}>

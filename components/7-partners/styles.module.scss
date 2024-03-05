@@ -2,7 +2,6 @@
 
 .partners {
 	position: relative;
-	padding-bottom: 42px;
 	.bgImage {
 		position: absolute;
 		z-index: 1;
@@ -14,15 +13,12 @@
 	}
 	&__container {
 		padding: 100px $padding-desktop;
-		background: #000;
+		background: url(/7-partners/partners-bg.webp);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
 
 		.blocksContainer {
-			// display: grid;
-			// grid-template-columns: repeat(3, 1fr);
-			// gap: 2.222vw; //32px, 1440
-			// grid-auto-rows: minmax(100px, auto);
-			// width: 100%;
-
 			display: grid;
 			grid-template-columns: repeat(3, minmax(auto, auto));
 			grid-auto-rows: minmax(100px, auto);
@@ -38,6 +34,7 @@
 @media (max-width: 768px) {
 	.partners {
 		position: relative;
+		padding-bottom: 42px;
 		.bgImage {
 			position: absolute;
 			// top: 567vw; //?, 1440
@@ -48,21 +45,21 @@
 		&__container {
 			padding: 0 $padding-mobile;
 			background: $color-black;
-	
+
 			.blocksContainer {
 				// display: grid;
 				// grid-template-columns: repeat(3, 1fr);
 				// gap: 2.222vw; //32px, 1440
 				// grid-auto-rows: minmax(100px, auto);
 				// width: 100%;
-	
+
 				display: grid;
 				grid-template-columns: repeat(3, minmax(auto, auto));
 				grid-auto-rows: minmax(1.25vw, auto);
 				gap: 1.25vw; //4px, 320
 				width: 100%;
 				align-items: center;
-	
+
 				// padding-top: 32px;
 			}
 		}

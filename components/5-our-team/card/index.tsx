@@ -9,9 +9,9 @@ const Card: React.FC<ICardProps> = ({ name, surname, backgroundImage, jobTitle }
 			<h4>
 				{name} <br /> {surname}
 			</h4>
-			<button>
+			<div>
 				<span>{jobTitle}</span>
-			</button>
+			</div>
 		</div>
 	);
 };
