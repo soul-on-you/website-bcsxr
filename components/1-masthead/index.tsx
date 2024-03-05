@@ -18,41 +18,33 @@ const Masthead: React.FC = () => {
 	const backgroundImageRef = useRef<HTMLImageElement | null>(null);
 
 	useEffect(() => {
-		if (
-			mastheadRef.current &&
-			firstH1Ref.current &&
-			secondH1Ref.current &&
-			thirdH1Ref.current &&
-			backgroundImageRef.current
-		) {
-			tl.current = gsap.timeline({
-				scrollTrigger: {
-					trigger: mastheadRef.current,
-					start: '1% top',
-					end: '+=3000px',
-					scrub: 1,
-					pin: true,
-				},
-				paused: true,
-			});
+		tl.current = gsap.timeline({
+			scrollTrigger: {
+				trigger: mastheadRef.current,
+				start: '1% top',
+				end: '+=3000px',
+				scrub: 1,
+				pin: true,
+			},
+			paused: true,
+		});
 
-			tl.current
-				.fromTo(firstH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0 })
-				.to(backgroundImageRef.current, { duration: 1, scale: 1.4, ease: 'none' }, '<')
-				.fromTo(secondH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0 })
-				.to(backgroundImageRef.current, { duration: 1, scale: 1, ease: 'none' }, '<')
-				.fromTo(thirdH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0 })
-				.fromTo(arrowRef.current, { opacity: 0, y: 500 }, { duration: 1, autoAlpha: 1, y: 0 }, '<');
+		tl.current
+			.fromTo(firstH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0 })
+			.to(backgroundImageRef.current, { duration: 1, scale: 1.4, ease: 'none' }, '<')
+			.fromTo(secondH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0 })
+			.to(backgroundImageRef.current, { duration: 1, scale: 1, ease: 'none' }, '<')
+			.fromTo(thirdH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0 })
+			.fromTo(arrowRef.current, { opacity: 0, y: 500 }, { duration: 1, autoAlpha: 1, y: 0 }, '<');
 
-			return () => {
-				if (tl.current) {
-					if (tl.current.scrollTrigger) {
-						tl.current.scrollTrigger.kill();
-					}
-					tl.current.kill();
+		return () => {
+			if (tl.current) {
+				if (tl.current.scrollTrigger) {
+					tl.current.scrollTrigger.kill();
 				}
-			};
-		}
+				tl.current.kill();
+			}
+		};
 	}, []);
 
 	return (
