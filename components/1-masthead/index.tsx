@@ -5,6 +5,7 @@ import styles from './styles.module.scss';
 import Image from 'next/image';
 import ArrowDown from './arrow-down';
 import gsap from 'gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import Title from './title';
 
 const Masthead: React.FC = () => {
@@ -18,6 +19,7 @@ const Masthead: React.FC = () => {
 	const backgroundImageRef = useRef<HTMLImageElement | null>(null);
 
 	useEffect(() => {
+		gsap.registerPlugin(ScrollTrigger);
 		tl.current = gsap.timeline({
 			scrollTrigger: {
 				trigger: mastheadRef.current,
@@ -26,6 +28,7 @@ const Masthead: React.FC = () => {
 				scrub: 1,
 				pin: true,
 			},
+			paused: true,
 		});
 
 		tl.current
