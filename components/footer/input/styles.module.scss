@@ -1,30 +1,5 @@
 @import '/styles/variables';
 
-//cf
-.cf:before,
-.cf:after {
-	content: '';
-	display: table;
-}
-
-.cf:after {
-	clear: both;
-}
-
-.cf {
-	zoom: 1;
-
-	&::before,
-	&::after {
-		content: '';
-		display: table;
-	}
-
-	&::after {
-		clear: both;
-	}
-}
-
 @media (min-width: 769px) {
 	.inputContainer {
 		display: flex;
@@ -32,7 +7,6 @@
 		align-items: center;
 		justify-content: space-between;
 
-		// width: 28.472vw; //410px, 1440
 		background: #2d2e33;
 		border: 1px solid #525564;
 		border-radius: 1.181vw; //17px, 1440
@@ -43,15 +17,12 @@
 			line-height: 110%;
 			color: $color-white;
 
-			// width: 20.139vw; // 290px, 1440
-			// height: 3.819vw; //55px, 1440
+			width: 31.25vw; //450px, 1440
 			float: left;
-			// width: 100%;
 			padding-left: 2.222vw; //32px, 1440
-			background: #2d2e33;
 			border-radius: 2.778vw; //40px, 1440
 			border-top-style: none;
-			width: 325px;
+			background: #2d2e33;
 
 			&:hover,
 			&:active,
@@ -78,7 +49,6 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			position: relative;
 			float: right;
 			overflow: visible;
 		}
@@ -87,27 +57,27 @@
 
 @media (max-width: 768px) {
 	.inputContainer {
-		// height: 100%;
-		width: 100%;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
+
 		background: #2d2e33;
 		border: 1px solid #525564;
 		border-radius: 4.375vw; //13px, 320
 
 		input {
 			font-family: 'Suisse-Intl-Regular';
-			font-size: 15.36px; //24px, 320
-			line-height: 16.9px;
+			font-size: 5vw; //16px, 320
+			line-height: 5.5vw; //17.6px, 320
 			color: $color-white;
 
+			width: 62.5vw; //200px, 320
 			float: left;
 			padding-left: 6.25vw; //20px, 320
-			background: #2d2e33;
 			border-radius: 12.5vw; //40px, 320
 			border-top-style: none;
+			background: #2d2e33;
 
 			&:hover,
 			&:active,

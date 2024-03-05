@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from './styles.module.scss';
-import ButtonGradient from '@/ui/button-gradient';
+import ButtonWhite from '@/ui/button-white';
 
 const Input: React.FC = () => {
 	return (
 		<>
-			<form className={`${styles.inputContainer} ${styles.cf}`}>
+			<form className={`${styles.inputContainer}`}>
 				<input type='text' placeholder='YOUR MAIL' required style={{ boxShadow: 'none' }} />
 				<button type='submit'>
-					<ButtonGradient>send</ButtonGradient>
+					<ButtonWhite>send</ButtonWhite>
 				</button>
 			</form>
 		</>

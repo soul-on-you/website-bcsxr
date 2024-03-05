@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Links from './links';
 import ButtonGradient from '@/ui/button-gradient';
+import Logo from '@/ui/logo';
 
 const Navbar: React.FC = () => {
 	const [show, setShow] = useState(true);
@@ -40,9 +41,7 @@ const Navbar: React.FC = () => {
 			<div
 				className={`${styles.navbar__container} ${show ? styles.active : styles.hidden} ${background ? styles.backgroundRed : ''}`}
 			>
-				<Link href='#'>
-					<Image src='/nav/logo.png' alt='logo' width={800 / 2} height={800 / 2} />
-				</Link>
+				<Logo />
 				<Links />
 				<div className={styles.buttonTest}>
 					<ButtonGradient>JOIN US</ButtonGradient>
