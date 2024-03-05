@@ -98,12 +98,6 @@
 				filter: blur(50px);
 				color: $color-pink;
 				overflow: hidden;
-
-					-webkit-backface-visibility: hidden;
-			-moz-backface-visibility: hidden;
-			-webkit-transform: translate3d(0, 0, 0);
-			-moz-transform: translate3d(0, 0, 0);
-			transform: translate3d(0, 0, 0);
 			}
 		}
 		h1:nth-child(3) {
@@ -120,12 +114,6 @@
 				filter: blur(50px);
 				color: $color-white;
 				overflow: hidden;
-
-					-webkit-backface-visibility: hidden;
-			-moz-backface-visibility: hidden;
-			-webkit-transform: translate3d(0, 0, 0);
-			-moz-transform: translate3d(0, 0, 0);
-			transform: translate3d(0, 0, 0);
 			}
 		}
 		h1:nth-child(5) {
@@ -144,12 +132,6 @@
 				left: 5vw; //72px, 1440
 				filter: blur(50px);
 				display: inline-block;
-
-				-webkit-backface-visibility: hidden;
-				-moz-backface-visibility: hidden;
-				-webkit-transform: translate3d(0, 0, 0);
-				-moz-transform: translate3d(0, 0, 0);
-				transform: translate3d(0, 0, 0);
 
 				color: $color-blue;
 				overflow: hidden;

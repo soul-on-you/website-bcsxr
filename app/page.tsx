@@ -1,6 +1,5 @@
 import React, { Suspense, lazy } from 'react';
 
-// Ленивая загрузка компонентов
 const Masthead = lazy(() => import('@/components/1-masthead'));
 const Mission = lazy(() => import('@/components/2-mission'));
 const Proprietary = lazy(() => import('@/components/3-proprietary'));
