@@ -18,7 +18,7 @@ const Masthead: React.FC = () => {
 	const arrowRef = useRef<HTMLDivElement | null>(null);
 	const backgroundImageRef = useRef<HTMLImageElement | null>(null);
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		if (
 			mastheadRef.current &&
 			firstH1Ref.current &&
