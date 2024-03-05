@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useEffect }  from 'react';
+import React, { useRef, useEffect } from 'react';
 import styles from './styles.module.scss';
 import Image from 'next/image';
 import ArrowDown from './arrow-down';
@@ -29,21 +29,20 @@ const Masthead: React.FC = () => {
 				scrollTrigger: {
 					trigger: mastheadRef.current,
 					start: '1% top',
-					end: '+=3000',
+					end: '+=3000px',
 					scrub: 1,
 					pin: true,
-					pinSpacing: true,
 				},
 				paused: true,
 			});
 
 			tl.current
-				.fromTo(firstH1Ref.current, { y: -500 }, { autoAlpha: 1, y: 0 })
-				.to(backgroundImageRef.current, { scale: 1.4, ease: 'none' }, '<')
-				.fromTo(secondH1Ref.current, { y: -500 }, { autoAlpha: 1, y: 0 })
-				.to(backgroundImageRef.current, { scale: 1, ease: 'none' }, '<')
-				.fromTo(thirdH1Ref.current, { y: -500 }, { autoAlpha: 1, y: 0 })
-				.fromTo(arrowRef.current, { opacity: 0, y: 500 }, { autoAlpha: 1, y: 0 }, '<');
+				.fromTo(firstH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0 })
+				.to(backgroundImageRef.current, { duration: 1, scale: 1.4, ease: 'none' }, '<')
+				.fromTo(secondH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0 })
+				.to(backgroundImageRef.current, { duration: 1, scale: 1, ease: 'none' }, '<')
+				.fromTo(thirdH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0 })
+				.fromTo(arrowRef.current, { opacity: 0, y: 500 }, { duration: 1, autoAlpha: 1, y: 0 }, '<');
 
 			return () => {
 				if (tl.current) {
