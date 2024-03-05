@@ -16,6 +16,7 @@ const Partners: React.FC = () => {
 	const tl = useRef<gsap.core.Timeline | null>(null);
 
 	useEffect(() => {
+		gsap.registerPlugin(ScrollTrigger);
 		tl.current = gsap.timeline({
 			scrollTrigger: {
 				trigger: largeBlockRef.current,

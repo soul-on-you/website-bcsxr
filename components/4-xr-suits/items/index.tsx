@@ -19,7 +19,7 @@ const Items: React.FC = () => {
 	const item5Ref = useRef<HTMLDivElement | null>(null);
 
 	useEffect(() => {
-		gsap.registerPlugin(ScrollTrigger)
+		gsap.registerPlugin(ScrollTrigger);
 		// Анимация для первого контейнера
 		const tl1 = gsap.timeline({
 			scrollTrigger: {

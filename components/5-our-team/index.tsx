@@ -22,6 +22,7 @@ const OurTeam: React.FC = () => {
 	const cards = [card1Ref, card2Ref, card3Ref, card4Ref, card5Ref, card6Ref];
 
 	useEffect(() => {
+		gsap.registerPlugin(ScrollTrigger);
 		const tl1 = gsap.timeline({
 			scrollTrigger: {
 				trigger: card1Ref.current,

@@ -11,6 +11,7 @@ const HeadingLeft: React.FC<IHeadingLeftProps> = ({ heading1, heading2, children
 	const textRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
+		gsap.registerPlugin(ScrollTrigger);
 		const span = new SplitType(textRef.current!, {
 			types: 'lines',
 			lineClass: 'splitType',
