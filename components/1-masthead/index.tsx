@@ -26,7 +26,6 @@ const Masthead: React.FC = () => {
 				scrub: 1,
 				pin: true,
 			},
-			paused: true,
 		});
 
 		tl.current
@@ -39,9 +38,6 @@ const Masthead: React.FC = () => {
 
 		return () => {
 			if (tl.current) {
-				if (tl.current.scrollTrigger) {
-					tl.current.scrollTrigger.kill();
-				}
 				tl.current.kill();
 			}
 		};
