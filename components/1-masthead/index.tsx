@@ -11,7 +11,6 @@ import Title from './title';
 const Masthead: React.FC = () => {
 	const tl = useRef<gsap.core.Timeline | null>(null);
 	gsap.registerPlugin(ScrollTrigger);
-	ScrollTrigger.normalizeScroll(true);
 
 	const mastheadRef = useRef<HTMLDivElement | null>(null);
 	const firstH1Ref = useRef<HTMLHeadingElement | null>(null);
@@ -23,6 +22,7 @@ const Masthead: React.FC = () => {
 	const invincibleRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
+		ScrollTrigger.normalizeScroll(true);
 
 		if (!pinContainerRef.current) {
 			return;
@@ -85,7 +85,7 @@ const Masthead: React.FC = () => {
 							width={2880 / 2}
 							height={1600 / 2}
 							priority={true}
-							// style={{ willChange: 'transform, opacity' }}
+							style={{ willChange: 'transform, opacity' }}
 						/>
 						<div className='absolute opacity-0' ref={invincibleRef} />
 					</div>
