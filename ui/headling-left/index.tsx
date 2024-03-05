@@ -6,12 +6,12 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import SplitType from 'split-type';
 
 const HeadingLeft: React.FC<IHeadingLeftProps> = ({ heading1, heading2, children, color }) => {
+	gsap.registerPlugin(ScrollTrigger);
 	const tl = useRef<gsap.core.Timeline | null>(null);
 	const headingRef = useRef<HTMLHeadingElement>(null);
 	const textRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		gsap.registerPlugin(ScrollTrigger);
 		const span = new SplitType(textRef.current!, {
 			types: 'lines',
 			lineClass: 'splitType',

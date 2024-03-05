@@ -1,5 +1,5 @@
 'use client';
-
+//invincibleRef добавил чтобы была задержка у анимации
 import React, { useRef, useEffect } from 'react';
 import styles from './styles.module.scss';
 import Image from 'next/image';
@@ -10,6 +10,7 @@ import Title from './title';
 
 const Masthead: React.FC = () => {
 	const tl = useRef<gsap.core.Timeline | null>(null);
+	gsap.registerPlugin(ScrollTrigger);
 
 	const mastheadRef = useRef<HTMLDivElement | null>(null);
 	const firstH1Ref = useRef<HTMLHeadingElement | null>(null);
@@ -18,26 +19,17 @@ const Masthead: React.FC = () => {
 	const arrowRef = useRef<HTMLDivElement | null>(null);
 	const backgroundImageRef = useRef<HTMLImageElement | null>(null);
 	const pinContainerRef = useRef<HTMLDivElement>(null);
+	const invincibleRef = useRef<HTMLDivElement>(null);
+	// window.history.scrollRestoration = 'manual';
 
 	useEffect(() => {
-		gsap.registerPlugin(ScrollTrigger);
+		// window.scrollTo(0, 0);
 		if (!pinContainerRef.current) {
 			return;
 		}
-		const endValue = `+=${pinContainerRef.current.offsetHeight * 2}`;
+		const endValue = `+=${pinContainerRef.current.offsetHeight * 3}`;
 
 		tl.current = gsap.timeline({
-			onComplete: () => {
-				// Отключить скролл после завершения анимации
-				console.log('block')
-				document.body.style.overflow = 'hidden';
-
-				// Включить скролл обратно через 2 секунды
-				console.log('unblock')
-				setTimeout(() => {
-					document.body.style.overflow = '';
-				}, 1000);
-			},
 			scrollTrigger: {
 				trigger: pinContainerRef.current,
 				start: '1% top',
@@ -52,11 +44,12 @@ const Masthead: React.FC = () => {
 
 		tl.current
 			.fromTo(firstH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0, ease: 'none' })
-			.to(backgroundImageRef.current, { duration: 1, scale: 1.4, ease: 'po' }, '<')
+			.to(backgroundImageRef.current, { duration: 1, scale: 1.4, ease: 'none' }, '<')
 			.fromTo(secondH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0, ease: 'none' })
 			.to(backgroundImageRef.current, { duration: 1, scale: 1, ease: 'none' }, '<')
 			.fromTo(thirdH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0, ease: 'none' })
-			.fromTo(arrowRef.current, { opacity: 0, y: 500 }, { duration: 1, autoAlpha: 1, y: 0 }, '<');
+			.fromTo(arrowRef.current, { opacity: 0, y: 500 }, { duration: 1, autoAlpha: 1, y: 0 }, '<')
+			.to(invincibleRef.current, { opacity: 0, y: 0, duration: 1 });
 
 		return () => {
 			if (tl.current) {
@@ -88,6 +81,7 @@ const Masthead: React.FC = () => {
 							height={1600 / 2}
 							priority={true}
 						/>
+						<div className='absolute opacity-0' ref={invincibleRef} />
 					</div>
 				</div>
 			</div>

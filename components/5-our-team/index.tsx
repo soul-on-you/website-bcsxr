@@ -13,6 +13,7 @@ const OurTeam: React.FC = () => {
 	const { width } = useWindowSize();
 	const isMobile = width < 768;
 
+	gsap.registerPlugin(ScrollTrigger);
 	const tl = useRef<gsap.core.Timeline | null>(null);
 	const card1Ref = useRef<HTMLDivElement | null>(null);
 	const card2Ref = useRef<HTMLDivElement | null>(null);
@@ -23,7 +24,6 @@ const OurTeam: React.FC = () => {
 	const cards = [card1Ref, card2Ref, card3Ref, card4Ref, card5Ref, card6Ref];
 
 	useEffect(() => {
-		gsap.registerPlugin(ScrollTrigger);
 		const tl1 = gsap.timeline({
 			scrollTrigger: {
 				trigger: card1Ref.current,

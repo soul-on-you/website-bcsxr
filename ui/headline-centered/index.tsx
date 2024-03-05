@@ -15,12 +15,12 @@ const HeadlineCentered: React.FC<IHeadlineCenteredProps> = ({
 	colorSpan3,
 	colorSpan4,
 }) => {
+	gsap.registerPlugin(ScrollTrigger);
 	const tl = useRef<gsap.core.Timeline | null>(null);
 	const titleRef = useRef<HTMLHeadingElement>(null);
 	const textRef = useRef<HTMLDivElement>(null);
-
+	
 	useEffect(() => {
-		gsap.registerPlugin(ScrollTrigger);
 		tl.current = gsap.timeline({
 			scrollTrigger: {
 				trigger: textRef.current,

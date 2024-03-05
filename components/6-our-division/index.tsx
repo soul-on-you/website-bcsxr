@@ -10,13 +10,13 @@ import HeadlineCentered from '@/ui/headline-centered';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 const OurDivision: React.FC = () => {
+	gsap.registerPlugin(ScrollTrigger);
 	const tl = useRef<gsap.core.Timeline | null>(null);
 	const largeBlockRef = useRef<HTMLDivElement | null>(null);
 	const bottomBlock1Ref = useRef<HTMLDivElement | null>(null);
 	const bottomBlock2Ref = useRef<HTMLDivElement | null>(null);
 
 	useEffect(() => {
-		gsap.registerPlugin(ScrollTrigger);
 
 		tl.current = gsap.timeline({
 			scrollTrigger: {

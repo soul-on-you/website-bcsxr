@@ -11,12 +11,12 @@ import Black from '@/components/black';
 const Home = () => {
 	return (
 		<main className='overflow-x-hidden'>
-			{/* <Masthead />
+			<Masthead />
 			<Mission />
 			<Proprietary />
 			<XRSuits />
 			<OurTeam />
-			<OurDivision /> */}
+			<OurDivision />
 			<Partners />
 			<Black />
 		</main>

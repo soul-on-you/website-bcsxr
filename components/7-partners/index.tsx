@@ -9,6 +9,7 @@ import LargeItem from './large-item';
 import HeadlineCentered from '@/ui/headline-centered';
 
 const Partners: React.FC = () => {
+	gsap.registerPlugin(ScrollTrigger);
 	const largeBlockRef = useRef(null);
 	const bottomBlocksRef1 = useRef(null);
 	const bottomBlocksRef2 = useRef(null);
@@ -16,7 +17,6 @@ const Partners: React.FC = () => {
 	const tl = useRef<gsap.core.Timeline | null>(null);
 
 	useEffect(() => {
-		gsap.registerPlugin(ScrollTrigger);
 		tl.current = gsap.timeline({
 			scrollTrigger: {
 				trigger: largeBlockRef.current,

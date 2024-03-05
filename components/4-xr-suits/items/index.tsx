@@ -11,6 +11,7 @@ import useWindowSize from '@/hooks/useWindowSize';
 const Items: React.FC = () => {
 	const { width } = useWindowSize();
 	const isMobile = width < 768;
+	gsap.registerPlugin(ScrollTrigger);
 
 	const item1Ref = useRef<HTMLDivElement | null>(null);
 	const item2Ref = useRef<HTMLDivElement | null>(null);
@@ -19,8 +20,6 @@ const Items: React.FC = () => {
 	const item5Ref = useRef<HTMLDivElement | null>(null);
 
 	useEffect(() => {
-		gsap.registerPlugin(ScrollTrigger);
-		// Анимация для первого контейнера
 		const tl1 = gsap.timeline({
 			scrollTrigger: {
 				trigger: item1Ref.current,

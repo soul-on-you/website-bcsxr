@@ -6,12 +6,12 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 const ImagesMobile2: React.FC = () => {
 	const tl = useRef<gsap.core.Timeline | null>(null);
+	gsap.registerPlugin(ScrollTrigger);
 	const imageRef1 = useRef<HTMLDivElement | null>(null);
 	const imageRef2 = useRef<HTMLDivElement | null>(null);
 	const imageRef3 = useRef<HTMLDivElement | null>(null);
 
 	useEffect(() => {
-		gsap.registerPlugin(ScrollTrigger);
 		tl.current = gsap.timeline({
 			scrollTrigger: {
 				trigger: imageRef1.current,
