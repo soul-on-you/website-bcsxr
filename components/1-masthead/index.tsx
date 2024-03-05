@@ -17,16 +17,25 @@ const Masthead: React.FC = () => {
 	const thirdH1Ref = useRef<HTMLHeadingElement | null>(null);
 	const arrowRef = useRef<HTMLDivElement | null>(null);
 	const backgroundImageRef = useRef<HTMLImageElement | null>(null);
+	const pinContainerRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
+		if (!pinContainerRef.current) {
+			return;
+		}
+		// const endValue = `+=${pinContainerRef.current.offsetHeight}`;
+		const endValue = `+=${pinContainerRef.current.offsetHeight * 2}`;
+
 		tl.current = gsap.timeline({
 			scrollTrigger: {
-				trigger: mastheadRef.current,
+				trigger: pinContainerRef.current,
 				start: '1% top',
-				end: '+=3000',
-				scrub: 1,
+				// end: '+=3000',
+				end: () => endValue,
+				scrub: true,
 				pin: true,
+				markers: true,
 			},
 			paused: true,
 		});
@@ -46,36 +55,38 @@ const Masthead: React.FC = () => {
 				}
 				tl.current.kill();
 			}
+			ScrollTrigger.getAll().forEach((instance) => instance.kill());
 		};
+
+		// return () => {
+		// 	if (tl.current) {
+		// 		tl.current.kill();
+		// 	}
+		// 	ScrollTrigger.getAll().forEach((instance) => instance.kill());
+		// };
 	}, []);
 
 	return (
-		<section className={styles.masthead} ref={mastheadRef}>
-			{/* <div className={`${styles.backgroundImageBlack} hide-on-mobile backgroundImageBlack`}>
-				<Image
-					className={styles.backgroundImageBlack}
-					src='/1-masthead/1back.webp'
-					alt='bg-image'
-					width={2880 / 2}
-					height={1600 / 2}
-				/>
-			</div> */}
-			<div className={styles.masthead__container}>
-				<Title firstH1Ref={firstH1Ref} secondH1Ref={secondH1Ref} thirdH1Ref={thirdH1Ref} />
-				<div className={`${styles.arrowDown} hide-on-mobile`} ref={arrowRef}>
-					<ArrowDown />
+		<div className={`lol ${styles.lol}`} ref={pinContainerRef}>
+			<div className={styles.masthead} ref={mastheadRef}>
+				<div className={styles.masthead__container}>
+					<Title firstH1Ref={firstH1Ref} secondH1Ref={secondH1Ref} thirdH1Ref={thirdH1Ref} />
+					<div className={`${styles.arrowDown} hide-on-mobile`} ref={arrowRef}>
+						<ArrowDown />
+					</div>
+
+					<Image
+						ref={backgroundImageRef}
+						className={styles.backgroundImage}
+						src='/1-masthead/bg.webp'
+						alt='bg-image'
+						width={2880 / 2}
+						height={1600 / 2}
+						priority={true}
+					/>
 				</div>
-				<Image
-					ref={backgroundImageRef}
-					className={styles.backgroundImage}
-					src='/1-masthead/bg.webp'
-					alt='bg-image'
-					width={2880 / 2}
-					height={1600 / 2}
-					priority={true}
-				/>
 			</div>
-		</section>
+		</div>
 	);
 };
 

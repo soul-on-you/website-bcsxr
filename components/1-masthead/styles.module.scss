@@ -1,35 +1,37 @@
 @import '../../styles/variables';
 
-.masthead {
-	position: relative;
-	
-	&__container {
+.lol {
+	.masthead {
 		position: relative;
-		height: 100vh;
-		width: 100vw;
 
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
+		&__container {
+			position: relative;
+			height: 100vh;
+			width: 100vw;
 
-		.arrowDown {
-			visibility: hidden;
-			position: absolute;
-			bottom: 4.444vw; //64px, 1440
-		}
-		.backgroundImage {
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			z-index: -1;
-			overflow: hidden;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			transform: scale(1.7);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+
+			.arrowDown {
+				visibility: hidden;
+				position: absolute;
+				bottom: 4.444vw; //64px, 1440
+			}
+			.backgroundImage {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				z-index: -1;
+				overflow: hidden;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				transform: scale(1.7);
+			}
 		}
 	}
 }
