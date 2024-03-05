@@ -22,7 +22,7 @@ const Masthead: React.FC = () => {
 	const invincibleRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		// ScrollTrigger.normalizeScroll(true);
+		ScrollTrigger.normalizeScroll(true);
 
 		if (!pinContainerRef.current) {
 			return;
@@ -53,7 +53,7 @@ const Masthead: React.FC = () => {
 			.fromTo(arrowRef.current, { opacity: 0, y: 500 }, { duration: 1, autoAlpha: 1, y: 0 }, '<')
 			.to(invincibleRef.current, { opacity: 0, y: 0, duration: 1 });
 
-		// ScrollTrigger.refresh();
+		ScrollTrigger.refresh();
 
 		return () => {
 			if (tl.current) {
