@@ -3,46 +3,48 @@
 import React from 'react';
 import styles from './styles.module.scss';
 import Image from 'next/image';
-import ArrowDown from '@/ui/arrow-down';
+import ArrowDown from './arrow-down';
 import gsap from 'gsap';
 import { useRef, useEffect } from 'react';
+import Title from './title';
 
 const Masthead: React.FC = () => {
 	const tl = useRef<gsap.core.Timeline | null>(null);
 
 	const mastheadRef = useRef<HTMLDivElement | null>(null);
-	const firstSpanRef = useRef<HTMLHeadingElement | null>(null);
-	const secondSpanRef = useRef<HTMLHeadingElement | null>(null);
-	const thirdSpanRef = useRef<HTMLHeadingElement | null>(null);
+	const firstH1Ref = useRef<HTMLHeadingElement | null>(null);
+	const secondH1Ref = useRef<HTMLHeadingElement | null>(null);
+	const thirdH1Ref = useRef<HTMLHeadingElement | null>(null);
 	const arrowRef = useRef<HTMLDivElement | null>(null);
 	const backgroundImageRef = useRef<HTMLImageElement | null>(null);
 
 	useEffect(() => {
 		if (
 			mastheadRef.current &&
-			firstSpanRef.current &&
-			secondSpanRef.current &&
-			thirdSpanRef.current &&
-			arrowRef.current &&
+			firstH1Ref.current &&
+			secondH1Ref.current &&
+			thirdH1Ref.current &&
 			backgroundImageRef.current
 		) {
 			tl.current = gsap.timeline({
 				scrollTrigger: {
 					trigger: mastheadRef.current,
-					start: 'top top',
+					start: '1% top',
 					end: '+=3000',
 					scrub: 1,
 					pin: true,
+					pinSpacing: true,
+					markers: true,
 				},
 				paused: true,
 			});
 
 			tl.current
-				.fromTo(firstSpanRef.current, { y: -500 }, { autoAlpha: 1, y: 0 })
+				.fromTo(firstH1Ref.current, { y: -500 }, { autoAlpha: 1, y: 0 })
 				.to(backgroundImageRef.current, { scale: 1.4, ease: 'none' }, '<')
-				.fromTo(secondSpanRef.current, { y: -500 }, { autoAlpha: 1, y: 0 })
+				.fromTo(secondH1Ref.current, { y: -500 }, { autoAlpha: 1, y: 0 })
 				.to(backgroundImageRef.current, { scale: 1, ease: 'none' }, '<')
-				.fromTo(thirdSpanRef.current, { y: -500 }, { autoAlpha: 1, y: 0 })
+				.fromTo(thirdH1Ref.current, { y: -500 }, { autoAlpha: 1, y: 0 })
 				.fromTo(arrowRef.current, { opacity: 0, y: 500 }, { autoAlpha: 1, y: 0 }, '<');
 
 			return () => {
@@ -59,22 +61,7 @@ const Masthead: React.FC = () => {
 	return (
 		<section className={styles.masthead} ref={mastheadRef}>
 			<div className={styles.masthead__container}>
-				<div className={styles.title}>
-					<h1 ref={firstSpanRef}>
-						<span>new format</span>
-						<span>new format</span>
-					</h1>
-					<br />
-					<h1 ref={secondSpanRef}>
-						<span>of competitive</span>
-						<span>of competitive</span>
-					</h1>
-					<br />
-					<h1 ref={thirdSpanRef}>
-						<span>sport</span>
-						<span>sport</span>
-					</h1>
-				</div>
+				<Title firstH1Ref={firstH1Ref} secondH1Ref={secondH1Ref} thirdH1Ref={thirdH1Ref} />
 				<div className={`${styles.arrowDown} hide-on-mobile`} ref={arrowRef}>
 					<ArrowDown />
 				</div>

@@ -1,0 +1,125 @@
+@import '/styles/variables';
+
+.title {
+	position: relative;
+	text-align: center;
+
+	h1:nth-child(1) {
+		opacity: 0;
+		visibility: hidden;
+		span:nth-child(1) {
+			display: inline-block;
+			color: $color-pink;
+		}
+		span:nth-child(2) {
+			position: absolute;
+			left: 5vw;
+			top: 0;
+			filter: blur(50px);
+			color: $color-pink;
+			overflow: hidden;
+		}
+	}
+	h1:nth-child(3) {
+		opacity: 0;
+		visibility: hidden;
+		span:nth-child(1) {
+			display: inline-block;
+			color: $color-white;
+		}
+		span:nth-child(2) {
+			position: absolute;
+			left: -1vw;
+			top: 1vw;
+			filter: blur(50px);
+			color: $color-white;
+			overflow: hidden;
+		}
+	}
+	h1:nth-child(5) {
+		opacity: 0;
+		visibility: hidden;
+		span:nth-child(1) {
+			display: inline-block;
+
+			color: $color-blue;
+
+			font-size: 15vw; //216px, 1440
+			transform: rotate(-4deg);
+		}
+		span:nth-child(2) {
+			position: absolute;
+			left: 5vw; //72px, 1440
+			filter: blur(50px);
+			display: inline-block;
+
+			color: $color-blue;
+			font-size: 15vw; //216px, 1440
+			transform: rotate(-4deg);
+			overflow: hidden;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.title {
+		text-align: center;
+		position: relative;
+
+		h1:nth-child(1) {
+			opacity: 0;
+			visibility: hidden;
+			span:nth-child(1) {
+				display: inline-block;
+				color: $color-pink;
+			}
+			span:nth-child(2) {
+				position: absolute;
+				left: 5vw;
+				top: 0;
+				filter: blur(50px);
+				color: $color-pink;
+				overflow: hidden;
+			}
+		}
+		h1:nth-child(3) {
+			opacity: 0;
+			visibility: hidden;
+			span:nth-child(1) {
+				display: inline-block;
+				color: $color-white;
+			}
+			span:nth-child(2) {
+				position: absolute;
+				left: -1vw;
+				top: 1vw;
+				filter: blur(50px);
+				color: $color-white;
+				overflow: hidden;
+			}
+		}
+		h1:nth-child(5) {
+			opacity: 0;
+			visibility: hidden;
+
+			span:nth-child(1) {
+				display: inline-block;
+
+				color: $color-blue;
+				transform: rotate(-4deg) translateY(4.688vw); //320, 15px
+				font-size: 35vw; //112px, 320
+			}
+			span:nth-child(2) {
+				position: absolute;
+				left: 5vw; //72px, 1440
+				filter: blur(50px);
+				display: inline-block;
+
+				color: $color-blue;
+				overflow: hidden;
+				font-size: 35vw; //112px, 320
+				transform: rotate(-4deg) translateY(4.688vw); //320, 15px
+			}
+		}
+	}
+}

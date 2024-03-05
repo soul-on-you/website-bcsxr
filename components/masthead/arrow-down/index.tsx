@@ -14,4 +14,5 @@ const ArrowDown: React.FC = () => {
 	);
 };
 
-export default ArrowDown;
+// export default ArrowDown;
+export default React.memo(ArrowDown);
