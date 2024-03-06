@@ -9,23 +9,25 @@ import ButtonGradient from '@/ui/button-gradient';
 import Logo from '@/ui/logo';
 
 const Navbar: React.FC = () => {
-	const [show, setShow] = useState(true);
-	const [lastScrollY, setLastScrollY] = useState(0);
-	const [background, setBackground] = useState(false);
+	const [show, setShow] = useState<boolean>(true);
+	const [lastScrollY, setLastScrollY] = useState<number>(0);
+	const [background, setBackground] = useState<boolean>(false);
 
 	const handleNavbar = () => {
+		const currentScrollY = window.scrollY;
+
 		if (window.scrollY > lastScrollY) {
 			setShow(false);
-		} else {
+		} else if (lastScrollY - currentScrollY > 32) {
 			setShow(true);
 		}
-		if (window.scrollY > window.innerHeight * 3) {
+		if (currentScrollY > window.innerHeight * 3) {
 			setBackground(true);
 		} else {
 			setBackground(false);
 		}
 
-		setLastScrollY(window.scrollY);
+		setLastScrollY(currentScrollY);
 	};
 
 	useEffect(() => {
@@ -39,7 +41,7 @@ const Navbar: React.FC = () => {
 	return (
 		<nav className={styles.navbar}>
 			<div
-				className={`${styles.navbar__container} ${show ? styles.active : styles.hidden} ${background ? styles.backgroundRed : ''}`}
+				className={`${styles.navbar__container} ${show ? styles.active : styles.hidden} ${background ? styles.backgroundBlack : ''}`}
 			>
 				<Logo />
 				<Links />
