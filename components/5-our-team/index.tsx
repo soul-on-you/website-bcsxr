@@ -23,6 +23,8 @@ const OurTeam: React.FC = () => {
 	const card4Ref = useRef<HTMLDivElement | null>(null);
 	const card5Ref = useRef<HTMLDivElement | null>(null);
 	const card6Ref = useRef<HTMLDivElement | null>(null);
+	const marqueeRef = useRef(null);
+	const marqueeRef2 = useRef(null);
 	const cards = [card1Ref, card2Ref, card3Ref, card4Ref, card5Ref, card6Ref];
 
 	useEffect(() => {
@@ -36,10 +38,15 @@ const OurTeam: React.FC = () => {
 		});
 
 		tl1.fromTo(
-			card1Ref.current,
-			{ autoAlpha: 0, y: 120 },
-			{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
+			[marqueeRef.current, marqueeRef2.current],
+			{ autoAlpha: 0, y: 0 },
+			{ autoAlpha: 1, y: 0, duration: 2, ease: 'power3.out' },
 		)
+			.fromTo(
+				card1Ref.current,
+				{ autoAlpha: 0, y: 120 },
+				{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
+			)
 			.fromTo(
 				card2Ref.current,
 				{ autoAlpha: 0, y: 120 },
@@ -94,7 +101,9 @@ const OurTeam: React.FC = () => {
 			</div>
 
 			<div className={styles.ourTeam__container}>
-				<MarqueeContainer direction='left' />
+				<div ref={marqueeRef}>
+					<MarqueeContainer direction='left' />
+				</div>
 				<HeadlineCentered
 					span1='our'
 					span2='team'
@@ -107,7 +116,9 @@ const OurTeam: React.FC = () => {
 				>
 					{/* Leading specialists in the field of VR */}
 				</HeadlineCentered>
-				<MarqueeContainer direction='right' />
+				<div ref={marqueeRef2}>
+					<MarqueeContainer direction='right' />
+				</div>
 
 				<div className={styles.gridContainer}>
 					<div ref={card1Ref}>

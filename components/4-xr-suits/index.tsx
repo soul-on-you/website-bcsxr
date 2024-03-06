@@ -8,6 +8,7 @@ import HeadlineCentered from '@/ui/headline-centered';
 import useWindowSize from '@/hooks/useWindowSize';
 import ImagesMobile from './images-mobile';
 import Image from 'next/image';
+import ImagesMobileSwiper from './images-mobile-swiper';
 
 const XRSuits: React.FC = () => {
 	const { width } = useWindowSize();
@@ -30,7 +31,8 @@ const XRSuits: React.FC = () => {
 					<br />
 					With haptic feedback & biometric reading
 				</HeadlineCentered>
-				{isMobile ? <ImagesMobile /> : <Images />}
+				{isMobile ? <ImagesMobileSwiper /> : <Images />}
+				{/* <ImagesMobileSwiper /> */}
 				<Items />
 			</div>
 		</section>

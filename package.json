@@ -15,7 +15,8 @@
 		"react-dom": "^18",
 		"react-fast-marquee": "1.6.4",
 		"sass": "1.71.1",
-		"split-type": "0.3.4"
+		"split-type": "0.3.4",
+		"swiper": "11.0.7"
 	},
 	"devDependencies": {
 		"@types/node": "^20",
