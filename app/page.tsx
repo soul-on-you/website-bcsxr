@@ -1,3 +1,6 @@
+import Test from '@/components/0-test';
+import Test2 from '@/components/0-test2';
+import MastheadTest from '@/components/1-masthead-test';
 import React, { Suspense, lazy } from 'react';
 
 const Masthead = lazy(() => import('@/components/1-masthead'));
@@ -13,14 +16,17 @@ const Home = () => {
 	return (
 		<main className='overflow-x-hidden'>
 			<Suspense fallback={<div>Loading...</div>}>
-				<Masthead />
+				{/* <Test /> */}
+				{/* <Test2 /> */}
+				<MastheadTest />
+				{/* <Masthead />
 				<Mission />
 				<Proprietary />
 				<XRSuits />
 				<OurTeam />
 				<OurDivision />
 				<Partners />
-				<Black />
+				<Black /> */}
 			</Suspense>
 		</main>
 	);
