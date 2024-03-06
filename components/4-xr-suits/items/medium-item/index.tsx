@@ -7,7 +7,7 @@ const MediumItem: React.ForwardRefRenderFunction<HTMLDivElement, IMediumItemProp
 	{ name, imgSrc, style, overflowHidden },
 	ref,
 ) => {
-	const dynamicStyles: React.CSSProperties = {
+	const imageStyles: React.CSSProperties = {
 		position: 'absolute',
 		width: style?.width,
 		height: 'auto',
@@ -23,9 +23,8 @@ const MediumItem: React.ForwardRefRenderFunction<HTMLDivElement, IMediumItemProp
 	return (
 		<div className={styles.mediumItem} style={containerStyles} ref={ref}>
 			<h3>{name}</h3>
-			<div style={dynamicStyles}>
-				<Image  src={imgSrc} alt='items2' width={2000} height={2000} />
-			</div>
+
+			<Image style={imageStyles} src={imgSrc} alt='items2' width={2000} height={2000} />
 		</div>
 	);
 };

@@ -1,7 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
 import styles from './styles.module.scss';
-import logo from '@/public/logo.png';
 
 const Black: React.FC = () => {
 	return (
@@ -11,4 +9,5 @@ const Black: React.FC = () => {
 	);
 };
 
-export default Black;
+// export default Black;
+export default React.memo(Black);

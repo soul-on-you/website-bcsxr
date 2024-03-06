@@ -5,15 +5,17 @@ import { ICardProps } from './interface';
 
 const Card: React.FC<ICardProps> = ({ name, surname, backgroundImage, jobTitle }) => {
 	return (
-		<div className={styles.card} style={{ backgroundImage: `url(${backgroundImage})` }}>
+		<div className={styles.card}>
 			<h4>
 				{name} <br /> {surname}
 			</h4>
 			<div>
 				<span>{jobTitle}</span>
 			</div>
+			<Image className={styles.backgroundImage} src={backgroundImage} alt='bgimage' width={1000} height={2000} />
 		</div>
 	);
 };
 
-export default Card;
+// export default Card;
+export default React.memo(Card);

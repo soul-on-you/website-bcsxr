@@ -1,10 +1,10 @@
 .black {
-	background-color: transparent;
+	position: fixed;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	position: fixed;
+	background-color: transparent;
 	bottom: 0px;
 	left: 0px;
 	right: 0px;
@@ -25,12 +25,12 @@
 
 @media (max-width: 768px) {
 	.black {
-		background-color: transparent;
+		position: fixed;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		position: fixed;
+		background-color: transparent;
 		bottom: 0px;
 		left: 0px;
 		right: 0px;

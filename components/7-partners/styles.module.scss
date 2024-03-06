@@ -2,28 +2,30 @@
 
 .partners {
 	position: relative;
-	.bgImage {
+
+	.backgroundImageSmall {
 		position: absolute;
 		z-index: 1;
 		bottom: 10vw;
+
 		img {
 			width: 100vw;
 			height: 100%;
 		}
 	}
+
 	&__container {
 		padding: 6.944vw $padding-desktop; //100px $padding-desktop, 1440
-		background-color: #131419;
+		background-color: $color-background;
 
 		.blocksContainer {
 			display: grid;
+			align-items: center;
 			grid-template-columns: repeat(3, minmax(auto, auto));
 			grid-auto-rows: minmax(100px, auto);
 			gap: 2.222vw; //32px, 1440
 			width: 100%;
-			align-items: center;
-
-			padding-top: 32px;
+			// padding-top: 32px;
 		}
 	}
 }
@@ -31,7 +33,8 @@
 @media (max-width: 768px) {
 	.partners {
 		position: relative;
-		padding-bottom: 42px;
+		// padding-bottom: 42px;
+
 		.bgImage {
 			position: absolute;
 			// top: 567vw; //?, 1440
@@ -39,51 +42,21 @@
 			z-index: 1;
 			bottom: 10vw;
 		}
+
 		&__container {
 			padding: 0 $padding-mobile;
-			background: $color-black;
+			background: $color-background;
 
 			.blocksContainer {
-				// display: grid;
-				// grid-template-columns: repeat(3, 1fr);
-				// gap: 2.222vw; //32px, 1440
-				// grid-auto-rows: minmax(100px, auto);
-				// width: 100%;
-
 				display: grid;
+				align-items: center;
 				grid-template-columns: repeat(3, minmax(auto, auto));
 				grid-auto-rows: minmax(1.25vw, auto);
 				gap: 1.25vw; //4px, 320
 				width: 100%;
-				align-items: center;
 
 				// padding-top: 32px;
 			}
 		}
 	}
 }
-
-// @media (max-width: 768px) {
-// 	.partners {
-// 		&__container {
-// 			padding: 0 $padding-mobile;
-// 			background: #000;
-
-// 			div:nth-child(2) {
-// 				// display: grid;
-// 				// grid-template-columns: repeat(3, 1fr);
-// 				// gap: 1.25vw; //4px, 320
-// 				// grid-auto-rows: minmax(1.25vw, auto);
-
-// 				display: grid;
-// 				grid-template-columns: repeat(3, minmax(auto, auto));
-// 				grid-auto-rows: minmax(100px, auto);
-// 				gap: 1.25vw; //4px, 320
-// 				width: 100%;
-// 				align-items: center;
-
-// 				padding-top: 32px;
-// 			}
-// 		}
-// 	}
-// }

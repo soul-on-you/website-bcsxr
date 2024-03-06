@@ -10,7 +10,6 @@ import Title from './title';
 
 const Masthead: React.FC = () => {
 	const tl = useRef<gsap.core.Timeline | null>(null);
-	gsap.registerPlugin(ScrollTrigger);
 
 	const mastheadRef = useRef<HTMLDivElement | null>(null);
 	const firstH1Ref = useRef<HTMLHeadingElement | null>(null);

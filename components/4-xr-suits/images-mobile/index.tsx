@@ -1,69 +1,45 @@
+'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './styles.module.scss';
 import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
 
 const ImagesMobile: React.FC = () => {
-	const images = ['/4-xr-suits/images/1.webp', '/4-xr-suits/images/2.webp', '/4-xr-suits/images/3.webp'];
-	const [imageIndex, setImageIndex] = useState(0);
-	const containerRef = useRef<HTMLDivElement>(null);
-
-	const showNextImage = () => {
-		setImageIndex((index) => (index + 1) % images.length);
-	};
-
-	useEffect(() => {
-		let interval: string | number | NodeJS.Timeout | undefined;
-		const observer = new IntersectionObserver(
-			(entries) => {
-				const [entry] = entries;
-				if (entry.isIntersecting) {
-					console.log('Анимация стартовала');
-					interval = setInterval(showNextImage, 1500);
-				} else {
-					if (interval) {
-						console.log('Анимация остановлена');
-						clearInterval(interval);
-					}
-				}
-			},
-			{
-				root: null,
-				rootMargin: '0px',
-				threshold: 0.1,
-			},
-		);
-
-		if (containerRef.current) {
-			observer.observe(containerRef.current);
-		}
-
-		return () => {
-			if (containerRef.current) {
-				observer.unobserve(containerRef.current);
-			}
-			if (interval) {
-				clearInterval(interval);
-			}
-		};
-	}, [containerRef, images.length]);
+	const images = [
+		'/4-xr-suits/images/1.webp',
+		'/4-xr-suits/images/2.webp',
+		'/4-xr-suits/images/3.webp',
+		'/4-xr-suits/images/1.webp',
+		'/4-xr-suits/images/2.webp',
+		'/4-xr-suits/images/3.webp',
+	];
 
 	return (
 		<>
-			<div ref={containerRef} className={styles.imagesContainer}>
-				{images.map((url) => (
-					<Image
-						key={url}
-						src={url}
-						className={styles.image}
-						style={{ translate: `${-100 * imageIndex}%` }}
-						width={800 / 2}
-						height={1000 / 2}
-						alt={url}
-					/>
+			<Swiper
+				slidesPerView={1.4}
+				spaceBetween={20}
+				loop={true}
+				centeredSlides={true}
+				speed={1000}
+				autoplay={{
+					delay: 1000,
+					disableOnInteraction: false,
+				}}
+				modules={[Autoplay]}
+			>
+				{images.map((image, index) => (
+					<SwiperSlide key={index} style={{ width: 'auto', height: '140vw' }}>
+						<Image src={image} alt={`Slide ${index}`} width={800 / 2} height={1000 / 2} />
+					</SwiperSlide>
 				))}
-			</div>
+				...
+			</Swiper>
 		</>
 	);
 };
 
-export default ImagesMobile;
+// export default ImagesMobile;
+export default React.memo(ImagesMobile);

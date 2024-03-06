@@ -1,3 +1,5 @@
+//хук чтобы отображать либо мобильную версию, либо десктопную
+
 'use client';
 import { useState, useEffect } from 'react';
 

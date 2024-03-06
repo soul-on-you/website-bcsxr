@@ -7,7 +7,7 @@ const LargeItem: React.ForwardRefRenderFunction<HTMLDivElement, ILargeItemProps>
 	return (
 		<div className={styles.largeItem} ref={ref}>
 			<h3>
-				<span>VR</span> <span>HEADSET</span>
+				<span>vr</span> <span>headset</span>
 			</h3>
 
 			<div className={styles.imageContainer}>

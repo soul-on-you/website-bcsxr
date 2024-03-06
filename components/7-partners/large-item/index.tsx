@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 import Image from 'next/image';
 import ILargeItemProps from './interface';
 
-const LargeIte: React.ForwardRefRenderFunction<HTMLDivElement, ILargeItemProps> = ({ img, width, height }, ref) => {
+const LargeItem: React.ForwardRefRenderFunction<HTMLDivElement, ILargeItemProps> = ({ img, width, height }, ref) => {
 	return (
 		<div className={styles.largeItem} ref={ref}>
 			<Image src={img} alt='partners' width={width} height={height} />
@@ -11,4 +11,4 @@ const LargeIte: React.ForwardRefRenderFunction<HTMLDivElement, ILargeItemProps> 
 	);
 };
 
-export default React.forwardRef(LargeIte);
+export default React.forwardRef(LargeItem);

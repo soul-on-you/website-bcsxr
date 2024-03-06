@@ -25,4 +25,5 @@ const Proprietary: React.FC = () => {
 	);
 };
 
-export default Proprietary;
+// export default Proprietary;
+export default React.memo(Proprietary);

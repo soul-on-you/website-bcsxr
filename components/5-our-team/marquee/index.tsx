@@ -37,4 +37,6 @@ const MarqueeContainer: React.FC<IMarqueeContainerProps> = ({ direction }) => {
 	);
 };
 
-export default MarqueeContainer;
+// export default MarqueeContainer;
+export default React.memo(MarqueeContainer);
+

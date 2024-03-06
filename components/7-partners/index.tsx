@@ -13,7 +13,6 @@ const Partners: React.FC = () => {
 	const { width } = useWindowSize();
 	const isMobile = width < 768;
 
-	gsap.registerPlugin(ScrollTrigger);
 	const largeBlockRef = useRef(null);
 	const bottomBlocksRef1 = useRef(null);
 	const bottomBlocksRef2 = useRef(null);
@@ -52,8 +51,8 @@ const Partners: React.FC = () => {
 
 	return (
 		<section className={styles.partners} id='partners'>
-			<div className={`${styles.bgImage} hide-on-mobile`}>
-				<Image src='/bg3.webp' alt='bg' width={2880 / 2} height={1600 / 2} />
+			<div className={`${styles.backgroundImageSmall} hide-on-mobile`}>
+				<Image src='/7-partners/bg.webp' alt='bg' width={2880 / 2} height={1600 / 2} />
 			</div>
 			<div className={styles.partners__container}>
 				<HeadlineCentered

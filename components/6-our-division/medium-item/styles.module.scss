@@ -1,13 +1,16 @@
+@import '/styles/variables';
+
 .mediumItem {
 	position: relative;
+	grid-column: span 1;
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	grid-column: span 1;
 
 	border: 1px solid #5d495b;
 	border-radius: 1.111vw; //16px, 1440
-	background: linear-gradient(to top, rgba(255, 255, 255, 0.07), rgba(217, 217, 217, 0.14));
+	background: $gradient-dark;
 	padding: 3.75vw 0; //54px 0, 1440
 
 	&::after {
@@ -30,16 +33,17 @@
 
 @media (max-width: 768px) {
 	.mediumItem {
+		position: relative;
 		grid-column: span 1;
 
-		position: relative;
-		border: 1px solid #5d495b;
-		border-radius: 3.75vw; //12px, 320
-		background: linear-gradient(to top, rgba(255, 255, 255, 0.07), rgba(217, 217, 217, 0.14));
-		padding: 3.75vw 0; //54px 0, 1440
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		
+		border: 1px solid #5d495b;
+		border-radius: 3.75vw; //12px, 320
+		background: $gradient-dark;
+		padding: 3.75vw 0; //54px 0, 1440
 
 		&::after {
 			content: '';

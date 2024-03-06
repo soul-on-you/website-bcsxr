@@ -1,11 +1,16 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './styles.module.scss';
 import Image from 'next/image';
 import HeadingLeft from '@/ui/headling-left';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 const Mission: React.FC = () => {
+	useEffect(() => {
+		gsap.registerPlugin(ScrollTrigger);
+	}, []);
 	return (
 		<section className={styles.mission} id='mission'>
 			<div className={styles.mission__container}>
@@ -25,4 +30,5 @@ const Mission: React.FC = () => {
 	);
 };
 
-export default Mission;
+// export default Mission;
+export default React.memo(Mission);

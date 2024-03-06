@@ -1,14 +1,12 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import styles from './styles.module.scss';
 import Images from './images';
 import Items from './items';
 import HeadlineCentered from '@/ui/headline-centered';
 import useWindowSize from '@/hooks/useWindowSize';
 import ImagesMobile from './images-mobile';
-import Image from 'next/image';
-import ImagesMobileSwiper from './images-mobile-swiper';
 
 const XRSuits: React.FC = () => {
 	const { width } = useWindowSize();
@@ -33,12 +31,12 @@ const XRSuits: React.FC = () => {
 					<br />
 					With haptic feedback & biometric reading
 				</HeadlineCentered>
-				{isMobile ? <ImagesMobileSwiper /> : <Images />}
-				{/* <ImagesMobileSwiper /> */}
+				{isMobile ? <ImagesMobile /> : <Images />}
 				<Items />
 			</div>
 		</section>
 	);
 };
 
-export default XRSuits;
+// export default XRSuits;
+export default React.memo(XRSuits);

@@ -1,8 +1,9 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useLayoutEffect } from 'react';
 import styles from './styles.module.scss';
 import gsap from 'gsap';
 import IHeadlineCenteredProps from './interface';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import SplitType from 'split-type';
 
 const HeadlineCentered: React.FC<IHeadlineCenteredProps> = ({
 	span1,
@@ -17,59 +18,69 @@ const HeadlineCentered: React.FC<IHeadlineCenteredProps> = ({
 	textShadow1,
 	textShadow2,
 }) => {
-	gsap.registerPlugin(ScrollTrigger);
 	const tl = useRef<gsap.core.Timeline | null>(null);
 	const titleRef = useRef<HTMLHeadingElement>(null);
 	const textRef = useRef<HTMLDivElement>(null);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
+		const span = new SplitType(textRef.current!, {
+			types: 'lines',
+			lineClass: 'splitType',
+		});
+		const split = new SplitType(span?.lines ?? [], {
+			types: 'lines',
+		});
+
 		tl.current = gsap.timeline({
 			scrollTrigger: {
 				trigger: textRef.current,
-				start: 'top bottom-=80',
+				start: 'top bottom-=100',
 				toggleActions: 'play none none none',
 			},
 		});
 
-		tl.current.fromTo(
-			titleRef.current,
-			{ autoAlpha: 0, y: 64 },
-			{
-				autoAlpha: 1,
-				y: 0,
-				duration: 1.4,
-				ease: 'power3.out',
-			},
-		);
-
-		tl.current.fromTo(
-			textRef.current,
-			{ autoAlpha: 0, y: 64 },
-			{
-				autoAlpha: 1,
-				y: 0,
-				duration: 1.6,
-				ease: 'power3.out',
-			},
-			'<',
-		);
+		tl.current
+			.fromTo(
+				titleRef.current,
+				{ autoAlpha: 0, y: 64 },
+				{
+					autoAlpha: 1,
+					y: 0,
+					duration: 1.4,
+					ease: 'power3.out',
+				},
+			)
+			.fromTo(
+				split.lines,
+				{ autoAlpha: 0, y: 64 },
+				{
+					autoAlpha: 1,
+					y: 0,
+					duration: 1,
+					stagger: 0.15,
+					ease: 'power3.out',
+				},
+				'0.2',
+			);
 
 		return () => {
-			tl.current?.kill();
+			if (tl.current) {
+				tl.current?.kill();
+			}
 		};
 	}, []);
 
 	return (
-		<div className={styles.headline}>
-			<div className={styles.title} ref={titleRef}>
-				<h2>
-					<span style={{ color: colorSpan1, textShadow: textShadow1 }}>{span1}</span>
-					<span style={{ color: colorSpan2, textShadow: textShadow2 }}>{span2}</span>
-				</h2>
-			</div>
+		<div className={styles.headlineCenter}>
+			<h2 ref={titleRef}>
+				<span style={{ color: colorSpan1, textShadow: textShadow1 }}>{span1}</span>
+				<span style={{ color: colorSpan2, textShadow: textShadow2 }}>{span2}</span>
+			</h2>
+
 			<h5 ref={textRef}>{children}</h5>
 		</div>
 	);
 };
 
-export default HeadlineCentered;
+// export default HeadlineCentered;
+export default React.memo(HeadlineCentered);

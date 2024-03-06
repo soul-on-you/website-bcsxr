@@ -1,30 +1,27 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useRef } from 'react';
 import styles from './styles.module.scss';
 import gsap from 'gsap';
 import MediumItem from './medium-item';
 import LargeItem from './large-item';
 import Image from 'next/image';
 import HeadlineCentered from '@/ui/headline-centered';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import useWindowSize from '@/hooks/useWindowSize';
 
 const OurDivision: React.FC = () => {
 	const { width } = useWindowSize();
 	const isMobile = width < 768;
 
-	gsap.registerPlugin(ScrollTrigger);
 	const tl = useRef<gsap.core.Timeline | null>(null);
 	const largeBlockRef = useRef<HTMLDivElement | null>(null);
 	const bottomBlock1Ref = useRef<HTMLDivElement | null>(null);
 	const bottomBlock2Ref = useRef<HTMLDivElement | null>(null);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		tl.current = gsap.timeline({
 			scrollTrigger: {
 				trigger: largeBlockRef.current,
-				// start: 'top bottom-=250',
 				start: isMobile ? 'top-=48 bottom-=32' : 'top bottom-=250',
 				end: 'bottom top',
 				toggleActions: 'play none none none',
@@ -53,8 +50,8 @@ const OurDivision: React.FC = () => {
 
 	return (
 		<section className={styles.ourDivision}>
-			<div className={`${styles.bgImage} hide-on-mobile`}>
-				<Image src='/6-our-division/bg2.webp' alt='bg' width={2880 / 2} height={1600 / 2} />
+			<div className={`${styles.backgroundImageSmall} hide-on-mobile`}>
+				<Image src='/6-our-division/bg.webp' alt='bg' width={2880 / 2} height={1600 / 2} />
 			</div>
 			<div className={styles.ourDivision__container}>
 				<HeadlineCentered
@@ -82,4 +79,5 @@ const OurDivision: React.FC = () => {
 	);
 };
 
-export default OurDivision;
+// export default OurDivision;
+export default React.memo(OurDivision);

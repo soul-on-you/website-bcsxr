@@ -2,11 +2,11 @@
 
 import React, { useState, useEffect } from 'react';
 import styles from './styles.module.scss';
-import Link from 'next/link';
-import Image from 'next/image';
 import Links from './links';
 import ButtonGradient from '@/ui/button-gradient';
 import Logo from '@/ui/logo';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 const Navbar: React.FC = () => {
 	const [show, setShow] = useState<boolean>(true);
@@ -45,12 +45,11 @@ const Navbar: React.FC = () => {
 			>
 				<Logo />
 				<Links />
-				<div className={styles.buttonTest}>
-					<ButtonGradient>JOIN US</ButtonGradient>
-				</div>
+				<ButtonGradient>JOIN US</ButtonGradient>
 			</div>
 		</nav>
 	);
 };
 
-export default Navbar;
+// export default Navbar;
+export default React.memo(Navbar);

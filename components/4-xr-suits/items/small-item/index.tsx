@@ -7,7 +7,7 @@ const SmallItem: React.ForwardRefRenderFunction<HTMLDivElement, ISmallItemProps>
 	{ name, imgSrc, style, overflowHidden },
 	ref,
 ) => {
-	const dynamicStyles: React.CSSProperties = {
+	const imageStyles: React.CSSProperties = {
 		position: 'absolute',
 		width: style?.width,
 		height: 'auto',
@@ -23,9 +23,7 @@ const SmallItem: React.ForwardRefRenderFunction<HTMLDivElement, ISmallItemProps>
 	return (
 		<div className={styles.smallItem} style={containerStyles} ref={ref}>
 			<h3>{name}</h3>
-			<div style={dynamicStyles}>
-				<Image src={imgSrc} alt='items1' width={1000} height={1000} />
-			</div>
+			<Image style={imageStyles} src={imgSrc} alt='image' width={1000} height={1000} />
 		</div>
 	);
 };

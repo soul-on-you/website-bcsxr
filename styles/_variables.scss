@@ -1,8 +1,11 @@
-$color-white: #FFFFFF;
+$color-white: #ffffff;
 $color-black: #000000;
-$color-pink: #E833EC;
-$color-blue: #2DE8E8;
+$color-pink: #e833ec;
+$color-blue: #2de8e8;
 $color-gradient: #5d495b;
+$color-background: #131419;
+
+$gradient-dark: linear-gradient(to top, rgba(255, 255, 255, 0.07), rgba(217, 217, 217, 0.14));
 
 $padding-desktop: 8.333vw; //120px, 1440
 $padding-mobile: 5vw; //16px, 320

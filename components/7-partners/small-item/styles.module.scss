@@ -1,3 +1,5 @@
+@import '/styles/variables';
+
 .smallItem {
 	position: relative;
 	height: 13.819vw; //199px, 1440
@@ -9,9 +11,9 @@
 
 	border: 1px solid #5d495b;
 	border-radius: 16px;
-	background: linear-gradient(to top, rgba(255, 255, 255, 0.07), rgba(217, 217, 217, 0.14));
+	background: $gradient-dark;
 	padding: 3.75vw 0; //54px 0, 1440
-	backdrop-filter: blur(32px);
+	backdrop-filter: blur(28px);
 	z-index: 1;
 
 	&::after {
@@ -45,8 +47,8 @@
 
 		border: 1px solid #5d495b;
 		border-radius: 3.75vw; //12px, 320
-		background: linear-gradient(to top, rgba(255, 255, 255, 0.07), rgba(217, 217, 217, 0.14));
-		padding: 2.5vw 0; //54px 0, 1440
+		background: $gradient-dark;
+		padding: 2.5vw 0; //54px 0, 320
 
 		img {
 			width: 100%;

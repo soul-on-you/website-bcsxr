@@ -11,8 +11,10 @@ import useWindowSize from '@/hooks/useWindowSize';
 const Items: React.FC = () => {
 	const { width } = useWindowSize();
 	const isMobile = width < 768;
-	gsap.registerPlugin(ScrollTrigger);
 
+	const tl1 = useRef<gsap.core.Timeline | null>(null);
+	const tl2 = useRef<gsap.core.Timeline | null>(null);
+	const tl3 = useRef<gsap.core.Timeline | null>(null);
 	const item1Ref = useRef<HTMLDivElement | null>(null);
 	const item2Ref = useRef<HTMLDivElement | null>(null);
 	const item3Ref = useRef<HTMLDivElement | null>(null);
@@ -20,55 +22,62 @@ const Items: React.FC = () => {
 	const item5Ref = useRef<HTMLDivElement | null>(null);
 
 	useEffect(() => {
-		const tl1 = gsap.timeline({
+		tl1.current = gsap.timeline({
 			scrollTrigger: {
 				trigger: item1Ref.current,
 				start: isMobile ? 'top-=48 bottom-=32' : 'top bottom-=250',
+				end: 'bottom top',
 				toggleActions: 'play none none none',
 			},
 		});
 
-		tl1.fromTo(
-			item1Ref.current,
-			{ autoAlpha: 0, y: 120 },
-			{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
-		).fromTo(
-			item2Ref.current,
-			{ autoAlpha: 0, y: 120 },
-			{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
-			'0.4',
-		);
+		tl1.current
+			.fromTo(
+				item1Ref.current,
+				{ autoAlpha: 0, y: 120 },
+				{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
+			)
+			.fromTo(
+				item2Ref.current,
+				{ autoAlpha: 0, y: 120 },
+				{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
+				'0.4',
+			);
 
 		// Анимация для второго контейнера
-		const tl2 = gsap.timeline({
+		tl2.current = gsap.timeline({
 			scrollTrigger: {
 				trigger: item3Ref.current,
 				start: isMobile ? 'top-=48 bottom-=32' : 'top bottom-=250',
+				end: 'bottom top',
 				toggleActions: 'play none none none',
 			},
 		});
 
-		tl2.fromTo(
-			item3Ref.current,
-			{ autoAlpha: 0, y: 120 },
-			{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
-		).fromTo(
-			item4Ref.current,
-			{ autoAlpha: 0, y: 120 },
-			{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
-			'0.4',
-		);
+		tl2.current
+			.fromTo(
+				item3Ref.current,
+				{ autoAlpha: 0, y: 120 },
+				{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
+			)
+			.fromTo(
+				item4Ref.current,
+				{ autoAlpha: 0, y: 120 },
+				{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
+				'0.4',
+			);
 
 		// Анимация для третьего контейнера
-		const tl3 = gsap.timeline({
+		tl3.current = gsap.timeline({
 			scrollTrigger: {
 				trigger: item5Ref.current,
 				start: isMobile ? 'top-=48 bottom-=32' : 'top bottom-=250',
+				end: 'bottom top',
 				toggleActions: 'play none none none',
 			},
 		});
 
-		tl3.fromTo(
+		tl3.current.fromTo(
 			item5Ref.current,
 			{ autoAlpha: 0, y: 120 },
 			{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
@@ -130,7 +139,7 @@ const Items: React.FC = () => {
 							? { width: '81.25vw', right: '5.313vw', bottom: '-118.75vw' }
 							: { width: '20.833vw', right: '4.792vw', bottom: '-24.722vw' }
 					}
-					overflowHidden={false}
+					overflowHidden={true}
 				/>
 			</div>
 			<div className={styles.container3}>
@@ -140,4 +149,4 @@ const Items: React.FC = () => {
 	);
 };
 
-export default Items;
+export default React.memo(Items);

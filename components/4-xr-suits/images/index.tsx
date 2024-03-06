@@ -6,7 +6,6 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 const Images: React.FC = () => {
 	const tl = useRef<gsap.core.Timeline | null>(null);
-	gsap.registerPlugin(ScrollTrigger);
 	const imageRef1 = useRef<HTMLDivElement | null>(null);
 	const imageRef2 = useRef<HTMLDivElement | null>(null);
 	const imageRef3 = useRef<HTMLDivElement | null>(null);
@@ -16,7 +15,6 @@ const Images: React.FC = () => {
 			scrollTrigger: {
 				trigger: imageRef1.current,
 				start: 'top bottom-=250',
-				// start: 'top bottom-=200',
 				end: 'bottom top',
 				toggleActions: 'play none none none',
 			},
@@ -42,7 +40,9 @@ const Images: React.FC = () => {
 			);
 
 		return () => {
-			tl.current?.kill();
+			if (tl.current) {
+				tl.current.kill();
+			}
 			ScrollTrigger.getAll().forEach((instance) => instance.kill());
 		};
 	}, []);
@@ -62,4 +62,7 @@ const Images: React.FC = () => {
 	);
 };
 
-export default Images;
+// export default Images;
+export default React.memo(Images);
+
+
