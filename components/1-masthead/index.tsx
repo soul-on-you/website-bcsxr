@@ -38,12 +38,10 @@ const Masthead: React.FC = () => {
 				immediateRender: false,
 				onLeave: () => {
 					ScrollTrigger.normalizeScroll(false);
-					console.log('normalizeScroll отключен при покидании области');
 				},
-				onEnterBack: () => {
-					ScrollTrigger.normalizeScroll(true);
-					console.log('normalizeScroll включен при возвращении');
-				},
+				// onEnterBack: () => {
+				// 	ScrollTrigger.normalizeScroll(false);
+				// },
 			},
 			paused: true,
 		});
