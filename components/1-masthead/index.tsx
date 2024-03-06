@@ -22,8 +22,8 @@ const Masthead: React.FC = () => {
 	const invincibleRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		ScrollTrigger.normalizeScroll(true);
-		ScrollTrigger.config({ ignoreMobileResize: true}) 
+		// ScrollTrigger.normalizeScroll(true);
+		ScrollTrigger.config({ ignoreMobileResize: true });
 
 		if (!pinContainerRef.current) {
 			return;
