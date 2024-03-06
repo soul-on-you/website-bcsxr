@@ -1,0 +1,21 @@
+@import '/styles/variables';
+
+.marqueeContainer {
+	transform: rotate(-4deg);
+	width: calc(100% + $padding-desktop * 2);
+	z-index: 6;
+
+	.imageWrapper {
+		margin: 0;
+		padding: 0;
+		transform: scale(1.01);
+
+		img {
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			display: block;
+			transform: translateX(2px);
+		}
+	}
+}

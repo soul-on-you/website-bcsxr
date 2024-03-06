@@ -8,6 +8,8 @@ import Image from 'next/image';
 import HeadlineCentered from '@/ui/headline-centered';
 import useWindowSize from '@/hooks/useWindowSize';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import Marquee from 'react-fast-marquee';
+import MarqueeContainer from './marquee';
 
 const OurTeam: React.FC = () => {
 	const { width } = useWindowSize();
@@ -23,15 +25,7 @@ const OurTeam: React.FC = () => {
 	const card6Ref = useRef<HTMLDivElement | null>(null);
 	const cards = [card1Ref, card2Ref, card3Ref, card4Ref, card5Ref, card6Ref];
 
-	const firstLineRef = useRef(null);
-
 	useEffect(() => {
-		gsap.to(firstLineRef.current, {
-			x: '-50%', // Анимация сдвига на 50% влево. Вы можете настроить это значение.
-			ease: 'linear',
-			duration: 30, // Длительность анимации в секундах. Можно настроить.
-			repeat: -1, // Бесконечное повторение
-		});
 		const tl1 = gsap.timeline({
 			scrollTrigger: {
 				trigger: card1Ref.current,
@@ -99,10 +93,8 @@ const OurTeam: React.FC = () => {
 				<Image src='/5-our-team/pink.webp' alt='bg' width={2880 / 2} height={1600 / 2} />
 			</div>
 
-			<div className={styles.firstLine} ref={firstLineRef}>
-				<Image src='/5-our-team/line.svg' alt='line' width={28000 / 2} height={500 / 2} />
-			</div>
 			<div className={styles.ourTeam__container}>
+				<MarqueeContainer direction='left' />
 				<HeadlineCentered
 					span1='our'
 					span2='team'
@@ -115,6 +107,7 @@ const OurTeam: React.FC = () => {
 				>
 					{/* Leading specialists in the field of VR */}
 				</HeadlineCentered>
+				<MarqueeContainer direction='right' />
 
 				<div className={styles.gridContainer}>
 					<div ref={card1Ref}>

@@ -2,7 +2,7 @@
 
 .mission {
 	position: relative;
-	
+
 	&__container {
 		position: relative;
 		width: 100vw;
@@ -12,6 +12,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: start;
+		// background-color: #131419;
 		padding: 0 $padding-desktop; //0  $padding-desktop, 1440
 
 		.backgroundImage {

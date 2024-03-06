@@ -13,15 +13,14 @@ const Home = () => {
 	return (
 		<main className='overflow-x-hidden'>
 			<Suspense fallback={<div>Loading...</div>}>
-				{/* <Masthead />
+				<Masthead />
 				<Mission />
 				<Proprietary />
-				<XRSuits /> */}
-				<div className='bg-black h-screen'/>
+				<XRSuits />
 				<OurTeam />
-				{/* <OurDivision />
+				<OurDivision />
 				<Partners />
-				<Black /> */}
+				<Black />
 			</Suspense>
 		</main>
 	);

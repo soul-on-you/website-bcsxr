@@ -3,12 +3,6 @@
 .ourTeam {
 	position: relative;
 
-	.firstLine {
-		transform: rotate(-5deg);
-		// transform-origin: left center;
-		// overflow: hidden; 
-	}
-
 	.bgImage {
 		position: absolute;
 		z-index: 1;
@@ -27,7 +21,7 @@
 		gap: 4.4vw; //64px, 1440
 		padding: $padding-desktop;
 		z-index: 1;
-		background-color: $color-black;
+		background-color: #131419;
 
 		.gridContainer {
 			z-index: 1;
