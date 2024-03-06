@@ -1,102 +1,52 @@
-'use client';
-//invincibleRef добавил чтобы была задержка у анимации
-import React, { useRef, useEffect } from 'react';
-import styles from './styles.module.scss';
-import Image from 'next/image';
-import ArrowDown from './arrow-down';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import Title from './title';
+import React, { useRef, useEffect, useState } from 'react';
+// Импортируйте остальные необходимые зависимости
 
-const Mastheadd: React.FC = () => {
-	const tl = useRef<gsap.core.Timeline | null>(null);
-	gsap.registerPlugin(ScrollTrigger);
+const Masthead = () => {
+  const [scrollCount, setScrollCount] = useState(0);
+  const mastheadRef = useRef(null);
+  const firstH1Ref = useRef(null);
+  const secondH1Ref = useRef(null);
+  const thirdH1Ref = useRef(null);
+  const backgroundImageRef = useRef(null);
 
-	const mastheadRef = useRef<HTMLDivElement | null>(null);
-	const firstH1Ref = useRef<HTMLHeadingElement | null>(null);
-	const secondH1Ref = useRef<HTMLHeadingElement | null>(null);
-	const thirdH1Ref = useRef<HTMLHeadingElement | null>(null);
-	const arrowRef = useRef<HTMLDivElement | null>(null);
-	const backgroundImageRef = useRef<HTMLImageElement | null>(null);
-	// const pinContainerRef = useRef<HTMLDivElement>(null);
-	const invincibleRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const handleScroll = () => {
+      // Повышаем счетчик скролла и запускаем анимацию, если страница скроллилась достаточно
+      if (window.scrollY > 10) {
+        setScrollCount((prevCount) => {
+          if (prevCount < 3) {
+            return prevCount + 1;
+          }
+          return prevCount;
+        });
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Возвращаем пользователя наверх страницы
+      }
+    };
 
-	useEffect(() => {
-		const normalizer = ScrollTrigger.normalizeScroll(true);
-		// ScrollTrigger.normalizeScroll(true);
-		ScrollTrigger.config({ ignoreMobileResize: true });
+    window.addEventListener('scroll', handleScroll);
 
-		if (!mastheadRef.current) {
-			return;
-		}
-		const endValue = `+=${mastheadRef.current.offsetHeight * 3}`;
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-		tl.current = gsap.timeline({
-			scrollTrigger: {
-				trigger: mastheadRef.current,
-				start: '1% top',
-				end: '+=3000',
-				// end: () => endValue,
-				scrub: true,
-				pin: true,
-				scroller: null,
-			},
-			paused: true,
-			onToggle: (scrollTrigger: any) => {
-				scrollTrigger.refresh();
-				ScrollTrigger.normalizeScroll(false);
-			},
-		});
+  useEffect(() => {
+    // Инициализируем анимации в зависимости от значения scrollCount
+    if (scrollCount === 1) {
+      gsap.fromTo(firstH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0, ease: 'none' });
+      gsap.to(backgroundImageRef.current, { duration: 1, scale: 1.4, ease: 'none' });
+    } else if (scrollCount === 2) {
+      gsap.fromTo(secondH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0, ease: 'none' });
+      gsap.to(backgroundImageRef.current, { duration: 1, scale: 1, ease: 'none' });
+    } else if (scrollCount === 3) {
+      gsap.fromTo(thirdH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0, ease: 'none' });
+      // Дополните анимацией для третьего скролла
+    }
+  }, [scrollCount]);
 
-		tl.current
-			.fromTo(firstH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0, ease: 'none' })
-			.to(backgroundImageRef.current, { duration: 1, scale: 1.4, ease: 'none' }, '<')
-			.fromTo(secondH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0, ease: 'none' })
-			.to(backgroundImageRef.current, { duration: 1, scale: 1, ease: 'none' }, '<')
-			.fromTo(thirdH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0, ease: 'none' })
-			.fromTo(arrowRef.current, { opacity: 0, y: 500 }, { duration: 1, autoAlpha: 1, y: 0 }, '<')
-			.to(invincibleRef.current, { opacity: 0, y: 0, duration: 1 });
-
-		ScrollTrigger.refresh();
-		ScrollTrigger.config({ ignoreMobileResize: true });
-
-		return () => {
-			normalizer?.kill()
-			if (tl.current) {
-				if (tl.current.scrollTrigger) {
-					tl.current.scrollTrigger.kill();
-				}
-				tl.current.kill();
-			}
-			ScrollTrigger.normalizeScroll(false);
-			ScrollTrigger.getAll().forEach((instance) => instance.kill());
-		};
-	}, []);
-
-	return (
-		<>
-			<div className={styles.masthead} ref={mastheadRef}>
-				<div className={styles.masthead__container}>
-					<Title firstH1Ref={firstH1Ref} secondH1Ref={secondH1Ref} thirdH1Ref={thirdH1Ref} />
-					<div className={`${styles.arrowDown} hide-on-mobile`} ref={arrowRef}>
-						<ArrowDown />
-					</div>
-
-					<Image
-						ref={backgroundImageRef}
-						className={styles.backgroundImage}
-						src='/1-masthead/bg.webp'
-						alt='bg-image'
-						width={2880 / 2}
-						height={1600 / 2}
-						priority={true}
-						style={{ willChange: 'transform, opacity' }}
-					/>
-					<div className='absolute opacity-0' ref={invincibleRef} />
-				</div>
-			</div>
-		</>
-	);
+  // JSX код компонента
+  return (
+    // Ваш JSX код
+  );
 };
 
-export default Mastheadd;
+export default Masthead;

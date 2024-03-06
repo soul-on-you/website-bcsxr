@@ -3,6 +3,12 @@
 .ourTeam {
 	position: relative;
 
+	.firstLine {
+		transform: rotate(-5deg);
+		// transform-origin: left center;
+		// overflow: hidden; 
+	}
+
 	.bgImage {
 		position: absolute;
 		z-index: 1;
@@ -22,7 +28,7 @@
 		padding: $padding-desktop;
 		z-index: 1;
 		background-color: $color-black;
-		
+
 		.gridContainer {
 			z-index: 1;
 			display: grid;

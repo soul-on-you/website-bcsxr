@@ -1,6 +1,6 @@
 'use client';
 //invincibleRef добавил чтобы была задержка у анимации
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import styles from './styles.module.scss';
 import Image from 'next/image';
 import ArrowDown from './arrow-down';
@@ -11,6 +11,7 @@ import Title from './title';
 const Masthead: React.FC = () => {
 	const tl = useRef<gsap.core.Timeline | null>(null);
 	gsap.registerPlugin(ScrollTrigger);
+	const [currentAnimation, setCurrentAnimation] = useState(0);
 
 	const mastheadRef = useRef<HTMLDivElement | null>(null);
 	const firstH1Ref = useRef<HTMLHeadingElement | null>(null);
@@ -49,13 +50,13 @@ const Masthead: React.FC = () => {
 		});
 
 		tl.current
-			.fromTo(firstH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0, ease: 'none' })
-			.to(backgroundImageRef.current, { duration: 1, scale: 1.4, ease: 'none' }, '<')
-			.fromTo(secondH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0, ease: 'none' })
-			.to(backgroundImageRef.current, { duration: 1, scale: 1, ease: 'none' }, '<')
-			.fromTo(thirdH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0, ease: 'none' })
-			.fromTo(arrowRef.current, { opacity: 0, y: 500 }, { duration: 1, autoAlpha: 1, y: 0 }, '<')
-			.to(invincibleRef.current, { opacity: 0, y: 0, duration: 1 });
+			.fromTo(firstH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0, ease: 'none' }) //1 итерация
+			.to(backgroundImageRef.current, { duration: 1, scale: 1.4, ease: 'none' }, '<') //1 итерация
+			.fromTo(secondH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0, ease: 'none' }) //2 итерация
+			.to(backgroundImageRef.current, { duration: 1, scale: 1, ease: 'none' }, '<') //2 итерация
+			.fromTo(thirdH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0, ease: 'none' }) //3 итерация
+			.fromTo(arrowRef.current, { opacity: 0, y: 500 }, { duration: 1, autoAlpha: 1, y: 0 }, '<'); //3 итерация
+		// .to(invincibleRef.current, { opacity: 0, y: 0, duration: 1 });
 
 		ScrollTrigger.refresh(); //фиксанула автоматический скролл при ф5
 
