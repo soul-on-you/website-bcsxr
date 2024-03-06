@@ -6,13 +6,19 @@ const Links: React.FC = () => {
 	return (
 		<ul className={styles.links}>
 			<li>
-				<Link href='#'>whitepaper</Link>
+				<Link href='https://blockchain-sports.gitbook.io/whitepaper/' target='_blank' rel='noopener noreferrer'>
+					whitepaper
+				</Link>
 			</li>
 			<li>
-				<Link href='#'>terms & conditions</Link>
+				<Link href='https://storage.googleapis.com/bcsports-bucket/ecosystem-static/docs/T&C.pdf'>
+					terms & conditions
+				</Link>
 			</li>
 			<li>
-				<Link href='#'>privacy policy</Link>
+				<Link href='https://storage.googleapis.com/bcsports-bucket/ecosystem-static/docs/Privacy_Policy.pdf'>
+					privacy policy
+				</Link>
 			</li>
 		</ul>
 	);

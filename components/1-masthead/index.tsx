@@ -37,7 +37,7 @@ const Masthead: React.FC = () => {
 				end: () => endValue,
 				scrub: true,
 				pin: true,
-				scroller: null
+				scroller: null,
 			},
 			paused: true,
 			onToggle: (scrollTrigger: any) => {
@@ -55,7 +55,7 @@ const Masthead: React.FC = () => {
 			.to(invincibleRef.current, { opacity: 0, y: 0, duration: 1 });
 
 		ScrollTrigger.refresh();
-		ScrollTrigger.config({ ignoreMobileResize: true})
+		ScrollTrigger.config({ ignoreMobileResize: true });
 
 		return () => {
 			if (tl.current) {
