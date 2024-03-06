@@ -37,12 +37,9 @@ const Masthead: React.FC = () => {
 				// scroller: null,
 				immediateRender: false,
 				onLeave: () => {
-					setTimeout(() => {
-						ScrollTrigger.normalizeScroll(false);
-						console.log('normalizeScroll отключен с задержкой');
-					}, 100); // Задержка в 100 мс
+					ScrollTrigger.normalizeScroll(false);
+					console.log('normalizeScroll отключен при покидании области');
 				},
-
 				onEnterBack: () => {
 					ScrollTrigger.normalizeScroll(false);
 					console.log('normalizeScroll включен при возвращении');
