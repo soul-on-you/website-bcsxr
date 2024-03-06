@@ -23,6 +23,7 @@ const Masthead: React.FC = () => {
 
 	useEffect(() => {
 		ScrollTrigger.normalizeScroll(true);
+		ScrollTrigger.config({ ignoreMobileResize: true}) 
 
 		if (!pinContainerRef.current) {
 			return;
@@ -64,6 +65,7 @@ const Masthead: React.FC = () => {
 				}
 				tl.current.kill();
 			}
+			ScrollTrigger.normalizeScroll(false);
 			ScrollTrigger.getAll().forEach((instance) => instance.kill());
 		};
 	}, []);
