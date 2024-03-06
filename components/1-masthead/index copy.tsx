@@ -8,7 +8,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import Title from './title';
 
-const Masthead: React.FC = () => {
+const Mastheadd: React.FC = () => {
 	const tl = useRef<gsap.core.Timeline | null>(null);
 	gsap.registerPlugin(ScrollTrigger);
 
@@ -22,6 +22,10 @@ const Masthead: React.FC = () => {
 	const invincibleRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
+		const normalizer = ScrollTrigger.normalizeScroll(true);
+		// ScrollTrigger.normalizeScroll(true);
+		ScrollTrigger.config({ ignoreMobileResize: true });
+
 		if (!mastheadRef.current) {
 			return;
 		}
@@ -31,12 +35,17 @@ const Masthead: React.FC = () => {
 			scrollTrigger: {
 				trigger: mastheadRef.current,
 				start: '1% top',
-				end: () => endValue,
+				end: '+=3000',
+				// end: () => endValue,
 				scrub: true,
 				pin: true,
 				scroller: null,
 			},
 			paused: true,
+			onToggle: (scrollTrigger: any) => {
+				scrollTrigger.refresh();
+				ScrollTrigger.normalizeScroll(false);
+			},
 		});
 
 		tl.current
@@ -48,13 +57,18 @@ const Masthead: React.FC = () => {
 			.fromTo(arrowRef.current, { opacity: 0, y: 500 }, { duration: 1, autoAlpha: 1, y: 0 }, '<')
 			.to(invincibleRef.current, { opacity: 0, y: 0, duration: 1 });
 
+		ScrollTrigger.refresh();
+		ScrollTrigger.config({ ignoreMobileResize: true });
+
 		return () => {
+			normalizer?.kill()
 			if (tl.current) {
 				if (tl.current.scrollTrigger) {
 					tl.current.scrollTrigger.kill();
 				}
 				tl.current.kill();
 			}
+			ScrollTrigger.normalizeScroll(false);
 			ScrollTrigger.getAll().forEach((instance) => instance.kill());
 		};
 	}, []);
@@ -85,4 +99,4 @@ const Masthead: React.FC = () => {
 	);
 };
 
-export default Masthead;
+export default Mastheadd;
