@@ -21,7 +21,7 @@ const Masthead: React.FC = () => {
 	const invincibleRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		ScrollTrigger.normalizeScroll(true);
+		// ScrollTrigger.normalizeScroll(true);
 		if (!mastheadRef.current) {
 			return;
 		}
