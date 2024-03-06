@@ -21,7 +21,7 @@ const Masthead: React.FC = () => {
 	const invincibleRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		ScrollTrigger.normalizeScroll(true); //фиксанула сложный скролл на мобилке
+		ScrollTrigger.normalizeScroll(true); //фиксанула скролл на мобилке (когда для скролла пина нужно очень сильно стараться, но из-за него лаги, поэтму потому выключаю)
 		if (!mastheadRef.current) {
 			return;
 		}
@@ -36,8 +36,14 @@ const Masthead: React.FC = () => {
 				pin: true,
 				// scroller: null,
 				immediateRender: false,
-				onLeave: () => ScrollTrigger.normalizeScroll(false),
-				onEnterBack: () => ScrollTrigger.normalizeScroll(true),
+				onLeave: () => {
+					ScrollTrigger.normalizeScroll(false);
+					console.log('normalizeScroll отключен при покидании области');
+				},
+				onEnterBack: () => {
+					ScrollTrigger.normalizeScroll(false);
+					console.log('normalizeScroll включен при возвращении');
+				},
 			},
 			paused: true,
 		});
