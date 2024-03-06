@@ -21,7 +21,7 @@ const Masthead: React.FC = () => {
 	const invincibleRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		// ScrollTrigger.normalizeScroll(true);
+		ScrollTrigger.normalizeScroll(true); //фиксанула сложный скролл на мобилке
 		if (!mastheadRef.current) {
 			return;
 		}
@@ -36,6 +36,8 @@ const Masthead: React.FC = () => {
 				pin: true,
 				// scroller: null,
 				immediateRender: false,
+				onLeave: () => ScrollTrigger.normalizeScroll(false),
+				onEnterBack: () => ScrollTrigger.normalizeScroll(true),
 			},
 			paused: true,
 		});
@@ -59,6 +61,7 @@ const Masthead: React.FC = () => {
 				tl.current.kill();
 			}
 			ScrollTrigger.getAll().forEach((instance) => instance.kill());
+			ScrollTrigger.normalizeScroll(false);
 		};
 	}, []);
 
