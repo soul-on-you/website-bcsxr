@@ -34,9 +34,13 @@ const Masthead: React.FC = () => {
 				end: () => endValue,
 				scrub: true,
 				pin: true,
-				scroller: null,
+				// scroller: null,
+				immediateRender: false,
 			},
 			paused: true,
+			onToggle: (scrollTrigger: any) => {
+				scrollTrigger.refresh();
+			},
 		});
 
 		tl.current
