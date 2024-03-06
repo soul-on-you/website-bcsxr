@@ -8,6 +8,6 @@ export default interface IHeadlineCenteredProps {
 	colorSpan2: string;
 	colorSpan3?: string;
 	colorSpan4?: string;
-	textShadow1: any;
-	textShadow2: any;
+	textShadow1?: any;
+	textShadow2?: any;
 }
