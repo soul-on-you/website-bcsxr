@@ -23,56 +23,54 @@ const Items: React.FC = () => {
 		const tl1 = gsap.timeline({
 			scrollTrigger: {
 				trigger: item1Ref.current,
-				start: isMobile ? 'top-=32 bottom' : 'top bottom-=200',
+				start: isMobile ? 'top-=48 bottom-=32' : 'top bottom-=250',
 				toggleActions: 'play none none none',
 			},
 		});
 
 		tl1.fromTo(
 			item1Ref.current,
-			{ autoAlpha: 0, y: 64 },
+			{ autoAlpha: 0, y: 120 },
 			{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
 		).fromTo(
 			item2Ref.current,
-			{ autoAlpha: 0, y: 64 },
+			{ autoAlpha: 0, y: 120 },
 			{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
-			'0.2',
+			'0.4',
 		);
 
 		// Анимация для второго контейнера
 		const tl2 = gsap.timeline({
 			scrollTrigger: {
 				trigger: item3Ref.current,
-				// start: 'top bottom-=200',
-				start: isMobile ? 'top-=64 bottom' : 'top bottom-=200',
-				toggleActions: 'play none none reverse',
+				start: isMobile ? 'top-=48 bottom-=32' : 'top bottom-=250',
+				toggleActions: 'play none none none',
 			},
 		});
 
 		tl2.fromTo(
 			item3Ref.current,
-			{ autoAlpha: 0, y: 64 },
+			{ autoAlpha: 0, y: 120 },
 			{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
 		).fromTo(
 			item4Ref.current,
-			{ autoAlpha: 0, y: 64 },
+			{ autoAlpha: 0, y: 120 },
 			{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
-			'0.2',
+			'0.4',
 		);
 
 		// Анимация для третьего контейнера
 		const tl3 = gsap.timeline({
 			scrollTrigger: {
 				trigger: item5Ref.current,
-				start: isMobile ? 'top-=96 bottom' : 'top bottom-=200',
-				// start: 'top bottom-=200',
-				toggleActions: 'play none none reverse',
+				start: isMobile ? 'top-=48 bottom-=32' : 'top bottom-=250',
+				toggleActions: 'play none none none',
 			},
 		});
 
 		tl3.fromTo(
 			item5Ref.current,
-			{ autoAlpha: 0, y: 64 },
+			{ autoAlpha: 0, y: 120 },
 			{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
 		);
 

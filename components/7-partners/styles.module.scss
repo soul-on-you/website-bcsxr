@@ -12,11 +12,8 @@
 		}
 	}
 	&__container {
-		padding: 100px $padding-desktop;
-		background: url(/7-partners/partners-bg.webp);
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center;
+		padding: 6.944vw $padding-desktop; //100px $padding-desktop, 1440
+		background-color: $color-black;
 
 		.blocksContainer {
 			display: grid;

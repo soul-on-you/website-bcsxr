@@ -4,7 +4,7 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
-const ImagesMobile2: React.FC = () => {
+const Images: React.FC = () => {
 	const tl = useRef<gsap.core.Timeline | null>(null);
 	gsap.registerPlugin(ScrollTrigger);
 	const imageRef1 = useRef<HTMLDivElement | null>(null);
@@ -15,7 +15,8 @@ const ImagesMobile2: React.FC = () => {
 		tl.current = gsap.timeline({
 			scrollTrigger: {
 				trigger: imageRef1.current,
-				start: 'top bottom-=100',
+				start: 'top bottom-=250',
+				// start: 'top bottom-=200',
 				end: 'bottom top',
 				toggleActions: 'play none none none',
 			},
@@ -61,4 +62,4 @@ const ImagesMobile2: React.FC = () => {
 	);
 };
 
-export default ImagesMobile2;
+export default Images;

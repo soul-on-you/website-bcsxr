@@ -49,8 +49,10 @@
 		padding: 2.5vw 0; //54px 0, 1440
 
 		img {
-			width: 22.5vw; //72px, 320
+			width: 100%;
 			height: auto;
+			padding: 3.125vw 2.5vw; //10px, 8px
+			object-fit: cover;
 		}
 
 		&::after {

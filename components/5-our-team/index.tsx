@@ -27,45 +27,54 @@ const OurTeam: React.FC = () => {
 		const tl1 = gsap.timeline({
 			scrollTrigger: {
 				trigger: card1Ref.current,
-				start: isMobile ? 'top bottom-=32' : 'top bottom-=200',
+				start: isMobile ? 'top-=48 bottom-=32' : 'top bottom-=250',
 				toggleActions: 'play none none none',
+				markers: true,
 			},
 		});
 
-		tl1.fromTo(card1Ref.current, { autoAlpha: 0, y: 64 }, { autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' })
+		tl1.fromTo(
+			card1Ref.current,
+			{ autoAlpha: 0, y: 120 },
+			{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
+		)
 			.fromTo(
 				card2Ref.current,
-				{ autoAlpha: 0, y: 64 },
+				{ autoAlpha: 0, y: 120 },
 				{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
-				'0.2',
+				'0.4',
 			)
 			.fromTo(
 				card3Ref.current,
-				{ autoAlpha: 0, y: 64 },
+				{ autoAlpha: 0, y: 120 },
 				{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
-				'0.4',
+				'0.8',
 			);
 
 		const tl2 = gsap.timeline({
 			scrollTrigger: {
 				trigger: card4Ref.current,
-				start: isMobile ? 'top bottom-=64' : 'top bottom-=200',
+				start: isMobile ? 'top-=48 bottom-=64' : 'top bottom-=250',
 				toggleActions: 'play none none none',
 			},
 		});
 
-		tl2.fromTo(card4Ref.current, { autoAlpha: 0, y: 64 }, { autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' })
+		tl2.fromTo(
+			card4Ref.current,
+			{ autoAlpha: 0, y: 120 },
+			{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
+		)
 			.fromTo(
 				card5Ref.current,
-				{ autoAlpha: 0, y: 64 },
+				{ autoAlpha: 0, y: 120 },
 				{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
-				'0.2',
+				'0.4',
 			)
 			.fromTo(
 				card6Ref.current,
-				{ autoAlpha: 0, y: 64 },
+				{ autoAlpha: 0, y: 120 },
 				{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
-				'0.4',
+				'0.8',
 			);
 
 		return () => {

@@ -21,11 +21,8 @@
 		gap: 4.4vw; //64px, 1440
 		padding: $padding-desktop;
 		z-index: 1;
-
-		background: url(/4-xr-suits/xr-suits-bg2.webp);
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center;
+		background-color: $color-black;
+		
 		.gridContainer {
 			z-index: 1;
 			display: grid;

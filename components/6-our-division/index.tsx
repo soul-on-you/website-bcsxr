@@ -8,8 +8,12 @@ import LargeItem from './large-item';
 import Image from 'next/image';
 import HeadlineCentered from '@/ui/headline-centered';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import useWindowSize from '@/hooks/useWindowSize';
 
 const OurDivision: React.FC = () => {
+	const { width } = useWindowSize();
+	const isMobile = width < 768;
+
 	gsap.registerPlugin(ScrollTrigger);
 	const tl = useRef<gsap.core.Timeline | null>(null);
 	const largeBlockRef = useRef<HTMLDivElement | null>(null);
@@ -17,27 +21,28 @@ const OurDivision: React.FC = () => {
 	const bottomBlock2Ref = useRef<HTMLDivElement | null>(null);
 
 	useEffect(() => {
-
 		tl.current = gsap.timeline({
 			scrollTrigger: {
 				trigger: largeBlockRef.current,
-				start: 'top bottom-=200',
+				// start: 'top bottom-=250',
+				start: isMobile ? 'top-=48 bottom-=32' : 'top bottom-=250',
 				end: 'bottom top',
 				toggleActions: 'play none none none',
 			},
 		});
 
-		tl.current.fromTo(
-			largeBlockRef.current,
-			{ autoAlpha: 0, y: 64 },
-			{ autoAlpha: 1, y: 0, duration: 1.2, ease: 'power3.out' },
-		);
-		tl.current.fromTo(
-			[bottomBlock1Ref.current, bottomBlock2Ref.current],
-			{ autoAlpha: 0, y: 64 },
-			{ autoAlpha: 1, y: 0, duration: 1.2, stagger: 0.2, ease: 'power3.out' },
-			'<',
-		);
+		tl.current
+			.fromTo(
+				largeBlockRef.current,
+				{ autoAlpha: 0, y: 120 },
+				{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
+			)
+			.fromTo(
+				[bottomBlock1Ref.current, bottomBlock2Ref.current],
+				{ autoAlpha: 0, y: 120 },
+				{ autoAlpha: 1, y: 0, duration: 1.4, stagger: 0.2, ease: 'power3.out' },
+				'0.4',
+			);
 
 		return () => {
 			if (tl.current) {

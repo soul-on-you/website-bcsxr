@@ -13,10 +13,7 @@
 		}
 	}
 	&__container {
-		background: url(/6-our-division/out-division-bg.webp);
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center;
+		background-color: $color-black;
 		padding: 6.9vw $padding-desktop; //100px desktop, 1440
 		z-index: 10;
 
