@@ -22,7 +22,7 @@ const Masthead: React.FC = () => {
 	const invincibleRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		// ScrollTrigger.normalizeScroll(true);
+		ScrollTrigger.normalizeScroll(true);
 		ScrollTrigger.config({ ignoreMobileResize: true });
 
 		if (!pinContainerRef.current) {
@@ -43,6 +43,7 @@ const Masthead: React.FC = () => {
 			paused: true,
 			onToggle: (scrollTrigger: any) => {
 				scrollTrigger.refresh();
+				ScrollTrigger.normalizeScroll(false);
 			},
 		});
 
