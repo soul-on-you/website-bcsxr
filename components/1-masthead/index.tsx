@@ -22,7 +22,7 @@ const Masthead: React.FC = () => {
 	const invincibleRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		const normalizer = ScrollTrigger.normalizeScroll({});
+		const normalizer = ScrollTrigger.normalizeScroll(true);
 		// ScrollTrigger.normalizeScroll(true);
 		ScrollTrigger.config({ ignoreMobileResize: true });
 
