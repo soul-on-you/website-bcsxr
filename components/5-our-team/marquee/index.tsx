@@ -10,7 +10,7 @@ interface IMarqueeContainerProps {
 const MarqueeContainer: React.FC<IMarqueeContainerProps> = ({ direction }) => {
 	return (
 		<div className={styles.marqueeContainer}>
-			<Marquee direction={direction} speed={40}>
+			<Marquee direction={direction}>
 				<div className={styles.imageWrapper}>
 					<Image src='/5-our-team/line.svg' alt='line' width={2800 / 2} height={500 / 2} />
 				</div>

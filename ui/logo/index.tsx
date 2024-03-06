@@ -6,7 +6,7 @@ import Link from 'next/link';
 const Logo: React.FC = () => {
 	return (
 		<Link href='#'>
-			<Image src='/LOGOXR.svg' alt='logo' width={320 / 2} height={190 / 2} priority={true} />
+			<Image src='/nav/logo.svg' alt='logo' width={320 / 2} height={190 / 2} priority={true} />
 		</Link>
 	);
 };
