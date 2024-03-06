@@ -1,48 +1,51 @@
 @import '../../styles/variables';
 
-.ourTeam {
-	position: relative;
+@media (min-width: 769px) {
+	.ourTeam {
+		position: relative;
 
-	.bgImage {
-		position: absolute;
-		z-index: 1;
-		top: 1vw;
-		img {
-			width: 100vw;
-			height: 100%;
-		}
-	}
-
-	&__container {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 4.4vw; //64px, 1440
-		padding: $padding-desktop;
-		z-index: 1;
-		background-color: #131419;
-
-		.marqueeRefContainer {
-			width: calc(100% + $padding-desktop * 2);
-			z-index: 6;
-		
-		}
-
-		.gridContainer {
+		.bgImage {
+			position: absolute;
 			z-index: 1;
-			display: grid;
-			grid-template-columns: repeat(3, minmax(auto, auto));
-			justify-content: space-between;
+			top: 1vw;
+			img {
+				width: 100vw;
+				height: 100%;
+			}
+		}
+
+		&__container {
+			display: flex;
+			flex-direction: column;
 			align-items: center;
-			row-gap: 5.5vw; //88px, 1600
-			width: 100%;
+			justify-content: center;
+			gap: 4.4vw; //64px, 1440
+			padding: $padding-desktop;
+			z-index: 1;
+			background-color: $color-background;
+
+			.marqueeRefContainer {
+				width: calc(100% + $padding-desktop * 2);
+				z-index: 6;
+			}
+
+			.gridContainer {
+				z-index: 1;
+				display: grid;
+				grid-template-columns: repeat(3, minmax(auto, auto));
+				justify-content: space-between;
+				align-items: center;
+				row-gap: 5.5vw; //88px, 1600
+				width: 100%;
+			}
 		}
 	}
 }
 
 @media (max-width: 768px) {
 	.ourTeam {
+		position: relative;
+
 		&__container {
 			display: flex;
 			flex-direction: column;
@@ -50,7 +53,20 @@
 			justify-content: center;
 			gap: 5vw; //16px, 320
 			padding: $padding-mobile;
-			background: $color-black;
+			background: $color-background;
+
+			.marqueeRefContainer {
+				width: calc(100% + $padding-desktop * 2);
+				z-index: 6;
+			}
+
+			.marqueeRefContainer1 {
+				padding-bottom: 5vw; //16px, 320
+			}
+			.marqueeRefContainer2 {
+				padding-top: 5vw; //16px, 320
+				padding-bottom: 10vw; //32px, 320
+			}
 
 			.gridContainer {
 				display: grid;

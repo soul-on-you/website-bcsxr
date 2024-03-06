@@ -20,6 +20,7 @@ const Masthead: React.FC = () => {
 	const invincibleRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
+		gsap.registerPlugin(ScrollTrigger);
 		ScrollTrigger.normalizeScroll(true); //фиксанула скролл на мобилке (когда для скролла пина нужно очень сильно стараться, но из-за него лаги, поэтму потом выключаю)
 		if (!mastheadRef.current) {
 			return;

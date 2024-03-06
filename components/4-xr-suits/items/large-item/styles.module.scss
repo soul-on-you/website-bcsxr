@@ -1,70 +1,72 @@
 @import '../../../../styles/variables';
 
-.largeItem {
-	flex: 1 1 auto;
-	height: 47.083vw; //678px, 1440
-	position: relative;
-	border-radius: 1.111vw; //16px, 1440
-	background: linear-gradient(to top, rgba(255, 255, 255, 0.07), rgba(217, 217, 217, 0.14));
-	padding: 2.222vw; //32px 0, 1440
+@media (min-width: 769px) {
+	.largeItem {
+		flex: 1 1 auto;
+		height: 47.083vw; //678px, 1440
+		position: relative;
+		border-radius: 1.111vw; //16px, 1440
+		background: $gradient-dark;
+		padding: 2.222vw; //32px 0, 1440
 
-	&::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background-image: url('/noise.webp');
-		opacity: 0.05;
-		pointer-events: none;
-	}
-
-	h3 {
-		width: 100%;
-		text-transform: uppercase;
-
-		span:nth-child(1) {
-			color: $color-blue;
-			text-shadow: 2px 2px 72px $color-blue;
-		}
-		span:nth-child(2) {
-			color: $color-pink;
-			text-shadow: 2px 2px 72px $color-pink;
-		}
-	}
-
-	.imageContainer {
-		position: absolute;
-		width: 76.389vw; //1100px, 1440
-		height: auto;
-		right: 3.194vw; //46px, 1440
-		bottom: 0.069vw; //1px, 1440
-		z-index: -1;
-		object-fit: cover;
-
-		.pinkBlur {
+		&::after {
+			content: '';
 			position: absolute;
-			width: 23.611vw; //340px, 1440
-			height: 23.611vw; //340px, 1440;
-			background-color: $color-pink;
-			top: 18.819vw; //271px, 1440;
-			left: 8.125vw; //117px, 1440
-			border-radius: 50%;
-			opacity: 0.65;
-			filter: blur(10vmax);
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-image: url('/noise.webp');
+			opacity: 0.05;
+			pointer-events: none;
 		}
 
-		.blueBlur {
+		h3 {
+			width: 100%;
+			text-transform: uppercase;
+
+			span:nth-child(1) {
+				color: $color-blue;
+				text-shadow: 2px 2px 72px $color-blue;
+			}
+			span:nth-child(2) {
+				color: $color-pink;
+				text-shadow: 2px 2px 72px $color-pink;
+			}
+		}
+
+		.imageContainer {
 			position: absolute;
-			width: 23.611vw; //340px, 1440
-			height: 23.611vw; //340px, 1440;
-			background-color: $color-blue;
-			right: 9.583vw; //138px, 1440
-			top: 18.958vw; //273px, 1440
-			border-radius: 50%;
-			opacity: 0.65;
-			filter: blur(10vmax);
+			width: 76.389vw; //1100px, 1440
+			height: auto;
+			right: 3.194vw; //46px, 1440
+			bottom: 0.069vw; //1px, 1440
+			z-index: -1;
+			object-fit: cover;
+
+			.pinkBlur {
+				position: absolute;
+				width: 23.611vw; //340px, 1440
+				height: 23.611vw; //340px, 1440;
+				background-color: $color-pink;
+				top: 18.819vw; //271px, 1440;
+				left: 8.125vw; //117px, 1440
+				border-radius: 50%;
+				opacity: 0.65;
+				filter: blur(10vmax);
+			}
+
+			.blueBlur {
+				position: absolute;
+				width: 23.611vw; //340px, 1440
+				height: 23.611vw; //340px, 1440;
+				background-color: $color-blue;
+				right: 9.583vw; //138px, 1440
+				top: 18.958vw; //273px, 1440
+				border-radius: 50%;
+				opacity: 0.65;
+				filter: blur(10vmax);
+			}
 		}
 	}
 }
@@ -76,7 +78,7 @@
 		position: relative;
 		border: 1px solid #5d495b;
 		border-radius: 16px;
-		background: linear-gradient(to top, rgba(255, 255, 255, 0.07), rgba(217, 217, 217, 0.14));
+		background: $gradient-dark;
 		padding: 16px; //32px 0, 1440
 
 		&::after {

@@ -1,45 +1,47 @@
 @import '../../../../styles/variables';
 
-.mediumItem {
-	position: relative;
-	height: 33.333vw; //480px, 1440
+@media (min-width: 769px) {
+	.mediumItem {
+		position: relative;
+		height: 33.333vw; //480px, 1440
 
-	display: flex;
-	flex: 1 0 auto;
-	border-radius: 1.111vw; //16px, 1440
-	background: linear-gradient(to top, rgba(255, 255, 255, 0.07), rgba(217, 217, 217, 0.14));
-	padding: 2.222vw; //32px, 1440
+		display: flex;
+		flex: 1 0 auto;
+		border-radius: 1.111vw; //16px, 1440
+		background: $gradient-dark;
+		padding: 2.222vw; //32px, 1440
 
-	&::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background-image: url('/noise.webp');
-		opacity: 0.05;
-		pointer-events: none;
-	}
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-image: url('/noise.webp');
+			opacity: 0.05;
+			pointer-events: none;
+		}
 
-	h3 {
-		width: 100%;
-		color: $color-blue;
-		text-shadow: 2px 2px 72px $color-blue;
+		h3 {
+			width: 100%;
+			color: $color-blue;
+			text-shadow: 2px 2px 72px $color-blue;
+		}
 	}
 }
 
 @media (max-width: 768px) {
 	.mediumItem {
-		display: flex;
-		align-items: start;
+		position: relative;
 		width: 89.688vw; //287px, 320
 		height: 89.688vw; //287px, 320
 
-		position: relative;
+		display: flex;
+		align-items: start;
 		border: 1px solid #5d495b;
 		border-radius: 16px;
-		background: linear-gradient(to top, rgba(255, 255, 255, 0.07), rgba(217, 217, 217, 0.14));
+		background: $gradient-dark;
 		padding: 16px; //32px, 1440
 
 		&::after {

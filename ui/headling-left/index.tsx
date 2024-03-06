@@ -10,7 +10,7 @@ const HeadingLeft: React.FC<IHeadingLeftProps> = ({ heading1, textShadow, childr
 	const titleRef = useRef<HTMLHeadingElement>(null);
 	const textRef = useRef<HTMLDivElement>(null);
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		const span = new SplitType(textRef.current!, {
 			types: 'lines',
 			lineClass: 'splitType',

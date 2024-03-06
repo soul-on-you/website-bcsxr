@@ -1,37 +1,41 @@
 @import '../../styles/variables';
 
-.ourDivision {
-	position: relative;
+@media (min-width: 769px) {
+	.ourDivision {
+		position: relative;
 
-	.backgroundImageSmall {
-		position: absolute;
-		z-index: 0;
-		bottom: 34vw;
-		left: 32vw;
+		.backgroundImageSmall {
+			position: absolute;
+			z-index: 0;
+			bottom: 34vw;
+			left: 32vw;
 
-		img {
-			width: 100vw;
-			height: 100%;
+			img {
+				width: 100vw;
+				height: 100%;
+			}
 		}
-	}
 
-	&__container {
-		background-color: $color-background;
-		padding: 6.9vw $padding-desktop; //100px desktop, 1440
-		z-index: 10;
+		&__container {
+			background-color: $color-background;
+			padding: 6.9vw $padding-desktop; //100px desktop, 1440
+			z-index: 10;
 
-		.containerItems {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 1.389vw; //20px, 1440
-			grid-auto-rows: minmax(100px, auto);
-			padding-top: 3.3vw; //48px, 1440
+			.containerItems {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 1.389vw; //20px, 1440
+				grid-auto-rows: minmax(100px, auto);
+				padding-top: 3.3vw; //48px, 1440
+			}
 		}
 	}
 }
 
 @media (max-width: 768px) {
 	.ourDivision {
+		position: relative;
+
 		&__container {
 			background-color: $color-background;
 			padding: $padding-mobile;

@@ -19,7 +19,7 @@ const OurTeam: React.FC = () => {
 	const marqueeRef2 = useRef<HTMLDivElement | null>(null);
 	const cardsContainerRef = useRef<HTMLDivElement | null>(null);
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
 		if (cardsContainerRef.current) {
 			// const items = gsap.utils.toArray(cardsContainerRef.current.children);
@@ -39,7 +39,6 @@ const OurTeam: React.FC = () => {
 							trigger: card,
 							start: isMobile ? 'top-=48 bottom-=32' : 'top bottom-=250',
 							toggleActions: 'play none none none',
-							markers: true,
 						},
 					},
 				);
@@ -58,7 +57,7 @@ const OurTeam: React.FC = () => {
 			</div>
 
 			<div className={styles.ourTeam__container}>
-				<div ref={marqueeRef} className={styles.marqueeRefContainer}>
+				<div ref={marqueeRef} className={`${styles.marqueeRefContainer} ${styles.marqueeRefContainer1}`}>
 					<MarqueeContainer direction='left' />
 				</div>
 				<HeadlineCentered
@@ -75,7 +74,7 @@ const OurTeam: React.FC = () => {
 				>
 					{/* Leading specialists in the field of VR */}
 				</HeadlineCentered>
-				<div ref={marqueeRef2} className={styles.marqueeRefContainer}>
+				<div ref={marqueeRef} className={`${styles.marqueeRefContainer} ${styles.marqueeRefContainer2}`}>
 					<MarqueeContainer direction='right' />
 				</div>
 
