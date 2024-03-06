@@ -18,7 +18,6 @@ const Masthead: React.FC = () => {
 	const thirdH1Ref = useRef<HTMLHeadingElement | null>(null);
 	const arrowRef = useRef<HTMLDivElement | null>(null);
 	const backgroundImageRef = useRef<HTMLImageElement | null>(null);
-	// const pinContainerRef = useRef<HTMLDivElement>(null);
 	const invincibleRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
@@ -66,7 +65,22 @@ const Masthead: React.FC = () => {
 		<>
 			<div className={styles.masthead} ref={mastheadRef}>
 				<div className={styles.masthead__container}>
-					<Title firstH1Ref={firstH1Ref} secondH1Ref={secondH1Ref} thirdH1Ref={thirdH1Ref} />
+					<div className={styles.title}>
+						<h1 ref={firstH1Ref} style={{ willChange: 'transform, opacity' }}>
+							<span>new format</span>
+							<span>new format</span>
+						</h1>
+						<br />
+						<h1 ref={secondH1Ref} style={{ willChange: 'transform, opacity' }}>
+							<span>of competitive</span>
+							<span>of competitive</span>
+						</h1>
+						<br />
+						<h1 ref={thirdH1Ref} style={{ willChange: 'transform, opacity' }}>
+							<span>sport</span>
+							<span>sport</span>
+						</h1>
+					</div>
 					<div className={`${styles.arrowDown} hide-on-mobile`} ref={arrowRef}>
 						<ArrowDown />
 					</div>
