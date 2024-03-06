@@ -15,10 +15,11 @@ const Proprietary: React.FC = () => {
 				</HeadingLeft>
 				<Image
 					className={styles.backgroundImage}
-					src='/3-proprietary/bg.webp'
+					src='/2-mission/bg.webp'
 					alt='proprietary-xr-lab-bg-image'
 					width={2880 / 2}
 					height={1600 / 2}
+					// sizes='(max-width: 768px) 100vw, 50vw'
 				/>
 			</div>
 		</section>

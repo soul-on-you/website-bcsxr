@@ -23,8 +23,8 @@ const Footer: React.FC = () => {
 						colorSpan2='#FFFFFF'
 						// colorSpan3='#FFFFFF'
 						// colorSpan4='#FFFFFF'
-							textShadow1='2px 2px 72px #2DE8E8'
-						textShadow2='2px 2px 72px #E833EC'
+						// textShadow1='2px 2px 72px #2DE8E8'
+						// textShadow2='2px 2px 72px #E833EC'
 					/>
 					<Input />
 				</div>
