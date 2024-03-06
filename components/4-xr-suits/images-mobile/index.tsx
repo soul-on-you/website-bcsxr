@@ -41,5 +41,5 @@ const ImagesMobile: React.FC = () => {
 	);
 };
 
-// export default ImagesMobile;
-export default React.memo(ImagesMobile);
+export default ImagesMobile;
+// export default React.memo(ImagesMobile);

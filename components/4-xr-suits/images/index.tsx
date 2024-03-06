@@ -62,7 +62,7 @@ const Images: React.FC = () => {
 	);
 };
 
-// export default Images;
-export default React.memo(Images);
+export default Images;
+// export default React.memo(Images);
 
 

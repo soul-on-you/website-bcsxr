@@ -12,4 +12,5 @@ const ButtonWhite: React.FC<IButtonWhiteProps> = ({ children }) => {
 	);
 };
 
-export default React.memo(ButtonWhite);
+// export default React.memo(ButtonWhite);
+export default ButtonWhite;

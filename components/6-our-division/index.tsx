@@ -79,5 +79,5 @@ const OurDivision: React.FC = () => {
 	);
 };
 
-// export default OurDivision;
-export default React.memo(OurDivision);
+export default OurDivision;
+// export default React.memo(OurDivision);

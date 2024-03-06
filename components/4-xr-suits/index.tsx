@@ -38,5 +38,5 @@ const XRSuits: React.FC = () => {
 	);
 };
 
-// export default XRSuits;
-export default React.memo(XRSuits);
+export default XRSuits;
+// export default React.memo(XRSuits);

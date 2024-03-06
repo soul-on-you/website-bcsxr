@@ -36,5 +36,5 @@ const Links: React.FC = () => {
 	);
 };
 
-// export default Links;
-export default React.memo(Links);
+export default Links;
+// export default React.memo(Links);

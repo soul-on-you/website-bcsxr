@@ -12,4 +12,5 @@ const ButtonGradient: React.FC<IButtonGradientProps> = ({ children }) => {
 	);
 };
 
-export default React.memo(ButtonGradient);
+// export default React.memo(ButtonGradient);
+export default ButtonGradient;

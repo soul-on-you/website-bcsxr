@@ -9,5 +9,5 @@ const Black: React.FC = () => {
 	);
 };
 
-// export default Black;
-export default React.memo(Black);
+export default Black;
+// export default React.memo(Black);

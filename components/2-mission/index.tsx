@@ -30,5 +30,5 @@ const Mission: React.FC = () => {
 	);
 };
 
-// export default Mission;
-export default React.memo(Mission);
+export default Mission;
+// export default React.memo(Mission);

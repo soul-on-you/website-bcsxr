@@ -109,4 +109,5 @@ const OurTeam: React.FC = () => {
 	);
 };
 
-export default React.memo(OurTeam);
+// export default React.memo(OurTeam);
+export default OurTeam;

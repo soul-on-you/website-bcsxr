@@ -82,5 +82,5 @@ const HeadlineCentered: React.FC<IHeadlineCenteredProps> = ({
 	);
 };
 
-// export default HeadlineCentered;
-export default React.memo(HeadlineCentered);
+export default HeadlineCentered;
+// export default React.memo(HeadlineCentered);

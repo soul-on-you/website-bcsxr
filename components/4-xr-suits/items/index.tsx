@@ -149,4 +149,5 @@ const Items: React.FC = () => {
 	);
 };
 
-export default React.memo(Items);
+// export default React.memo(Items);
+export default Items;

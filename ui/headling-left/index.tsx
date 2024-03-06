@@ -68,5 +68,5 @@ const HeadingLeft: React.FC<IHeadingLeftProps> = ({ heading1, textShadow, childr
 	);
 };
 
-// export default HeadingLeft;
-export default React.memo(HeadingLeft);
+export default HeadingLeft;
+// export default React.memo(HeadingLeft);
