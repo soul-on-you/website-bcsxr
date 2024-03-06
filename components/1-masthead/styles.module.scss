@@ -37,32 +37,34 @@
 }
 
 @media (max-width: 768px) {
-	.masthead {
-		&__container {
-			position: relative;
-			height: 100vh;
-			width: 100vw;
+	.lol {
+		.masthead {
+			&__container {
+				position: relative;
+				height: 100vh;
+				width: 100vw;
 
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			flex-direction: column;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
 
-			.arrowDown {
-				// на мобилке не отображается
-			}
-			.backgroundImage {
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				z-index: -1;
-				overflow: hidden;
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				transform: scale(2);
+				.arrowDown {
+					// на мобилке не отображается
+				}
+				.backgroundImage {
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					z-index: -1;
+					overflow: hidden;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					transform: scale(2);
+				}
 			}
 		}
 	}
