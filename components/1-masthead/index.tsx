@@ -52,6 +52,8 @@ const Masthead: React.FC = () => {
 			.fromTo(arrowRef.current, { opacity: 0, y: 500 }, { duration: 1, autoAlpha: 1, y: 0 }, '<')
 			.to(invincibleRef.current, { opacity: 0, y: 0, duration: 1 });
 
+		ScrollTrigger.refresh();
+
 		return () => {
 			if (tl.current) {
 				if (tl.current.scrollTrigger) {
