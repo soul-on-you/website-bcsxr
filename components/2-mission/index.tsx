@@ -24,6 +24,7 @@ const Mission: React.FC = () => {
 					alt='mission bg image'
 					width={2880 / 2}
 					height={1120 / 2}
+					sizes='(max-width: 768px) 100vw, 50vw'
 				/>
 			</div>
 		</section>

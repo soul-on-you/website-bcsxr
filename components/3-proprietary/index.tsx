@@ -13,19 +13,13 @@ const Proprietary: React.FC = () => {
 					We are creating our own laboratory, which will be used <br />
 					to develop and test the best VR equipment.
 				</HeadingLeft>
-				{/* <Image
+				<Image
 					className={styles.backgroundImage}
-					src='/2-mission/bg.webp'
+					src='/3-proprietary/bg.webp'
 					alt='proprietary-xr-lab-bg-image'
 					width={2880 / 2}
 					height={1600 / 2}
-				/> */}
-				<Image
-					className={styles.backgroundImage}
-					src='/2-mission/bg.webp'
-					alt='mission bg image'
-					width={2880 / 2}
-					height={1120 / 2}
+					sizes='(max-width: 768px) 100vw, 50vw'
 				/>
 			</div>
 		</section>
