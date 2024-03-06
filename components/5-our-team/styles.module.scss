@@ -23,6 +23,12 @@
 		z-index: 1;
 		background-color: #131419;
 
+		.marqueeRefContainer {
+			width: calc(100% + $padding-desktop * 2);
+			z-index: 6;
+		
+		}
+
 		.gridContainer {
 			z-index: 1;
 			display: grid;

@@ -101,7 +101,7 @@ const OurTeam: React.FC = () => {
 			</div>
 
 			<div className={styles.ourTeam__container}>
-				<div ref={marqueeRef}>
+				<div ref={marqueeRef} className={styles.marqueeRefContainer}>
 					<MarqueeContainer direction='left' />
 				</div>
 				<HeadlineCentered
@@ -116,7 +116,7 @@ const OurTeam: React.FC = () => {
 				>
 					{/* Leading specialists in the field of VR */}
 				</HeadlineCentered>
-				<div ref={marqueeRef2}>
+				<div ref={marqueeRef2} className={styles.marqueeRefContainer}>
 					<MarqueeContainer direction='right' />
 				</div>
 
