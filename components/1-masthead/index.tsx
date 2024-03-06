@@ -48,7 +48,7 @@ const Masthead: React.FC = () => {
 			.fromTo(arrowRef.current, { opacity: 0, y: 500 }, { duration: 1, autoAlpha: 1, y: 0 }, '<')
 			.to(invincibleRef.current, { opacity: 0, y: 0, duration: 1 });
 
-		ScrollTrigger.refresh();
+		ScrollTrigger.refresh(); //фиксанула автоматический скролл при ф5
 
 		return () => {
 			if (tl.current) {
@@ -65,22 +65,7 @@ const Masthead: React.FC = () => {
 		<>
 			<div className={styles.masthead} ref={mastheadRef}>
 				<div className={styles.masthead__container}>
-					<div className={styles.title}>
-						<h1 ref={firstH1Ref} style={{ willChange: 'transform, opacity' }}>
-							<span>new format</span>
-							<span>new format</span>
-						</h1>
-						<br />
-						<h1 ref={secondH1Ref} style={{ willChange: 'transform, opacity' }}>
-							<span>of competitive</span>
-							<span>of competitive</span>
-						</h1>
-						<br />
-						<h1 ref={thirdH1Ref} style={{ willChange: 'transform, opacity' }}>
-							<span>sport</span>
-							<span>sport</span>
-						</h1>
-					</div>
+					<Title firstH1Ref={firstH1Ref} secondH1Ref={secondH1Ref} thirdH1Ref={thirdH1Ref} />
 					<div className={`${styles.arrowDown} hide-on-mobile`} ref={arrowRef}>
 						<ArrowDown />
 					</div>
