@@ -16,7 +16,8 @@ const OurTeam: React.FC = () => {
 	const isMobile = width < 768;
 
 	gsap.registerPlugin(ScrollTrigger);
-	const tl = useRef<gsap.core.Timeline | null>(null);
+	// const tl = useRef<gsap.core.Timeline | null>(null);
+	const tl2 = useRef<gsap.core.Timeline | null>(null);
 	const card1Ref = useRef<HTMLDivElement | null>(null);
 	const card2Ref = useRef<HTMLDivElement | null>(null);
 	const card3Ref = useRef<HTMLDivElement | null>(null);
@@ -28,69 +29,31 @@ const OurTeam: React.FC = () => {
 	const cards = [card1Ref, card2Ref, card3Ref, card4Ref, card5Ref, card6Ref];
 
 	useEffect(() => {
-		const tl1 = gsap.timeline({
-			scrollTrigger: {
-				trigger: card1Ref.current,
-				start: isMobile ? 'top-=48 bottom-=32' : 'top bottom-=250',
-				toggleActions: 'play none none none',
-				markers: true,
-			},
-		});
+		gsap.registerPlugin(ScrollTrigger);
 
-		tl1.fromTo(
-			[marqueeRef.current, marqueeRef2.current],
-			{ autoAlpha: 0, y: 0 },
-			{ autoAlpha: 1, y: 0, duration: 2, ease: 'power3.out' },
-		)
-			.fromTo(
-				card1Ref.current,
+		cards.forEach((card, index) => {
+			gsap.fromTo(
+				card.current,
 				{ autoAlpha: 0, y: 120 },
-				{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
-			)
-			.fromTo(
-				card2Ref.current,
-				{ autoAlpha: 0, y: 120 },
-				{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
-				'0.4',
-			)
-			.fromTo(
-				card3Ref.current,
-				{ autoAlpha: 0, y: 120 },
-				{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
-				'0.8',
+				{
+					autoAlpha: 1,
+					y: 0,
+					duration: 1.4,
+					ease: 'power3.out',
+					delay: index * 0.1,
+					scrollTrigger: {
+						trigger: card.current,
+						start: isMobile ? 'top-=48 bottom-=32' : 'top bottom-=250',
+						toggleActions: 'play none none none',
+						markers: true,
+					},
+				},
 			);
-
-		const tl2 = gsap.timeline({
-			scrollTrigger: {
-				trigger: card4Ref.current,
-				start: isMobile ? 'top-=48 bottom-=64' : 'top bottom-=250',
-				toggleActions: 'play none none none',
-			},
 		});
-
-		tl2.fromTo(
-			card4Ref.current,
-			{ autoAlpha: 0, y: 120 },
-			{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
-		)
-			.fromTo(
-				card5Ref.current,
-				{ autoAlpha: 0, y: 120 },
-				{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
-				'0.4',
-			)
-			.fromTo(
-				card6Ref.current,
-				{ autoAlpha: 0, y: 120 },
-				{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
-				'0.8',
-			);
 
 		return () => {
-			if (tl1.current && tl2.current) {
-				tl1.current.kill();
-				tl2.current.kill();
-			}
+			// Удаление всех инстансов ScrollTrigger
+			ScrollTrigger.getAll().forEach((st) => st.kill());
 		};
 	}, []);
 
@@ -113,6 +76,8 @@ const OurTeam: React.FC = () => {
 					colorSpan2='#E833EC'
 					colorSpan3='#E833EC'
 					colorSpan4='#E833EC'
+					textShadow1='2px 2px 72px #E833EC'
+					textShadow2='2px 2px 72px #E833EC'
 				>
 					{/* Leading specialists in the field of VR */}
 				</HeadlineCentered>

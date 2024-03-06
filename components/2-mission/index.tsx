@@ -9,7 +9,7 @@ const Mission: React.FC = () => {
 	return (
 		<section className={styles.mission} id='mission'>
 			<div className={styles.mission__container}>
-				<HeadingLeft heading1='mission' heading2='mission' color='#E833EC'>
+				<HeadingLeft heading1='mission' textShadow='2px 2px 72px #E833EC' color='#E833EC'>
 					New format of competitive sport <br /> where teams from different parts <br /> of the world compete
 					against each other
 				</HeadingLeft>

@@ -13,9 +13,9 @@ const Home = () => {
 	return (
 		<main className='overflow-x-hidden'>
 			<Suspense fallback={<div>Loading...</div>}>
-				<Masthead />
-				<Mission />
-				<Proprietary />
+				{/* <Masthead /> */}
+				{/* <Mission />
+				<Proprietary /> */}
 				<XRSuits />
 				<OurTeam />
 				<OurDivision />

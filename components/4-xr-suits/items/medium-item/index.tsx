@@ -4,7 +4,7 @@ import Image from 'next/image';
 import IMediumItemProps from './interface';
 
 const MediumItem: React.ForwardRefRenderFunction<HTMLDivElement, IMediumItemProps> = (
-	{ name, nameBlur, imgSrc, style, overflowHidden },
+	{ name, imgSrc, style, overflowHidden },
 	ref,
 ) => {
 	const dynamicStyles: React.CSSProperties = {
@@ -23,7 +23,6 @@ const MediumItem: React.ForwardRefRenderFunction<HTMLDivElement, IMediumItemProp
 	return (
 		<div className={styles.mediumItem} style={containerStyles} ref={ref}>
 			<h3>{name}</h3>
-			<h3>{nameBlur}</h3>
 			<div style={dynamicStyles}>
 				<Image  src={imgSrc} alt='items2' width={2000} height={2000} />
 			</div>

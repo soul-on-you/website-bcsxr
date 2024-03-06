@@ -23,27 +23,6 @@
 				color: $color-pink;
 			}
 		}
-
-		h2:nth-child(2) {
-			position: absolute;
-			transform: translateY(-7.5vw); //-108px, 1440
-			filter: blur(50px);
-			overflow: hidden;
-			top: 1.389vw; //20px, 1440
-
-			-webkit-backface-visibility: hidden;
-			-moz-backface-visibility: hidden;
-			-webkit-transform: translate3d(0, 0, 0);
-			-moz-transform: translate3d(0, 0, 0);
-			transform: translate3d(0, 0, 0);
-
-			span:nth-child(1) {
-				// color: $color-blue;
-			}
-			span:nth-child(2) {
-				// color: $color-pink;
-			}
-		}
 	}
 
 	h5 {

@@ -4,7 +4,6 @@
 	flex: 1 1 auto;
 	height: 47.083vw; //678px, 1440
 	position: relative;
-	// border: 1px solid #5d495b;
 	border-radius: 1.111vw; //16px, 1440
 	background: linear-gradient(to top, rgba(255, 255, 255, 0.07), rgba(217, 217, 217, 0.14));
 	padding: 2.222vw; //32px 0, 1440
@@ -26,22 +25,11 @@
 
 		span:nth-child(1) {
 			color: $color-blue;
+			text-shadow: 2px 2px 72px $color-blue;
 		}
 		span:nth-child(2) {
 			color: $color-pink;
-		}
-	}
-	h3:nth-child(2) {
-		position: absolute;
-		top: 2.2vw; //32px, 1440
-		filter: blur(50px);
-		overflow: hidden;
-
-		span:nth-child(1) {
-			color: $color-blue;
-		}
-		span:nth-child(2) {
-			color: $color-pink;
+			text-shadow: 2px 2px 72px $color-pink;
 		}
 	}
 

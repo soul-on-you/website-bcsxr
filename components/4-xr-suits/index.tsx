@@ -22,6 +22,8 @@ const XRSuits: React.FC = () => {
 					span2='suit'
 					span3='xr'
 					span4='suit'
+					textShadow1='2px 2px 72px #2DE8E8'
+					textShadow2='2px 2px 72px #E833EC'
 					colorSpan1='#2DE8E8'
 					colorSpan2='#E833EC'
 					colorSpan3='#2DE8E8'

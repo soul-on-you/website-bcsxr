@@ -88,7 +88,6 @@ const Items: React.FC = () => {
 				<SmallItem
 					ref={item1Ref}
 					name='haptic shin guards'
-					nameBlur='haptic shin guards'
 					imgSrc='/4-xr-suits/items/haptic.webp'
 					style={
 						isMobile
@@ -100,7 +99,6 @@ const Items: React.FC = () => {
 				<MediumItem
 					ref={item2Ref}
 					name='ai cleats'
-					nameBlur='ai cleats'
 					imgSrc='/4-xr-suits/items/ai-cleats.webp'
 					style={
 						isMobile
@@ -114,7 +112,6 @@ const Items: React.FC = () => {
 				<MediumItem
 					ref={item3Ref}
 					name='goal keeper gloves'
-					nameBlur='goal keeper gloves'
 					imgSrc='/4-xr-suits/items/goalkeeper.webp'
 					style={
 						isMobile
@@ -123,29 +120,17 @@ const Items: React.FC = () => {
 					}
 					overflowHidden={false}
 				/>
-				{/* <SmallItem
-					ref={item4Ref}
-					name='xr suit'
-					nameBlur='xr suit'
-					imgSrc='/4-xr-suits/items/xr-suit.webp'
-					style={
-						isMobile
-							? { width: '81.25vw', right: '5.313vw', bottom: '-118.75vw' }
-							: { width: '20.833vw', right: '4.792vw', bottom: '-24.722vw' }
-					}
-					overflowHidden={true}
-				/> */}
+
 				<SmallItem
 					ref={item4Ref}
 					name='xr suit'
-					nameBlur='xr suit'
 					imgSrc='/4-xr-suits/items/xr-suit.webp'
 					style={
 						isMobile
 							? { width: '81.25vw', right: '5.313vw', bottom: '-118.75vw' }
 							: { width: '20.833vw', right: '4.792vw', bottom: '-24.722vw' }
 					}
-					overflowHidden={true}
+					overflowHidden={false}
 				/>
 			</div>
 			<div className={styles.container3}>

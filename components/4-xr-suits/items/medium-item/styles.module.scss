@@ -6,7 +6,6 @@
 
 	display: flex;
 	flex: 1 0 auto;
-	// border: 1px solid #5d495b;
 	border-radius: 1.111vw; //16px, 1440
 	background: linear-gradient(to top, rgba(255, 255, 255, 0.07), rgba(217, 217, 217, 0.14));
 	padding: 2.222vw; //32px, 1440
@@ -26,12 +25,7 @@
 	h3 {
 		width: 100%;
 		color: $color-blue;
-	}
-	h3:nth-child(2) {
-		position: absolute;
-		top: 2.2vw; //32px, 1440
-		filter: blur(50px);
-		overflow: hidden;
+		text-shadow: 2px 2px 72px $color-blue;
 	}
 }
 

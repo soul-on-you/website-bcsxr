@@ -14,12 +14,14 @@ const HeadlineCentered: React.FC<IHeadlineCenteredProps> = ({
 	colorSpan2,
 	colorSpan3,
 	colorSpan4,
+	textShadow1,
+	textShadow2,
 }) => {
 	gsap.registerPlugin(ScrollTrigger);
 	const tl = useRef<gsap.core.Timeline | null>(null);
 	const titleRef = useRef<HTMLHeadingElement>(null);
 	const textRef = useRef<HTMLDivElement>(null);
-	
+
 	useEffect(() => {
 		tl.current = gsap.timeline({
 			scrollTrigger: {
@@ -61,12 +63,8 @@ const HeadlineCentered: React.FC<IHeadlineCenteredProps> = ({
 		<div className={styles.headline}>
 			<div className={styles.title} ref={titleRef}>
 				<h2>
-					<span style={{ color: colorSpan1 }}>{span1}</span>
-					<span style={{ color: colorSpan2 }}>{span2}</span>
-				</h2>
-				<h2>
-					<span style={{ color: colorSpan3 }}>{span3}</span>
-					<span style={{ color: colorSpan4 }}>{span4}</span>
+					<span style={{ color: colorSpan1, textShadow: textShadow1 }}>{span1}</span>
+					<span style={{ color: colorSpan2, textShadow: textShadow2 }}>{span2}</span>
 				</h2>
 			</div>
 			<h5 ref={textRef}>{children}</h5>

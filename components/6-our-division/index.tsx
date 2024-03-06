@@ -66,6 +66,8 @@ const OurDivision: React.FC = () => {
 					colorSpan2='#2DE8E8'
 					colorSpan3='#2DE8E8'
 					colorSpan4='#2DE8E8'
+					textShadow1='2px 2px 72px #2DE8E8'
+					textShadow2='2px 2px 72px #2DE8E8'
 				>
 					We are part of blockchain sports ecosystem
 				</HeadlineCentered>

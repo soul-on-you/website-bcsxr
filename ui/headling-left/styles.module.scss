@@ -7,19 +7,6 @@
 		h2 {
 			width: 100%;
 		}
-
-		h2:nth-child(2) {
-			position: absolute;
-			top: 1.389vw; //20px, 1440
-			filter: blur(50px);
-			overflow: hidden;
-
-			-webkit-backface-visibility: hidden;
-			-moz-backface-visibility: hidden;
-			-webkit-transform: translate3d(0, 0, 0);
-			-moz-transform: translate3d(0, 0, 0);
-			transform: translate3d(0, 0, 0);
-		}
 	}
 
 	h5 {

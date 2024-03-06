@@ -63,6 +63,8 @@ const Partners: React.FC = () => {
 					colorSpan2='#E833EC'
 					colorSpan3='#E833EC'
 					colorSpan4='#E833EC'
+					textShadow1='2px 2px 72px #E833EC'
+					textShadow2='2px 2px 72px #E833EC'
 				>
 					We are part of a corporate group of companies
 				</HeadlineCentered>
