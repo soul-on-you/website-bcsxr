@@ -125,7 +125,7 @@ const Items: React.FC = () => {
 					}
 					overflowHidden={false}
 				/>
-				<SmallItem
+				{/* <SmallItem
 					ref={item4Ref}
 					name='xr suit'
 					nameBlur='xr suit'
@@ -136,6 +136,18 @@ const Items: React.FC = () => {
 							: { width: '20.833vw', right: '4.792vw', bottom: '-24.722vw' }
 					}
 					overflowHidden={true}
+				/> */}
+				<SmallItem
+					ref={item1Ref}
+					name='haptic shin guards'
+					nameBlur='haptic shin guards'
+					imgSrc='/4-xr-suits/items/haptic.webp'
+					style={
+						isMobile
+							? { width: '59.375vw', right: '-6.875vw', bottom: '-10.625vw' }
+							: { width: '20.833vw', right: '-2.569vw', bottom: '-3.889vw' }
+					}
+					overflowHidden={false}
 				/>
 			</div>
 			<div className={styles.container3}>
