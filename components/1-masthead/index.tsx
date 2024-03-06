@@ -41,7 +41,7 @@ const Masthead: React.FC = () => {
 					console.log('normalizeScroll отключен при покидании области');
 				},
 				onEnterBack: () => {
-					ScrollTrigger.normalizeScroll(false);
+					ScrollTrigger.normalizeScroll(true);
 					console.log('normalizeScroll включен при возвращении');
 				},
 			},

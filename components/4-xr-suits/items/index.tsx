@@ -138,7 +138,7 @@ const Items: React.FC = () => {
 					overflowHidden={true}
 				/> */}
 				<SmallItem
-					ref={item1Ref}
+					ref={item4Ref}
 					name='haptic shin guards'
 					nameBlur='haptic shin guards'
 					imgSrc='/4-xr-suits/items/haptic.webp'

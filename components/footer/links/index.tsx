@@ -11,12 +11,12 @@ const Links: React.FC = () => {
 				</Link>
 			</li>
 			<li>
-				<Link href='https://storage.googleapis.com/bcsports-bucket/ecosystem-static/docs/T&C.pdf'>
+				<Link href='https://storage.googleapis.com/bcsports-bucket/ecosystem-static/docs/T&C.pdf' target='_blank' rel='noopener noreferrer'>
 					terms & conditions
 				</Link>
 			</li>
 			<li>
-				<Link href='https://storage.googleapis.com/bcsports-bucket/ecosystem-static/docs/Privacy_Policy.pdf'>
+				<Link href='https://storage.googleapis.com/bcsports-bucket/ecosystem-static/docs/Privacy_Policy.pdf' target='_blank' rel='noopener noreferrer'>
 					privacy policy
 				</Link>
 			</li>
