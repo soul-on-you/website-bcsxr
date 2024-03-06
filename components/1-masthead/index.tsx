@@ -76,7 +76,7 @@ const Masthead: React.FC = () => {
 						width={2880 / 2}
 						height={1600 / 2}
 						priority={true}
-						style={{ willChange: 'transform, opacity' }}
+						// style={{ willChange: 'transform, opacity' }}
 					/>
 					<div className='absolute opacity-0' ref={invincibleRef} />
 				</div>
