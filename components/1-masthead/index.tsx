@@ -18,24 +18,25 @@ const Masthead: React.FC = () => {
 	const thirdH1Ref = useRef<HTMLHeadingElement | null>(null);
 	const arrowRef = useRef<HTMLDivElement | null>(null);
 	const backgroundImageRef = useRef<HTMLImageElement | null>(null);
-	const pinContainerRef = useRef<HTMLDivElement>(null);
+	// const pinContainerRef = useRef<HTMLDivElement>(null);
 	const invincibleRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		ScrollTrigger.normalizeScroll(true);
+		const normalizer = ScrollTrigger.normalizeScroll({});
+		// ScrollTrigger.normalizeScroll(true);
 		ScrollTrigger.config({ ignoreMobileResize: true });
 
-		if (!pinContainerRef.current) {
+		if (!mastheadRef.current) {
 			return;
 		}
-		const endValue = `+=${pinContainerRef.current.offsetHeight * 3}`;
+		const endValue = `+=${mastheadRef.current.offsetHeight * 3}`;
 
 		tl.current = gsap.timeline({
 			scrollTrigger: {
-				trigger: pinContainerRef.current,
+				trigger: mastheadRef.current,
 				start: '1% top',
-				// end: '+=3000',
-				end: () => endValue,
+				end: '+=3000',
+				// end: () => endValue,
 				scrub: true,
 				pin: true,
 				scroller: null,
@@ -60,6 +61,7 @@ const Masthead: React.FC = () => {
 		ScrollTrigger.config({ ignoreMobileResize: true });
 
 		return () => {
+			normalizer?.kill()
 			if (tl.current) {
 				if (tl.current.scrollTrigger) {
 					tl.current.scrollTrigger.kill();
@@ -73,26 +75,24 @@ const Masthead: React.FC = () => {
 
 	return (
 		<>
-			<div className={`lol ${styles.lol}`} ref={pinContainerRef}>
-				<div className={styles.masthead} ref={mastheadRef}>
-					<div className={styles.masthead__container}>
-						<Title firstH1Ref={firstH1Ref} secondH1Ref={secondH1Ref} thirdH1Ref={thirdH1Ref} />
-						<div className={`${styles.arrowDown} hide-on-mobile`} ref={arrowRef}>
-							<ArrowDown />
-						</div>
-
-						<Image
-							ref={backgroundImageRef}
-							className={styles.backgroundImage}
-							src='/1-masthead/bg.webp'
-							alt='bg-image'
-							width={2880 / 2}
-							height={1600 / 2}
-							priority={true}
-							style={{ willChange: 'transform, opacity' }}
-						/>
-						<div className='absolute opacity-0' ref={invincibleRef} />
+			<div className={styles.masthead} ref={mastheadRef}>
+				<div className={styles.masthead__container}>
+					<Title firstH1Ref={firstH1Ref} secondH1Ref={secondH1Ref} thirdH1Ref={thirdH1Ref} />
+					<div className={`${styles.arrowDown} hide-on-mobile`} ref={arrowRef}>
+						<ArrowDown />
 					</div>
+
+					<Image
+						ref={backgroundImageRef}
+						className={styles.backgroundImage}
+						src='/1-masthead/bg.webp'
+						alt='bg-image'
+						width={2880 / 2}
+						height={1600 / 2}
+						priority={true}
+						style={{ willChange: 'transform, opacity' }}
+					/>
+					<div className='absolute opacity-0' ref={invincibleRef} />
 				</div>
 			</div>
 		</>
