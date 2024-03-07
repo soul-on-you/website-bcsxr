@@ -52,6 +52,15 @@ const MastheadTest: React.FC = () => {
 		});
 		gsap.set(swipePanels.current, { autoAlpha: 0, y: '-500px' });
 
+		const calculateDynamicEnd = () => {
+			// Например, вы можете рассчитать высоту всех swipePanels и добавить некоторое значение для "прокрутки"
+			const totalHeight = swipePanels.current.reduce((acc, panel) => acc + panel.offsetHeight, 0);
+			// Добавьте некоторый "буфер" для свободной прокрутки
+			return totalHeight + window.innerHeight * 0.5; // 0.5 - примерный коэффициент буфера
+		};
+
+		const endValue = isMobile ? calculateDynamicEnd() : '+=1';
+
 		const intentObserver = ScrollTrigger.observe({
 			type: 'wheel, touch, pointer',
 			onUp: () => !animating && gotoPanel(currentIndex + 1, true),
@@ -123,7 +132,8 @@ const MastheadTest: React.FC = () => {
 			pin: true,
 			start: 'top top',
 			// end: '+=1',
-			end: isMobile ? '+=4000' : '+=1',
+			// end: isMobile ? '+=4000' : '+=1',
+			end: endValue,
 			immediateRender: false,
 			scroller: null,
 			onEnter: () => {
