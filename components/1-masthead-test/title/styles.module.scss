@@ -1,46 +1,30 @@
 @import '/styles/variables';
 
-.title {
-	position: relative;
-	text-align: center;
+@media (min-width: 769px) {
+	.title {
+		text-align: center;
 
-	h1:nth-child(1) {
-		opacity: 0;
-		transform: translateY(-300px);
-
-		span:nth-child(1) {
+		h1:nth-child(2) {
 			display: inline-block;
 			color: $color-pink;
 			text-shadow: 2px 2px 72px $color-pink;
+			opacity: 0;
 		}
-	}
-	h1:nth-child(3) {
-		opacity: 0;
-		transform: translateY(-300px);
-
-		span:nth-child(1) {
+		h1:nth-child(4) {
 			display: inline-block;
 			color: $color-white;
 			text-shadow: 2px 2px 72px $color-white;
+			opacity: 0;
 		}
-
-		// img {
-		// 	position: absolute;
-		// 	transform: translateY(-136px);
-		// }
-	}
-	h1:nth-child(5) {
-		opacity: 0;
-		transform: translateY(-300px);
-
-		span:nth-child(1) {
-			display: inline-block;
-			text-shadow: 2px 2px 72px $color-blue;
-
-			color: $color-blue;
-
-			font-size: 15vw; //216px, 1440
-			transform: rotate(-4deg);
+		h1:nth-child(6) {
+			opacity: 0;
+			span:nth-child(1) {
+				display: inline-block;
+				color: $color-blue;
+				font-size: 15vw; //216px, 1440
+				text-shadow: 2px 2px 72px $color-blue;
+				transform: rotate(-4deg);
+			}
 		}
 	}
 }
@@ -48,44 +32,26 @@
 @media (max-width: 768px) {
 	.title {
 		text-align: center;
-		position: relative;
 
-		h1:nth-child(1) {
+		h1:nth-child(2) {
+			display: inline-block;
+			color: $color-pink;
+			text-shadow: 2px 2px 72px $color-pink;
 			opacity: 0;
-
-			span:nth-child(1) {
-				display: inline-block;
-				color: $color-pink;
-			}
-
-			img {
-				position: absolute;
-				transform: translateY(-16.875vw); //-54px, 320
-			}
 		}
-		h1:nth-child(3) {
+		h1:nth-child(4) {
+			display: inline-block;
+			color: $color-white;
+			text-shadow: 2px 2px 72px $color-white;
 			opacity: 0;
-
-			span:nth-child(1) {
-				display: inline-block;
-				color: $color-white;
-			}
 		}
-		h1:nth-child(5) {
+		h1:nth-child(6) {
+			display: inline-block;
+			color: $color-blue;
+			font-size: 35vw; //112px, 320
+			transform: rotate(-4deg) translateY(4.688vw); //320, 15px
 			opacity: 0;
-
-			span:nth-child(1) {
-				display: inline-block;
-
-				color: $color-blue;
-				transform: rotate(-4deg) translateY(4.688vw); //320, 15px
-				font-size: 35vw; //112px, 320
-			}
-
-			img {
-				position: absolute;
-				transform: translateY(-16.875vw); //-54px, 320
-			}
+			text-shadow: 2px 2px 72px $color-blue;
 		}
 	}
 }

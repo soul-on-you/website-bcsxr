@@ -32,6 +32,7 @@ const MastheadTest: React.FC = () => {
 
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
+		tl.current = gsap.timeline({})
 		ScrollTrigger.normalizeScroll({
 			allowNestedScroll: true,
 			type: 'touch,scroll,pointer',
@@ -40,8 +41,6 @@ const MastheadTest: React.FC = () => {
 		// swipePanels.current = [h1Ref.current, h2Ref.current, h3Ref.current].filter(Boolean) as HTMLElement[];
 		let currentIndex = -1;
 		let animating: boolean;
-		let scaleValue = 1.6;
-		// let scaleValue = 1.6;
 
 		// gsap.set('.x-100', { yPercent: 100 });
 
@@ -66,7 +65,6 @@ const MastheadTest: React.FC = () => {
 		function gotoPanel(index: any, isScrollingDown: boolean) {
 			const newScale = scaleValues[Math.max(0, Math.min(scaleValues.length - 1, index))];
 			animating = true;
-			scaleValue -= 0.2;
 			if ((index === swipePanels.current.length && isScrollingDown) || (index === -1 && !isScrollingDown)) {
 				const target = index;
 				gsap.to(target, {
@@ -80,7 +78,6 @@ const MastheadTest: React.FC = () => {
 			}
 
 			const target = isScrollingDown ? swipePanels.current[index] : swipePanels.current[currentIndex];
-			const target2 = isScrollingDown ? backgroundImageRef.current : backgroundImageRef.current;
 
 			gsap.to(target, {
 				// yPercent: isScrollingDown ? 0 : 100,
@@ -125,10 +122,12 @@ const MastheadTest: React.FC = () => {
 			end: '+=1',
 			onEnter: () => {
 				intentObserver.enable();
+				ScrollTrigger.normalizeScroll(true);
 				gotoPanel(currentIndex + 1, true);
 			},
 			onEnterBack: () => {
 				intentObserver.enable();
+				ScrollTrigger.normalizeScroll(false);
 				gotoPanel(currentIndex - 1, false);
 			},
 		});
@@ -144,24 +143,12 @@ const MastheadTest: React.FC = () => {
 		<>
 			<div className={styles.masthead}>
 				<div className={styles.masthead__container} ref={swipeSectionRef}>
-					<div className={styles.title}>
-						<h1 ref={addToSwipePanels} style={{ willChange: 'transform, opacity' }}>
-							{/* as */}
-						</h1>
-						<h1 ref={addToSwipePanels} style={{ willChange: 'transform, opacity' }}>
-							new format
-						</h1>
-						<br />
-
-						<h1 ref={addToSwipePanels} style={{ willChange: 'transform, opacity' }}>
-							of competitive
-						</h1>
-						<br />
-
-						<h1 ref={addToSwipePanels} style={{ willChange: 'transform, opacity' }}>
-							sport
-						</h1>
-					</div>
+					<Title
+						invincibleRef={addToSwipePanels}
+						firstH1Ref={addToSwipePanels}
+						secondH1Ref={addToSwipePanels}
+						thirdH1Ref={addToSwipePanels}
+					/>
 
 					<div className={`${styles.arrowDown} hide-on-mobile`} ref={arrowRef}>
 						<ArrowDown />
