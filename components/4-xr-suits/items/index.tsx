@@ -136,10 +136,10 @@ const Items: React.FC = () => {
 					imgSrc='/4-xr-suits/items/haptic.webp'
 					style={
 						isMobile
-							? { width: '74.375vw', right: '8.875vw', bottom: '-85.625vw' }
+							? { width: '74.375vw', right: '8.875vw', bottom: '-16.625vw' }
 							: { width: '20.833vw', right: '-2.569vw', bottom: '-3.889vw' }
 					}
-					overflowHidden={true}
+					overflowHidden={false}
 				/>
 			</div>
 			<div className={styles.container3}>
