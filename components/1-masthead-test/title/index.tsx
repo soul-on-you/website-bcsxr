@@ -11,9 +11,9 @@ const Title: React.ForwardRefRenderFunction<HTMLDivElement, ITitleProps> = ({
 }) => {
 	return (
 		<div className={styles.title}>
-			<h1 ref={invincibleRef} style={{ willChange: 'transform, opacity' }}>
-				{/* as */}
-			</h1>
+			{/* <h1 ref={invincibleRef} style={{ willChange: 'transform, opacity' }}>
+				as
+			</h1> */}
 			<h1 ref={firstH1Ref} style={{ willChange: 'transform, opacity' }}>
 				new format
 			</h1>
@@ -31,5 +31,5 @@ const Title: React.ForwardRefRenderFunction<HTMLDivElement, ITitleProps> = ({
 	);
 };
 
-// export default React.forwardRef(Title);
-export default React.memo(React.forwardRef(Title));
+export default React.forwardRef(Title);
+// export default React.memo(React.forwardRef(Title));
