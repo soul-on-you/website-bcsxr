@@ -35,6 +35,7 @@ const MastheadTest: React.FC = () => {
 		// swipePanels.current = [h1Ref.current, h2Ref.current, h3Ref.current].filter(Boolean) as HTMLElement[];
 		let currentIndex = -1;
 		let animating: boolean;
+		let allowScroll = true;
 
 		// gsap.set('.x-100', { yPercent: 100 });
 
@@ -57,7 +58,7 @@ const MastheadTest: React.FC = () => {
 			onUp: () => !animating && gotoPanel(currentIndex + 1, true),
 			onDown: () => !animating && gotoPanel(currentIndex - 1, false), //обратный скрол
 			wheelSpeed: -1,
-			tolerance: -600,
+			tolerance: 10,
 			preventDefault: isMobile ? false : true,
 			// onPress: (self) => {
 			// 	ScrollTrigger.isTouch && self.event.preventDefault();
@@ -66,9 +67,15 @@ const MastheadTest: React.FC = () => {
 		intentObserver.disable();
 
 		function gotoPanel(index: any, isScrollingDown: boolean) {
+			if (!allowScroll || animating) return; 
+
 			const newScale = scaleValues[Math.max(0, Math.min(scaleValues.length - 1, index))];
+
 			animating = true;
+			allowScroll = false;
+
 			if ((index === swipePanels.current.length && isScrollingDown) || (index === -1 && !isScrollingDown)) {
+				allowScroll = true;
 				const target = index;
 				gsap.to(target, {
 					duration: 0.0,
@@ -90,6 +97,7 @@ const MastheadTest: React.FC = () => {
 				duration: 0.75,
 				onComplete: () => {
 					animating = false;
+					gsap.delayedCall(0.5, () => { allowScroll = true; }); 
 				},
 			});
 
@@ -122,9 +130,9 @@ const MastheadTest: React.FC = () => {
 			trigger: swipeSectionRef.current,
 			pin: true,
 			start: 'top top',
-			// end: '+=1',
+			end: '+=50%',
 			// end: isMobile ? '+=4000' : '+=1',
-			end: endValue,
+			// end: endValue,
 			immediateRender: false,
 			scroller: null,
 			onEnter: () => {
