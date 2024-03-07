@@ -32,7 +32,7 @@ const MastheadTest: React.FC = () => {
 
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
-		tl.current = gsap.timeline({})
+		tl.current = gsap.timeline({});
 		ScrollTrigger.normalizeScroll({
 			allowNestedScroll: true,
 			type: 'touch,scroll,pointer',
@@ -122,12 +122,10 @@ const MastheadTest: React.FC = () => {
 			end: '+=1',
 			onEnter: () => {
 				intentObserver.enable();
-				ScrollTrigger.normalizeScroll(true);
 				gotoPanel(currentIndex + 1, true);
 			},
 			onEnterBack: () => {
 				intentObserver.enable();
-				ScrollTrigger.normalizeScroll(false);
 				gotoPanel(currentIndex - 1, false);
 			},
 		});
