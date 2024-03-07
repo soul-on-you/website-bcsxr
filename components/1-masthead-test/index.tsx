@@ -11,17 +11,19 @@ import Title from './title';
 const MastheadTest: React.FC = () => {
 	const tl = useRef<gsap.core.Timeline | null>(null);
 
-	const h1Ref = useRef<HTMLHeadingElement | null>(null);
-	const h2Ref = useRef<HTMLHeadingElement | null>(null);
-	const h3Ref = useRef<HTMLHeadingElement | null>(null);
 	const arrowRef = useRef<HTMLDivElement | null>(null);
 	const backgroundImageRef = useRef<HTMLImageElement | null>(null);
-	const swipePanels = useRef([]);
+	const swipePanels = useRef<HTMLElement[]>([]);
+
 	swipePanels.current = [];
-	const intentObserverRef = useRef<Observer | null>(null);
 	const swipeSectionRef = useRef(null);
 
-	const addToSwipePanels = (el) => {
+	// const addToSwipePanels = (el) => {
+	// 	if (el && !swipePanels.current.includes(el)) {
+	// 		swipePanels.current.push(el);
+	// 	}
+	// };
+	const addToSwipePanels = (el: HTMLElement | null) => {
 		if (el && !swipePanels.current.includes(el)) {
 			swipePanels.current.push(el);
 		}
@@ -31,7 +33,7 @@ const MastheadTest: React.FC = () => {
 		gsap.registerPlugin(ScrollTrigger);
 		// swipePanels.current = [h1Ref.current, h2Ref.current, h3Ref.current].filter(Boolean) as HTMLElement[];
 		let currentIndex = -1;
-		let animating;
+		let animating: boolean;
 		// let scaleValue = 1.6;
 
 		// gsap.set('.x-100', { yPercent: 100 });
@@ -41,7 +43,7 @@ const MastheadTest: React.FC = () => {
 		});
 		gsap.set(swipePanels.current, { autoAlpha: 0 });
 
-		let intentObserver = ScrollTrigger.observe({
+		const intentObserver = ScrollTrigger.observe({
 			type: 'wheel,touch',
 			onUp: () => !animating && gotoPanel(currentIndex + 1, true),
 			onDown: () => !animating && gotoPanel(currentIndex - 1, false), //обратный скрол
@@ -54,11 +56,10 @@ const MastheadTest: React.FC = () => {
 		});
 		intentObserver.disable();
 
-		function gotoPanel(index, isScrollingDown) {
-		
+		function gotoPanel(index: any, isScrollingDown: boolean) {
 			animating = true;
 			if ((index === swipePanels.current.length && isScrollingDown) || (index === -1 && !isScrollingDown)) {
-				let target = index;
+				const target = index;
 				gsap.to(target, {
 					duration: 0.0,
 					onComplete: () => {
@@ -69,7 +70,7 @@ const MastheadTest: React.FC = () => {
 				return;
 			}
 
-			let target = isScrollingDown ? swipePanels.current[index] : swipePanels.current[currentIndex];
+			const target = isScrollingDown ? swipePanels.current[index] : swipePanels.current[currentIndex];
 
 			gsap.to(target, {
 				// yPercent: isScrollingDown ? 0 : 100,
