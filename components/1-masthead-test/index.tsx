@@ -113,20 +113,20 @@ const MastheadTest: React.FC = () => {
 			currentIndex = index;
 		}
 
-		ScrollTrigger.create({
-			trigger: swipeSectionRef.current,
-			pin: true,
-			start: 'top top',
-			end: '+=1',
-			onEnter: () => {
-				intentObserver.enable();
-				gotoPanel(currentIndex + 1, true);
-			},
-			onEnterBack: () => {
-				intentObserver.enable();
-				gotoPanel(currentIndex - 1, false);
-			},
-		});
+		// ScrollTrigger.create({
+		// 	trigger: swipeSectionRef.current,
+		// 	pin: true,
+		// 	start: 'top top',
+		// 	end: '+=1',
+		// 	onEnter: () => {
+		// 		intentObserver.enable();
+		// 		gotoPanel(currentIndex + 1, true);
+		// 	},
+		// 	onEnterBack: () => {
+		// 		intentObserver.enable();
+		// 		gotoPanel(currentIndex - 1, false);
+		// 	},
+		// });
 
 		ScrollTrigger.refresh(); //фиксанула автоматический скролл при ф5
 
@@ -143,19 +143,13 @@ const MastheadTest: React.FC = () => {
 						<h1 ref={addToSwipePanels} style={{ willChange: 'transform, opacity' }}>
 							{/* as */}
 						</h1>
-						<h1 ref={addToSwipePanels} className='x-100' style={{ willChange: 'transform, opacity' }}>
-							new format
-						</h1>
+						<h1 ref={addToSwipePanels}>new format</h1>
 						<br />
 
-						<h1 ref={addToSwipePanels} className='x-100' style={{ willChange: 'transform, opacity' }}>
-							of competitive
-						</h1>
+						<h1 ref={addToSwipePanels}>of competitive</h1>
 						<br />
 
-						<h1 ref={addToSwipePanels} className='x-100' style={{ willChange: 'transform, opacity' }}>
-							sport
-						</h1>
+						<h1 ref={addToSwipePanels}>sport</h1>
 					</div>
 
 					<div className={`${styles.arrowDown} hide-on-mobile`} ref={arrowRef}>

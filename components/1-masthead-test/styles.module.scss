@@ -1,8 +1,6 @@
 @import '../../styles/variables';
 
 .masthead {
-
-
 	&__container {
 		position: relative;
 		height: 100vh;
@@ -16,27 +14,23 @@
 
 		.title {
 			text-align: center;
-			display: block;
 
-			h1:nth-child(1) {
+			h1:nth-child(2) {
 				opacity: 0;
-				// transform: translateY(-300px);
 
 				display: inline-block;
 				color: $color-pink;
 				text-shadow: 2px 2px 72px $color-pink;
 			}
-			h1:nth-child(3) {
+			h1:nth-child(4) {
 				opacity: 0;
-				// transform: translateY(-300px);
 
 				display: inline-block;
 				color: $color-white;
 				text-shadow: 2px 2px 72px $color-white;
 			}
-			h1:nth-child(5) {
+			h1:nth-child(6) {
 				opacity: 0;
-				// transform: translateY(-300px);
 
 				display: inline-block;
 				text-shadow: 2px 2px 72px $color-blue;
