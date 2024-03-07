@@ -123,7 +123,7 @@ const MastheadTest: React.FC = () => {
 			pin: true,
 			start: 'top top',
 			// end: '+=1',
-			end: isMobile ? '+=3000' : '+=1',
+			end: isMobile ? '+=4000' : '+=1',
 			immediateRender: false,
 			scroller: null,
 			onEnter: () => {
