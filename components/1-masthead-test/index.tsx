@@ -45,10 +45,9 @@ const MastheadTest: React.FC = () => {
 		gsap.set(swipePanels.current, { autoAlpha: 0, y: '-500px' });
 
 		const calculateDynamicEnd = () => {
-			// Например, вы можете рассчитать высоту всех swipePanels и добавить некоторое значение для "прокрутки"
 			const totalHeight = swipePanels.current.reduce((acc, panel) => acc + panel.offsetHeight, 0);
-			// Добавьте некоторый "буфер" для свободной прокрутки
-			return totalHeight + window.innerHeight * 0.5; // 0.5 - примерный коэффициент буфера
+
+			return totalHeight + window.innerHeight * 0.5;
 		};
 
 		const endValue = isMobile ? calculateDynamicEnd() : '+=1';
@@ -135,11 +134,18 @@ const MastheadTest: React.FC = () => {
 			trigger: swipeSectionRef.current,
 			pin: true,
 			start: 'top top',
-			end: '+=100%',
+			end: '+=70%',
 			// end: isMobile ? '+=4000' : '+=1',
 			// end: endValue,
 			immediateRender: false,
 			scroller: null,
+			onToggle: (self) => {
+				if (self.isActive) {
+					intentObserver.enable();
+				} else {
+					intentObserver.disable();
+				}
+			},
 			onEnter: () => {
 				intentObserver.enable();
 				gotoPanel(currentIndex + 1, true);
@@ -148,6 +154,24 @@ const MastheadTest: React.FC = () => {
 				intentObserver.enable();
 				gotoPanel(currentIndex - 1, false);
 			},
+			onLeave: () => {
+				intentObserver.disable();
+			},
+			onLeaveBack: () => {
+				intentObserver.disable();
+			},
+			// onEnter: () => {
+			// 	intentObserver.enable({ preventDefault: true });
+			// },
+			// onLeave: () => {
+			// 	intentObserver.enable({ preventDefault: false });
+			// },
+			// onEnterBack: () => {
+			// 	intentObserver.enable({ preventDefault: true });
+			// },
+			// onLeaveBack: () => {
+			// 	intentObserver.enable({ preventDefault: false });
+			// },
 		});
 		// ScrollTrigger.normalizeScroll(true);
 		ScrollTrigger.refresh(); //фиксанула автоматический скролл при ф5
