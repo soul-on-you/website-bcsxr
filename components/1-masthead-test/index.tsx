@@ -32,7 +32,11 @@ const MastheadTest: React.FC = () => {
 
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
-		ScrollTrigger.normalizeScroll(true);
+		ScrollTrigger.normalizeScroll({
+			target: swipeSectionRef.current,
+			allowNestedScroll: true,
+			type: 'touch,scroll,pointer',
+		});
 		// ScrollTrigger.normalizeScroll(true);
 		// swipePanels.current = [h1Ref.current, h2Ref.current, h3Ref.current].filter(Boolean) as HTMLElement[];
 		let currentIndex = -1;
@@ -81,7 +85,8 @@ const MastheadTest: React.FC = () => {
 
 			gsap.to(target, {
 				// yPercent: isScrollingDown ? 0 : 100,
-				translateY: isScrollingDown ? 0 : '-800px',
+				// translateY: isScrollingDown ? 0 : '-800px',
+				transform: isScrollingDown ? 'translate3d(0, 0, 0)' : 'translate3d(0, -800px, 0)',
 				autoAlpha: 1,
 				duration: 0.75,
 				onComplete: () => {
@@ -144,13 +149,19 @@ const MastheadTest: React.FC = () => {
 						<h1 ref={addToSwipePanels} style={{ willChange: 'transform, opacity' }}>
 							{/* as */}
 						</h1>
-						<h1 ref={addToSwipePanels}>new format</h1>
+						<h1 ref={addToSwipePanels} style={{ willChange: 'transform, opacity' }}>
+							new format
+						</h1>
 						<br />
 
-						<h1 ref={addToSwipePanels}>of competitive</h1>
+						<h1 ref={addToSwipePanels} style={{ willChange: 'transform, opacity' }}>
+							of competitive
+						</h1>
 						<br />
 
-						<h1 ref={addToSwipePanels}>sport</h1>
+						<h1 ref={addToSwipePanels} style={{ willChange: 'transform, opacity' }}>
+							sport
+						</h1>
 					</div>
 
 					<div className={`${styles.arrowDown} hide-on-mobile`} ref={arrowRef}>
