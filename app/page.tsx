@@ -19,14 +19,14 @@ const Home = () => {
 				{/* <Test /> */}
 				{/* <Test2 /> */}
 				<MastheadTest />
-				{/* <Masthead />
+				{/* <Masthead /> */}
 				<Mission />
 				<Proprietary />
 				<XRSuits />
 				<OurTeam />
 				<OurDivision />
 				<Partners />
-				<Black /> */}
+				<Black />
 			</Suspense>
 		</main>
 	);

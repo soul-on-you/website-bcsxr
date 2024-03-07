@@ -11,34 +11,25 @@ import Title from './title';
 const MastheadTest: React.FC = () => {
 	const tl = useRef<gsap.core.Timeline | null>(null);
 
-	const h1Ref = useRef(null);
-	const h2Ref = useRef(null);
-	const h3Ref = useRef(null);
-	const swipePanels = useRef([]);
-	const intentObserverRef = useRef(null);
-	const backgroundImageRef = useRef(null);
-	let scaleValue = 1.6;
-	let currentIndex = -1;
-	let animating = false;
-
+	const h1Ref = useRef<HTMLHeadingElement | null>(null);
+	const h2Ref = useRef<HTMLHeadingElement | null>(null);
+	const h3Ref = useRef<HTMLHeadingElement | null>(null);
 	const arrowRef = useRef<HTMLDivElement | null>(null);
-	const invincibleRef = useRef<HTMLDivElement>(null);
-	const redRef = useRef(null);
+	const backgroundImageRef = useRef<HTMLImageElement | null>(null);
+	const swipePanels = useRef<HTMLElement[]>([]);
+	const intentObserverRef = useRef<Observer | null>(null);
+	let animating = false;
+	let currentIndex = -1;
+	let scaleValue = 1.6;
 
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
-		swipePanels.current = [h1Ref.current, h2Ref.current, h3Ref.current]; // добавляем наши панели (элементы) в массив для управления анимациями
+		swipePanels.current = [h1Ref.current, h2Ref.current, h3Ref.current].filter(Boolean) as HTMLElement[];
 
-		// let currentIndex = -1; // начинаем с первой панели
-		// let animating = false; // флаг для отслеживания состояния анимации
-		// let scaleValue = 1.6;
-
-		// функция для перехода к панели
-		const gotoPanel = (index) => {
-			if (animating || index < 0 || index >= swipePanels.current.length) return; // предотвращаем анимацию, если уже что-то анимируется или индекс вне допустимого диапазона
+		const gotoPanel = (index: number) => {
+			if (animating || index < 0 || index >= swipePanels.current.length) return;
 
 			animating = true; // начинаем анимацию
-			const direction = index > currentIndex ? 1 : -1; // определяем направление анимации
 			scaleValue -= 0.2;
 
 			gsap.fromTo(
@@ -52,8 +43,7 @@ const MastheadTest: React.FC = () => {
 						animating = false; // анимация завершена
 						currentIndex = index; // обновляем текущий индекс
 						if (currentIndex === swipePanels.current.length - 1) {
-							// Если да, отключаем intentObserver, чтобы разрешить стандартный скролл
-							intentObserverRef.current.kill();
+							intentObserverRef.current?.kill();
 						}
 					},
 				},
@@ -63,6 +53,9 @@ const MastheadTest: React.FC = () => {
 				scale: scaleValue,
 				duration: 1,
 			});
+			if (index === 2) {
+				gsap.fromTo(arrowRef.current, { opacity: 0, y: 500 }, { autoAlpha: 1, y: 0, duration: 1 });
+			}
 		};
 
 		// Наблюдатель за скроллом
@@ -70,6 +63,8 @@ const MastheadTest: React.FC = () => {
 			type: 'wheel,touch',
 			onDown: () => !animating && gotoPanel(currentIndex + 1),
 			onUp: () => !animating && gotoPanel(currentIndex - 1),
+			// onUp: () => !animating && gotoPanel(currentIndex + 1, true),
+			// onDown: () => !animating && gotoPanel(currentIndex - 1, false),
 			preventDefault: true,
 			tolerance: 10,
 			onPress: (self) => {
@@ -88,41 +83,24 @@ const MastheadTest: React.FC = () => {
 
 	return (
 		<>
-			<div className={styles.red} ref={redRef}>
-				<div className={styles.masthead} >
-					<div className={styles.masthead__container}>
-						<div className={styles.title}>
-							<h1 ref={h1Ref} style={{ willChange: 'transform, opacity' }}>
-								<span>new format</span>
-								<Image src='/blur-pink.webp' alt='blur-pink' width={1800 / 2} height={500 / 2} />
-							</h1>
-							<br />
-							<h1 ref={h2Ref} style={{ willChange: 'transform, opacity' }}>
-								<span>of competitive</span>
-							</h1>
-							<br />
-							<h1 ref={h3Ref} style={{ willChange: 'transform, opacity' }}>
-								<span>sport</span>
-								<Image src='/blur-blue.webp' alt='blur-pink' width={1800 / 2} height={500 / 2} />
-							</h1>
-						</div>
+			<div className={styles.masthead}>
+				<div className={styles.masthead__container}>
+					<Title firstH1Ref={h1Ref} secondH1Ref={h2Ref} thirdH1Ref={h3Ref} />
 
-						<div className={`${styles.arrowDown} hide-on-mobile`} ref={arrowRef}>
-							<ArrowDown />
-						</div>
-
-						<Image
-							ref={backgroundImageRef}
-							className={styles.backgroundImage}
-							src='/1-masthead/bg.webp'
-							alt='bg-image'
-							width={2880 / 2}
-							height={1600 / 2}
-							priority={true}
-							// style={{ willChange: 'transform, opacity' }}
-						/>
-						<div className='absolute opacity-0' ref={invincibleRef} />
+					<div className={`${styles.arrowDown} hide-on-mobile`} ref={arrowRef}>
+						<ArrowDown />
 					</div>
+
+					<Image
+						ref={backgroundImageRef}
+						className={styles.backgroundImage}
+						src='/1-masthead/bg.webp'
+						alt='bg-image'
+						width={2880 / 2}
+						height={1600 / 2}
+						priority={true}
+						style={{ willChange: 'transform, opacity' }}
+					/>
 				</div>
 			</div>
 		</>

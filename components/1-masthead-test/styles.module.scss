@@ -1,86 +1,84 @@
 @import '../../styles/variables';
 
-.red {
-	height: 100%;
-	.masthead {
+
+.masthead {
+	position: relative;
+
+	&__container {
 		position: relative;
+		height: 100vh;
+		width: 100vw;
 
-		&__container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
+		.title {
 			position: relative;
-			height: 100vh;
-			width: 100vw;
+			text-align: center;
 
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			flex-direction: column;
+			h1:nth-child(1) {
+				opacity: 0;
 
-			.title {
-				position: relative;
-				text-align: center;
-
-				h1:nth-child(1) {
-					opacity: 0;
-
-					span:nth-child(1) {
-						display: inline-block;
-						color: $color-pink;
-					}
-
-					img {
-						position: absolute;
-						transform: translateY(-9.444vw); //-136px, 1440
-					}
+				span:nth-child(1) {
+					display: inline-block;
+					color: $color-pink;
 				}
-				h1:nth-child(3) {
-					opacity: 0;
 
-					span:nth-child(1) {
-						display: inline-block;
-						color: $color-white;
-					}
-
-					// img {
-					// 	position: absolute;
-					// 	transform: translateY(-136px);
-					// }
-				}
-				h1:nth-child(5) {
-					opacity: 0;
-
-					span:nth-child(1) {
-						display: inline-block;
-
-						color: $color-blue;
-
-						font-size: 15vw; //216px, 1440
-						transform: rotate(-4deg);
-					}
-					img {
-						position: absolute;
-						transform: translateY(-12.5vw); //-180px, 1440
-					}
+				img {
+					position: absolute;
+					transform: translateY(-9.444vw); //-136px, 1440
 				}
 			}
+			h1:nth-child(3) {
+				opacity: 0;
 
-			.arrowDown {
-				visibility: hidden;
-				position: absolute;
-				bottom: 4.444vw; //64px, 1440
+				span:nth-child(1) {
+					display: inline-block;
+					color: $color-white;
+				}
+
+				// img {
+				// 	position: absolute;
+				// 	transform: translateY(-136px);
+				// }
 			}
-			.backgroundImage {
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				z-index: -1;
-				overflow: hidden;
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				transform: scale(1.7);
+			h1:nth-child(5) {
+				opacity: 0;
+
+				span:nth-child(1) {
+					display: inline-block;
+
+					color: $color-blue;
+
+					font-size: 15vw; //216px, 1440
+					transform: rotate(-4deg);
+				}
+				img {
+					position: absolute;
+					transform: translateY(-12.5vw); //-180px, 1440
+				}
 			}
+		}
+
+		.arrowDown {
+			visibility: hidden;
+			position: absolute;
+			bottom: 4.444vw; //64px, 1440
+		}
+		.backgroundImage {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: -1;
+			overflow: hidden;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transform: scale(1.7);
 		}
 	}
 }

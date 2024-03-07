@@ -49,14 +49,14 @@ const Masthead: React.FC = () => {
 	// 		paused: true,
 	// 	});
 
-	// 	tl.current
-	// 		.fromTo(firstH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0, ease: 'none' }) //1 итерация
-	// 		.to(backgroundImageRef.current, { duration: 1, scale: 1.4, ease: 'none' }, '<') //1 итерация
-	// 		.fromTo(secondH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0, ease: 'none' }) //2 итерация
-	// 		.to(backgroundImageRef.current, { duration: 1, scale: 1, ease: 'none' }, '<') //2 итерация
-	// 		.fromTo(thirdH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0, ease: 'none' }) //3 итерация
-	// 		.fromTo(arrowRef.current, { opacity: 0, y: 500 }, { duration: 1, autoAlpha: 1, y: 0 }, '<'); //3 итерация
-	// 	// .to(invincibleRef.current, { opacity: 0, y: 0, duration: 1 });
+		// tl.current
+		// 	.fromTo(firstH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0, ease: 'none' }) //1 итерация
+		// 	.to(backgroundImageRef.current, { duration: 1, scale: 1.4, ease: 'none' }, '<') //1 итерация
+		// 	.fromTo(secondH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0, ease: 'none' }) //2 итерация
+		// 	.to(backgroundImageRef.current, { duration: 1, scale: 1, ease: 'none' }, '<') //2 итерация
+		// 	.fromTo(thirdH1Ref.current, { y: -500 }, { duration: 1, autoAlpha: 1, y: 0, ease: 'none' }) //3 итерация
+		// 	.fromTo(arrowRef.current, { opacity: 0, y: 500 }, { duration: 1, autoAlpha: 1, y: 0 }, '<'); //3 итерация
+		// // .to(invincibleRef.current, { opacity: 0, y: 0, duration: 1 });
 
 	// 	ScrollTrigger.refresh(); //фиксанула автоматический скролл при ф5
 
