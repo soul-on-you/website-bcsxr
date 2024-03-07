@@ -55,7 +55,7 @@ const MastheadTest: React.FC = () => {
 			onDown: () => !animating && gotoPanel(currentIndex - 1, false), //обратный скрол
 			// wheelSpeed: -1,
 			tolerance: 4,
-			preventDefault: false,
+			preventDefault: true,
 			// onPress: (self) => {
 			// 	ScrollTrigger.isTouch && self.event.preventDefault();
 			// },
