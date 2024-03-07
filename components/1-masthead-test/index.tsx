@@ -32,6 +32,7 @@ const MastheadTest: React.FC = () => {
 
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
+		ScrollTrigger.normalizeScroll(true);
 		// ScrollTrigger.normalizeScroll(true);
 		// swipePanels.current = [h1Ref.current, h2Ref.current, h3Ref.current].filter(Boolean) as HTMLElement[];
 		let currentIndex = -1;
@@ -113,20 +114,20 @@ const MastheadTest: React.FC = () => {
 			currentIndex = index;
 		}
 
-		// ScrollTrigger.create({
-		// 	trigger: swipeSectionRef.current,
-		// 	pin: true,
-		// 	start: 'top top',
-		// 	end: '+=1',
-		// 	onEnter: () => {
-		// 		intentObserver.enable();
-		// 		gotoPanel(currentIndex + 1, true);
-		// 	},
-		// 	onEnterBack: () => {
-		// 		intentObserver.enable();
-		// 		gotoPanel(currentIndex - 1, false);
-		// 	},
-		// });
+		ScrollTrigger.create({
+			trigger: swipeSectionRef.current,
+			pin: true,
+			start: 'top top',
+			end: '+=1',
+			onEnter: () => {
+				intentObserver.enable();
+				gotoPanel(currentIndex + 1, true);
+			},
+			onEnterBack: () => {
+				intentObserver.enable();
+				gotoPanel(currentIndex - 1, false);
+			},
+		});
 
 		ScrollTrigger.refresh(); //фиксанула автоматический скролл при ф5
 
