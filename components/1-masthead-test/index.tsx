@@ -22,11 +22,6 @@ const MastheadTest: React.FC = () => {
 	swipePanels.current = [];
 	const swipeSectionRef = useRef(null);
 
-	// const addToSwipePanels = (el) => {
-	// 	if (el && !swipePanels.current.includes(el)) {
-	// 		swipePanels.current.push(el);
-	// 	}
-	// };
 	const addToSwipePanels = (el: HTMLElement | null) => {
 		if (el && !swipePanels.current.includes(el)) {
 			swipePanels.current.push(el);
@@ -36,10 +31,6 @@ const MastheadTest: React.FC = () => {
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
 		tl.current = gsap.timeline({});
-		// ScrollTrigger.normalizeScroll({
-		// 	allowNestedScroll: true,
-		// 	type: 'touch,scroll,pointer',
-		// });
 		// ScrollTrigger.normalizeScroll(true);
 		// swipePanels.current = [h1Ref.current, h2Ref.current, h3Ref.current].filter(Boolean) as HTMLElement[];
 		let currentIndex = -1;
