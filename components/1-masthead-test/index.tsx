@@ -7,8 +7,11 @@ import ArrowDown from './arrow-down';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import Title from './title';
+import useWindowSize from '@/hooks/useWindowSize';
 
 const MastheadTest: React.FC = () => {
+	const { width } = useWindowSize();
+	const isMobile = width < 768;
 	const tl = useRef<gsap.core.Timeline | null>(null);
 
 	const arrowRef = useRef<HTMLDivElement | null>(null);
@@ -55,10 +58,10 @@ const MastheadTest: React.FC = () => {
 			onDown: () => !animating && gotoPanel(currentIndex - 1, false), //обратный скрол
 			wheelSpeed: -1,
 			tolerance: 4,
-			preventDefault: false,
-			// onPress: (self) => {
-			// 	ScrollTrigger.isTouch && self.event.preventDefault();
-			// },
+			preventDefault: isMobile ? false : true,
+			onPress: (self) => {
+				ScrollTrigger.isTouch && self.event.preventDefault();
+			},
 		});
 		intentObserver.disable();
 
