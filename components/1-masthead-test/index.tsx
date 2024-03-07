@@ -135,7 +135,7 @@ const MastheadTest: React.FC = () => {
 			trigger: swipeSectionRef.current,
 			pin: true,
 			start: 'top top',
-			end: '+=200%',
+			end: '+=100%',
 			// end: isMobile ? '+=4000' : '+=1',
 			// end: endValue,
 			immediateRender: false,
