@@ -65,6 +65,9 @@ const MastheadTest: React.FC = () => {
 			// onPress: (self) => {
 			// 	ScrollTrigger.isTouch && self.event.preventDefault();
 			// },
+			onPress: (self) => {
+				ScrollTrigger.isTouch && self.event.preventDefault();
+			},
 		});
 		intentObserver.disable();
 
