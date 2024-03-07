@@ -61,10 +61,8 @@ const MastheadTest: React.FC = () => {
 			// onDown: () => allowScroll && gotoPanel(currentIndex + 1, true),
 			wheelSpeed: -1,
 			tolerance: 10,
-			preventDefault: isMobile ? false : true,
-			// onPress: (self) => {
-			// 	ScrollTrigger.isTouch && self.event.preventDefault();
-			// },
+			// preventDefault: isMobile ? false : true,
+			preventDefault: true,
 			onPress: (self) => {
 				ScrollTrigger.isTouch && self.event.preventDefault();
 			},
