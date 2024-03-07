@@ -33,10 +33,10 @@ const MastheadTest: React.FC = () => {
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
 		tl.current = gsap.timeline({});
-		ScrollTrigger.normalizeScroll({
-			allowNestedScroll: true,
-			type: 'touch,scroll,pointer',
-		});
+		// ScrollTrigger.normalizeScroll({
+		// 	allowNestedScroll: true,
+		// 	type: 'touch,scroll,pointer',
+		// });
 		// ScrollTrigger.normalizeScroll(true);
 		// swipePanels.current = [h1Ref.current, h2Ref.current, h3Ref.current].filter(Boolean) as HTMLElement[];
 		let currentIndex = -1;
@@ -50,15 +50,15 @@ const MastheadTest: React.FC = () => {
 		gsap.set(swipePanels.current, { autoAlpha: 0, y: '-500px' });
 
 		const intentObserver = ScrollTrigger.observe({
-			type: 'wheel,touch',
+			type: 'wheel, touch, pointer',
 			onUp: () => !animating && gotoPanel(currentIndex + 1, true),
 			onDown: () => !animating && gotoPanel(currentIndex - 1, false), //обратный скрол
-			wheelSpeed: -1,
+			wheelSpeed: 1,
 			tolerance: 10,
 			preventDefault: true,
-			onPress: (self) => {
-				ScrollTrigger.isTouch && self.event.preventDefault();
-			},
+			// onPress: (self) => {
+			// 	ScrollTrigger.isTouch && self.event.preventDefault();
+			// },
 		});
 		intentObserver.disable();
 
@@ -120,6 +120,8 @@ const MastheadTest: React.FC = () => {
 			pin: true,
 			start: 'top top',
 			end: '+=1',
+			immediateRender: false,
+			scroller: null,
 			onEnter: () => {
 				intentObserver.enable();
 				gotoPanel(currentIndex + 1, true);
@@ -129,7 +131,7 @@ const MastheadTest: React.FC = () => {
 				gotoPanel(currentIndex - 1, false);
 			},
 		});
-
+		// ScrollTrigger.normalizeScroll(true);
 		ScrollTrigger.refresh(); //фиксанула автоматический скролл при ф5
 
 		return () => {
