@@ -133,7 +133,7 @@ const Items: React.FC = () => {
 				<SmallItem
 					ref={item4Ref}
 					name='xr suit'
-					imgSrc='/4-xr-suits/items/xr-suit.webp'
+					imgSrc='/4-xr-suits/items/haptic.webp'
 					style={
 						isMobile
 							? { width: '74.375vw', right: '8.875vw', bottom: '-85.625vw' }
