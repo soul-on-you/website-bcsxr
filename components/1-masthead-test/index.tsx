@@ -57,6 +57,8 @@ const MastheadTest: React.FC = () => {
 			type: 'wheel, touch, pointer',
 			onUp: () => !animating && gotoPanel(currentIndex + 1, true),
 			onDown: () => !animating && gotoPanel(currentIndex - 1, false), //обратный скрол
+			// onUp: () => allowScroll && gotoPanel(currentIndex - 1, false),
+			// onDown: () => allowScroll && gotoPanel(currentIndex + 1, true),
 			wheelSpeed: -1,
 			tolerance: 10,
 			preventDefault: isMobile ? false : true,
@@ -67,7 +69,7 @@ const MastheadTest: React.FC = () => {
 		intentObserver.disable();
 
 		function gotoPanel(index: any, isScrollingDown: boolean) {
-			if (!allowScroll || animating) return; 
+			if (!allowScroll || animating) return;
 
 			const newScale = scaleValues[Math.max(0, Math.min(scaleValues.length - 1, index))];
 
@@ -97,7 +99,9 @@ const MastheadTest: React.FC = () => {
 				duration: 0.75,
 				onComplete: () => {
 					animating = false;
-					gsap.delayedCall(0.5, () => { allowScroll = true; }); 
+					gsap.delayedCall(0.5, () => {
+						allowScroll = true;
+					});
 				},
 			});
 
@@ -130,7 +134,7 @@ const MastheadTest: React.FC = () => {
 			trigger: swipeSectionRef.current,
 			pin: true,
 			start: 'top top',
-			end: '+=50%',
+			end: '+=200%',
 			// end: isMobile ? '+=4000' : '+=1',
 			// end: endValue,
 			immediateRender: false,
