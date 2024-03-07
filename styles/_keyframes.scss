@@ -3,7 +3,6 @@
 body,
 html {
 	overscroll-behavior: none;
-	min-height: 100vh;
 }
 
 .swipe-section {
@@ -15,8 +14,4 @@ html {
 
 .swipe-section .panel {
 	position: absolute;
-}
-
-.vh-200 {
-	height: 500vh !important;
 }

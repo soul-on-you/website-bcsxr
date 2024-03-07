@@ -9,6 +9,10 @@
 // 	const swipePanels = useRef([]);
 // 	swipePanels.current = [];
 
+// 	const h1Ref = useRef(null);
+// 	const h2Ref = useRef(null);
+// 	const h3Ref = useRef(null);
+
 // 	const addToSwipePanels = (el) => {
 // 		if (el && !swipePanels.current.includes(el)) {
 // 			swipePanels.current.push(el);
@@ -21,7 +25,7 @@
 // 		let currentIndex = -1;
 // 		let animating;
 
-// 		gsap.set('.x-100', { xPercent: 100 });
+// 		gsap.set('.x-100', { yPercent: 100 });
 
 // 		gsap.set(swipePanels.current, {
 // 			zIndex: (i) => i,
@@ -57,7 +61,7 @@
 // 			let target = isScrollingDown ? swipePanels.current[index] : swipePanels.current[currentIndex];
 
 // 			gsap.to(target, {
-// 				xPercent: isScrollingDown ? 0 : 100,
+// 				yPercent: isScrollingDown ? 0 : 100,
 // 				duration: 0.75,
 // 				onComplete: () => {
 // 					animating = false;
@@ -87,30 +91,28 @@
 // 	}, []);
 
 // 	return (
-// 		<div className='swipe-section' ref={swipeSectionRef}>
-// 			<section
-// 				className='panel red bg-yellow-500 h-screen w-screen flex justify-center items-center'
-// 				ref={addToSwipePanels}
-// 			>
-// 				ScrollTrigger.observe() section
-// 			</section>
-// 			<section
-// 				className='panel purple x-100 h-screen w-screen bg-red-700 flex justify-center items-center'
-// 				ref={addToSwipePanels}
-// 			>
-// 				Section 2
-// 			</section>
-// 			<section
-// 				className='panel blue x-100 h-screen w-screen bg-blue-700 flex justify-center items-center'
-// 				ref={addToSwipePanels}
-// 			>
-// 				Section 3
-// 			</section>
-// 			<section className='panel orange x-100 vh-200' ref={addToSwipePanels}>
-// 				This section should switch to vertical scroll (500vh)
-// 			</section>
-// 			<div style={{ height: '400vh' }}></div>
-// 		</div>
+// 		<>
+// 			<div className='swipe-section' ref={swipeSectionRef}>
+// 				<section
+// 					className='panel red bg-yellow-500 h-screen w-screen flex justify-center items-center'
+// 					ref={addToSwipePanels}
+// 				>
+// 					<h1>FIRST</h1>
+// 				</section>
+// 				<section
+// 					className='panel purple x-100 h-screen w-screen bg-red-700 flex justify-center items-center'
+// 					ref={addToSwipePanels}
+// 				>
+// 					<h2>SECOND</h2>
+// 				</section>
+// 				<section
+// 					className='panel blue x-100 h-screen w-screen bg-blue-700 flex justify-center items-center'
+// 					ref={addToSwipePanels}
+// 				>
+// 					<h3>THIRD</h3>
+// 				</section>
+// 			</div>
+// 		</>
 // 	);
 // };
 

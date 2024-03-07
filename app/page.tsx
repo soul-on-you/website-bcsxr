@@ -1,5 +1,5 @@
-// import Test from '@/components/0-test';
-// import Test2 from '@/components/0-test2';
+import Test from '@/components/0-test';
+import Test2 from '@/components/0-test2';
 import MastheadTest from '@/components/1-masthead-test';
 import React, { Suspense, lazy } from 'react';
 

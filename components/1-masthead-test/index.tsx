@@ -18,36 +18,43 @@ const MastheadTest: React.FC = () => {
 	const backgroundImageRef = useRef<HTMLImageElement | null>(null);
 	const swipePanels = useRef<HTMLElement[]>([]);
 	const intentObserverRef = useRef<Observer | null>(null);
-	let animating = false;
-	let currentIndex = -1;
-	let scaleValue = 1.6;
 
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
 		swipePanels.current = [h1Ref.current, h2Ref.current, h3Ref.current].filter(Boolean) as HTMLElement[];
+		let animating: any;
+		let currentIndex = -1;
+		let scaleValue = 1.6;
 
-		const gotoPanel = (index: number) => {
-			if (animating || index < 0 || index >= swipePanels.current.length) return;
-
-			animating = true; // начинаем анимацию
+		const gotoPanel = (index: any, isScrollingDown: boolean) => {
+			// if (animating || index < 0 || index >= swipePanels.current.length) return;
 			scaleValue -= 0.2;
 
-			gsap.fromTo(
-				swipePanels.current[index],
-				{ y: -500 },
-				{
-					y: 0, // перемещаем на 300px в зависимости от направления
-					autoAlpha: 1,
-					duration: 1,
+			animating = true;
+			if ((index === swipePanels.current.length && isScrollingDown) || (index === -1 && !isScrollingDown)) {
+				const target = index;
+				gsap.to(target, {
+					duration: 0.0,
 					onComplete: () => {
-						animating = false; // анимация завершена
-						currentIndex = index; // обновляем текущий индекс
-						if (currentIndex === swipePanels.current.length - 1) {
-							intentObserverRef.current?.kill();
+						animating = false;
+						if (intentObserverRef.current) {
+							isScrollingDown && intentObserverRef.current.disable();
 						}
 					},
+				});
+				return;
+			}
+			const target = isScrollingDown ? swipePanels.current[index] : swipePanels.current[currentIndex];
+
+			gsap.to(target, {
+				yPercent: isScrollingDown ? 0 : 0,
+				duration: 0.75,
+				autoAlpha: 1,
+				onComplete: () => {
+					animating = false;
 				},
-			);
+			});
+			currentIndex = index;
 
 			gsap.to(backgroundImageRef.current, {
 				scale: scaleValue,
@@ -61,10 +68,10 @@ const MastheadTest: React.FC = () => {
 		// Наблюдатель за скроллом
 		intentObserverRef.current = ScrollTrigger.observe({
 			type: 'wheel,touch',
-			onDown: () => !animating && gotoPanel(currentIndex + 1),
-			onUp: () => !animating && gotoPanel(currentIndex - 1),
-			// onUp: () => !animating && gotoPanel(currentIndex + 1, true),
-			// onDown: () => !animating && gotoPanel(currentIndex - 1, false),
+			// onDown: () => !animating && gotoPanel(currentIndex + 1),
+			// onUp: () => !animating && gotoPanel(currentIndex - 1),
+			onUp: () => !animating && gotoPanel(currentIndex - 1, false),
+			onDown: () => !animating && gotoPanel(currentIndex + 1, true),
 			preventDefault: true,
 			tolerance: 10,
 			onPress: (self) => {
@@ -73,7 +80,6 @@ const MastheadTest: React.FC = () => {
 		});
 
 		return () => {
-			// Очистка
 			if (intentObserverRef.current) {
 				intentObserverRef.current.kill();
 			}
