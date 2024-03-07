@@ -18,8 +18,8 @@ const Home = () => {
 			<Suspense fallback={<div>Loading...</div>}>
 				{/* <Test /> */}
 				{/* <Test2 /> */}
-				<MastheadTest />
 				{/* <Masthead /> */}
+				<MastheadTest />
 				<Mission />
 				<Proprietary />
 				<XRSuits />

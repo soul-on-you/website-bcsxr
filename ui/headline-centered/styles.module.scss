@@ -1,30 +1,57 @@
 @import '../../styles/variables';
 
-.headlineCenter {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+@media (min-width: 769px) {
+	.headlineCenter {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding-bottom: 3.3vw; //48px, 1440
 
-	h2 {
-		width: 100%;
-		text-align: center;
+		h2 {
+			width: 100%;
+			text-align: center;
 
-		span:nth-child(1) {
-			color: $color-blue;
-			padding-right: 1.111vw; //16px, 1440
+			span:nth-child(1) {
+				color: $color-blue;
+				padding-right: 1.111vw; //16px, 1440
+			}
 
-			@media (max-width: 768px) {
-				padding-right: 2.5vw; //8px, 320
+			span:nth-child(2) {
+				color: $color-pink;
 			}
 		}
 
-		span:nth-child(2) {
-			color: $color-pink;
+		h5 {
+			text-align: center;
 		}
 	}
+}
 
-	h5 {
-		text-align: center;
+@media (max-width: 768px) {
+	.headlineCenter {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding-bottom: 5vw; //16px, 320
+
+		h2 {
+			width: 100%;
+			text-align: center;
+
+			span:nth-child(1) {
+				color: $color-blue;
+				padding-right: 2.5vw; //8px, 320
+			}
+
+			span:nth-child(2) {
+				color: $color-pink;
+			}
+		}
+
+		h5 {
+			text-align: center;
+		}
 	}
 }

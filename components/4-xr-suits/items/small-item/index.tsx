@@ -9,7 +9,7 @@ const SmallItem: React.ForwardRefRenderFunction<HTMLDivElement, ISmallItemProps>
 ) => {
 	const imageStyles: React.CSSProperties = {
 		position: 'absolute',
-		width: style?.width,
+		maxWidth: style?.width,
 		height: 'auto',
 		right: style?.right,
 		bottom: style?.bottom,
@@ -23,7 +23,7 @@ const SmallItem: React.ForwardRefRenderFunction<HTMLDivElement, ISmallItemProps>
 	return (
 		<div className={styles.smallItem} style={containerStyles} ref={ref}>
 			<h3>{name}</h3>
-			<Image style={imageStyles} src={imgSrc} alt='image' width={1000} height={1000} />
+			<Image style={imageStyles} src={imgSrc} alt='image' width={1500} height={1500} />
 		</div>
 	);
 };

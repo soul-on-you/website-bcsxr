@@ -95,6 +95,16 @@
 
 		h3 {
 			width: 100%;
+			text-transform: uppercase;
+
+			span:nth-child(1) {
+				color: $color-blue;
+				text-shadow: 2px 2px 72px $color-blue;
+			}
+			span:nth-child(2) {
+				color: $color-pink;
+				text-shadow: 2px 2px 72px $color-pink;
+			}
 		}
 
 		.imageContainer {

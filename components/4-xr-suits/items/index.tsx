@@ -100,7 +100,7 @@ const Items: React.FC = () => {
 					imgSrc='/4-xr-suits/items/haptic.webp'
 					style={
 						isMobile
-							? { width: '59.375vw', right: '-6.875vw', bottom: '-10.625vw' }
+							? { width: '62.375vw', right: '-6.875vw', bottom: '-10.625vw' }
 							: { width: '20.833vw', right: '-2.569vw', bottom: '-3.889vw' }
 					}
 					overflowHidden={false}
@@ -124,7 +124,7 @@ const Items: React.FC = () => {
 					imgSrc='/4-xr-suits/items/goalkeeper.webp'
 					style={
 						isMobile
-							? { width: '103.125vw', right: '-11.875vw', bottom: '-6.25vw' }
+							? { width: '107.125vw', right: '-14.875vw', bottom: '-6.25vw' }
 							: { width: '52.083vw', right: '0.694vw', bottom: '-3.194vw' }
 					}
 					overflowHidden={false}
@@ -133,11 +133,11 @@ const Items: React.FC = () => {
 				<SmallItem
 					ref={item4Ref}
 					name='xr suit'
-					imgSrc='/4-xr-suits/items/haptic.webp'
+					imgSrc='/4-xr-suits/items/xr-suit.webp'
 					style={
 						isMobile
-							? { width: '81.25vw', right: '5.313vw', bottom: '-118.75vw' }
-							: { width: '20.833vw', right: '4.792vw', bottom: '-24.722vw' }
+							? { width: '74.375vw', right: '8.875vw', bottom: '-85.625vw' }
+							: { width: '20.833vw', right: '-2.569vw', bottom: '-3.889vw' }
 					}
 					overflowHidden={true}
 				/>

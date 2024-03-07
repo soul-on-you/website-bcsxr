@@ -52,9 +52,9 @@ const OurTeam: React.FC = () => {
 
 	return (
 		<section className={styles.ourTeam} id='team'>
-			<div className={`${styles.bgImage} hide-on-mobile`}>
+			{/* <div className={`${styles.bgImage} hide-on-mobile`}>
 				<Image src='/5-our-team/bg.webp' alt='bg' width={2880 / 2} height={1600 / 2} />
-			</div>
+			</div> */}
 
 			<div className={styles.ourTeam__container}>
 				<div ref={marqueeRef} className={`${styles.marqueeRefContainer} ${styles.marqueeRefContainer1}`}>
