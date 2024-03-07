@@ -33,7 +33,6 @@ const MastheadTest: React.FC = () => {
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
 		ScrollTrigger.normalizeScroll({
-			target: swipeSectionRef.current,
 			allowNestedScroll: true,
 			type: 'touch,scroll,pointer',
 		});
