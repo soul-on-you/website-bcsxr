@@ -14,6 +14,7 @@ const MastheadTest: React.FC = () => {
 	const arrowRef = useRef<HTMLDivElement | null>(null);
 	const backgroundImageRef = useRef<HTMLImageElement | null>(null);
 	const swipePanels = useRef<HTMLElement[]>([]);
+	const scaleValues = [1.7, 1.7, 1.3, 1.0];
 
 	swipePanels.current = [];
 	const swipeSectionRef = useRef(null);
@@ -31,9 +32,11 @@ const MastheadTest: React.FC = () => {
 
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
+		// ScrollTrigger.normalizeScroll(true);
 		// swipePanels.current = [h1Ref.current, h2Ref.current, h3Ref.current].filter(Boolean) as HTMLElement[];
 		let currentIndex = -1;
 		let animating: boolean;
+		let scaleValue = 1.6;
 		// let scaleValue = 1.6;
 
 		// gsap.set('.x-100', { yPercent: 100 });
@@ -41,7 +44,7 @@ const MastheadTest: React.FC = () => {
 		gsap.set(swipePanels.current, {
 			zIndex: (i) => i,
 		});
-		gsap.set(swipePanels.current, { autoAlpha: 0 });
+		gsap.set(swipePanels.current, { autoAlpha: 0, y: '-500px' });
 
 		const intentObserver = ScrollTrigger.observe({
 			type: 'wheel,touch',
@@ -57,7 +60,9 @@ const MastheadTest: React.FC = () => {
 		intentObserver.disable();
 
 		function gotoPanel(index: any, isScrollingDown: boolean) {
+			const newScale = scaleValues[Math.max(0, Math.min(scaleValues.length - 1, index))];
 			animating = true;
+			scaleValue -= 0.2;
 			if ((index === swipePanels.current.length && isScrollingDown) || (index === -1 && !isScrollingDown)) {
 				const target = index;
 				gsap.to(target, {
@@ -71,16 +76,40 @@ const MastheadTest: React.FC = () => {
 			}
 
 			const target = isScrollingDown ? swipePanels.current[index] : swipePanels.current[currentIndex];
+			const target2 = isScrollingDown ? backgroundImageRef.current : backgroundImageRef.current;
 
 			gsap.to(target, {
 				// yPercent: isScrollingDown ? 0 : 100,
-				translateY: isScrollingDown ? 0 : '-100px',
+				translateY: isScrollingDown ? 0 : '-800px',
 				autoAlpha: 1,
 				duration: 0.75,
 				onComplete: () => {
 					animating = false;
 				},
 			});
+
+			if (backgroundImageRef.current) {
+				gsap.to(backgroundImageRef.current, {
+					scale: newScale,
+					duration: 0.75,
+				});
+			}
+
+			if (arrowRef.current) {
+				gsap.fromTo(
+					arrowRef.current,
+					{
+						y: 500,
+						opacity: 0,
+					},
+					{
+						autoAlpha: index >= 3 ? 1 : 0, // Появляется на третьем скролле (index == 2) и скрывается на остальных
+						duration: 1,
+						y: 0,
+					},
+				);
+			}
+
 			currentIndex = index;
 		}
 
@@ -99,6 +128,8 @@ const MastheadTest: React.FC = () => {
 			},
 		});
 
+		ScrollTrigger.refresh(); //фиксанула автоматический скролл при ф5
+
 		return () => {
 			ScrollTrigger.getAll().forEach((st) => st.kill());
 		};
@@ -110,6 +141,9 @@ const MastheadTest: React.FC = () => {
 				<div className={styles.masthead__container} ref={swipeSectionRef}>
 					<div className={styles.title}>
 						<h1 ref={addToSwipePanels} style={{ willChange: 'transform, opacity' }}>
+							{/* as */}
+						</h1>
+						<h1 ref={addToSwipePanels} className='x-100' style={{ willChange: 'transform, opacity' }}>
 							new format
 						</h1>
 						<br />
