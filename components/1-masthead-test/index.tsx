@@ -16,73 +16,89 @@ const MastheadTest: React.FC = () => {
 	const h3Ref = useRef<HTMLHeadingElement | null>(null);
 	const arrowRef = useRef<HTMLDivElement | null>(null);
 	const backgroundImageRef = useRef<HTMLImageElement | null>(null);
-	const swipePanels = useRef<HTMLElement[]>([]);
+	const swipePanels = useRef([]);
+	swipePanels.current = [];
 	const intentObserverRef = useRef<Observer | null>(null);
+	const swipeSectionRef = useRef(null);
+
+	const addToSwipePanels = (el) => {
+		if (el && !swipePanels.current.includes(el)) {
+			swipePanels.current.push(el);
+		}
+	};
 
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
-		swipePanels.current = [h1Ref.current, h2Ref.current, h3Ref.current].filter(Boolean) as HTMLElement[];
-		let animating: any;
+		// swipePanels.current = [h1Ref.current, h2Ref.current, h3Ref.current].filter(Boolean) as HTMLElement[];
 		let currentIndex = -1;
-		let scaleValue = 1.6;
+		let animating;
+		// let scaleValue = 1.6;
 
-		const gotoPanel = (index: any, isScrollingDown: boolean) => {
-			// if (animating || index < 0 || index >= swipePanels.current.length) return;
-			scaleValue -= 0.2;
+		// gsap.set('.x-100', { yPercent: 100 });
 
+		gsap.set(swipePanels.current, {
+			zIndex: (i) => i,
+		});
+		gsap.set(swipePanels.current, { autoAlpha: 0 });
+
+		let intentObserver = ScrollTrigger.observe({
+			type: 'wheel,touch',
+			onUp: () => !animating && gotoPanel(currentIndex + 1, true),
+			onDown: () => !animating && gotoPanel(currentIndex - 1, false), //обратный скрол
+			wheelSpeed: -1,
+			tolerance: 10,
+			preventDefault: true,
+			onPress: (self) => {
+				ScrollTrigger.isTouch && self.event.preventDefault();
+			},
+		});
+		intentObserver.disable();
+
+		function gotoPanel(index, isScrollingDown) {
+		
 			animating = true;
 			if ((index === swipePanels.current.length && isScrollingDown) || (index === -1 && !isScrollingDown)) {
-				const target = index;
+				let target = index;
 				gsap.to(target, {
 					duration: 0.0,
 					onComplete: () => {
 						animating = false;
-						if (intentObserverRef.current) {
-							isScrollingDown && intentObserverRef.current.disable();
-						}
+						isScrollingDown && intentObserver.disable();
 					},
 				});
 				return;
 			}
-			const target = isScrollingDown ? swipePanels.current[index] : swipePanels.current[currentIndex];
+
+			let target = isScrollingDown ? swipePanels.current[index] : swipePanels.current[currentIndex];
 
 			gsap.to(target, {
-				yPercent: isScrollingDown ? 0 : 0,
-				duration: 0.75,
+				// yPercent: isScrollingDown ? 0 : 100,
+				translateY: isScrollingDown ? 0 : '-100px',
 				autoAlpha: 1,
+				duration: 0.75,
 				onComplete: () => {
 					animating = false;
 				},
 			});
 			currentIndex = index;
+		}
 
-			gsap.to(backgroundImageRef.current, {
-				scale: scaleValue,
-				duration: 1,
-			});
-			if (index === 2) {
-				gsap.fromTo(arrowRef.current, { opacity: 0, y: 500 }, { autoAlpha: 1, y: 0, duration: 1 });
-			}
-		};
-
-		// Наблюдатель за скроллом
-		intentObserverRef.current = ScrollTrigger.observe({
-			type: 'wheel,touch',
-			// onDown: () => !animating && gotoPanel(currentIndex + 1),
-			// onUp: () => !animating && gotoPanel(currentIndex - 1),
-			onUp: () => !animating && gotoPanel(currentIndex - 1, false),
-			onDown: () => !animating && gotoPanel(currentIndex + 1, true),
-			preventDefault: true,
-			tolerance: 10,
-			onPress: (self) => {
-				ScrollTrigger.isTouch && self.event.preventDefault();
+		ScrollTrigger.create({
+			trigger: swipeSectionRef.current,
+			pin: true,
+			start: 'top top',
+			end: '+=1',
+			onEnter: () => {
+				intentObserver.enable();
+				gotoPanel(currentIndex + 1, true);
+			},
+			onEnterBack: () => {
+				intentObserver.enable();
+				gotoPanel(currentIndex - 1, false);
 			},
 		});
 
 		return () => {
-			if (intentObserverRef.current) {
-				intentObserverRef.current.kill();
-			}
 			ScrollTrigger.getAll().forEach((st) => st.kill());
 		};
 	}, []);
@@ -90,8 +106,22 @@ const MastheadTest: React.FC = () => {
 	return (
 		<>
 			<div className={styles.masthead}>
-				<div className={styles.masthead__container}>
-					<Title firstH1Ref={h1Ref} secondH1Ref={h2Ref} thirdH1Ref={h3Ref} />
+				<div className={styles.masthead__container} ref={swipeSectionRef}>
+					<div className={styles.title}>
+						<h1 ref={addToSwipePanels} style={{ willChange: 'transform, opacity' }}>
+							new format
+						</h1>
+						<br />
+
+						<h1 ref={addToSwipePanels} className='x-100' style={{ willChange: 'transform, opacity' }}>
+							of competitive
+						</h1>
+						<br />
+
+						<h1 ref={addToSwipePanels} className='x-100' style={{ willChange: 'transform, opacity' }}>
+							sport
+						</h1>
+					</div>
 
 					<div className={`${styles.arrowDown} hide-on-mobile`} ref={arrowRef}>
 						<ArrowDown />
