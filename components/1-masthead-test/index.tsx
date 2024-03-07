@@ -53,9 +53,9 @@ const MastheadTest: React.FC = () => {
 			type: 'wheel, touch, pointer',
 			onUp: () => !animating && gotoPanel(currentIndex + 1, true),
 			onDown: () => !animating && gotoPanel(currentIndex - 1, false), //обратный скрол
-			// wheelSpeed: -1,
+			wheelSpeed: -1,
 			tolerance: 4,
-			preventDefault: true,
+			preventDefault: false,
 			// onPress: (self) => {
 			// 	ScrollTrigger.isTouch && self.event.preventDefault();
 			// },
