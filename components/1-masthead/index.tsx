@@ -46,7 +46,7 @@ const Masthead: React.FC = () => {
 			wheelSpeed: -1,
 			tolerance: 10,
 			// preventDefault: isMobile ? false : true,
-			preventDefault: true,
+			preventDefault: false,
 			onPress: (self) => {
 				ScrollTrigger.isTouch && self.event.preventDefault();
 			},

@@ -140,7 +140,7 @@ const Items: React.FC = () => {
 							? { width: '74.375vw', right: '8.875vw', bottom: '-16.625vw' }
 							: { width: '20.833vw', right: '-2.569vw', bottom: '-3.889vw' }
 					}
-					overflowHidden={false}
+					overflowHidden={true}
 				/>
 			</div>
 			<div className={styles.container3}>
