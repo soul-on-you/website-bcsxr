@@ -26,8 +26,14 @@
 @media (max-width: 768px) {
 	.marqueeContainer {
 		transform: rotate(-4deg);
-		width: calc(100% + $padding-desktop * 2);
-		z-index: 6;
+		margin: 0 -5.072vw; //0 -21, 414px
+ 		z-index: 6;
+		// width: 100vw;
+		// position: relative;
+		// left: 49%;
+		// right: 49%;
+		// margin-left: -50vw;
+		// margin-right: -50vw;
 
 		.imageWrapper {
 			margin: 0;
