@@ -56,6 +56,7 @@ const HeadingLeft: React.FC<IHeadingLeftProps> = ({ heading1, textShadow, childr
 			if (tl.current) {
 				tl.current.kill();
 			}
+			span.revert();
 		};
 	}, []);
 	return (

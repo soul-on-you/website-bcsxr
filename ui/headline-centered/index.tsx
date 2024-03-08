@@ -67,6 +67,7 @@ const HeadlineCentered: React.FC<IHeadlineCenteredProps> = ({
 			if (tl.current) {
 				tl.current?.kill();
 			}
+			span.revert();
 		};
 	}, []);
 

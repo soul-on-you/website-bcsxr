@@ -1,9 +1,8 @@
 // import Test from '@/components/0-test';
 // import Test2 from '@/components/0-test2';
-import MastheadTest from '@/components/1-masthead-test';
-import React, { Suspense, lazy } from 'react';
 
-const Masthead = lazy(() => import('@/components/1-masthead'));
+import React, { Suspense, lazy } from 'react';
+import Masthead from '@/components/1-masthead';
 const Mission = lazy(() => import('@/components/2-mission'));
 const Proprietary = lazy(() => import('@/components/3-proprietary'));
 const XRSuits = lazy(() => import('@/components/4-xr-suits'));
@@ -16,11 +15,7 @@ const Home = () => {
 	return (
 		<main className='overflow-x-hidden'>
 			<Suspense fallback={<div>Loading...</div>}>
-				{/* <Test /> */}
-				{/* <Test /> */}
-				{/* <Test2 /> */}
-				{/* <Masthead /> */}
-				<MastheadTest />
+				<Masthead />
 				<Mission />
 				<Proprietary />
 				<XRSuits />

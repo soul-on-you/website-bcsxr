@@ -7,55 +7,60 @@
 // import gsap from 'gsap';
 // import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 // import Title from './title';
+// import useWindowSize from '@/hooks/useWindowSize';
 
-// const MastheadTest: React.FC = () => {
+// const Masthead: React.FC = () => {
+// 	const { width } = useWindowSize();
+// 	const isMobile = width < 768;
+
 // 	const tl = useRef<gsap.core.Timeline | null>(null);
-
 // 	const arrowRef = useRef<HTMLDivElement | null>(null);
 // 	const backgroundImageRef = useRef<HTMLImageElement | null>(null);
-// 	const swipePanels = useRef<HTMLElement[]>([]);
-// 	const scaleValues = [1.7, 1.7, 1.3, 1.0];
+// 	const swipeH1 = useRef<HTMLElement[]>([]);
+// 	const scaleBackgroundValues = [1.7, 1.7, 1.3, 1.0];
 
-// 	swipePanels.current = [];
+// 	swipeH1.current = [];
 // 	const swipeSectionRef = useRef(null);
 
-// 	// const addToSwipePanels = (el) => {
-// 	// 	if (el && !swipePanels.current.includes(el)) {
-// 	// 		swipePanels.current.push(el);
-// 	// 	}
-// 	// };
 // 	const addToSwipePanels = (el: HTMLElement | null) => {
-// 		if (el && !swipePanels.current.includes(el)) {
-// 			swipePanels.current.push(el);
+// 		if (el && !swipeH1.current.includes(el)) {
+// 			swipeH1.current.push(el);
 // 		}
 // 	};
 
 // 	useEffect(() => {
 // 		gsap.registerPlugin(ScrollTrigger);
-// 		ScrollTrigger.normalizeScroll({
-// 			allowNestedScroll: true,
-// 			type: 'touch,scroll,pointer',
-// 		});
+// 		tl.current = gsap.timeline({});
 // 		// ScrollTrigger.normalizeScroll(true);
 // 		// swipePanels.current = [h1Ref.current, h2Ref.current, h3Ref.current].filter(Boolean) as HTMLElement[];
 // 		let currentIndex = -1;
 // 		let animating: boolean;
-// 		let scaleValue = 1.6;
-// 		// let scaleValue = 1.6;
+// 		let allowScroll = true;
 
 // 		// gsap.set('.x-100', { yPercent: 100 });
 
-// 		gsap.set(swipePanels.current, {
+// 		gsap.set(swipeH1.current, {
 // 			zIndex: (i) => i,
 // 		});
-// 		gsap.set(swipePanels.current, { autoAlpha: 0, y: '-500px' });
+// 		gsap.set(swipeH1.current, { autoAlpha: 0, y: '-500px' });
+
+// 		const calculateDynamicEnd = () => {
+// 			const totalHeight = swipeH1.current.reduce((acc, panel) => acc + panel.offsetHeight, 0);
+
+// 			return totalHeight + window.innerHeight * 0.5;
+// 		};
+
+// 		const endValue = isMobile ? calculateDynamicEnd() : '+=1';
 
 // 		const intentObserver = ScrollTrigger.observe({
-// 			type: 'wheel,touch',
+// 			type: 'wheel, touch, pointer',
 // 			onUp: () => !animating && gotoPanel(currentIndex + 1, true),
 // 			onDown: () => !animating && gotoPanel(currentIndex - 1, false), //обратный скрол
+// 			// onUp: () => allowScroll && gotoPanel(currentIndex - 1, false),
+// 			// onDown: () => allowScroll && gotoPanel(currentIndex + 1, true),
 // 			wheelSpeed: -1,
 // 			tolerance: 10,
+// 			// preventDefault: isMobile ? false : true,
 // 			preventDefault: true,
 // 			onPress: (self) => {
 // 				ScrollTrigger.isTouch && self.event.preventDefault();
@@ -64,10 +69,15 @@
 // 		intentObserver.disable();
 
 // 		function gotoPanel(index: any, isScrollingDown: boolean) {
-// 			const newScale = scaleValues[Math.max(0, Math.min(scaleValues.length - 1, index))];
+// 			if (!allowScroll || animating) return;
+
+// 			const newScale = scaleBackgroundValues[Math.max(0, Math.min(scaleBackgroundValues.length - 1, index))];
+
 // 			animating = true;
-// 			scaleValue -= 0.2;
-// 			if ((index === swipePanels.current.length && isScrollingDown) || (index === -1 && !isScrollingDown)) {
+// 			allowScroll = false;
+
+// 			if ((index === swipeH1.current.length && isScrollingDown) || (index === -1 && !isScrollingDown)) {
+// 				allowScroll = true;
 // 				const target = index;
 // 				gsap.to(target, {
 // 					duration: 0.0,
@@ -79,8 +89,7 @@
 // 				return;
 // 			}
 
-// 			const target = isScrollingDown ? swipePanels.current[index] : swipePanels.current[currentIndex];
-// 			const target2 = isScrollingDown ? backgroundImageRef.current : backgroundImageRef.current;
+// 			const target = isScrollingDown ? swipeH1.current[index] : swipeH1.current[currentIndex];
 
 // 			gsap.to(target, {
 // 				// yPercent: isScrollingDown ? 0 : 100,
@@ -90,6 +99,9 @@
 // 				duration: 0.75,
 // 				onComplete: () => {
 // 					animating = false;
+// 					gsap.delayedCall(0.5, () => {
+// 						allowScroll = true;
+// 					});
 // 				},
 // 			});
 
@@ -122,7 +134,18 @@
 // 			trigger: swipeSectionRef.current,
 // 			pin: true,
 // 			start: 'top top',
-// 			end: '+=1',
+// 			end: '+=70%',
+// 			// end: isMobile ? '+=4000' : '+=1',
+// 			// end: endValue,
+// 			immediateRender: false,
+// 			scroller: null,
+// 			onToggle: (self) => {
+// 				if (self.isActive) {
+// 					intentObserver.enable();
+// 				} else {
+// 					intentObserver.disable();
+// 				}
+// 			},
 // 			onEnter: () => {
 // 				intentObserver.enable();
 // 				gotoPanel(currentIndex + 1, true);
@@ -131,8 +154,26 @@
 // 				intentObserver.enable();
 // 				gotoPanel(currentIndex - 1, false);
 // 			},
+// 			onLeave: () => {
+// 				intentObserver.disable();
+// 			},
+// 			onLeaveBack: () => {
+// 				intentObserver.disable();
+// 			},
+// 			// onEnter: () => {
+// 			// 	intentObserver.enable({ preventDefault: true });
+// 			// },
+// 			// onLeave: () => {
+// 			// 	intentObserver.enable({ preventDefault: false });
+// 			// },
+// 			// onEnterBack: () => {
+// 			// 	intentObserver.enable({ preventDefault: true });
+// 			// },
+// 			// onLeaveBack: () => {
+// 			// 	intentObserver.enable({ preventDefault: false });
+// 			// },
 // 		});
-
+// 		// ScrollTrigger.normalizeScroll(true);
 // 		ScrollTrigger.refresh(); //фиксанула автоматический скролл при ф5
 
 // 		return () => {
@@ -144,25 +185,12 @@
 // 		<>
 // 			<div className={styles.masthead}>
 // 				<div className={styles.masthead__container} ref={swipeSectionRef}>
-// 					<div className={styles.title}>
-// 						<h1 ref={addToSwipePanels} style={{ willChange: 'transform, opacity' }}>
-// 							{/* as */}
-// 						</h1>
-// 						<h1 ref={addToSwipePanels} style={{ willChange: 'transform, opacity' }}>
-// 							new format
-// 						</h1>
-// 						<br />
-
-// 						<h1 ref={addToSwipePanels} style={{ willChange: 'transform, opacity' }}>
-// 							of competitive
-// 						</h1>
-// 						<br />
-
-// 						<h1 ref={addToSwipePanels} style={{ willChange: 'transform, opacity' }}>
-// 							sport
-// 						</h1>
-// 					</div>
-
+// 					<Title
+// 						invincibleRef={addToSwipePanels}
+// 						firstH1Ref={addToSwipePanels}
+// 						secondH1Ref={addToSwipePanels}
+// 						thirdH1Ref={addToSwipePanels}
+// 					/>
 
 // 					<div className={`${styles.arrowDown} hide-on-mobile`} ref={arrowRef}>
 // 						<ArrowDown />
@@ -184,4 +212,4 @@
 // 	);
 // };
 
-// export default MastheadTest;
+// export default Masthead;
