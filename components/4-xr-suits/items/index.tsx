@@ -100,8 +100,8 @@ const Items: React.FC = () => {
 					imgSrc='/4-xr-suits/items/haptic.webp'
 					style={
 						isMobile
-							? { width: '62.375vw', right: '-6.875vw', bottom: '-10.625vw' }
-							: { width: '20.833vw', right: '-2.569vw', bottom: '-3.889vw' }
+							? { width: '50.375vw', right: '-2.875vw', bottom: '-4.625vw' }
+							: { width: '17.833vw', right: '-1.569vw', bottom: '-0.889vw' }
 					}
 					overflowHidden={false}
 				/>
@@ -124,8 +124,8 @@ const Items: React.FC = () => {
 					imgSrc='/4-xr-suits/items/goalkeeper.webp'
 					style={
 						isMobile
-							? { width: '107.125vw', right: '-14.875vw', bottom: '-6.25vw' }
-							: { width: '52.083vw', right: '0.694vw', bottom: '-3.194vw' }
+							? { width: '92.125vw', right: '-2.875vw', bottom: '-6.25vw' }
+							: { width: '50.083vw', right: '0.069vw', bottom: '-0.625vw' }
 					}
 					overflowHidden={false}
 				/>
