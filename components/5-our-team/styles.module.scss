@@ -3,7 +3,7 @@
 @media (min-width: 769px) {
 	.ourTeam {
 		position: relative;
-		overflow-x: hidden;
+		// overflow-x: hidden;
 
 		.bgImage {
 			position: absolute;
@@ -54,7 +54,7 @@
 @media (max-width: 768px) {
 	.ourTeam {
 		position: relative;
-		overflow-x: hidden;
+		// overflow-x: hidden;
 
 		&__container {
 			display: flex;
