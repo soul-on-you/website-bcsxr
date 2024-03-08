@@ -138,7 +138,7 @@ const Items: React.FC = () => {
 					style={
 						isMobile
 							? { width: '74.375vw', right: '8.875vw', bottom: '-72.625vw' }
-							: { width: '20.833vw', right: '-2.569vw', bottom: '-12.889vw' }
+							: { width: '20.833vw', right: '-2.569vw', bottom: '-24.889vw' }
 					}
 					overflowHidden={true}
 				/>
