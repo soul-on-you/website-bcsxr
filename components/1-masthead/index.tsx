@@ -46,8 +46,8 @@ const Masthead: React.FC = () => {
 			onDown: () => !animating && allowScroll && gotoPanel(currentIndex - 1, false), //обратный скрол
 			wheelSpeed: -1,
 			tolerance: 10,
-			preventDefault: isMobile ? false : true,
-			// preventDefault: true,
+			// preventDefault: isMobile ? false : true,
+			preventDefault: true,
 			onPress: (self) => {
 				ScrollTrigger.isTouch && self.event.preventDefault();
 			},
