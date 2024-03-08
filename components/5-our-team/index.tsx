@@ -38,6 +38,7 @@ const OurTeam: React.FC = () => {
 						scrollTrigger: {
 							trigger: card,
 							start: isMobile ? 'top-=48 bottom-=32' : 'top bottom-=250',
+							end: 'bottom top',
 							toggleActions: 'play none none none',
 						},
 					},
@@ -52,10 +53,6 @@ const OurTeam: React.FC = () => {
 
 	return (
 		<section className={styles.ourTeam} id='team'>
-			{/* <div className={`${styles.bgImage} hide-on-mobile`}>
-				<Image src='/5-our-team/bg.webp' alt='bg' width={2880 / 2} height={1600 / 2} />
-			</div> */}
-
 			<div className={styles.ourTeam__container}>
 				<div ref={marqueeRef} className={`${styles.marqueeRefContainer} ${styles.marqueeRefContainer1}`}>
 					<MarqueeContainer direction='left' />
