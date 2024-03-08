@@ -137,7 +137,7 @@ const Items: React.FC = () => {
 					imgSrc='/4-xr-suits/items/xr-suit.webp'
 					style={
 						isMobile
-							? { width: '74.375vw', right: '8.875vw', bottom: '-80.625vw' }
+							? { width: '74.375vw', right: '8.875vw', bottom: '-72.625vw' }
 							: { width: '20.833vw', right: '-2.569vw', bottom: '-3.889vw' }
 					}
 					overflowHidden={true}
