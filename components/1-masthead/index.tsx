@@ -81,15 +81,15 @@ const Masthead: React.FC = () => {
 			const target = isScrollingDown ? swipeH1.current[index] : swipeH1.current[currentIndex];
 
 			gsap.to(target, {
-				// translateY: isScrollingDown ? 0 : -500,
-				transform: isScrollingDown ? 'translate3d(0, 0, 0)' : 'translate3d(0, -500, 0)',
+				translateY: isScrollingDown ? 0 : -800,
+				// transform: isScrollingDown ? 'translate3d(0, 0, 0)' : 'translate3d(0, -500, 0)',
 				autoAlpha: 1,
 				duration: 0.8,
 				ease: 'power2.out',
 
 				onComplete: () => {
 					animating = false;
-					gsap.delayedCall(index === swipeH1.current.length - 1 ? 0 : 0.2, () => {
+					gsap.delayedCall(index === swipeH1.current.length - 1 ? 0 : 0.3, () => {
 						allowScroll = true;
 					});
 				},
@@ -192,3 +192,4 @@ const Masthead: React.FC = () => {
 };
 
 export default Masthead;
+
