@@ -2,7 +2,7 @@
 // import Test2 from '@/components/0-test2';
 
 import React, { Suspense, lazy } from 'react';
-// import Masthead from '@/components/1-masthead';
+import Masthead from '@/components/1-masthead';
 const Mission = lazy(() => import('@/components/2-mission'));
 const Proprietary = lazy(() => import('@/components/3-proprietary'));
 const XRSuits = lazy(() => import('@/components/4-xr-suits'));
@@ -13,9 +13,9 @@ const Black = lazy(() => import('@/components/black'));
 
 const Home = () => {
 	return (
-		<main className='overflow-x-hidden'>
+		<main className=''>
 			<Suspense fallback={<div>Loading...</div>}>
-				{/* <Masthead /> */}
+				<Masthead />
 				<Mission />
 				<Proprietary />
 				<XRSuits />
