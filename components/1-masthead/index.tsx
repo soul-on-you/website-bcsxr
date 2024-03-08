@@ -36,7 +36,7 @@ const Masthead: React.FC = () => {
 		tl.current = gsap.timeline();
 
 		gsap.set(swipeH1.current, { autoAlpha: 0, y: -500 });
-		gsap.set(arrowRef.current, { autoAlpha: 0, y: 500 });
+		// gsap.set(arrowRef.current, { autoAlpha: 0, y: 500 });
 		gsap.set(backgroundImageRef.current, { transform: 'scale(1.7)' });
 
 		const intentObserver = ScrollTrigger.observe({
@@ -89,7 +89,7 @@ const Masthead: React.FC = () => {
 
 				onComplete: () => {
 					animating = false;
-					gsap.delayedCall(index === swipeH1.current.length - 1 ? 0 : 0.3, () => {
+					gsap.delayedCall(index === swipeH1.current.length - 1 ? 0 : 0.2, () => {
 						allowScroll = true;
 					});
 				},
@@ -104,8 +104,9 @@ const Masthead: React.FC = () => {
 			}
 
 			if (arrowRef.current) {
-				gsap.to(
+				gsap.fromTo(
 					arrowRef.current,
+					{ y: 500 },
 
 					{
 						autoAlpha: index >= 3 ? 1 : 0,
@@ -192,4 +193,3 @@ const Masthead: React.FC = () => {
 };
 
 export default Masthead;
-
