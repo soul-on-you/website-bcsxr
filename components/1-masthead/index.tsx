@@ -48,9 +48,9 @@ const Masthead: React.FC = () => {
 			tolerance: 10,
 			preventDefault: isMobile ? false : true,
 			// preventDefault: true,
-			// onPress: (self) => {
-			// 	ScrollTrigger.isTouch && self.event.preventDefault();
-			// },
+			onPress: (self) => {
+				ScrollTrigger.isTouch && self.event.preventDefault();
+			},
 		});
 		intentObserver.disable();
 
