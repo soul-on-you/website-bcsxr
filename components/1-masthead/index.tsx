@@ -89,7 +89,7 @@ const Masthead: React.FC = () => {
 
 				onComplete: () => {
 					animating = false;
-					gsap.delayedCall(0.2, () => {
+					gsap.delayedCall(index === swipeH1.current.length - 1 ? 0 : 0.2, () => {
 						allowScroll = true;
 					});
 				},
