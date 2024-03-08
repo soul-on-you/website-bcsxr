@@ -36,6 +36,7 @@
 			.marqueeRefContainer {
 				width: calc(100% + $padding-desktop * 2);
 				z-index: 6;
+				overflow-x: hidden;
 			}
 
 			.gridContainer {
