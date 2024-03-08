@@ -13,7 +13,7 @@ const Black = lazy(() => import('@/components/black'));
 
 const Home = () => {
 	return (
-		<main className=''>
+		<main className='overflow-x-hidden'>
 			<Suspense fallback={<div>Loading...</div>}>
 				{/* <Masthead /> */}
 				<Mission />
