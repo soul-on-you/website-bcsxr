@@ -20,7 +20,6 @@ const Masthead: React.FC = () => {
 	const swipeH1 = useRef<HTMLElement[]>([]);
 	const swipeSectionRef = useRef(null);
 	swipeH1.current = [];
-	const [preventDefault, setPreventDefault] = useState<boolean>(true);
 
 	let currentIndex = -1;
 	let animating: boolean;
@@ -85,7 +84,7 @@ const Masthead: React.FC = () => {
 				// translateY: isScrollingDown ? 0 : -500,
 				transform: isScrollingDown ? 'translate3d(0, 0, 0)' : 'translate3d(0, -500, 0)',
 				autoAlpha: 1,
-				duration: 1,
+				duration: 0.8,
 				ease: 'power2.out',
 
 				onComplete: () => {
@@ -99,7 +98,7 @@ const Masthead: React.FC = () => {
 			if (backgroundImageRef.current) {
 				gsap.to(backgroundImageRef.current, {
 					scale: newScale,
-					duration: 1,
+					duration: 0.8,
 					ease: 'power2.out',
 				});
 			}
@@ -110,7 +109,7 @@ const Masthead: React.FC = () => {
 
 					{
 						autoAlpha: index >= 3 ? 1 : 0,
-						duration: 1,
+						duration: 0.8,
 						ease: 'power2.out',
 						y: 0,
 					},
@@ -151,7 +150,6 @@ const Masthead: React.FC = () => {
 				intentObserver.disable();
 			},
 		});
-		// ScrollTrigger.normalizeScroll(true);
 		ScrollTrigger.refresh(); //фиксанула автоматический скролл при ф5
 
 		return () => {
@@ -159,10 +157,8 @@ const Masthead: React.FC = () => {
 				tl.current.kill();
 			}
 			ScrollTrigger.getAll().forEach((st) => st.kill());
-			// intentObserver.kill();
-			// gsap.killTweensOf('*');
 		};
-	}, [preventDefault]);
+	}, []);
 
 	return (
 		<>

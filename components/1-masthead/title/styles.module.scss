@@ -23,7 +23,7 @@
 				color: $color-blue;
 				font-size: 15vw; //216px, 1440
 				text-shadow: 2px 2px 72px $color-blue;
-				transform: rotate(-4deg);
+				transform: translate(0, 1.667vw) rotate(-4deg); //0 24px, 1440
 			}
 		}
 	}
@@ -46,12 +46,14 @@
 			opacity: 0;
 		}
 		h1:nth-child(6) {
-			display: inline-block;
-			color: $color-blue;
-			font-size: 35vw; //112px, 320
-			transform: rotate(-4deg) translateY(4.688vw); //320, 15px
 			opacity: 0;
-			text-shadow: 2px 2px 72px $color-blue;
+			span:nth-child(1) {
+				display: inline-block;
+				color: $color-blue;
+				font-size: 35vw; //112px, 320
+				transform: rotate(-4deg) translateY(6.688vw); //320, 20px
+				text-shadow: 2px 2px 72px $color-blue;
+			}
 		}
 	}
 }
