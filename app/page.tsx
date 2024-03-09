@@ -2,7 +2,8 @@
 // import Test2 from '@/components/0-test2';
 
 import React, { Suspense, lazy } from 'react';
-import Masthead from '@/components/1-masthead';
+// import Masthead from '@/components/1-masthead';
+const Masthead = lazy(() => import('@/components/1-masthead'));
 const Mission = lazy(() => import('@/components/2-mission'));
 const Proprietary = lazy(() => import('@/components/3-proprietary'));
 const XRSuits = lazy(() => import('@/components/4-xr-suits'));
