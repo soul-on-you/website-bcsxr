@@ -21,75 +21,75 @@ const Items: React.FC = () => {
 	const item4Ref = useRef<HTMLDivElement | null>(null);
 	const item5Ref = useRef<HTMLDivElement | null>(null);
 
-	// useEffect(() => {
-	// 	tl1.current = gsap.timeline({
-	// 		scrollTrigger: {
-	// 			trigger: item1Ref.current,
-	// 			start: isMobile ? 'top-=48 bottom-=32' : 'top bottom-=250',
-	// 			end: 'bottom top',
-	// 			toggleActions: 'play none none none',
-	// 		},
-	// 	});
+	useEffect(() => {
+		tl1.current = gsap.timeline({
+			scrollTrigger: {
+				trigger: item1Ref.current,
+				start: isMobile ? 'top-=48 bottom-=32' : 'top bottom-=250',
+				end: 'bottom top',
+				toggleActions: 'play none none none',
+			},
+		});
 
-	// 	tl1.current
-	// 		.fromTo(
-	// 			item1Ref.current,
-	// 			{ autoAlpha: 0, y: 120 },
-	// 			{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
-	// 		)
-	// 		.fromTo(
-	// 			item2Ref.current,
-	// 			{ autoAlpha: 0, y: 120 },
-	// 			{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
-	// 			'0.4',
-	// 		);
+		tl1.current
+			.fromTo(
+				item1Ref.current,
+				{ autoAlpha: 0, y: 120 },
+				{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
+			)
+			.fromTo(
+				item2Ref.current,
+				{ autoAlpha: 0, y: 120 },
+				{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
+				'0.4',
+			);
 
-	// 	// Анимация для второго контейнера
-	// 	tl2.current = gsap.timeline({
-	// 		scrollTrigger: {
-	// 			trigger: item3Ref.current,
-	// 			start: isMobile ? 'top-=48 bottom-=32' : 'top bottom-=250',
-	// 			end: 'bottom top',
-	// 			toggleActions: 'play none none none',
-	// 		},
-	// 	});
+		// Анимация для второго контейнера
+		tl2.current = gsap.timeline({
+			scrollTrigger: {
+				trigger: item3Ref.current,
+				start: isMobile ? 'top-=48 bottom-=32' : 'top bottom-=250',
+				end: 'bottom top',
+				toggleActions: 'play none none none',
+			},
+		});
 
-	// 	tl2.current
-	// 		.fromTo(
-	// 			item3Ref.current,
-	// 			{ autoAlpha: 0, y: 120 },
-	// 			{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
-	// 		)
-	// 		.fromTo(
-	// 			item4Ref.current,
-	// 			{ autoAlpha: 0, y: 120 },
-	// 			{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
-	// 			'0.4',
-	// 		);
+		tl2.current
+			.fromTo(
+				item3Ref.current,
+				{ autoAlpha: 0, y: 120 },
+				{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
+			)
+			.fromTo(
+				item4Ref.current,
+				{ autoAlpha: 0, y: 120 },
+				{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
+				'0.4',
+			);
 
-	// 	// Анимация для третьего контейнера
-	// 	tl3.current = gsap.timeline({
-	// 		scrollTrigger: {
-	// 			trigger: item5Ref.current,
-	// 			start: isMobile ? 'top-=48 bottom-=32' : 'top bottom-=250',
-	// 			end: 'bottom top',
-	// 			toggleActions: 'play none none none',
-	// 		},
-	// 	});
+		// Анимация для третьего контейнера
+		tl3.current = gsap.timeline({
+			scrollTrigger: {
+				trigger: item5Ref.current,
+				start: isMobile ? 'top-=48 bottom-=32' : 'top bottom-=250',
+				end: 'bottom top',
+				toggleActions: 'play none none none',
+			},
+		});
 
-	// 	tl3.current.fromTo(
-	// 		item5Ref.current,
-	// 		{ autoAlpha: 0, y: 120 },
-	// 		{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
-	// 	);
+		tl3.current.fromTo(
+			item5Ref.current,
+			{ autoAlpha: 0, y: 120 },
+			{ autoAlpha: 1, y: 0, duration: 1.4, ease: 'power3.out' },
+		);
 
-	// 	return () => {
-	// 		tl1.current?.kill();
-	// 		tl2.current?.kill();
-	// 		tl3.current?.kill();
-	// 		// ScrollTrigger.getAll().forEach((instance) => instance.kill());
-	// 	};
-	// }, []);
+		return () => {
+			tl1.current?.kill();
+			tl2.current?.kill();
+			tl3.current?.kill();
+			// ScrollTrigger.getAll().forEach((instance) => instance.kill());
+		};
+	}, []);
 
 	return (
 		<div className={styles.items}>
@@ -144,7 +144,8 @@ const Items: React.FC = () => {
 				/>
 			</div>
 			<div className={styles.container3}>
-				<LargeItem ref={item5Ref} />
+				{/* <LargeItem ref={item5Ref} /> */}
+				<LargeItem  />
 			</div>
 		</div>
 	);
