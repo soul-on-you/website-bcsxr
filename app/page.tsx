@@ -21,7 +21,6 @@ const Home = () => {
 				{/* <Mission /> */}
 				{/* <Proprietary /> */}
 				<XRSuits />
-
 				<OurTeam />
 				<OurDivision />
 				<Partners />
