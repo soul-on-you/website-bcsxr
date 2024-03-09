@@ -16,7 +16,7 @@ const MarqueeContainer: React.FC<IMarqueeContainerProps> = ({ direction }) => {
 
 	return (
 		<div className={styles.marqueeContainer}>
-			<Marquee direction={direction} speed={100}>
+			<Marquee direction={direction}>
 				<div className={styles.imageWrapper}>
 					<img src='/5-our-team/line.webp' alt='line' />
 				</div>
@@ -31,5 +31,5 @@ const MarqueeContainer: React.FC<IMarqueeContainerProps> = ({ direction }) => {
 	);
 };
 
-export default MarqueeContainer;
-// export default React.memo(MarqueeContainer);
+// export default MarqueeContainer;
+export default React.memo(MarqueeContainer);
