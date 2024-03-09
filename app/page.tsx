@@ -15,7 +15,7 @@ const Home = () => {
 			<Suspense fallback={<div>Loading...</div>}>
 				<Masthead />
 				<Mission />
-				{/* <Proprietary /> */}
+				<Proprietary />  
 				{/* <XRSuits /> */}
 				<OurTeam />
 				{/* <OurDivision /> */}
