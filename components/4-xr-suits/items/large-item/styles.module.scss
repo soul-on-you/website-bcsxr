@@ -2,9 +2,9 @@
 
 @media (min-width: 769px) {
 	.largeItem {
+		position: relative;
 		flex: 1 1 auto;
 		height: 47.083vw; //678px, 1440
-		position: relative;
 		border-radius: 1.111vw; //16px, 1440
 		background: $gradient-dark;
 		padding: 2.222vw; //32px 0, 1440
@@ -53,7 +53,7 @@
 				left: 8.125vw; //117px, 1440
 				border-radius: 50%;
 				opacity: 0.65;
-				filter: blur(10vmax);
+				filter: blur(5vmax);
 			}
 
 			.blueBlur {
@@ -65,7 +65,7 @@
 				top: 18.958vw; //273px, 1440
 				border-radius: 50%;
 				opacity: 0.65;
-				filter: blur(10vmax);
+				filter: blur(5vmax);
 			}
 		}
 	}
@@ -76,7 +76,7 @@
 		position: relative;
 		width: 89.688vw; //287px, 320
 		height: 89.688vw; //287px, 320
-		
+
 		border: 1px solid #5d495b;
 		border-radius: 5vw; //16px, 320
 		background: $gradient-dark;
@@ -126,7 +126,7 @@
 				left: 8.125vw; //117px, 1440
 				border-radius: 50%;
 				opacity: 0.65;
-				filter: blur(10vmax);
+				// filter: 32px;
 			}
 
 			.blueBlur {
@@ -138,7 +138,7 @@
 				top: 18.958vw; //273px, 1440
 				border-radius: 50%;
 				opacity: 0.65;
-				filter: blur(10vmax);
+				// filter: 32px;
 			}
 		}
 	}

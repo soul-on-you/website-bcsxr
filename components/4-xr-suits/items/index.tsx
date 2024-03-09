@@ -144,12 +144,7 @@ const Items: React.FC = () => {
 				/>
 			</div>
 			<div className={styles.container3}>
-				{/* <LargeItem ref={item5Ref} /> */}
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ipsam dolores ex aliquam temporibus
-					tempora maxime molestiae, iure recusandae accusamus aut dolor? Dolorem expedita veniam, numquam quod
-					nam fugiat ad?
-				</p>
+				<LargeItem ref={item5Ref} />
 			</div>
 		</div>
 	);
