@@ -17,7 +17,7 @@ const Home = () => {
 	return (
 		<main className=''>
 			<Suspense fallback={<div>Loading...</div>}>
-				{/* <Masthead /> */}
+				<Masthead />
 				{/* <Mission /> */}
 				<Proprietary />
 				<XRSuits />
