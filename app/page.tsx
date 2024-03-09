@@ -1,6 +1,7 @@
 // import Test from '@/components/0-test';
 // import Test2 from '@/components/0-test2';
 
+import MarqueeContainer from '@/components/5-our-team/marquee';
 import React, { Suspense, lazy } from 'react';
 // import Masthead from '@/components/1-masthead';
 const Masthead = lazy(() => import('@/components/1-masthead'));
@@ -16,14 +17,16 @@ const Home = () => {
 	return (
 		<main className=''>
 			<Suspense fallback={<div>Loading...</div>}>
-				<Masthead />
+				{/* <Masthead />
 				<Mission />
 				<Proprietary />
-				<XRSuits />
-				<OurTeam />
+				<XRSuits /> */}
+				<MarqueeContainer direction='left'/>
+				<MarqueeContainer direction='right'/>
+				{/* <OurTeam />
 				<OurDivision />
 				<Partners />
-				<Black />
+				<Black /> */}
 			</Suspense>
 		</main>
 	);
