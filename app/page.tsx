@@ -17,15 +17,15 @@ const Home = () => {
 	return (
 		<main className=''>
 			<Suspense fallback={<div>Loading...</div>}>
-				<Masthead />
+				{/* <Masthead /> */}
 				{/* <Mission /> */}
-				<Proprietary />
-				<XRSuits />
+				{/* <Proprietary /> */}
+				{/* <XRSuits /> */}
 
 				<OurTeam />
-				<OurDivision />
-				<Partners />
-				<Black />
+				{/* <OurDivision /> */}
+				{/* <Partners /> */}
+				{/* <Black /> */}
 			</Suspense>
 		</main>
 	);
