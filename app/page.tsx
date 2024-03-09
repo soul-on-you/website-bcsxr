@@ -21,8 +21,7 @@ const Home = () => {
 				<Mission />
 				<Proprietary />
 				<XRSuits /> */}
-				{/* <MarqueeContainer direction='left'/>
-				<MarqueeContainer direction='right'/> */}
+
 				<OurTeam />
 				<OurDivision />
 				<Partners />

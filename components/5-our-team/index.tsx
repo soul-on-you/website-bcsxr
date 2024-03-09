@@ -68,7 +68,7 @@ const OurTeam: React.FC = () => {
 					{/* Leading specialists in the field of VR */}
 				</HeadlineCentered>
 				<div className={`${styles.marqueeRefContainer} ${styles.marqueeRefContainer2}`}>
-					<MarqueeContainer direction='left'/>
+					<MarqueeContainer direction='right'/>
 				</div>
 
 				<div className={styles.gridContainer} ref={cardsContainerRef}>
