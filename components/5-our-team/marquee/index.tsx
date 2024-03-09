@@ -18,13 +18,13 @@ const MarqueeContainer: React.FC<IMarqueeContainerProps> = ({ direction }) => {
 		<div className={styles.marqueeContainer}>
 			<Marquee direction={direction} speed={100}>
 				<div className={styles.imageWrapper}>
-					<img src='/5-our-team/line.svg' alt='line' />
+					<img src='/5-our-team/line.png' alt='line' />
 				</div>
 				<div className={styles.imageWrapper}>
-					<img src='/5-our-team/line.svg' alt='line' />
+					<img src='/5-our-team/line.png' alt='line' />
 				</div>
 				<div className={styles.imageWrapper}>
-					<img src='/5-our-team/line.svg' alt='line' />
+					<img src='/5-our-team/line.png' alt='line' />
 				</div>
 			</Marquee>
 		</div>
