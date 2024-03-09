@@ -14,14 +14,12 @@ const Home = () => {
 		<main className=''>
 			<Suspense fallback={<div>Loading...</div>}>
 				<Masthead />
-				{/* <Mission />
-				<Proprietary />
-				<XRSuits />
+				{/* <Mission /> */}
+				{/* <Proprietary /> */}
+				{/* <XRSuits /> */}
 				<OurTeam />
-				<OurDivision />
-				<Partners /> */}
-				<MarqueeContainer direction='left'/>
-				<MarqueeContainer direction='right'/>
+				{/* <OurDivision /> */}
+				{/* <Partners /> */}
 				<Black />
 			</Suspense>
 		</main>
