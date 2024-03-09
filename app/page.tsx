@@ -19,7 +19,7 @@ const Home = () => {
 				{/* <XRSuits /> */}
 				<OurTeam />
 				{/* <OurDivision /> */}
-				{/* <Partners /> */}
+				<Partners />
 				<Black />
 			</Suspense>
 		</main>
