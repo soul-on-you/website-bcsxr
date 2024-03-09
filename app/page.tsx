@@ -23,9 +23,9 @@ const Home = () => {
 				<XRSuits />
 
 				<OurTeam />
-				{/* <OurDivision /> */}
-				{/* <Partners /> */}
-				{/* <Black /> */}
+				<OurDivision />
+				<Partners />
+				<Black />
 			</Suspense>
 		</main>
 	);
