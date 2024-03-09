@@ -7,7 +7,7 @@ import Image from 'next/image';
 import useWindowSize from '@/hooks/useWindowSize';
 
 interface IMarqueeContainerProps {
-	direction: any;
+	direction?: any;
 }
 
 const MarqueeContainer: React.FC<IMarqueeContainerProps> = ({ direction }) => {
@@ -16,7 +16,7 @@ const MarqueeContainer: React.FC<IMarqueeContainerProps> = ({ direction }) => {
 
 	return (
 		<div className={styles.marqueeContainer}>
-			<Marquee direction={direction}>
+			<Marquee >
 				<div className={styles.imageWrapper}>
 					<img src='/5-our-team/line.webp' alt='line' />
 				</div>

@@ -55,7 +55,7 @@ const OurTeam: React.FC = () => {
 		<section className={styles.ourTeam} id='team'>
 			<div className={styles.ourTeam__container}>
 				<div ref={marqueeRef} className={`${styles.marqueeRefContainer} ${styles.marqueeRefContainer1}`}>
-					<MarqueeContainer direction='left' />
+					<MarqueeContainer  />
 				</div>
 				<HeadlineCentered
 					span1='our'
@@ -72,7 +72,7 @@ const OurTeam: React.FC = () => {
 					{/* Leading specialists in the field of VR */}
 				</HeadlineCentered>
 				<div ref={marqueeRef} className={`${styles.marqueeRefContainer} ${styles.marqueeRefContainer2}`}>
-					<MarqueeContainer direction='right' />
+					<MarqueeContainer  />
 				</div>
 
 				<div className={styles.gridContainer} ref={cardsContainerRef}>
