@@ -143,9 +143,10 @@ const Items: React.FC = () => {
 					overflowHidden={true}
 				/>
 			</div>
-			{/* <div className={styles.container3}>
-				<LargeItem ref={item5Ref} />
-			</div> */}
+			<div className={styles.container3}>
+				{/* <LargeItem ref={item5Ref} /> */}
+				<div className='bg-red-700'/>
+			</div>
 		</div>
 	);
 };

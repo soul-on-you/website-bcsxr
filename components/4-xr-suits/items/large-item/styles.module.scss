@@ -73,13 +73,14 @@
 
 @media (max-width: 768px) {
 	.largeItem {
+		position: relative;
 		width: 89.688vw; //287px, 320
 		height: 89.688vw; //287px, 320
-		position: relative;
+		
 		border: 1px solid #5d495b;
-		border-radius: 16px;
+		border-radius: 5vw; //16px, 320
 		background: $gradient-dark;
-		padding: 16px; //32px 0, 1440
+		padding: 5vw; //16px, 320
 
 		&::after {
 			content: '';

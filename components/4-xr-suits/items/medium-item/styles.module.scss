@@ -40,9 +40,9 @@
 		display: flex;
 		align-items: start;
 		border: 1px solid #5d495b;
-		border-radius: 16px;
+		border-radius: 5vw; //16px, 320
 		background: $gradient-dark;
-		padding: 16px; //32px, 1440
+		padding: 5vw; //16px, 320
 
 		&::after {
 			content: '';
