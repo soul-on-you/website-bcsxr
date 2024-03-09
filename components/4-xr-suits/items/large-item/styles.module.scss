@@ -126,7 +126,7 @@
 				left: 8.125vw; //117px, 1440
 				border-radius: 50%;
 				opacity: 0.65;
-				// filter: 32px;
+				filter: blur(16px);
 			}
 
 			.blueBlur {
@@ -138,7 +138,7 @@
 				top: 18.958vw; //273px, 1440
 				border-radius: 50%;
 				opacity: 0.65;
-				// filter: 32px;
+				filter: blur(16px);
 			}
 		}
 	}
