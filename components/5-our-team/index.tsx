@@ -13,10 +13,6 @@ import MarqueeContainer from './marquee';
 const OurTeam: React.FC = () => {
 	const { width } = useWindowSize();
 	const isMobile = width < 768;
-
-	const tl = useRef<gsap.core.Timeline | null>(null);
-	const marqueeRef = useRef<HTMLDivElement | null>(null);
-	const marqueeRef2 = useRef<HTMLDivElement | null>(null);
 	const cardsContainerRef = useRef<HTMLDivElement | null>(null);
 
 	useEffect(() => {
@@ -54,8 +50,8 @@ const OurTeam: React.FC = () => {
 	return (
 		<section className={styles.ourTeam} id='team'>
 			<div className={styles.ourTeam__container}>
-				<div ref={marqueeRef} className={`${styles.marqueeRefContainer} ${styles.marqueeRefContainer1}`}>
-					<MarqueeContainer  />
+				<div className={`${styles.marqueeRefContainer} ${styles.marqueeRefContainer1}`}>
+					<MarqueeContainer />
 				</div>
 				<HeadlineCentered
 					span1='our'
@@ -71,8 +67,8 @@ const OurTeam: React.FC = () => {
 				>
 					{/* Leading specialists in the field of VR */}
 				</HeadlineCentered>
-				<div ref={marqueeRef} className={`${styles.marqueeRefContainer} ${styles.marqueeRefContainer2}`}>
-					<MarqueeContainer  />
+				<div className={`${styles.marqueeRefContainer} ${styles.marqueeRefContainer2}`}>
+					<MarqueeContainer />
 				</div>
 
 				<div className={styles.gridContainer} ref={cardsContainerRef}>
