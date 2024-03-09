@@ -37,7 +37,7 @@ const Partners: React.FC = () => {
 			)
 			.fromTo(
 				[bottomBlocksRef1.current, bottomBlocksRef2.current, bottomBlocksRef3.current],
-				{ autoAlpha: 0, y: 64 },
+				{ autoAlpha: 0, y: isMobile ? 64 : 120 },
 				{ autoAlpha: 1, y: 0, duration: 1.4, stagger: 0.3, ease: 'power3.out' },
 				'0.4',
 			);
