@@ -18,31 +18,31 @@ const MarqueeContainer: React.FC<IMarqueeContainerProps> = ({ direction }) => {
 		<div className={styles.marqueeContainer}>
 			<Marquee direction={direction} speed={isMobile ? 10 : 50}>
 				<div className={styles.imageWrapper}>
-					<Image src='/5-our-team/line.svg' alt='line' width={2800 / 2} height={500 / 2} />
+					<img src='/5-our-team/line.svg' alt='line'  />
 				</div>
 				<div className={styles.imageWrapper}>
-					<Image src='/5-our-team/line.svg' alt='line' width={2800 / 2} height={500 / 2} />
+					<img src='/5-our-team/line.svg' alt='line'  />
 				</div>
 				<div className={styles.imageWrapper}>
-					<Image src='/5-our-team/line.svg' alt='line' width={2800 / 2} height={500 / 2} />
+					<img src='/5-our-team/line.svg' alt='line'  />
 				</div>
 				<div className={styles.imageWrapper}>
-					<Image src='/5-our-team/line.svg' alt='line' width={2800 / 2} height={500 / 2} />
+					<img src='/5-our-team/line.svg' alt='line'  />
 				</div>
 				<div className={styles.imageWrapper}>
-					<Image src='/5-our-team/line.svg' alt='line' width={2800 / 2} height={500 / 2} />
+					<img src='/5-our-team/line.svg' alt='line'  />
 				</div>
 				<div className={styles.imageWrapper}>
-					<Image src='/5-our-team/line.svg' alt='line' width={2800 / 2} height={500 / 2} />
+					<img src='/5-our-team/line.svg' alt='line'  />
 				</div>
 				<div className={styles.imageWrapper}>
-					<Image src='/5-our-team/line.svg' alt='line' width={2800 / 2} height={500 / 2} />
+					<img src='/5-our-team/line.svg' alt='line'  />
 				</div>
 				<div className={styles.imageWrapper}>
-					<Image src='/5-our-team/line.svg' alt='line' width={2800 / 2} height={500 / 2} />
+					<img src='/5-our-team/line.svg' alt='line' />
 				</div>
 				<div className={styles.imageWrapper}>
-					<Image src='/5-our-team/line.svg' alt='line' width={2800 / 2} height={500 / 2} />
+					<img src='/5-our-team/line.svg' alt='line'  />
 				</div>
 			</Marquee>
 		</div>
