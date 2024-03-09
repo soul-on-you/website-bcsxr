@@ -93,7 +93,7 @@ const Items: React.FC = () => {
 
 	return (
 		<div className={styles.items}>
-			<div className={styles.container1}>
+			{/* <div className={styles.container1}>
 				<SmallItem
 					ref={item1Ref}
 					name='haptic shin guards'
@@ -142,7 +142,7 @@ const Items: React.FC = () => {
 					}
 					overflowHidden={true}
 				/>
-			</div>
+			</div> */}
 			<div className={styles.container3}>
 				<LargeItem ref={item5Ref} />
 			</div>
