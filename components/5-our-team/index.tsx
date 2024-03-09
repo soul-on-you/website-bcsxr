@@ -51,7 +51,7 @@ const OurTeam: React.FC = () => {
 		<section className={styles.ourTeam} id='team'>
 			<div className={styles.ourTeam__container}>
 				<div className={`${styles.marqueeRefContainer} ${styles.marqueeRefContainer1}`}>
-					<MarqueeContainer direction='right'/>
+					<MarqueeContainer direction='left'/>
 				</div>
 				<HeadlineCentered
 					span1='our'
