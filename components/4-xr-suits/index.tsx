@@ -31,7 +31,7 @@ const XRSuits: React.FC = () => {
 					<br />
 					With haptic feedback & biometric reading
 				</HeadlineCentered>
-				{isMobile ? <ImagesMobile /> : <Images />}
+				{/* {isMobile ? <ImagesMobile /> : <Images />} */}
 				<Items />
 			</div>
 		</section>
