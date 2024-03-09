@@ -15,37 +15,37 @@ const OurTeam: React.FC = () => {
 	const isMobile = width < 768;
 	const cardsContainerRef = useRef<HTMLDivElement | null>(null);
 
-	useEffect(() => {
-		gsap.registerPlugin(ScrollTrigger);
-		if (cardsContainerRef.current) {
-			// const items = gsap.utils.toArray(cardsContainerRef.current.children);
-			const items = gsap.utils.toArray(cardsContainerRef.current.children) as Element[];
+	// useEffect(() => {
+	// 	gsap.registerPlugin(ScrollTrigger);
+	// 	if (cardsContainerRef.current) {
+	// 		// const items = gsap.utils.toArray(cardsContainerRef.current.children);
+	// 		const items = gsap.utils.toArray(cardsContainerRef.current.children) as Element[];
 
-			items.forEach((card, index) => {
-				gsap.fromTo(
-					card,
-					{ autoAlpha: 0, y: 120 },
-					{
-						autoAlpha: 1,
-						y: 0,
-						duration: 1.4,
-						ease: 'power3.out',
-						delay: index * 0.08,
-						scrollTrigger: {
-							trigger: card,
-							start: isMobile ? 'top-=48 bottom-=32' : 'top bottom-=250',
-							end: 'bottom top',
-							toggleActions: 'play none none none',
-						},
-					},
-				);
-			});
-		}
+	// 		items.forEach((card, index) => {
+	// 			gsap.fromTo(
+	// 				card,
+	// 				{ autoAlpha: 0, y: 120 },
+	// 				{
+	// 					autoAlpha: 1,
+	// 					y: 0,
+	// 					duration: 1.4,
+	// 					ease: 'power3.out',
+	// 					delay: index * 0.08,
+	// 					scrollTrigger: {
+	// 						trigger: card,
+	// 						start: isMobile ? 'top-=48 bottom-=32' : 'top bottom-=250',
+	// 						end: 'bottom top',
+	// 						toggleActions: 'play none none none',
+	// 					},
+	// 				},
+	// 			);
+	// 		});
+	// 	}
 
-		return () => {
-			ScrollTrigger.getAll().forEach((st) => st.kill());
-		};
-	}, []);
+	// 	return () => {
+	// 		ScrollTrigger.getAll().forEach((st) => st.kill());
+	// 	};
+	// }, []);
 
 	return (
 		<section className={styles.ourTeam} id='team'>
