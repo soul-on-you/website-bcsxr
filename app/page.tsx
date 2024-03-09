@@ -1,9 +1,5 @@
-// import Test from '@/components/0-test';
-// import Test2 from '@/components/0-test2';
-
 import MarqueeContainer from '@/components/5-our-team/marquee';
 import React, { Suspense, lazy } from 'react';
-// import Masthead from '@/components/1-masthead';
 const Masthead = lazy(() => import('@/components/1-masthead'));
 const Mission = lazy(() => import('@/components/2-mission'));
 const Proprietary = lazy(() => import('@/components/3-proprietary'));
@@ -18,12 +14,14 @@ const Home = () => {
 		<main className=''>
 			<Suspense fallback={<div>Loading...</div>}>
 				<Masthead />
-				<Mission />
+				{/* <Mission />
 				<Proprietary />
 				<XRSuits />
 				<OurTeam />
 				<OurDivision />
-				<Partners />
+				<Partners /> */}
+				<MarqueeContainer direction='left'/>
+				<MarqueeContainer direction='right'/>
 				<Black />
 			</Suspense>
 		</main>
