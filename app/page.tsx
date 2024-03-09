@@ -18,7 +18,7 @@ const Home = () => {
 				<Proprietary />  
 				{/* <XRSuits /> */}
 				<OurTeam />
-				{/* <OurDivision /> */}
+				<OurDivision />
 				<Partners />
 				<Black />
 			</Suspense>
