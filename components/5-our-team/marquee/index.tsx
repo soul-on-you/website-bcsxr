@@ -11,12 +11,9 @@ interface IMarqueeContainerProps {
 }
 
 const MarqueeContainer: React.FC<IMarqueeContainerProps> = ({ direction }) => {
-	// const { width } = useWindowSize();
-	// const isMobile = width < 768;
-
 	return (
 		<div className={styles.marqueeContainer}>
-			<Marquee >
+			<Marquee direction='right'>
 				<div className={styles.imageWrapper}>
 					<img src='/5-our-team/line.svg' alt='line' />
 				</div>
