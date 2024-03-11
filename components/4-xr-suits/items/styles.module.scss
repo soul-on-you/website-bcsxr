@@ -1,18 +1,19 @@
-@import '../../../styles/variables';
+@import '/styles/variables';
+@import '/styles/functions';
 
 @media (min-width: 769px) {
 	.items {
 		display: flex;
 		flex-direction: column;
 		padding: 0 $padding-desktop;
-		gap: 2.222vw; //32px, 1440
+		gap: px-to-vw(32, $base-width-desktop);
 
 		.container1 {
 			display: flex;
 			flex-direction: row;
 			align-items: center;
 			justify-content: space-between;
-			gap: 2.222vw; //32px, 1440
+			gap: px-to-vw(32, $base-width-desktop);
 		}
 
 		.container2 {
@@ -20,7 +21,7 @@
 			flex-direction: row;
 			align-items: center;
 			justify-content: space-between;
-			gap: 2.222vw; //32px, 1440
+			gap: px-to-vw(32, $base-width-desktop);
 		}
 
 		.container3 {
@@ -34,14 +35,14 @@
 		display: flex;
 		flex-direction: column;
 		padding: 0 $padding-mobile;
-		gap: 5vw; //16px, 320
+		gap: px-to-vw(16, $base-width-mobile);
 
 		.container1 {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			justify-content: space-between;
-			gap: 5vw; //16px, 320
+			gap: px-to-vw(16, $base-width-mobile);
 		}
 
 		.container2 {
@@ -49,7 +50,7 @@
 			flex-direction: column;
 			align-items: center;
 			justify-content: space-between;
-			gap: 5vw; //16px, 320
+			gap: px-to-vw(16, $base-width-mobile);
 		}
 
 		.container3 {

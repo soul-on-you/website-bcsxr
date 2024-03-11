@@ -1,9 +1,10 @@
 @import '/styles/variables';
+@import '/styles/functions';
 
 @media (min-width: 769px) {
 	.smallItem {
 		position: relative;
-		height: 13.819vw; //199px, 1440
+		height: px-to-vw(199, $base-width-desktop);
 
 		display: flex;
 		justify-content: center;
@@ -11,7 +12,7 @@
 		grid-column: span 1;
 
 		border: 1px solid #5d495b;
-		border-radius: 1.111vw; //16px, 1440
+		border-radius: px-to-vw(16, $base-width-desktop);
 		background: $gradient-dark;
 		padding: 3.75vw 0; //54px 0, 1440
 		backdrop-filter: blur(28px);
@@ -30,7 +31,7 @@
 		}
 
 		img {
-			width: 22.361vw; //322px, 1440
+			width: px-to-vw(322, $base-width-desktop);
 			min-height: 100%;
 			object-fit: cover;
 		}
@@ -48,8 +49,7 @@
 		grid-column: span 1;
 
 		border: 1px solid #5d495b;
-		// border-radius: 3.75vw; //12px, 320
-		border-radius: 2.5vw; //8px, 320
+		border-radius: px-to-vw(8, $base-width-mobile);
 		background: $gradient-dark;
 		padding: 2.5vw 0; //54px 0, 320
 

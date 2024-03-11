@@ -1,4 +1,5 @@
-@import '../../styles/variables';
+@import '/styles/variables';
+@import '/styles/functions';
 
 @media (min-width: 769px) {
 	.ourDivision {
@@ -24,7 +25,7 @@
 			.containerItems {
 				display: grid;
 				grid-template-columns: 1fr 1fr;
-				gap: 1.389vw; //20px, 1440
+				gap: px-to-vw(20, $base-width-desktop);
 				grid-auto-rows: minmax(100px, auto);
 			}
 		}
@@ -43,7 +44,7 @@
 			.containerItems {
 				display: grid;
 				grid-template-columns: 1fr 1fr;
-				gap: 6.25vw; //20px, 320
+				gap: px-to-vw(20, $base-width-mobile);
 				grid-auto-rows: minmax(100px, auto);
 			}
 		}

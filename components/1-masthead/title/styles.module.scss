@@ -1,4 +1,5 @@
 @import '/styles/variables';
+@import '/styles/functions';
 
 @media (min-width: 769px) {
 	.title {
@@ -21,7 +22,7 @@
 			span:nth-child(1) {
 				display: inline-block;
 				color: $color-blue;
-				font-size: 15vw; //216px, 1440
+				font-size: px-to-vw(216, $base-width-desktop);
 				text-shadow: 2px 2px 72px $color-blue;
 				transform: translate(0, 1.667vw) rotate(-4deg); //0 24px, 1440
 			}
@@ -50,7 +51,7 @@
 			span:nth-child(1) {
 				display: inline-block;
 				color: $color-blue;
-				font-size: 35vw; //112px, 320
+				font-size: px-to-vw(112, $base-width-mobile);
 				transform: rotate(-4deg) translateY(6.688vw); //320, 20px
 				text-shadow: 2px 2px 72px $color-blue;
 			}

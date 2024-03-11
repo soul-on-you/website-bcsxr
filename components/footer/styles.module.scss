@@ -1,4 +1,5 @@
 @import '/styles/variables';
+@import '/styles/functions';
 
 @media (min-width: 769px) {
 	.footer {
@@ -6,7 +7,7 @@
 			display: flex;
 			flex-direction: column;
 			background: rgba(29, 30, 33, 1);
-			padding-top: 6.944vw; //100px, 1440
+			padding-top: px-to-vw(100, $base-width-desktop);
 			padding: 4.444vw $padding-desktop 1.111vw; //64px, $padding-desktop, 16px, 1440
 
 			.input {
@@ -14,8 +15,8 @@
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
-				gap: 1.111vw; //16px, 1440
-				padding-bottom: 6.944vw; //100px, 1440
+				gap: px-to-vw(16, $base-width-desktop);
+				padding-bottom: px-to-vw(100, $base-width-desktop);
 			}
 
 			.linksLogo {
@@ -23,7 +24,7 @@
 				flex-direction: row;
 				align-items: center;
 				justify-content: space-between;
-				padding-bottom: 4.444vw; //64px, 1440
+				padding-bottom: px-to-vw(64, $base-width-desktop);
 			}
 
 			.copyright {
@@ -34,8 +35,8 @@
 
 				p {
 					color: $color-white;
-					font-size: 1.111vw; //16px, 1440
-					line-height: 1.222vw; //17.6px, 1440
+					font-size: px-to-vw(16, $base-width-desktop);
+					line-height: px-to-vw(17.6, $base-width-desktop);
 				}
 			}
 		}
@@ -48,7 +49,6 @@
 			display: flex;
 			flex-direction: column;
 			background: rgba(29, 30, 33, 1);
-			// padding-top: 6.944vw; //100px, 1440
 			padding: 20vw $padding-mobile 5vw; //64px, $padding-desktop, 16px, 320
 
 			.input {
@@ -56,8 +56,8 @@
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
-				gap: 5vw; //16px, 320
-				padding-bottom: 31.25vw; //100px, 320
+				gap: px-to-vw(16, $base-width-mobile);
+				padding-bottom: px-to-vw(100, $base-width-mobile);
 			}
 
 			.linksLogo {
@@ -65,8 +65,8 @@
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
-				gap: 32px;
-				padding-bottom: 20vw; //64px, 320
+				gap: px-to-vw(32, $base-width-mobile);
+				padding-bottom: px-to-vw(64, $base-width-mobile);
 			}
 
 			.copyright {
@@ -74,12 +74,11 @@
 				justify-content: center;
 				align-items: center;
 				margin: 0 auto;
-				// padding: 0;
 
 				p {
 					color: $color-white;
-					font-size: 5vw; //16px, 320
-					line-height: 5.5vw; //17.6px, 320
+					font-size: px-to-vw(16, $base-width-mobile);
+					line-height: px-to-vw(17.6, $base-width-mobile);
 				}
 			}
 		}

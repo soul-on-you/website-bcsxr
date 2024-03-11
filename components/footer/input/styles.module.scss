@@ -1,4 +1,5 @@
 @import '/styles/variables';
+@import '/styles/functions';
 
 @media (min-width: 769px) {
 	.inputContainer {
@@ -9,18 +10,18 @@
 
 		background: #2d2e33;
 		border: 1px solid #525564;
-		border-radius: 1.181vw; //17px, 1440
+		border-radius: px-to-vw(17, $base-width-desktop);
 
 		input {
 			font-family: 'Suisse-Intl-Regular';
-			font-size: 1.667vw; //24px, 1440
+			font-size: px-to-vw(24, $base-width-desktop);
 			line-height: 110%;
 			color: $color-white;
 
-			width: 31.25vw; //450px, 1440
+			width: px-to-vw(450, $base-width-desktop);
 			float: left;
-			padding-left: 2.222vw; //32px, 1440
-			border-radius: 2.778vw; //40px, 1440
+			padding-left: px-to-vw(32, $base-width-desktop);
+			border-radius: px-to-vw(40, $base-width-desktop);
 			border-top-style: none;
 			background: #2d2e33;
 
@@ -64,18 +65,18 @@
 
 		background: #2d2e33;
 		border: 1px solid #525564;
-		border-radius: 4.375vw; //13px, 320
+		border-radius: px-to-vw(13, $base-width-mobile);
 
 		input {
 			font-family: 'Suisse-Intl-Regular';
-			font-size: 5vw; //16px, 320
-			line-height: 5.5vw; //17.6px, 320
+			font-size: px-to-vw(16, $base-width-mobile);
+			line-height: px-to-vw(17.6, $base-width-mobile);
 			color: $color-white;
 
-			width: 62.5vw; //200px, 320
+			width: px-to-vw(200, $base-width-mobile);
 			float: left;
-			padding-left: 6.25vw; //20px, 320
-			border-radius: 12.5vw; //40px, 320
+			padding-left: px-to-vw(20, $base-width-mobile);
+			border-radius: px-to-vw(40, $base-width-mobile);
 			border-top-style: none;
 			background: #2d2e33;
 

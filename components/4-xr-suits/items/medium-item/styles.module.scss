@@ -1,15 +1,16 @@
-@import '../../../../styles/variables';
+@import '/styles/variables';
+@import '/styles/functions';
 
 @media (min-width: 769px) {
 	.mediumItem {
 		position: relative;
-		height: 33.333vw; //480px, 1440
+		height: px-to-vw(480, $base-width-desktop);
 
 		display: flex;
 		flex: 1 0 auto;
-		border-radius: 1.111vw; //16px, 1440
+		border-radius: px-to-vw(16, $base-width-desktop);
 		background: $gradient-dark;
-		padding: 2.222vw; //32px, 1440
+		padding: px-to-vw(32, $base-width-desktop);
 
 		&::after {
 			content: '';
@@ -34,15 +35,15 @@
 @media (max-width: 768px) {
 	.mediumItem {
 		position: relative;
-		width: 89.688vw; //287px, 320
-		height: 89.688vw; //287px, 320
+		width: px-to-vw(287, $base-width-mobile);
+		height: px-to-vw(287, $base-width-mobile);
 
 		display: flex;
 		align-items: start;
 		border: 1px solid #5d495b;
-		border-radius: 5vw; //16px, 320
+		border-radius: px-to-vw(16, $base-width-mobile);
 		background: $gradient-dark;
-		padding: 5vw; //16px, 320
+		padding: px-to-vw(16, $base-width-mobile);
 
 		&::after {
 			content: '';

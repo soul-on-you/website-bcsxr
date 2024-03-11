@@ -1,13 +1,14 @@
-@import '../../../../styles/variables';
+@import '/styles/variables';
+@import '/styles/functions';
 
 @media (min-width: 769px) {
 	.largeItem {
 		position: relative;
 		flex: 1 1 auto;
-		height: 47.083vw; //678px, 1440
-		border-radius: 1.111vw; //16px, 1440
+		height: px-to-vw(678, $base-width-desktop);
+		border-radius: px-to-vw(16, $base-width-desktop);
 		background: $gradient-dark;
-		padding: 2.222vw; //32px 0, 1440
+		padding: px-to-vw(32, $base-width-desktop);
 
 		&::after {
 			content: '';
@@ -37,10 +38,10 @@
 
 		.imageContainer {
 			position: absolute;
-			width: 76.389vw; //1100px, 1440
+			width: px-to-vw(1100, $base-width-desktop);
 			height: auto;
-			right: 3.194vw; //46px, 1440
-			bottom: 0.069vw; //1px, 1440
+			right: px-to-vw(46, $base-width-desktop);
+			bottom: px-to-vw(1, $base-width-desktop);
 			z-index: -1;
 			object-fit: cover;
 
@@ -49,8 +50,8 @@
 				width: 15.611vw;
 				height: 15.611vw;
 				background-color: $color-pink;
-				top: 18.819vw; //271px, 1440;
-				left: 8.125vw; //117px, 1440
+				top: px-to-vw(271, $base-width-desktop);
+				left: px-to-vw(117, $base-width-desktop);
 				border-radius: 50%;
 				opacity: 0.65;
 				filter: blur(5vmax);
@@ -61,8 +62,8 @@
 				width: 15.611vw;
 				height: 15.611vw;
 				background-color: $color-blue;
-				right: 9.583vw; //138px, 1440
-				top: 18.958vw; //273px, 1440
+				right: px-to-vw(138, $base-width-desktop);
+				top: px-to-vw(273, $base-width-desktop);
 				border-radius: 50%;
 				opacity: 0.65;
 				filter: blur(5vmax);
@@ -74,13 +75,13 @@
 @media (max-width: 768px) {
 	.largeItem {
 		position: relative;
-		width: 89.688vw; //287px, 320
-		height: 89.688vw; //287px, 320
+		width: px-to-vw(287, $base-width-mobile);
+		height: px-to-vw(287, $base-width-mobile);
 
 		border: 1px solid #5d495b;
-		border-radius: 5vw; //16px, 320
+		border-radius: px-to-vw(16, $base-width-mobile);
 		background: $gradient-dark;
-		padding: 5vw; //16px, 320
+		padding: px-to-vw(16, $base-width-mobile);
 
 		&::after {
 			content: '';
@@ -110,10 +111,10 @@
 
 		.imageContainer {
 			position: absolute;
-			width: 96.875vw; //310px, 320
+			width: px-to-vw(310, $base-width-mobile);
 			height: auto;
-			right: -3.125vw; //-10px, 320
-			bottom: 3.125vw; //10px, 320
+			right: px-to-vw(-10, $base-width-mobile);
+			bottom: px-to-vw(10, $base-width-mobile);
 			z-index: -1;
 			object-fit: cover;
 

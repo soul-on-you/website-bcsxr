@@ -1,19 +1,19 @@
-@import '../../styles/variables';
+@import '/styles/variables';
+@import '/styles/functions';
 
 @media (min-width: 769px) {
 	.buttonContainer {
 		display: inline-block;
 		position: relative;
-		// border: 1px solid $color-gradient;
-		border-radius: 1.111vw; //16px, 1440
+		border-radius: px-to-vw(16, $base-width-desktop);
+		background: $color-gradient;
 		padding: 0.833vw 2.222vw 0.556vw 1.667vw; //12px 32px 8px 24px, 1440
-		background: linear-gradient(180deg, rgba(255, 255, 255, 0.22) 0%, rgba(217, 217, 217, 0.11) 100%);
 
 		&::after {
 			content: '';
 			overflow: hidden;
 			position: absolute;
-			border-radius: 1.111vw; //16px, 1440
+			border-radius: px-to-vw(16, $base-width-desktop);
 			top: 0;
 			left: 0;
 			right: 0;
@@ -24,11 +24,11 @@
 		}
 
 		span {
-			font-family: Thunder-Semibold-Italic;
-			font-size: 2.222vw; //32px, 1440
-			line-height: 2.444vw; //35.2px, 1440
-			letter-spacing: 4%;
 			color: $color-white;
+			font-family: Thunder-Semibold-Italic;
+			font-size: px-to-vw(32, $base-width-desktop);
+			line-height: px-to-vw(35, $base-width-desktop);
+			letter-spacing: 4%;
 			text-transform: uppercase;
 		}
 	}
@@ -41,8 +41,8 @@
 		position: relative;
 		overflow: hidden;
 		border-radius: 3.622vw; // 11.59px, 320
+		background: $color-gradient;
 		padding: 2.5vw 7.5vw 0.625vw 5.625vw; //8px 24px 2px 18px, 320
-		background: linear-gradient(180deg, rgba(255, 255, 255, 0.22) 0%, rgba(217, 217, 217, 0.11) 100%);
 
 		&::after {
 			content: '';
@@ -58,11 +58,11 @@
 		}
 
 		span {
-			font-family: Thunder-Semibold-Italic;
-			font-size: 7.5vw; //24px, 320
-			line-height: 8.25vw; //26.4px, 320
-			letter-spacing: 4%;
 			color: $color-white;
+			font-family: Thunder-Semibold-Italic;
+			font-size: px-to-vw(24, $base-width-mobile);
+			line-height: px-to-vw(26.4, $base-width-mobile);
+			letter-spacing: 4%;
 		}
 	}
 }

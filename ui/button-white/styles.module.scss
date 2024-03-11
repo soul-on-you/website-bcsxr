@@ -1,19 +1,20 @@
-@import '../../styles/variables';
+@import '/styles/variables';
+@import '/styles/functions';
 
 @media (min-width: 769px) {
 	.buttonContainer {
 		display: inline-block;
 		border-top-left-radius: 0;
-		border-top-right-radius: 1.111vw; //16px, 1440
-		border-bottom-right-radius: 1.111vw; //16px, 1440
+		border-top-right-radius: px-to-vw(16, $base-width-desktop);
+		border-bottom-right-radius: px-to-vw(16, $base-width-desktop);
 		border-bottom-left-radius: 0;
-		padding: 0.833vw 2.222vw 0.556vw 1.667vw; //12px 32px 8px 24px, 1440
 		background-color: $color-white;
+		padding: 0.833vw 2.222vw 0.556vw 1.667vw; //12px 32px 8px 24px, 1440
 
 		span {
 			font-family: Thunder-Medium-Italic;
-			font-size: 2.222vw; //32px, 1440
-			line-height: 2.444vw; //35.2px, 1440
+			font-size: px-to-vw(32, $base-width-desktop);
+			line-height: px-to-vw(35.2, $base-width-desktop);
 			letter-spacing: 4%;
 			color: $color-black;
 			text-transform: uppercase;
@@ -25,16 +26,16 @@
 	.buttonContainer {
 		display: inline-block;
 		border-top-left-radius: 0;
-		border-top-right-radius: 5vw; //16px, 320
-		border-bottom-right-radius: 5vw; //16px, 320
+		border-top-right-radius: px-to-vw(16, $base-width-mobile);
+		border-bottom-right-radius: px-to-vw(16, $base-width-mobile);
 		border-bottom-left-radius: 0;
-		padding: 2.5vw 7.5vw 0.625vw 5.625vw; //8px 24px 2px 18px, 320
 		background-color: $color-white;
+		padding: 2.5vw 7.5vw 0.625vw 5.625vw; //8px 24px 2px 18px, 320
 
 		span {
 			font-family: Thunder-Medium-Italic;
-			font-size: 7.5vw; //24px, 320
-			line-height: 8.25vw; //26.4px, 320
+			font-size: px-to-vw(24, $base-width-mobile);
+			line-height: px-to-vw(26.4, $base-width-mobile);
 			letter-spacing: 4%;
 			color: $color-black;
 			text-transform: uppercase;

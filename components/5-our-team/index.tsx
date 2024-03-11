@@ -73,27 +73,52 @@ const OurTeam: React.FC = () => {
 
 				<div className={styles.gridContainer} ref={cardsContainerRef}>
 					<div>
-						<Card name='MICHAIL' surname='ZEUS' jobTitle='CEO' backgroundImage='/5-our-team/1.png' />
+						<Card
+							name='MICHAIL'
+							surname='ZEUS'
+							jobTitle='CEO'
+							backgroundImage='/5-our-team/polyakov.webp'
+						/>
 					</div>
 					<div>
-						<Card name='YAROSLAV' surname='FERT' jobTitle='CTO' backgroundImage='/5-our-team/1.png' />
+						<Card
+							name='YAROSLAV'
+							surname='FERT'
+							jobTitle='CTO'
+							backgroundImage='/5-our-team/fertyakov.webp'
+						/>
 					</div>
 					<div>
-						<Card name='NIKOLAY' surname='DOLGOV' jobTitle='COO' backgroundImage='/5-our-team/1.png' />
+						<Card
+							name='NIKOLAY'
+							surname='DOLGOV'
+							jobTitle='COO'
+							backgroundImage='/5-our-team/dolgov.webp'
+						/>
 					</div>
 					<div>
-						<Card name='PAVEL' surname='CHURSIN' jobTitle='PRODUCT' backgroundImage='/5-our-team/1.png' />
+						<Card
+							name='PAVEL'
+							surname='CHURSIN'
+							jobTitle='PRODUCT'
+							backgroundImage='/5-our-team/chursin.webp'
+						/>
 					</div>
 					<div>
 						<Card
 							name='ALEXANDER'
 							surname='ZELLNER'
 							jobTitle='DESIGNER'
-							backgroundImage='/5-our-team/1.png'
+							backgroundImage='/5-our-team/zellner.webp'
 						/>
 					</div>
 					<div>
-						<Card name='SERGEY' surname='ISAEV' jobTitle='PROJECT' backgroundImage='/5-our-team/1.png' />
+						<Card
+							name='SERGEY'
+							surname='ISAEV'
+							jobTitle='PROJECT'
+							backgroundImage='/5-our-team/isaev.webp'
+						/>
 					</div>
 				</div>
 			</div>

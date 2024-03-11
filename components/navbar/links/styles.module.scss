@@ -1,17 +1,18 @@
-@import '../../../styles/variables';
+@import '/styles/variables';
+@import '/styles/functions';
 
 .links {
 	ul {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		gap: 3.333vw; //48px, 1440
+		gap: px-to-vw(48, $base-width-desktop);
 
 		li {
 			a {
 				span {
 					font-family: Suisse-Intl-Regular;
-					font-size: 1.389vw; //20px, 1440
+					font-size: px-to-vw(20, $base-width-desktop);
 					line-height: 0.9988em;
 					letter-spacing: -1%;
 					text-transform: uppercase;

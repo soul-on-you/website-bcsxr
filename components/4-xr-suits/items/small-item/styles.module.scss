@@ -1,14 +1,15 @@
-@import '../../../../styles/variables';
+@import '/styles/variables';
+@import '/styles/functions';
 
 @media (min-width: 769px) {
 	.smallItem {
 		position: relative;
-		height: 33.333vw; //480px, 1440
+		height: px-to-vw(480, $base-width-desktop);
 
 		flex: 0 0 29.653vw; //427px, 1440
-		border-radius: 1.111vw; //16px, 1440
+		border-radius: px-to-vw(16, $base-width-desktop);
 		background: $gradient-dark;
-		padding: 2.222vw; //32px 0, 1440
+		padding: px-to-vw(32, $base-width-desktop);
 		visibility: hidden;
 
 		&::after {
@@ -36,16 +37,16 @@
 @media (max-width: 768px) {
 	.smallItem {
 		position: relative;
+		width: px-to-vw(287, $base-width-mobile);
+		height: px-to-vw(287, $base-width-mobile);
 
 		display: flex;
 		align-items: start;
 		flex: 1 0 auto;
-		width: 89.688vw; //287px, 320
-		height: 89.688vw; //287px, 320
 		border: 1px solid #5d495b;
-		border-radius: 16px;
+		border-radius: px-to-vw(16, $base-width-mobile);
 		background: $gradient-dark;
-		padding: 16px; //32px 0, 1440
+		padding: px-to-vw(16, $base-width-mobile);
 
 		&::after {
 			content: '';

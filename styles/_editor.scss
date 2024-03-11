@@ -1,46 +1,47 @@
 @import './variables';
+@import './functions';
 
 h1 {
-	font-size: 8.889vw; //128px, 1440
+	font-size: px-to-vw(128, $base-width-desktop);
 	font-family: 'Thunder-Semibold-Italic';
 	text-transform: uppercase;
 	line-height: 0.8em;
 	letter-spacing: 0.05em;
 
 	@media (max-width: 768px) {
-		font-size: 17.5vw; //320, 56px
+		font-size: px-to-vw(56, $base-width-mobile);
 		line-height: 0.8em;
 	}
 }
 
 h2 {
 	font-family: 'Thunder-Semibold-Italic';
-	font-size: 6.667vw; //96px, 1440
+	font-size: px-to-vw(96, $base-width-desktop);
 	line-height: 1.1em;
 	letter-spacing: 0.04em;
 	text-transform: uppercase;
 
 	@media (max-width: 768px) {
-		font-size: 11.25vw; //320, 36px
+		font-size: px-to-vw(36, $base-width-mobile);
 	}
 }
 
 h3 {
 	font-family: 'Thunder-Semibold-Italic';
-	font-size: 5.972vw; //86px, 1440
+	font-size: px-to-vw(86, $base-width-desktop);
 	line-height: 1.1em;
 	letter-spacing: 0.04em;
 	text-transform: uppercase;
 	color: $color-white;
 
 	@media (max-width: 768px) {
-		font-size: 15vw; //320, 48px
+		font-size: px-to-vw(48, $base-width-mobile);
 	}
 }
 
 h4 {
 	font-family: 'Thunder-Medium-Italic';
-	font-size: 4.444vw; //64px, 1440
+	font-size: px-to-vw(64, $base-width-desktop);
 	line-height: 1.1em;
 	letter-spacing: 0.04em;
 
@@ -52,21 +53,18 @@ h4 {
 	-webkit-text-fill-color: transparent;
 
 	@media (max-width: 768px) {
-		font-size: 8.75vw; //28px, 320
+		font-size: px-to-vw(28, $base-width-mobile);
 	}
 }
 
 h5 {
-	font-size: 1.667vw; //24px, 1440
+	font-size: px-to-vw(24, $base-width-desktop);
 	font-family: 'Suisse-Intl-Regular';
 	text-transform: uppercase;
-	// line-height: 1em;
-	// letter-spacing: 0.05em;
 	line-height: 110%;
-	// letter-spacing: 0%;
 	color: $color-white;
 
 	@media (max-width: 768px) {
-		font-size: 3.75vw; //12, 36px
+		font-size: px-to-vw(12, $base-width-mobile);
 	}
 }
