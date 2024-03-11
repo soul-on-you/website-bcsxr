@@ -76,7 +76,7 @@ const OurTeam: React.FC = () => {
 						<Card
 							name='DMITRY'
 							surname='SAKSONOV'
-							jobTitle='FOUNDER'
+							jobTitle='CEO'
 							backgroundImage='/5-our-team/dmitry_saksonov.webp'
 						/>
 					</div>
@@ -84,7 +84,7 @@ const OurTeam: React.FC = () => {
 						<Card
 							name='MICHAIL'
 							surname='POLYAKOV'
-							jobTitle='CEO'
+							jobTitle='COO'
 							backgroundImage='/5-our-team/polyakov.webp'
 						/>
 					</div>
@@ -100,7 +100,7 @@ const OurTeam: React.FC = () => {
 						<Card
 							name='ALEXEY'
 							surname='ISAEV'
-							jobTitle='TECH LEAD'
+							jobTitle='LEAD UNITY'
 							backgroundImage='/5-our-team/alexey_isaev.webp'
 						/>
 					</div>
@@ -108,24 +108,24 @@ const OurTeam: React.FC = () => {
 						<Card
 							name='NIKOLAY'
 							surname='DOLGOV'
-							jobTitle='CMO'
+							jobTitle='PRODUCT'
 							backgroundImage='/5-our-team/dolgov.webp'
 						/>
 					</div>
 					<div>
 						<Card
-							name='PAVEL'
-							surname='CHURSIN'
-							jobTitle='PRODUCT'
-							backgroundImage='/5-our-team/chursin.webp'
+							name='SERGEY'
+							surname='ISAEV'
+							jobTitle='GAME DESIGNER'
+							backgroundImage='/5-our-team/isaev.webp'
 						/>
 					</div>
 					{/* <div>
 						<Card
-							name='ALEXANDER'
-							surname='ZELLNER'
-							jobTitle='DESIGNER'
-							backgroundImage='/5-our-team/zellner.webp'
+							name='PAVEL'
+							surname='CHURSIN'
+							jobTitle='PRODUCT'
+							backgroundImage='/5-our-team/chursin.webp'
 						/>
 					</div> */}
 					{/* <div>
