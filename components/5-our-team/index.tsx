@@ -9,6 +9,7 @@ import HeadlineCentered from '@/ui/headline-centered';
 import useWindowSize from '@/hooks/useWindowSize';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import MarqueeContainer from './marquee';
+import { NULL } from 'sass';
 
 const OurTeam: React.FC = () => {
 	const { width } = useWindowSize();
@@ -120,22 +121,32 @@ const OurTeam: React.FC = () => {
 							backgroundImage='/5-our-team/isaev.webp'
 						/>
 					</div>
-					{/* <div>
+					<div>
 						<Card
 							name='PAVEL'
 							surname='CHURSIN'
 							jobTitle='PRODUCT'
 							backgroundImage='/5-our-team/chursin.webp'
 						/>
-					</div> */}
-					{/* <div>
+					</div>
+					<div>
 						<Card
-							name='SERGEY'
-							surname='ISAEV'
-							jobTitle='PROJECT'
-							backgroundImage='/5-our-team/isaev.webp'
+							name='ALEXANDER'
+							surname='ZELLNER'
+							jobTitle='DESIGNER'
+							backgroundImage='/5-our-team/zellner.webp'
 						/>
-					</div> */}
+					</div>
+					{isMobile ? null : (
+						<div>
+							<Card
+								name='ELENA'
+								surname='GRACHEVA'
+								jobTitle='PROJECT'
+								backgroundImage='/5-our-team/elena_gracheva.webp'
+							/>
+						</div>
+					)}
 				</div>
 			</div>
 		</section>
