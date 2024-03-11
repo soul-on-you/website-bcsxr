@@ -18,4 +18,3 @@ const Card: React.FC<ICardProps> = ({ name, surname, backgroundImage, jobTitle }
 };
 
 export default Card;
-// export default React.memo(Card);

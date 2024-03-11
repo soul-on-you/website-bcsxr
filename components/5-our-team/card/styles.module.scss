@@ -14,6 +14,18 @@
 		padding: px-to-vw(20, $base-width-desktop);
 		z-index: 5;
 
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			border-radius: px-to-vw(15, $base-width-desktop);
+			background-image: radial-gradient(97.79% 59.3% at 11.42% 109.3%, #000000 7.58%, rgba(0, 0, 0, 0) 100%);
+			z-index: 0; 
+		}
+
 		h4 {
 			width: 100%;
 		}
@@ -62,6 +74,18 @@
 		align-items: start;
 		justify-content: end;
 		padding: px-to-vw(8, $base-width-mobile);
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: px-to-vw(-2.5, $base-width-mobile);;
+			border-radius: px-to-vw(16, $base-width-mobile);
+			background-image: radial-gradient(97.79% 59.3% at 11.42% 109.3%, #000000 7.58%, rgba(0, 0, 0, 0) 100%);
+			z-index: 0; 
+		}
 
 		h4 {
 			width: 100%;
