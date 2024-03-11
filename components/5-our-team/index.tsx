@@ -75,7 +75,7 @@ const OurTeam: React.FC = () => {
 					<div>
 						<Card
 							name='MICHAIL'
-							surname='ZEUS'
+							surname='POLYAKOV'
 							jobTitle='CEO'
 							backgroundImage='/5-our-team/polyakov.webp'
 						/>
@@ -83,7 +83,7 @@ const OurTeam: React.FC = () => {
 					<div>
 						<Card
 							name='YAROSLAV'
-							surname='FERT'
+							surname='FERTYAKOV'
 							jobTitle='CTO'
 							backgroundImage='/5-our-team/fertyakov.webp'
 						/>
