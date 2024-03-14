@@ -4,6 +4,7 @@
 @media (min-width: 769px) {
 	.ourTeam {
 		position: relative;
+		overflow-x: hidden;
 
 		.bgImage {
 			position: absolute;
@@ -29,7 +30,7 @@
 				padding-bottom: px-to-vw(64, $base-width-desktop);
 			}
 			.marqueeRefContainer2 {
-				margin-bottom: px-to-vw(100, $base-width-desktop);;
+				margin-bottom: px-to-vw(100, $base-width-desktop);
 			}
 
 			.marqueeRefContainer {
