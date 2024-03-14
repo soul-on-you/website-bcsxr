@@ -40,7 +40,7 @@ const OurTeam: React.FC = () => {
 						},
 					},
 				);
-			});
+			});			
 		}
 
 		return () => {
