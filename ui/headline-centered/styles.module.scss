@@ -7,7 +7,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		padding-bottom: px-to-vw(48, $base-width-desktop);
+		padding-bottom: px-to-vw(0, $base-width-desktop);
 
 		h2 {
 			width: 100%;
@@ -35,7 +35,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		padding-bottom: px-to-vw(16, $base-width-mobile);
+		padding-bottom: px-to-vw(0, $base-width-mobile);
 
 		h2 {
 			width: 100%;
