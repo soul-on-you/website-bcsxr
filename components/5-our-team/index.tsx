@@ -83,6 +83,14 @@ const OurTeam: React.FC = () => {
 					</div>
 					<div>
 						<Card
+							name='DMITRY'
+							surname='Mikhalchuk'
+							jobTitle='Biz Dev'
+							backgroundImage='/5-our-team/dmitry_mikhalchuk.webp'
+						/>
+					</div>
+					<div>
+						<Card
 							name='MICHAIL'
 							surname='POLYAKOV'
 							jobTitle='COO'
@@ -97,14 +105,14 @@ const OurTeam: React.FC = () => {
 							backgroundImage='/5-our-team/fertyakov.webp'
 						/>
 					</div>
-					<div>
+					{/* <div>
 						<Card
 							name='ALEXEY'
 							surname='ISAEV'
 							jobTitle='LEAD UNITY'
 							backgroundImage='/5-our-team/alexey_isaev.webp'
 						/>
-					</div>
+					</div> */}
 					<div>
 						<Card
 							name='NIKOLAY'
