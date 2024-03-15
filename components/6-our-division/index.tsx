@@ -8,6 +8,7 @@ import LargeItem from './large-item';
 import Image from 'next/image';
 import HeadlineCentered from '@/ui/headline-centered';
 import useWindowSize from '@/hooks/useWindowSize';
+import Link from 'next/link';
 
 const OurDivision: React.FC = () => {
 	const { width } = useWindowSize();
@@ -70,9 +71,17 @@ const OurDivision: React.FC = () => {
 				</HeadlineCentered>
 
 				<div className={styles.containerItems}>
-					<LargeItem ref={largeBlockRef} img='/6-our-division/ecosystem.svg' />
-					<MediumItem ref={bottomBlock1Ref} img='/6-our-division/foundation.svg' />
-					<MediumItem ref={bottomBlock2Ref} img='/6-our-division/football.svg' />
+					<LargeItem ref={largeBlockRef} img='/6-our-division/ecosystem.svg' href='https://bcsports.io/' />
+					<MediumItem
+						ref={bottomBlock1Ref}
+						img='/6-our-division/foundation.svg'
+						href='https://foundation.bcsports.io/'
+					/>
+					<MediumItem
+						ref={bottomBlock2Ref}
+						img='/6-our-division/football.svg'
+						href='https://football.bcsports.io/'
+					/>
 				</div>
 			</div>
 		</section>

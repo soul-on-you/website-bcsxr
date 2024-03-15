@@ -8,6 +8,7 @@ import SmallItem from './small-item';
 import LargeItem from './large-item';
 import HeadlineCentered from '@/ui/headline-centered';
 import useWindowSize from '@/hooks/useWindowSize';
+import Link from 'next/link';
 
 const Partners: React.FC = () => {
 	const { width } = useWindowSize();
@@ -73,14 +74,31 @@ const Partners: React.FC = () => {
 						img='/7-partners/atommining.webp'
 						width={1352 / 2}
 						height={184 / 2}
+						href='https://atommining.io/'
 					/>
-					<SmallItem ref={bottomBlocksRef1} img='/7-partners/enigma.webp' width={532 / 2} height={156 / 2} />
-					<SmallItem ref={bottomBlocksRef2} img='/7-partners/uplift.webp' width={604 / 2} height={226 / 2} />
+
+					<SmallItem
+						ref={bottomBlocksRef1}
+						img='/7-partners/enigma.webp'
+						width={532 / 2}
+						height={156 / 2}
+						href='https://enigma.global/'
+					/>
+
+					<SmallItem
+						ref={bottomBlocksRef2}
+						img='/7-partners/uplift.webp'
+						width={604 / 2}
+						height={226 / 2}
+						href='https://www.uplift.io/'
+					/>
+
 					<SmallItem
 						ref={bottomBlocksRef3}
 						img='/7-partners/liquid-mining.webp'
 						width={626 / 2}
 						height={174 / 2}
+						href='https://liquidmining.com/'
 					/>
 				</div>
 			</div>
