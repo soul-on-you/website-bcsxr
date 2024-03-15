@@ -1,13 +1,14 @@
 'use client';
 import React from 'react';
 import styles from './styles.module.scss';
-import Input from './input';
+// import Input from './input';
 import Links from './links';
 import HeadlineCentered from '@/ui/headline-centered';
 
 import Image from 'next/image';
 import Link from 'next/link';
 import Logo from '@/ui/logo';
+import Button from './button';
 
 const Footer: React.FC = () => {
 	return (
@@ -17,16 +18,11 @@ const Footer: React.FC = () => {
 					<HeadlineCentered
 						span1='join'
 						span2='us'
-						// span3='join'
-						// span4='us'
 						colorSpan1='#FFFFFF'
 						colorSpan2='#FFFFFF'
-						// colorSpan3='#FFFFFF'
-						// colorSpan4='#FFFFFF'
-						// textShadow1='2px 2px 72px #2DE8E8'
-						// textShadow2='2px 2px 72px #E833EC'
 					/>
-					<Input />
+					{/* <Input /> */}
+					<Button>send message</Button>
 				</div>
 				<div className={styles.linksLogo}>
 					<Logo />

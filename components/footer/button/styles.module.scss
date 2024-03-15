@@ -1,0 +1,52 @@
+@import '/styles/variables';
+@import '/styles/functions';
+
+@media (min-width: 769px) {
+	.buttonContainer {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+
+		border-radius: px-to-vw(32, $base-width-desktop);
+		width: px-to-vw(400, $base-width-desktop);
+		height: px-to-vw(58, $base-width-desktop);
+
+		background: white;
+		color: black;
+
+		span {
+			color: $color-black;
+			font-family: Thunder-Semibold-Italic;
+			font-size: px-to-vw(36, $base-width-desktop);
+			line-height: px-to-vw(39, $base-width-desktop);
+			letter-spacing: 4%;
+			text-transform: uppercase;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.buttonContainer {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+
+		border-radius: px-to-vw(32, $base-width-mobile);
+		width: px-to-vw(200, $base-width-mobile);
+		height: px-to-vw(58, $base-width-mobile);
+
+		background: white;
+		color: black;
+
+		span {
+			color: $color-black;
+			font-family: Thunder-Semibold-Italic;
+			font-size: px-to-vw(28, $base-width-mobile);
+			line-height: px-to-vw(30.4, $base-width-mobile);
+			letter-spacing: 4%;
+			text-transform: uppercase;
+		}
+	}
+}
