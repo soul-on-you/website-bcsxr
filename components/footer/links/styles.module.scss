@@ -2,35 +2,79 @@
 @import '/styles/functions';
 
 @media (min-width: 769px) {
-	.links {
+	.linksContainer {
 		display: flex;
-		flex-direction: row;
-		align-items: center;
-		gap: px-to-vw(48, $base-width-desktop);
-		text-transform: uppercase;
+		flex-direction: column;
+		align-items: end;
+		gap: px-to-vw(32, $base-width-desktop);
 
-		li {
-			color: $color-white;
-			font-size: px-to-vw(20, $base-width-desktop);
-			line-height: px-to-vw(24, $base-width-desktop);
-			letter-spacing: -2%;
+		.links {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: px-to-vw(48, $base-width-desktop);
+			text-transform: uppercase;
+
+			li {
+				color: $color-white;
+				font-size: px-to-vw(20, $base-width-desktop);
+				line-height: px-to-vw(24, $base-width-desktop);
+				letter-spacing: -2%;
+				border-bottom: 1px solid $color-white;
+			}
+		}
+		.smallText{
+			font-family: 'Suisse-Intl-Regular';
+			font-size: px-to-vw(16, $base-width-desktop);
+			font-weight: 400;
+			line-height: px-to-vw(18, $base-width-desktop);
+			letter-spacing: 0em;
+			color: #959595;
+			
+			.contacts {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
 		}
 	}
 }
 
 @media (max-width: 768px) {
-	.links {
+	.linksContainer {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		gap: px-to-vw(32, $base-width-mobile);
-		text-transform: uppercase;
+		align-items: end;
+		gap: px-to-vw(32, $base-width-desktop);
 
-		li {
-			color: $color-white;
-			font-size: px-to-vw(20, $base-width-mobile);
-			line-height: px-to-vw(24, $base-width-mobile);
-			letter-spacing: -2%;
+		.links {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: px-to-vw(32, $base-width-mobile);
+			text-transform: uppercase;
+
+			li {
+				color: $color-white;
+				font-size: px-to-vw(20, $base-width-mobile);
+				line-height: px-to-vw(24, $base-width-mobile);
+				letter-spacing: -2%;
+				border-bottom: 1px solid $color-white;
+			}
+		}
+		.smallText{
+			font-family: 'Suisse-Intl-Regular';
+			font-size: px-to-vw(16, $base-width-desktop);
+			font-weight: 400;
+			line-height: px-to-vw(18, $base-width-desktop);
+			letter-spacing: 0em;
+			color: #959595;
+
+			.contacts {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
 		}
 	}
 }

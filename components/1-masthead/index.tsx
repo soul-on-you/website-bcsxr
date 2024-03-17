@@ -179,7 +179,7 @@ const Masthead: React.FC = () => {
 					<Image
 						ref={backgroundImageRef}
 						className={styles.backgroundImage}
-						src='/1-masthead/bg.webp'
+						src='/1-masthead/bg_new.webp'
 						alt='bg-image'
 						width={2880 / 2}
 						height={1600 / 2}

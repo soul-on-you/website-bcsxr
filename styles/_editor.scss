@@ -45,13 +45,7 @@ h4 {
 	line-height: 1.1em;
 	letter-spacing: 0.04em;
 	color: $color-white;
-
 	text-transform: uppercase;
-	// background: linear-gradient(180.76deg, #ffffff 0.66%, #6b6b6b 85.38%);
-	// -webkit-background-clip: text;
-	// background-clip: text;
-	// color: transparent;
-	// -webkit-text-fill-color: transparent;
 
 	@media (max-width: 768px) {
 		font-size: px-to-vw(24, $base-width-mobile);

@@ -71,7 +71,12 @@ const OurDivision: React.FC = () => {
 				</HeadlineCentered>
 
 				<div className={styles.containerItems}>
-					<LargeItem ref={largeBlockRef} img='/6-our-division/ecosystem.svg' href='https://bcsports.io/' />
+					<LargeItem
+						ref={largeBlockRef}
+						img='/6-our-division/ecosystem.svg'
+						href='https://bcsports.io/
+'
+					/>
 					<MediumItem
 						ref={bottomBlock1Ref}
 						img='/6-our-division/foundation.svg'
@@ -89,4 +94,3 @@ const OurDivision: React.FC = () => {
 };
 
 export default OurDivision;
-// export default React.memo(OurDivision);
