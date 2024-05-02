@@ -26,6 +26,10 @@
 				align-items: center;
 				justify-content: space-between;
 				padding-bottom: px-to-vw(64, $base-width-desktop);
+
+				> :last-child {
+					display: none;
+				}
 			}
 
 			.copyright {
@@ -51,7 +55,7 @@
 			flex-direction: column;
 			background: rgba(29, 30, 33, 1);
 			padding: 20vw $padding-mobile 5vw; //64px, $padding-desktop, 16px, 320
-			padding-bottom: px-to-vw(60, $base-width-mobile);
+			padding-bottom: px-to-vw(120, $base-width-mobile);
 
 			.input {
 				display: flex;
@@ -59,7 +63,29 @@
 				align-items: center;
 				justify-content: center;
 				gap: px-to-vw(16, $base-width-mobile);
-				padding-bottom: px-to-vw(100, $base-width-mobile);
+				padding-bottom: px-to-vw(32, $base-width-mobile);
+
+				> :first-child > h2 {
+					font-size: 48px;
+				}
+
+				> :first-child {
+					padding-bottom: 0 !important;
+				}
+
+				> :last-child {
+					height: auto;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					border-radius: 12px;
+					padding-top: 6px;
+					width: 90%;
+				}
+
+				> :last-child > span {
+					font-size: 24px;
+				}
 			}
 
 			.linksCopyright {
@@ -67,12 +93,33 @@
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
-				gap: px-to-vw(32, $base-width-mobile);
-				padding-bottom: px-to-vw(64, $base-width-mobile);
+				gap: px-to-vw(12, $base-width-mobile);
+
+				> :first-child > span {
+					font-size: 15px !important;
+				}
+
+				> :first-child > :nth-child(2) {
+					display: none;
+				}
+
+				> :last-child {
+					width: 100%;
+				}
+
+				> :last-child > :first-child {
+					display: none;
+				}
+
+				> :last-child > p {
+					font-size: 10px;
+					line-height: 12px;
+					width: 100%;
+				}
 			}
 
 			.copyright {
-				display: flex;
+				display: none;
 				justify-content: center;
 				align-items: center;
 				margin: 0 auto;

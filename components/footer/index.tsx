@@ -24,6 +24,7 @@ const Footer: React.FC = () => {
 					{/* <Logo /> */}
 					<Copyright />
 					<Links />
+					<Copyright />
 				</div>
 
 				<div className={styles.copyright}>

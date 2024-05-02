@@ -23,14 +23,14 @@
 				border-bottom: 1px solid $color-white;
 			}
 		}
-		.smallText{
+		.smallText {
 			font-family: 'Suisse-Intl-Regular';
 			font-size: px-to-vw(16, $base-width-desktop);
 			font-weight: 400;
 			line-height: px-to-vw(18, $base-width-desktop);
 			letter-spacing: 0em;
 			color: #959595;
-			
+
 			.contacts {
 				display: flex;
 				flex-direction: row;
@@ -45,35 +45,46 @@
 		display: flex;
 		flex-direction: column;
 		align-items: end;
-		gap: px-to-vw(32, $base-width-desktop);
+		gap: px-to-vw(22, $base-width-desktop);
+		width: 100% !important;
 
 		.links {
 			display: flex;
-			flex-direction: column;
 			align-items: center;
-			gap: px-to-vw(32, $base-width-mobile);
+			justify-content: space-between;
 			text-transform: uppercase;
+			width: 100% !important;
 
 			li {
 				color: $color-white;
 				font-size: px-to-vw(20, $base-width-mobile);
 				line-height: px-to-vw(24, $base-width-mobile);
 				letter-spacing: -2%;
-				border-bottom: 1px solid $color-white;
+				font-size: 10px;
+				margin-bottom: 30px;
+
+				a {
+					font-size: 10px;
+				}
 			}
 		}
-		.smallText{
+
+		.smallText {
 			font-family: 'Suisse-Intl-Regular';
 			font-size: px-to-vw(16, $base-width-desktop);
+			width: 100%;
 			font-weight: 400;
-			line-height: px-to-vw(18, $base-width-desktop);
+			line-height: px-to-vw(33, $base-width-desktop);
 			letter-spacing: 0em;
 			color: #959595;
+			font-size: 10px;
+			text-align: left !important;
+			line-height: 11px !important;
 
 			.contacts {
 				display: flex;
 				flex-direction: row;
-				justify-content: space-between;
+				gap: 32px;
 			}
 		}
 	}
