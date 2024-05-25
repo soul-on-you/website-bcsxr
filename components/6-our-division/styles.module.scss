@@ -27,6 +27,15 @@
 				grid-template-columns: 1fr 1fr;
 				gap: px-to-vw(20, $base-width-desktop);
 				grid-auto-rows: minmax(100px, auto);
+
+				div {
+					height: 200px;
+
+					img {
+						height: 140px;
+						object-fit: contain;
+					}
+				}
 			}
 		}
 	}

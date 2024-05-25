@@ -69,22 +69,21 @@ const Partners: React.FC = () => {
 					We are part of a corporate group of companies
 				</HeadlineCentered>
 				<div className={styles.blocksContainer}>
-					<LargeItem
-						ref={largeBlockRef}
-						img='/7-partners/atommining.webp'
-						width={1352 / 2}
-						height={184 / 2}
-						href='https://atommining.io/'
+					<SmallItem
+						ref={bottomBlocksRef1}
+						img='/7-partners/jiggl.webp'
+						width={604 / 2}
+						height={226 / 2}
+						href='https://market.jiggl.ai/'
 					/>
 
 					<SmallItem
-						ref={bottomBlocksRef1}
-						img='/7-partners/enigma.webp'
-						width={532 / 2}
-						height={156 / 2}
-						href='https://enigma.global/'
+						ref={largeBlockRef}
+						img='/7-partners/atom.svg'
+						width={604 / 2}
+						height={226 / 2}
+						href='https://atommining.io/'
 					/>
-
 					<SmallItem
 						ref={bottomBlocksRef2}
 						img='/7-partners/uplift.webp'

@@ -79,8 +79,8 @@ const OurDivision: React.FC = () => {
 					/>
 					<MediumItem
 						ref={bottomBlock1Ref}
-						img='/6-our-division/foundation.svg'
-						href='https://foundation.bcsports.io/'
+						img='/6-our-division/atleta.webp'
+						href='https://atleta.network/'
 					/>
 					<MediumItem
 						ref={bottomBlock2Ref}

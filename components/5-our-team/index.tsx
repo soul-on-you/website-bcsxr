@@ -125,7 +125,7 @@ const OurTeam: React.FC = () => {
 						<Card
 							name='SERGEY'
 							surname='ISAEV'
-							jobTitle='GAME DESIGNER'
+							jobTitle='PRODUCT'
 							backgroundImage='/5-our-team/isaev.webp'
 						/>
 					</div>

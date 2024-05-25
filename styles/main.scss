@@ -11,3 +11,7 @@
 @import './swiper';
 @import './tailwind';
 @import './variables';
+
+body {
+	overflow-x: hidden;
+}
